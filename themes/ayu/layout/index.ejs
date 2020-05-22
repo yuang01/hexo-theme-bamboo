@@ -1,0 +1,16 @@
+<section class="posts">
+  <% page.posts.each(function (post) { %>
+    <article class="post">
+      <div class="post-title">
+        <a class="post-title-link" href="<%- url_for(post.path) %>"><%= post.title %></a>
+      </div>
+      <div class="post-content">
+        <%- post.excerpt %>
+      </div>
+      <div class="post-meta">
+        <span class="post-time"><%- date(post.date, "YYYY-MM-DD") %></span>
+      </div>
+    </article>
+  <% }) %>
+</section>
+<%- partial('_partial/paginator') %>
