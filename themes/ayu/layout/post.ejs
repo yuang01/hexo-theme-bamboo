@@ -10,6 +10,9 @@
     <%- page.content %>
   </div>
 </article>
+<% if (theme.donate.on){ %>
+  <%- partial('_partial/donate') %>
+<% } %>
 <% if(theme.sharejs.on) { %>
   <%- partial('_partial/share') %>
 <% } %>

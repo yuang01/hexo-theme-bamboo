@@ -1,0 +1,32 @@
+<div class="post-donate">
+  <div id="donate_board" class="donate_bar center">
+    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏"></a>
+    <span class="donate_txt">
+      ↑<br>
+      <%=theme.donate_message%>
+    </span>
+    <br>
+  </div>
+  <div id="donate_guide" class="donate_bar center hidden">
+    <!-- 方式一： 
+          ![](/img/Alipay.jpg)
+          ![](/img/WeChatpay.jpg)
+      -->
+    <!-- 方式二；
+          step1：在_config.yml中添加配置
+              Alipay: /img/Alipay.jpg
+              WeChatpay: /img/WeChatpay.jpg
+          step2：此处两张图片的路径分别设置为如下
+              <img src="<%- theme.root_url %><%=theme.Alipay%>"
+              <img src="<%- theme.root_url %><%=theme.WeChatpay%>"
+      -->
+      <img src="<%- theme.root_url %><%=theme.Alipay%>" alt="支付宝打赏" style="width: 45%" />
+      <img src="<%- theme.root_url %><%=theme.WeChatpay%>" alt="微信打赏"style="width: 45%"/>
+  </div>
+  <script type="text/javascript">
+    document.getElementById('btn_donate').onclick = function () {
+      $('#donate_board').addClass('hidden');
+      $('#donate_guide').removeClass('hidden');
+    }
+  </script>
+</div>

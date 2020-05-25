@@ -11,9 +11,15 @@ fancybox:
 busuanzi:
   on: true
 
+donate:
+  on: true
+donate_message: 欣赏此文？求鼓励，求支持！
 
 sharejs: 
   on: true
+
+Alipay: '/img/54542.jpg'
+WeChatpay: '/img/520.jpg'
 
 # valine 评论
 valine:
