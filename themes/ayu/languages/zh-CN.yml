@@ -21,7 +21,9 @@ tag: Tag
 Menu:
   Home: 首页
   Archives: 归档
-  Github: 交友
+  Github: Github
+  about: 关于我
+  link: 友情链接
 
 Paginator:
   Prev: 上一页

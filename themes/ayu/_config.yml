@@ -2,3 +2,7 @@ menu:
   Home: /
   Archives: /archives
   Github: https://github.com/yuang01
+  about: /about
+  link: /link
+
+fancybox: true
