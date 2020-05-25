@@ -9,3 +9,10 @@
     <%- page.content %>
   </div>
 </article>
+
+<!-- 评论 -->
+<% if(theme.valine.on === true ) { %>
+  <%- partial('_partial/comment/valine') %>
+<% } else if(theme.gitment.on === true) { %>
+  <%- partial('_partial/comment/gitment') %>
+<% } %>

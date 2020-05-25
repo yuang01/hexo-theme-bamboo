@@ -98,4 +98,5 @@ theme: ayu
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: ''
+  type: git
+  repo: https://github.com/yuang01/yuang01.github.io.git

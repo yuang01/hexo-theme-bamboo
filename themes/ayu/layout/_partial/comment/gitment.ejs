@@ -1,0 +1,19 @@
+<div id="gitment-ctn"></div> 
+
+<!-- 修改css与js文件如下即可-->
+<link rel="stylesheet" href="//billts.site/extra_css/gitment.css">
+<script src="//billts.site/js/gitment.js"></script>
+<!-- end-->
+
+<script>
+var gitment = new Gitment({
+  id: "<%= page.date %>",
+  owner: '<%= theme.gitment.gitment_owner %>',
+  repo: '<%= theme.gitment.gitment_repo %>',
+  oauth: {
+    client_id: '<%= theme.gitment.clientId %>',
+    client_secret: '<%= theme.gitment.clientSecret %>',
+  },
+})
+gitment.render('gitment-ctn')
+</script>

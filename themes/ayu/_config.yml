@@ -6,3 +6,24 @@ menu:
   link: /link
 
 fancybox: true
+
+valine:
+  on: false
+  appid: RaAwMtm0awJV0HcwwjdBo0Nt-gzGzoHsz # App ID
+  appkey: ewO06LrADh1erYkXEOC9jkNf # App Key
+  avatar: '' # 匿名者头像选项
+  placeholder: ヾﾉ≧∀≦)o来啊，快活啊!
+
+gitment:
+  on: true
+  gitment_owner: '用户名'      #你的 GitHub ID
+  gitment_repo: 'https://yuang01.github.io' #存储评论的 repo
+  clientId: '418a1890782d27e5bc5b' #client ID
+  clientSecret: '0500f22139fb648833d54076c086c3dd3c2d8ca4'       #client secret
+    
+    
+
+
+CDN:
+  valine: https://cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js
+  # valine: https://cdn.bootcdn.net/ajax/libs/valine/1.4.14/detect.min.js

@@ -7,14 +7,8 @@
       <%- body %>
     </main>
     <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
-    <% if(config['fancybox'] === 'true'){ %>
+    <% if(theme.fancybox === true ) { %>
       <%- js(['js/fancybox/jquery.fancybox.min.js', 'js/wrapImage.js']) %>
-      <!-- <%- js('js/fancybox/jquery.fancybox.min.js') %>
-      
-      <%- js('js/wrapImage.js') %> -->
-      <!-- <script type="text/javascript" src="js/wrapImage.js"></script>
-      <script type="text/javascript" src="js/fancybox/jquery.fancybox.min.js"></script> -->
-      
     <% } %>
   </body>
 </html>
