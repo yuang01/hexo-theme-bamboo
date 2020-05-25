@@ -6,7 +6,7 @@ menu:
   link: /link
 
 fancybox: true
-
+# valine 评论
 valine:
   on: false
   appid: RaAwMtm0awJV0HcwwjdBo0Nt-gzGzoHsz # App ID
@@ -14,15 +14,32 @@ valine:
   avatar: '' # 匿名者头像选项
   placeholder: ヾﾉ≧∀≦)o来啊，快活啊!
 
+# gitment 评论
 gitment:
-  on: true
+  on: false
   gitment_owner: '用户名'      #你的 GitHub ID
   gitment_repo: 'https://yuang01.github.io' #存储评论的 repo
   clientId: '418a1890782d27e5bc5b' #client ID
   clientSecret: '0500f22139fb648833d54076c086c3dd3c2d8ca4'       #client secret
-    
-    
 
+# 来必力评论
+livere:
+  on: false
+  livere_uid: MTAyMC8zNTA1My8xMTU4OA
+
+# 畅言评论
+changyan:
+  on: false
+  appId: cytFT1Bjx
+  conf: 3d54029125cc00c10be39c2e23b4b2c7
+
+gitalk:
+  on: true         # 用来做启用判断可以不用
+  owner: 'yuang01'        #Github 用户名,
+  repo:  'yuang01.github.io'         #储存评论issue的github仓库名
+  admin:   yuang01        #Github 用户名,
+  clientID:  '418a1890782d27e5bc5b'      #`Github Application clientID`
+  clientSecret:  '0500f22139fb648833d54076c086c3dd3c2d8ca4'  #`Github Application clientSecret`
 
 CDN:
   valine: https://cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js
