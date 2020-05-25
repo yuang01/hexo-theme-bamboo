@@ -8,7 +8,7 @@
         id: window.location.pathname,
         repo: '<%= theme.gitalk.repo %>',
         owner: '<%= theme.gitalk.owner %>',
-        admin: '<%= theme.gitalk.admin %>'
+        admin: ['<%= theme.gitalk.admin %>']
     })
     gitalk.render('gitalk-container')
 </script>

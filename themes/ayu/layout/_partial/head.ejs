@@ -3,7 +3,11 @@
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   <title><%= config.title %></title>
   <%- css('css/style.css') %>
-  <% if(theme.fancybox === true ) { %>
+  
+  <% if(theme.fancybox.on === true ) { %>
     <%- css('js/fancybox/jquery.fancybox.min.css') %>
+  <% } %>
+  <% if(theme.sharejs.on === true ) { %>
+    <%- css(['js/shareJs/share.min.css']) %>
   <% } %>
 </head>

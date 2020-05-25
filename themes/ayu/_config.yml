@@ -5,9 +5,15 @@ menu:
   about: /about
   link: /link
 
-fancybox: true
+fancybox: 
+  on: true
 
-busuanzi: true
+busuanzi:
+  on: true
+
+
+sharejs: 
+  on: true
 
 # valine 评论
 valine:

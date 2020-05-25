@@ -1,4 +1,6 @@
 <div class="footer">
   这是页脚
-  <%- partial('_partial/busuanzi') %>
+  <% if(theme.busuanzi.on === true ) { %>
+    <%- partial('_partial/busuanzi') %>
+  <% } %>
 </div>

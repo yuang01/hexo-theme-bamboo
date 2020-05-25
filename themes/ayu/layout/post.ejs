@@ -10,7 +10,9 @@
     <%- page.content %>
   </div>
 </article>
-
+<% if(theme.sharejs.on) { %>
+  <%- partial('_partial/share') %>
+<% } %>
 <!-- 评论 -->
 <% if(theme.valine.on === true ) { %>
   <%- partial('_partial/comment/valine') %>
