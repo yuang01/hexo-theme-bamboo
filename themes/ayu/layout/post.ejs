@@ -2,6 +2,12 @@
   <div class="post-title">
     <h2 class="title"><%= page.title %></h2>
   </div>
+  <div class="tags">
+    <%- partial('_partial/post/tags', {post: page}) %>
+  </div>
+  <div class="categories">
+    <%- partial('_partial/post/categories', {post: page}) %>
+  </div>
    <div class="post-meta">
     <span class="post-time"><%- date(page.date, "YYYY-MM-DD") %></span>
   </div>
@@ -12,7 +18,7 @@
 </article>
 <!-- 上一篇文章和下一篇文章 -->
 <% if (theme.postNav.on){ %>
-  <%- partial('_partial/post-nav') %>
+  <%- partial('_partial/post/post-nav') %>
 <% } %>
 <!-- 打赏 -->
 <% if (theme.donate.on){ %>

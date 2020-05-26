@@ -2,8 +2,10 @@
 menu:
   Home: /
   Archives: /archives
+  Tags: /tags
+  Categories: /categories
   Github: https://github.com/yuang01
-  about: /about
+  About: /about
   link: /link
 
 # 图片点击放大功能
@@ -13,6 +15,9 @@ fancybox:
 # 统计网站访问数量
 busuanzi:
   on: true
+
+# 标签页和分类页中，显示这个标签或者分类在文章中出现的次数
+show_count: true
 
 # 打赏功能
 donate:
@@ -25,6 +30,10 @@ WeChatpay: '/img/520.jpg'
 
 # 分享功能
 sharejs: 
+  on: true
+
+# 点击出现爱心效果
+clicklove:
   on: true
 
 # 全文搜索功能

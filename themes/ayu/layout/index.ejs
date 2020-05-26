@@ -4,6 +4,12 @@
       <div class="post-title">
         <a class="post-title-link" href="<%- url_for(post.path) %>"><%= post.title %></a>
       </div>
+      <div class="post-tags">
+        <%- partial('_partial/post/tags', {post: post}) %>
+      </div>
+      <div class="post-categories">
+        <%- partial('_partial/post/categories', {post: post}) %>
+      </div>
       <div class="post-content">
         <%- post.excerpt %>
       </div>

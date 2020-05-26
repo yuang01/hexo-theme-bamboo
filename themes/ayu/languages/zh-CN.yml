@@ -21,10 +21,15 @@ tag: Tag
 Menu:
   Home: 首页
   Archives: 归档
+  Tags: 标签
+  Categories: 分类
   Github: Github
-  about: 关于我
+  About: 关于我
   link: 友情链接
 
 Paginator:
   Prev: 上一页
   Next: 下一页
+
+postCategoryTitle: 文章分类
+postTagTitle: 文章标签

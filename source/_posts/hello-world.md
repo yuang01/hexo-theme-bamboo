@@ -20,7 +20,7 @@ More info: [Writing](https://hexo.io/docs/writing.html)
 npm install hexo-generator-search --save
 ```
 
-``` yml
+``` javascript
 search:
   path: search.xml
   field: post
