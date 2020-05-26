@@ -25,6 +25,7 @@ search:
   path: search.xml
   field: post
 ```
+>这是一段文字哦
 test
 ``` html
 <ayu-form :model="baseForm" labelWidth="80px">
