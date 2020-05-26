@@ -10,9 +10,15 @@
     <%- page.content %>
   </div>
 </article>
+<!-- 上一篇文章和下一篇文章 -->
+<% if (theme.postNav.on){ %>
+  <%- partial('_partial/post-nav') %>
+<% } %>
+<!-- 打赏 -->
 <% if (theme.donate.on){ %>
   <%- partial('_partial/donate') %>
 <% } %>
+<!-- 分享 -->
 <% if(theme.sharejs.on) { %>
   <%- partial('_partial/share') %>
 <% } %>

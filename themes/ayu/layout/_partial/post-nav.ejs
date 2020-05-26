@@ -1,0 +1,17 @@
+<div class="post-nav">
+<% if(page.prev) { %>
+  <div class="post-nav-prev post-nav-item">
+    <a href="<%- url_for(page.prev.path) %>">
+      <%= page.prev.title %>
+    </a>
+  </div>
+<% } %>
+
+<% if(page.next) { %>
+  <div class="post-nav-next post-nav-item">
+    <a href="<%- url_for(page.next.path) %>">
+      <%= page.next.title %>
+    </a>
+  </div>
+<% } %>
+</div>

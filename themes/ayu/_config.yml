@@ -1,3 +1,4 @@
+# 菜单
 menu:
   Home: /
   Archives: /archives
@@ -5,23 +6,33 @@ menu:
   about: /about
   link: /link
 
+# 图片点击放大功能
 fancybox: 
   on: true
 
+# 统计网站访问数量
 busuanzi:
   on: true
 
+# 打赏功能
 donate:
   on: true
 donate_message: 欣赏此文？求鼓励，求支持！
+# 支付宝打赏图片相对路径
+Alipay: '/img/54542.jpg'
+# 微信打赏图片相对路径
+WeChatpay: '/img/520.jpg'
 
+# 分享功能
 sharejs: 
   on: true
 
-Alipay: '/img/54542.jpg'
-WeChatpay: '/img/520.jpg'
-
+# 全文搜索功能
 search:
+  on: true
+
+# 文章详情页底部显示上一篇文章和下一篇文章
+postNav:
   on: true
 
 # valine 评论
@@ -29,8 +40,6 @@ valine:
   on: true
   appid: nmal09L0arSjEFBUUCSpWzyK-gzGzoHsz
   appkey: xiiSst0NtHRg1POFFV32iqKI
-  # appid: RaAwMtm0awJV0HcwwjdBo0Nt-gzGzoHsz # App ID
-  # appkey: ewO06LrADh1erYkXEOC9jkNf # App Key
   avatar: '' # 匿名者头像选项
   placeholder: ヾﾉ≧∀≦)o来啊，快活啊!
 
@@ -53,6 +62,7 @@ changyan:
   appId: cytFT1Bjx
   conf: 3d54029125cc00c10be39c2e23b4b2c7
 
+# gitalk评论
 gitalk:
   on: false         # 用来做启用判断可以不用
   owner: 'yuang01'        #Github 用户名,
@@ -63,4 +73,3 @@ gitalk:
 
 CDN:
   valine: https://cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js
-  # valine: https://cdn.bootcdn.net/ajax/libs/valine/1.4.14/detect.min.js
