@@ -45,13 +45,22 @@ post_asset_folder: false
 relative_link: false
 future: true
 highlight:
-  enable: true
-  line_number: true
+  enable: false
+  line_number: false
   auto_detect: false
   tab_replace: ''
   wrap: true
   hljs: false
 
+prism_plugin:
+  mode: 'preprocess'    # realtime/preprocess
+  theme: 'tomorrow'
+  line_number: false    # default false
+  custom_css:
+
+search:
+  path: search.xml
+  field: post  
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
@@ -104,7 +113,7 @@ feed:
   content_limit: 140
   content_limit_delim: ' '
   order_by: -date
-  
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:

@@ -3,6 +3,10 @@
   <%- partial('_partial/head') %>
   <body>
     <%- partial('_partial/header') %>
+    
+    <% if(theme.search.on === true) { %>
+      <%- partial('_partial/search') %>
+    <% } %>
     <main class="main">
       <%- body %>
     </main>

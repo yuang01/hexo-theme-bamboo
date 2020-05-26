@@ -21,11 +21,16 @@ sharejs:
 Alipay: '/img/54542.jpg'
 WeChatpay: '/img/520.jpg'
 
+search:
+  on: true
+
 # valine 评论
 valine:
-  on: false
-  appid: RaAwMtm0awJV0HcwwjdBo0Nt-gzGzoHsz # App ID
-  appkey: ewO06LrADh1erYkXEOC9jkNf # App Key
+  on: true
+  appid: nmal09L0arSjEFBUUCSpWzyK-gzGzoHsz
+  appkey: xiiSst0NtHRg1POFFV32iqKI
+  # appid: RaAwMtm0awJV0HcwwjdBo0Nt-gzGzoHsz # App ID
+  # appkey: ewO06LrADh1erYkXEOC9jkNf # App Key
   avatar: '' # 匿名者头像选项
   placeholder: ヾﾉ≧∀≦)o来啊，快活啊!
 
