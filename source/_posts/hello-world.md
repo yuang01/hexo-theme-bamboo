@@ -20,63 +20,39 @@ More info: [Writing](https://hexo.io/docs/writing.html)
 npm install hexo-generator-search --save
 ```
 
-``` javascript
+``` js
 search:
   path: search.xml
   field: post
 ```
+``` json
+{
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+   "lint-staged": {
+    "*.{js,vue}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
+}
+```
+``` js
+// babel.config.js
+module.exports = {
+  presets: [
+    ['@vue/app', {
+      polyfills: [
+        'es.promise',
+        'es.symbol'
+      ]
+    }]
+  ]
+}
+```
 >这是一段文字哦
 test
-``` html
-<ayu-form :model="baseForm" labelWidth="80px">
-  <ayu-form-item label="用户名">
-    <ayu-input v-model="baseForm.name"/>
-  </ayu-form-item>
-  <ayu-form-item label="水果">
-    <ayu-select v-model="baseForm.fruits" placeholder="请选择">
-      <ayu-option 
-        v-for="item in options" 
-        :key="item.value" 
-        :label="item.label" 
-        :value="item.value">
-        {{ item.label }}
-      </ayu-option>
-    </ayu-select>
-  </ayu-form-item>
-  <ayu-form-item>
-    <ayu-button>取消</ayu-button>
-    <ayu-button type="primary" @click="onSubmit">确定</ayu-button>
-  </ayu-form-item>
-</ayu-form>
-
-<script>
-  export default {
-    data() {
-      return {
-        baseForm: {
-          name: '',
-          fruits: ''
-        },
-        options: [
-          {
-            label: '苹果',
-            value: 'apple'
-          },
-          {
-            label: '香蕉',
-            value: 'Banana'
-          },
-        ]
-      }
-    },
-    methods:{
-      onSubmit() {
-        console.log('提交');
-      }
-    }
-  }
-</script>
-```
 ``` bash
 $ hexo server
 ```
