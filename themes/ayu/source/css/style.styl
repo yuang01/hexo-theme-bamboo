@@ -1,9 +1,12 @@
-body {
+html {
   background-color: #F2F2F2;
-  font-size: 1.25rem;
   line-height: 1.5;
+  font-size: 16px;
+  --color-primary: #42b983;
 }
-
+[v-cloak] {
+  display: none; 
+} 
 .container {
   max-width: 960px;
   margin: 0 auto;
@@ -16,3 +19,5 @@ body {
 @import "_partial/donate";
 @import "_partial/comment";
 @import "_partial/custom";
+@import "_partial/search";
+@import "_partial/mobile";

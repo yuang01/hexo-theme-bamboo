@@ -1,6 +1,6 @@
 .post {
   margin: 1em auto;
-  padding: 30px 50px;
+  padding: 0.5rem;
   background-color: #fff;
   border: 1px solid #ddd;
   box-shadow: 0 0 2px #ddd;
@@ -237,9 +237,10 @@
       padding: 0;
       word-break: initial;
       width: 100%;
-      display: table;
+      table-layout:fixed;
       border-collapse: collapse;
       border-spacing: 0;
+      overflow: auto;
   }
 
   table tr {
@@ -267,6 +268,8 @@
       text-align: left;
       margin: 0;
       padding: 6px 13px;
+      font-size: 55%;
+      word-wrap:break-word;
   }
 
   table tr th:first-child,
@@ -285,4 +288,3 @@
     line-height: 1.85rem;
   }
 }
-

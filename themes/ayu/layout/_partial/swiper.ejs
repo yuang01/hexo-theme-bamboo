@@ -1,0 +1,49 @@
+<link href="https://cdn.bootcdn.net/ajax/libs/Swiper/5.4.1/css/swiper.min.css" rel="stylesheet">
+<div id="appSwiper">
+  <swiper ref="mySwiper" :options="swiperOptions">
+    <swiper-slide><%=theme.Alipay%></swiper-slide>
+    <swiper-slide>Slide 2</swiper-slide>
+    <swiper-slide>Slide 3</swiper-slide>
+    <swiper-slide>Slide 4</swiper-slide>
+    <swiper-slide>Slide 5</swiper-slide>
+    <div class="swiper-pagination" slot="pagination"></div>
+  </swiper>
+</div>
+
+<script src="https://cdn.bootcdn.net/ajax/libs/Swiper/5.4.1/js/swiper.min.js"></script>
+<%- js(['js/vue-awesome-swiper.js']) %>
+<script type="text/javascript">
+  Vue.use(window.VueAwesomeSwiper)
+</script>
+<script>
+  var vm = new Vue({
+    el: '#appSwiper',
+    data: {
+      swiperOptions: {
+        pagination: {
+          el: '.swiper-pagination'
+        },
+        // Some Swiper option/callback...
+      }
+    },
+    computed: {
+      swiper() {
+        return this.$refs.mySwiper.$swiper
+      }
+    },
+    mounted() {
+      console.log('Current Swiper instance object', this.swiper)
+      this.swiper.slideTo(3, 1000, false)
+    },
+    methods: {
+
+    },
+    created() {}
+  })
+</script>
+
+<style>
+.swiper-slide {
+  height: 300px;
+}
+</style>

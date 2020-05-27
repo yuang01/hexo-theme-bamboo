@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
   <%- partial('_partial/head') %>
+  <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
   <body>
     <%- partial('_partial/header') %>
-
     <% if(theme.search.on === true) { %>
       <%- partial('_partial/search') %>
     <% } %>
@@ -11,7 +12,6 @@
       <%- body %>
     </main>
     <%- partial('_partial/footer') %>
-    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.5.1/jquery.js"></script>
     <!-- 图片放大 -->
     <% if(theme.fancybox.on === true ) { %>
       <%- js(['js/fancybox/jquery.fancybox.min.js', 'js/wrapImage.js']) %>
@@ -21,4 +21,9 @@
       <%- js(['js/clicklove.js']) %>
     <% } %>
   </body>
+  <% if(theme.color.on) { %>
+  <script>
+    document.body.style.setProperty('--color-primary', '<%= theme.color.primary %>');
+  </script>
+  <% } %>
 </html>

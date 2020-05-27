@@ -1,0 +1,32 @@
+
+  <div id="appElement">
+    <button @click="test()">dianji</button>
+    <div v-if="dialogVisible">asdaasdsadsadsadsadsadsadsadss</div>
+  </div>
+
+  <script>
+    var vm = new Vue({
+      el: '#appElement',
+      data: {
+        dialogVisible: false
+      },
+      computed: {
+      },
+      mounted() {
+        
+      },
+      methods: {
+        test() {
+          this.dialogVisible = true
+        },
+        handleClose(done) {
+          this.$confirm('确认关闭？')
+            .then(_ => {
+              done();
+            })
+            .catch(_ => {});
+        }
+      },
+      created() {}
+    })
+  </script>

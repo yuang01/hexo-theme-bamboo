@@ -1,12 +1,55 @@
-<div>
-  <form class="site-search-form">
-    <input type="text" id="local-search-input" class="st-search-input" />
-  </form>
-  <div id="local-search-result" class="local-search-result-cls"></div>
+<div id="appSearch">
+  <button @click="showDialog()">搜索</button>
+  <div class="message-box_wrapper" style="display: none;" v-cloak v-show="dialogVisible" @click.self="cancelDialogVisible()">
+    <div class="message-box">
+      <h2>
+        <i class="fa fa-search" aria-hidden="true"></i>
+        <span class="title">搜索</span>
+      </h2>
+      <form class="site-search-form">
+        <input type="text" 
+          id="local-search-input" 
+          @click="getSearchFile()"
+          class="st-search-input"
+          v-model="searchInput"
+        />
+      </form>
+      <div class="result-wrapper">
+        <div id="local-search-result" class="local-search-result-cls"></div>
+      </div>
+    </div>
+  </div>
 </div>
 <%- js(['js/local_search.js']) %>
-<script type="text/javascript" id="local.search.active">
+<script>
+  var vm = new Vue({
+    el: '#appSearch',
+    data: {
+      dialogVisible: false,
+      searchInput: '',
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialog() {
+        this.dialogVisible = true;
+      },
+      getSearchFile() {
+        if (!this.searchInput) {
+          getSearchFile();
+        }
+      },
+      cancelDialogVisible() {
+        this.dialogVisible = false;
+      },
+    },
+    created() {}
+  })
+</script>
+<!-- <script type="text/javascript" id="local.search.active">
   var inputArea = document.querySelector("#local-search-input");
   inputArea.onclick   = function(){ getSearchFile(); this.onclick = null }
   inputArea.onkeydown = function(){ if(event.keyCode == 13) return false }
-</script>
+</script> -->

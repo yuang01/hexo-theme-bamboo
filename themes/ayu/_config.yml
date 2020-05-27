@@ -44,6 +44,10 @@ search:
 postNav:
   on: true
 
+color:
+  on: true
+  primary: '#42b983'
+
 # valine 评论
 valine:
   on: true
