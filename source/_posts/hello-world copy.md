@@ -3,6 +3,8 @@ title: vue.js实现左侧导航栏和tab切换页面效果
 date: 2019-01-20 21:11
 categories: "vue.js"
 tags: 'vue.js'
+swiper: true
+swiperImg: 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/834adf15c7fe490cb3f5c672ddd9d106.jpg!sswm'
 ---
 # 前言 
 基于<a href="https://getbootstrapadmin.com/remark/base/index.html">remark UI</a>的样式，使用vue.js编写了左侧导航栏（侧边栏）和tab切换页面功能。

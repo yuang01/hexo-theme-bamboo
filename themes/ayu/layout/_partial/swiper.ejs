@@ -1,11 +1,22 @@
 <link href="https://cdn.bootcdn.net/ajax/libs/Swiper/5.4.1/css/swiper.min.css" rel="stylesheet">
 <div id="appSwiper">
-  <swiper ref="mySwiper" :options="swiperOptions">
-    <swiper-slide><%=theme.Alipay%></swiper-slide>
-    <swiper-slide>Slide 2</swiper-slide>
-    <swiper-slide>Slide 3</swiper-slide>
-    <swiper-slide>Slide 4</swiper-slide>
-    <swiper-slide>Slide 5</swiper-slide>
+  <swiper v-cloak ref="mySwiper" :options="swiperOptions">
+    <% site.posts.each(function (post) { %>
+      <% if(post.swiper === true) { %>
+        <swiper-slide>
+          <div class="item">
+            <a href="<%- url_for(post.path) %>">
+              <% if(post.swiperImg) { %>
+                <img class="homeSwiper" src="<%- theme.root_url %><%=post.swiperImg%>" alt="<%=post.title%>" style="width: 100%;">
+              <% } %>
+              <%=post.swiper%><%=post.title%>
+            </a>
+          </div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </swiper-slide>
+      <% } %>
+    <% }) %>
     <div class="swiper-pagination" slot="pagination"></div>
   </swiper>
 </div>
@@ -21,7 +32,16 @@
     data: {
       swiperOptions: {
         pagination: {
-          el: '.swiper-pagination'
+          el: '.swiper-pagination',
+          clickable: true // 允许点击小圆点跳转
+        },
+        autoplay: {
+  　　　　delay: 3000,
+  　　　　disableOnInteraction: false // 手动切换之后继续自动轮播
+    　　},
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
         },
         // Some Swiper option/callback...
       }
@@ -33,7 +53,7 @@
     },
     mounted() {
       console.log('Current Swiper instance object', this.swiper)
-      this.swiper.slideTo(3, 1000, false)
+      // this.swiper.slideTo(0, 1000, false)
     },
     methods: {
 
@@ -44,6 +64,14 @@
 
 <style>
 .swiper-slide {
-  height: 300px;
+  height: 50vh;
+  position: relative;
+}
+.swiper-slide .item {
+  width: 100%;
+  height: 100%;
+}
+.swiper-slide img {
+  min-height: 100%;
 }
 </style>

@@ -29,14 +29,16 @@
   <%- partial('_partial/share') %>
 <% } %>
 <!-- 评论 -->
-<% if(theme.valine.on === true ) { %>
-  <%- partial('_partial/comment/valine') %>
-<% } else if(theme.gitment.on === true) { %>
-  <%- partial('_partial/comment/gitment') %>
-<% } else if(theme.livere.on === true) {  %>
-  <%- partial('_partial/comment/livere') %>
-<% } else if(theme.changyan.on === true) {  %>
-  <%- partial('_partial/comment/changyan') %>
-<% } else if(theme.gitalk.on === true) {  %>
-  <%- partial('_partial/comment/gitalk') %>
+<% if(page.comments !== false ) { %>
+  <% if(theme.valine.on === true ) { %>
+    <%- partial('_partial/comment/valine') %>
+  <% } else if(theme.gitment.on === true) { %>
+    <%- partial('_partial/comment/gitment') %>
+  <% } else if(theme.livere.on === true) {  %>
+    <%- partial('_partial/comment/livere') %>
+  <% } else if(theme.changyan.on === true) {  %>
+    <%- partial('_partial/comment/changyan') %>
+  <% } else if(theme.gitalk.on === true) {  %>
+    <%- partial('_partial/comment/gitalk') %>
+  <% } %>
 <% } %>

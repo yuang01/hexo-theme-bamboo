@@ -7,7 +7,8 @@
         <span class="title">搜索</span>
       </h2>
       <form class="site-search-form">
-        <input type="text" 
+        <input type="text"
+          placeholder="清输入关键字"
           id="local-search-input" 
           @click="getSearchFile()"
           class="st-search-input"
@@ -22,6 +23,7 @@
 </div>
 <%- js(['js/local_search.js']) %>
 <script>
+  var body = document.body;
   var vm = new Vue({
     el: '#appSearch',
     data: {
@@ -35,6 +37,9 @@
     methods: {
       showDialog() {
         this.dialogVisible = true;
+        // 防止页面滚动，只能让弹框滚动
+        var top = body.scrollTop;
+        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + top + 'px; left: 0; overflow: hidden;';
       },
       getSearchFile() {
         if (!this.searchInput) {
@@ -43,11 +48,15 @@
       },
       cancelDialogVisible() {
         this.dialogVisible = false;
+        body.removeAttribute('style');
+        body.scrollTop = top;
       },
     },
     created() {}
   })
 </script>
+<!-- 解决刷新页面闪烁问题，可以在元素上添加display: none, 或者用vue.extend方法，详情：https://blog.csdn.net/qq_31393401/article/details/81017912 -->
+<!-- 下面是搜索基本写法 -->
 <!-- <script type="text/javascript" id="local.search.active">
   var inputArea = document.querySelector("#local-search-input");
   inputArea.onclick   = function(){ getSearchFile(); this.onclick = null }

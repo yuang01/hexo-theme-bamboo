@@ -2,11 +2,10 @@
 title: 这是一个测试页面哦
 date: 2018-09-28 13:34:00
 author: blinkfox
-cover: true
 categories: 前端
-tags:
-  - Hexo
-  - hexo-theme-matery
+tags: [Hexo, hexo-theme-matery]
+swiper: true
+swiperImg: 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/c5fddfe6d6bd43dda64cb683b7d9c620.jpg!sswm'
 ---
 [English Document](README.md) | [演示示例](https://blinkfox.github.io/) | QQ交流群:`926552981`
 
