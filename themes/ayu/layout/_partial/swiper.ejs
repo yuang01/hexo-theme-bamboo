@@ -1,23 +1,39 @@
 <link href="https://cdn.bootcdn.net/ajax/libs/Swiper/5.4.1/css/swiper.min.css" rel="stylesheet">
+<%
+var imgArr = ['https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/aa85e7943d514609b6a7e526298ffa60.jpg!sswm', '/medias/comment_bg.png', 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/0df374e14f61415088dcc202aca968f6.jpg!sswm', '/medias/comment_bg.png',];
+
+%>
 <div id="appSwiper">
   <swiper v-cloak ref="mySwiper" :options="swiperOptions">
     <% site.posts.each(function (post) { %>
+      <%
+          var index = Math.floor((Math.random()*imgArr.length)); 
+      %>
       <% if(post.swiper === true) { %>
         <swiper-slide>
-          <div class="item">
-            <a href="<%- url_for(post.path) %>">
-              <% if(post.swiperImg) { %>
-                <img class="homeSwiper" src="<%- theme.root_url %><%=post.swiperImg%>" alt="<%=post.title%>" style="width: 100%;">
-              <% } %>
-              <%=post.swiper%><%=post.title%>
-            </a>
+          
+          <div class="item" style="background-image: url('<%- theme.root_url %><% if(post.swiperImg) { %><%=post.swiperImg%><% } else { %><%-imgArr[index]%><% }%>'); background-size: 40000px; 
+          background-position: center center;">
+            <div class="flag">
+              <img class="homeSwiper img-mask" src="<%- theme.root_url %><% if(post.swiperImg) { %><%=post.swiperImg%><% } else { %><%-imgArr[index]%><% }%>" alt="<%=post.title%>" style="width: 100%;background-size: cover; 
+              background-position: center center;">
+              <div class="flag-text">
+                <div>
+                  <div class="title"><%=post.title%></div>
+                  <div class="excerpt"><%- post.excerpt %></div>
+                </div>
+                <a href="<%- url_for(post.path) %>" class="read-more" style="display: block; z-index:1;">阅读更多</a>
+              </div>
+            </div>
           </div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
+
         </swiper-slide>
       <% } %>
     <% }) %>
     <div class="swiper-pagination" slot="pagination"></div>
+    <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
+    <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
+    
   </swiper>
 </div>
 
@@ -35,10 +51,12 @@
           el: '.swiper-pagination',
           clickable: true // 允许点击小圆点跳转
         },
-        autoplay: {
-  　　　　delay: 3000,
-  　　　　disableOnInteraction: false // 手动切换之后继续自动轮播
-    　　},
+        // effect: 'fade',
+  //       autoplay: {
+  // 　　　　delay: 3000,
+  // 　　　　disableOnInteraction: false // 手动切换之后继续自动轮播
+  //   　　},
+        loop: true,
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
@@ -64,14 +82,119 @@
 
 <style>
 .swiper-slide {
-  height: 50vh;
+  height: 350px;
   position: relative;
 }
+.swiper-button-prev,
+.swiper-button-next {
+  padding: 10px 10px;
+  transition: background 0.2s;
+}
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
+/* .swiper-button-prev {
+  margin-left: 20%;
+  transform: translateX(-180%);
+}
+.swiper-button-next {
+  margin-right: 20%;
+  transform: translateX(180%);
+} */
 .swiper-slide .item {
   width: 100%;
   height: 100%;
 }
-.swiper-slide img {
+.flag {
+  position: relative;
+  width: 60%;
+  margin: 0 auto;
+  color: #ffffff;
+  height: 100%;
+  background: #000;
+}
+.flag img {
   min-height: 100%;
+}
+.flag-text {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  width: 80%;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.flag-text .title {
+  font-size: 1.8rem;
+}
+.flag-text .excerpt {
+  width: 70%;
+  height: 135px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+  overflow: hidden;
+}
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background-color: #42b983;
+}
+.img-mask {
+  opacity:0.6; filter: alpha(opacity=60);
+}
+.flag-text .read-more {
+  margin-bottom: 30px;
+}
+@media (min-width: 982px) {
+  .swiper-button-prev {
+    margin-left: 20%;
+    transform: translateX(-180%);
+  }
+  .swiper-button-next {
+    margin-right: 20%;
+    transform: translateX(180%);
+  }
+}
+@media (max-width: 982px) {
+  .swiper-slide {
+    height: 250px;
+  }
+  .flag {
+    width: 100%;
+  }
+  .flag-text .title {
+    font-size: 1.3rem;
+    margin-top: 20px;
+  }
+  .flag-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    text-align: center;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+  .flag-text .excerpt {
+    width: 100%;
+    height: 90px;
+    text-align: center;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
+  .flag-text .read-more {
+    margin-bottom: 50px;
+  }
+}
+@media (max-width: 551px) {
+  .flag-text .excerpt { 
+    font-size: 0.8rem;
+  }
 }
 </style>

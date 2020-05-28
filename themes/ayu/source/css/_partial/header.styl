@@ -2,9 +2,22 @@
   display: flex;
   align-items: baseline;
   justify-content: space-between;
+  // background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
+  
+  .header-content {
+    width: 60%;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  a {
+    color: #fff;
+  }
 
   .blog-title .logo {
-    color: #AAA;
     font-size: 2em;
     font-family: "Comic Sans MS",cursive,LiSu,sans-serif;
     text-decoration: none;
@@ -17,15 +30,24 @@
     .menu-item {
       display: inline-block;
       margin-right: 10px;
+
+      i {
+       color: #ffffff; 
+      }
     }
 
     .menu-item-link {
-      color: #AAA;
       text-decoration: none;
 
       &:hover {
         color: #368CCB;
       }
     }
+  }
+}
+
+@media (max-width: 982px) {
+  .header .header-content { 
+    width: 100%;
   }
 }

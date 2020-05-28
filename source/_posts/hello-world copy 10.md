@@ -1,12 +1,12 @@
 ---
-title: Hello World10
+title: vue代码风格
 tags: ['vue', 'html']
 categories: ['前端', '运维', '攻城狮']
 swiper: true
-swiperImg: 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/62fd20ec61d44995a427349a4dda6a5c.jpg!sswm'
+swiperImg: 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/aa85e7943d514609b6a7e526298ffa60.jpg!sswm'
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
-
+Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub]
+<!-- more -->
 ## Quick Start
 
 ### Create a new post

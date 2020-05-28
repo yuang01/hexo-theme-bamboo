@@ -85,7 +85,7 @@ var searchFunc = function (path, search_id, content_id) {
           }
           // 0x05. show search results
           if (isMatch) {
-            str += "<li><a href='" + data_url + "' class='search-result-title' target='_blank'>" + orig_data_title + "</a>";
+            str += "<li><a class='color-primary' href='" + data_url + "' class='search-result-title' target='_blank'>" + orig_data_title + "</a>";
             var content = orig_data_content;
             if (first_occur >= 0) {
               // cut out 100 characters

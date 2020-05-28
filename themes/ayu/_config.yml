@@ -38,15 +38,11 @@ clicklove:
 
 # 全文搜索功能
 search:
-  on: true
+  on: false
 
 # 文章详情页底部显示上一篇文章和下一篇文章
 postNav:
   on: true
-
-color:
-  on: true
-  primary: '#42b983'
 
 # valine 评论
 valine:

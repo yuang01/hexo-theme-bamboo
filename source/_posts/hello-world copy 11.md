@@ -5,8 +5,10 @@ author: blinkfox
 categories: 前端
 tags: [Hexo, hexo-theme-matery]
 swiper: true
-swiperImg: 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/c5fddfe6d6bd43dda64cb683b7d9c620.jpg!sswm'
+swiperImg: 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/663afbe7197941039f65afd048223aff.jpg!sswm'
 ---
+基于<a href="https://getbootstrapadmin.com/remark/base/index.html">remark UI</a>的样式，使用vue.js编写了左侧导航栏（侧边栏）和tab切换页面功能，基于<a href="https://getbootstrapadmin.com/remark/base/index.html">remark UI</a>的样式
+<!-- more -->
 [English Document](README.md) | [演示示例](https://blinkfox.github.io/) | QQ交流群:`926552981`
 
 > 这是一个采用`Material Design`和响应式设计的 Hexo 博客主题。
