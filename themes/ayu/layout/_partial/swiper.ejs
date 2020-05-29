@@ -3,7 +3,7 @@
 var imgArr = ['https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/aa85e7943d514609b6a7e526298ffa60.jpg!sswm', '/medias/comment_bg.png', 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/0df374e14f61415088dcc202aca968f6.jpg!sswm', '/medias/comment_bg.png',];
 
 %>
-<div id="appSwiper">
+<div id="appSwiper" @mouseenter="stopAutoPlay()" @mouseleave="startAutoPlay()">
   <swiper v-cloak ref="mySwiper" :options="swiperOptions">
     <% site.posts.each(function (post) { %>
       <%
@@ -19,10 +19,10 @@ var imgArr = ['https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/aa85e7943d51
               background-position: center center;">
               <div class="flag-text">
                 <div>
-                  <div class="title"><%=post.title%></div>
-                  <div class="excerpt"><%- post.excerpt %></div>
+                  <div class="title ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><%=post.title%></div>
+                  <div class="excerpt ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><%- post.excerpt %></div>
                 </div>
-                <a href="<%- url_for(post.path) %>" class="read-more" style="display: block; z-index:1;">阅读更多</a>
+                <div class="excerpt ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><a href="<%- url_for(post.path) %>" class="read-more border-color bg-color" style="display: inline-block; z-index:1;">阅读更多</a></div>
               </div>
             </div>
           </div>
@@ -39,6 +39,7 @@ var imgArr = ['https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/aa85e7943d51
 
 <script src="https://cdn.bootcdn.net/ajax/libs/Swiper/5.4.1/js/swiper.min.js"></script>
 <%- js(['js/vue-awesome-swiper.js']) %>
+<%- js(['js/swiper.animate1.0.3.min.js']) %>
 <script type="text/javascript">
   Vue.use(window.VueAwesomeSwiper)
 </script>
@@ -51,16 +52,26 @@ var imgArr = ['https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/aa85e7943d51
           el: '.swiper-pagination',
           clickable: true // 允许点击小圆点跳转
         },
-        // effect: 'fade',
-  //       autoplay: {
-  // 　　　　delay: 3000,
-  // 　　　　disableOnInteraction: false // 手动切换之后继续自动轮播
-  //   　　},
+        effect: 'slide', // fade
+        autoplay: {
+  　　　　delay: 5000,
+  　　　　disableOnInteraction: false // 手动切换之后继续自动轮播
+    　　},
         loop: true,
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
         },
+        on:{
+          init: function() {
+            swiperAnimateCache(this); //隐藏动画元素 
+            swiperAnimate(this); //初始化完成开始动画
+          }, 
+          slideChangeTransitionEnd: function(){ 
+            swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
+            //this.slides.eq(this.activeIndex).find('.ani').removeClass('ani'); 动画只展现一次，去除ani类名
+          } 
+        }
         // Some Swiper option/callback...
       }
     },
@@ -70,17 +81,25 @@ var imgArr = ['https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/aa85e7943d51
       }
     },
     mounted() {
-      console.log('Current Swiper instance object', this.swiper)
+      // console.log('Current Swiper instance object', this.swiper)
       // this.swiper.slideTo(0, 1000, false)
     },
     methods: {
-
+      stopAutoPlay() {
+        this.swiper.autoplay.stop();
+      },
+      startAutoPlay() {
+        this.swiper.autoplay.start();
+      }
     },
     created() {}
   })
 </script>
 
 <style>
+.swiper-container {
+  overflow: hidden;
+}
 .swiper-slide {
   height: 350px;
   position: relative;
@@ -94,14 +113,6 @@ var imgArr = ['https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/aa85e7943d51
 .swiper-button-next:hover {
   background: rgba(0, 0, 0, 0.2);
 }
-/* .swiper-button-prev {
-  margin-left: 20%;
-  transform: translateX(-180%);
-}
-.swiper-button-next {
-  margin-right: 20%;
-  transform: translateX(180%);
-} */
 .swiper-slide .item {
   width: 100%;
   height: 100%;
@@ -147,6 +158,8 @@ var imgArr = ['https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/aa85e7943d51
 }
 .flag-text .read-more {
   margin-bottom: 30px;
+  padding: 5px;
+  color: #ffffff;
 }
 @media (min-width: 982px) {
   .swiper-button-prev {
