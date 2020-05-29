@@ -22,7 +22,7 @@ var imgArr = ['https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/aa85e7943d51
                   <div class="title ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><%=post.title%></div>
                   <div class="excerpt ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><%- post.excerpt %></div>
                 </div>
-                <div class="excerpt ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><a href="<%- url_for(post.path) %>" class="read-more border-color bg-color" style="display: inline-block; z-index:1;">阅读更多</a></div>
+                <div class="ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><a href="<%- url_for(post.path) %>" class="read-more border-color bg-color" style="display: inline-block; z-index:1;">阅读更多</a></div>
               </div>
             </div>
           </div>
@@ -69,7 +69,6 @@ var imgArr = ['https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/aa85e7943d51
           }, 
           slideChangeTransitionEnd: function(){ 
             swiperAnimate(this); //每个slide切换结束时也运行当前slide动画
-            //this.slides.eq(this.activeIndex).find('.ani').removeClass('ani'); 动画只展现一次，去除ani类名
           } 
         }
         // Some Swiper option/callback...
@@ -144,6 +143,7 @@ var imgArr = ['https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/aa85e7943d51
 .flag-text .excerpt {
   width: 70%;
   height: 135px;
+  margin-top: 2%;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 5;
@@ -172,14 +172,11 @@ var imgArr = ['https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/aa85e7943d51
   }
 }
 @media (max-width: 982px) {
-  .swiper-slide {
-    height: 250px;
-  }
   .flag {
     width: 100%;
   }
   .flag-text .title {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     margin-top: 20px;
   }
   .flag-text {
@@ -188,14 +185,14 @@ var imgArr = ['https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/aa85e7943d51
     left: 0;
     width: 80%;
     height: 100%;
-    text-align: center;
+    /* text-align: center; */
     margin-left: 50%;
     transform: translateX(-50%);
   }
   .flag-text .excerpt {
     width: 100%;
     height: 90px;
-    text-align: center;
+    /* text-align: center; */
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
@@ -205,9 +202,20 @@ var imgArr = ['https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/aa85e7943d51
     margin-bottom: 50px;
   }
 }
+@media (max-width: 982px) and (min-width: 551px) {
+  .flag-text .excerpt {
+    width: 70%;
+  }
+}
 @media (max-width: 551px) {
+  .swiper-slide {
+    height: 250px;
+  }
   .flag-text .excerpt { 
-    font-size: 0.8rem;
+    font-size: 1rem;
+  }
+  .flag-text .excerpt { 
+    margin-top: 0;
   }
 }
 </style>

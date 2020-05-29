@@ -4,9 +4,11 @@ menu:
   Archives: /archives
   Tags: /tags
   Categories: /categories
-  Github: https://github.com/yuang01
+  # Github: https://github.com/yuang01
   About: /about
   link: /link
+
+Github: https://github.com/yuang01
 
 # 图片点击放大功能
 fancybox: 
@@ -38,7 +40,7 @@ clicklove:
 
 # 全文搜索功能
 search:
-  on: false
+  on: true
 
 # 文章详情页底部显示上一篇文章和下一篇文章
 postNav:
