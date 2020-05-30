@@ -1,0 +1,70 @@
+<div id="appDrawer" class="sidebar-image">
+  <i class="fa fa-bars" aria-hidden="true" @click="showDialogDrawer"></i>
+  <div class="drawer-box_mask" v-cloak style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
+  </div>
+  <div class="drawer-box" :class="{'active': visible}">
+    <div class="drawer-box-head bg-color">
+      <img class="drawer-box-head_logo" src="<%- theme.root_url %><%- theme.logo %>" alt="logo">
+      <h3 class="drawer-box-head_title"><%= config.title %></h3>
+      <h5 class="drawer-box-head_desc"><%= config.description %></h5>
+    </div>
+    <div class="drawer-box-content">
+      <ul class="drawer-box-content_menu">
+        <% for (name in theme.menu) { %>
+          <li class="drawer-box-content_item">
+            <a href="<%- url_for(theme.menu[name]) %>" class="menu-item-link">
+              <% if(name === 'Home') { %>
+                <i class="fa fa-home" aria-hidden="true"></i>
+              <% } else if (name === 'Archives') { %>
+                <i class="fa fa-home" aria-hidden="true"></i>
+              <% } else if (name === 'Tags') { %>
+                <i class="fa fa-tags" aria-hidden="true"></i>
+              <% } else if (name === 'Categories') { %>
+                <i class="fa fa-bookmark" aria-hidden="true"></i>
+              <% } else if (name === 'About') { %>
+                <i class="fa fa-user" aria-hidden="true"></i>
+              <% } else if (name === 'link') { %>
+                <i class="fa fa-link" aria-hidden="true"></i>
+              <% } %>
+              <span><%- __('Menu.' + name) %></span>
+            </a>
+          </li>
+        <% } %>
+        <li class="drawer-box-content_item">
+          <a href="">
+            <i class="fa fa-github" aria-hidden="true"></i>
+            <span>Github</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  var body = document.body;
+  var vm = new Vue({
+    el: '#appDrawer',
+    data: {
+      visible: false,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        var top = body.scrollTop;
+        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + top + 'px; left: 0; overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        body.scrollTop = top;
+      }
+    },
+    created() {}
+  })
+</script>

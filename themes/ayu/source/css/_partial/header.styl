@@ -5,16 +5,20 @@ $height = 60px
   align-items: baseline;
   justify-content: space-between;
   height: $height;
+  box-sizing: border-box;
   // background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
   
   .header-content {
-    width: 60%;
+    min-width: calc(60% + 150px);
+    // min-width: 70%;
     height: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
+    .bars {
+      // display: none
+    }
     .navbar {
       height: 100%;
       display: flex;
@@ -24,51 +28,57 @@ $height = 60px
         padding: 0;
         .menu-item {
           a {
+            color: #ffffff;
             display: block;
             width: 100%;
             height: 100%;
           }
-          float: left; 
           list-style: none;
           height: 100%;
           display: inline-block;
           line-height: $height;
-          i {
-            color: #ffffff; 
-          }
           padding: 0 10px;
           transition: background-color 0.5s;
           &:hover {
             background-color: rgba(0, 0, 0, 0.2);  
-          }
-          .menu-item-link:hover {
-            color: #ffffff;
           }
         }
       }
     }
   }
 
-  a {
-    color: #fff;
-  }
 
   .blog-title {
-    line-height: $height;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    .avatar {
+      border-radius: 50%;
+      overflow hidden;
+      width: 40px;
+      height: 40px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
     a {
-      font-size: 2em;
+      color: #ffffff;
+      margin-left: 5px;
+      display: inline-block;
+      font-size: 1.6em;
       font-family: "Comic Sans MS",cursive,LiSu,sans-serif;
       text-decoration: none;
     }  
   }
 }
-@media (max-width: 1100px) {
-  .header .header-content { 
-    width: 70%;
+@media (min-width: 992px) { 
+  .bars {
+    display: none;  
   }
 }
-
-@media (max-width: 982px) {
+@media (max-width: 992px) {
   .header .header-content { 
     width: 100%;
   }
@@ -76,7 +86,10 @@ $height = 60px
     display: none;
   }
   .header {
-    padding: 0 60px 0 20px;
+    padding: 0 20px;
+  }
+  .github-corner {
+    display: none;
   }
 }
 // @media (max-width: 982px) and (min-width: 551px) {

@@ -1,6 +1,15 @@
-<header class="header bg-color">
+<header class="header bg-color" 
+  style="<% if(theme.headMenuFixed) { %>position: fixed; <% } %>
+  left: 0; top: 0; z-index: 10;width: 100%;"
+>
   <div class="header-content">
-    <div class="blog-title">
+    <div class="bars">
+      <%- partial('_partial/drawer') %>
+    </div>
+    <div class="blog-title" id="author-avatar">
+      <div class="avatar">
+        <img src="<%- theme.root_url %><%- theme.logo %>" alt="logo">
+      </div>
       <a href="<%- url_for() %>" class="logo"><%= config.title %></a>
     </div>
     <nav class="navbar">

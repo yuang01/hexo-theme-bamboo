@@ -3,7 +3,11 @@
 var imgArr = ['https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/aa85e7943d514609b6a7e526298ffa60.jpg!sswm', '/medias/comment_bg.png', 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/0df374e14f61415088dcc202aca968f6.jpg!sswm', '/medias/comment_bg.png',];
 
 %>
-<div id="appSwiper" @mouseenter="stopAutoPlay()" @mouseleave="startAutoPlay()">
+<div id="appSwiper" 
+  @mouseenter="stopAutoPlay()" 
+  @mouseleave="startAutoPlay()" 
+  style="<% if(theme.headMenuFixed) { %>margin-top: 60px;<% } %>"
+>
   <swiper v-cloak ref="mySwiper" :options="swiperOptions">
     <% site.posts.each(function (post) { %>
       <%
@@ -161,7 +165,7 @@ var imgArr = ['https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/aa85e7943d51
   padding: 5px;
   color: #ffffff;
 }
-@media (min-width: 982px) {
+@media (min-width: 992px) {
   .swiper-button-prev {
     margin-left: 20%;
     transform: translateX(-180%);
@@ -171,7 +175,7 @@ var imgArr = ['https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/aa85e7943d51
     transform: translateX(180%);
   }
 }
-@media (max-width: 982px) {
+@media (max-width: 992px) {
   .flag {
     width: 100%;
   }
@@ -202,7 +206,7 @@ var imgArr = ['https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/aa85e7943d51
     margin-bottom: 50px;
   }
 }
-@media (max-width: 982px) and (min-width: 551px) {
+@media (max-width: 992px) and (min-width: 551px) {
   .flag-text .excerpt {
     width: 70%;
   }

@@ -10,6 +10,11 @@ menu:
 
 Github: https://github.com/yuang01
 
+logo: '/img/520.jpg'
+
+# 頂部导航固定
+headMenuFixed: true
+
 # 图片点击放大功能
 fancybox: 
   on: true

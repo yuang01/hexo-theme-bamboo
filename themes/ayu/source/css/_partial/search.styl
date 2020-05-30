@@ -19,7 +19,7 @@
   background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
-  z-index: 100;
+  z-index: 999;
   .message-box {
     display: flex;
     flex-direction: column;
@@ -60,6 +60,7 @@
   .result-wrapper {
     height: 80%;
     overflow: auto;
+    overflow-x: hidden;
     margin-top: 10px;
     .search-keyword {
       color: #e96900;
