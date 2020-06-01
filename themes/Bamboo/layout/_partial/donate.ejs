@@ -1,32 +1,74 @@
-<div class="post-donate">
-  <div id="donate_board" class="donate_bar center">
-    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏"></a>
-    <span class="donate_txt">
-      ↑<br>
-      <%=theme.donate_message%>
-    </span>
-    <br>
+<div id="appDonate" class="post-donate">
+  <div id="donate_board" class="donate_bar center" ref="donate">
+    <a id="btn_donate" class="btn_donate" href="javascript:;" title="打赏" @click="showDialogDrawer()"></a>
   </div>
-  <div id="donate_guide" class="donate_bar center hidden">
-    <!-- 方式一： 
-          ![](/img/Alipay.jpg)
-          ![](/img/WeChatpay.jpg)
-      -->
-    <!-- 方式二；
-          step1：在_config.yml中添加配置
-              Alipay: /img/Alipay.jpg
-              WeChatpay: /img/WeChatpay.jpg
-          step2：此处两张图片的路径分别设置为如下
-              <img src="<%- theme.root_url %><%=theme.Alipay%>"
-              <img src="<%- theme.root_url %><%=theme.WeChatpay%>"
-      -->
-      <img src="<%- theme.root_url %><%=theme.Alipay%>" alt="支付宝打赏" style="width: 45%" />
-      <img src="<%- theme.root_url %><%=theme.WeChatpay%>" alt="微信打赏"style="width: 45%"/>
+  <div 
+    class="donate-box-mask" 
+    v-cloak 
+    style="display: none;"
+    v-show="visible"
+    @click="cancelDialogDrawer()"
+  >
   </div>
-  <script type="text/javascript">
-    document.getElementById('btn_donate').onclick = function () {
-      $('#donate_board').addClass('hidden');
-      $('#donate_guide').removeClass('hidden');
-    }
-  </script>
+  <div class="donate-box" v-cloak style="display: none;" v-show="visible">
+    <div class="donate-box_close">
+      <i class="fa fa-times" aria-hidden="true"></i>
+    </div>
+    <div class="donate-box_title">
+      <h4>
+        <%=theme.donate_message%>
+      </h4>
+    </div>
+    <div class="donate-box_tab">
+      <div class="Alipay active">
+        支付宝
+      </div>
+      <div class="WeChatpay active">
+        微信
+      </div>
+    </div>
+    <div class="donate-box_img">
+      <div class="AlipayImg">
+        <img src="<%- theme.root_url %><%=theme.Alipay%>" alt="支付宝打赏" />
+      </div> 
+      <div class="WeChatpayImg">
+        <img src="<%- theme.root_url %><%=theme.WeChatpay%>" alt="微信打赏" />
+      </div>
+    </div>
+  </div>
 </div>
+
+<script>
+  var body = document.body || document.documentElement || window;
+  var vm = new Vue({
+    el: '#appDonate',
+    data: {
+      visible: false,
+      top: 0,
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+      showDialogDrawer() {
+        this.visible = true;
+        // 防止页面滚动，只能让弹框滚动
+        function getScroll() {
+          return {
+            left: window.pageXOffset || document.documentElement.scrollLeft || document.body.scrollLeft || 0,
+            top: window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+          };
+        }
+        this.top = getScroll().top;
+        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + this.top + 'px; left: 0; overflow: hidden;';
+      },
+      cancelDialogDrawer() {
+        this.visible = false;
+        body.removeAttribute('style');
+        $(document).scrollTop(this.top)
+      }
+    },
+    created() {}
+  })
+</script>

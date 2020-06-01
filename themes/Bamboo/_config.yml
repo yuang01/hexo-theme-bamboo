@@ -40,7 +40,7 @@ show_count: true
 # 打赏功能
 donate:
   on: true
-donate_message: 欣赏此文？求鼓励，求支持！
+donate_message: 你的赏识是我前进的动力
 # 支付宝打赏图片相对路径
 Alipay: '/img/54542.jpg'
 # 微信打赏图片相对路径
