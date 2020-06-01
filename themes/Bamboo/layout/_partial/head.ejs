@@ -1,0 +1,33 @@
+<% 
+  let iconType = 'image/png'
+  let faviconExt = theme.favicon.substr(theme.favicon.lastIndexOf('.') + 1, theme.favicon.length)
+  if (faviconExt === 'png') {
+      iconType = 'image/png'
+  } else if (faviconExt === 'svg') {
+      iconType = 'image/svg+xml'
+  } else if (faviconExt === 'gif') {
+      iconType = 'image/gif'
+  } else if (faviconExt === 'jpeg') {
+      iconType = 'image/jpeg'
+  } else if (faviconExt === 'jpg') {
+      iconType = 'image/jpeg'
+  } else if (faviconExt === 'ico') {
+      iconType = 'image/x-icon, image/vnd.microsoft.icon'
+  }
+%>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <title><%= config.title %></title>
+  <link rel="icon" type="<%= iconType %>" href="<%- url_for(theme.favicon) %>">
+  <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <%- css('css/animate.min.css') %>
+  <%- css('css/style.css') %>
+  
+  <% if(theme.fancybox.on === true ) { %>
+    <%- css('js/fancybox/jquery.fancybox.min.css') %>
+  <% } %>
+  <% if(theme.sharejs.on === true ) { %>
+    <%- css(['js/shareJs/share.min.css']) %>
+  <% } %>
+</head>

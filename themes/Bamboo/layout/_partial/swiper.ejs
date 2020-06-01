@@ -1,43 +1,49 @@
 <link href="https://cdn.bootcdn.net/ajax/libs/Swiper/5.4.1/css/swiper.min.css" rel="stylesheet">
 <%
 var imgArr = ['https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/aa85e7943d514609b6a7e526298ffa60.jpg!sswm', '/medias/comment_bg.png', 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/0df374e14f61415088dcc202aca968f6.jpg!sswm', '/medias/comment_bg.png',];
-
+var swpiers = site.posts.filter(function(post) {return post.swiper});
+var swiperLength = swpiers.length;
 %>
-<div id="appSwiper" 
+<div class="swiper-length" style="display: none;"><%- swiperLength %></div>
+<div id="appSwiper"
+  class="<% if(swiperLength <= 1) { %>swiper-no-swiping<% } %>"
   @mouseenter="stopAutoPlay()" 
   @mouseleave="startAutoPlay()" 
   style="<% if(theme.headMenuFixed) { %>margin-top: 60px;<% } %>"
 >
   <swiper v-cloak ref="mySwiper" :options="swiperOptions">
-    <% site.posts.each(function (post) { %>
-      <%
-          var index = Math.floor((Math.random()*imgArr.length)); 
-      %>
-      <% if(post.swiper === true) { %>
-        <swiper-slide>
-          
-          <div class="item" style="background-image: url('<%- theme.root_url %><% if(post.swiperImg) { %><%=post.swiperImg%><% } else { %><%-imgArr[index]%><% }%>'); background-size: 40000px; 
-          background-position: center center;">
-            <div class="flag">
-              <img class="homeSwiper img-mask" src="<%- theme.root_url %><% if(post.swiperImg) { %><%=post.swiperImg%><% } else { %><%-imgArr[index]%><% }%>" alt="<%=post.title%>" style="width: 100%;background-size: cover; 
-              background-position: center center;">
-              <div class="flag-text">
-                <div>
-                  <div class="title ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><%=post.title%></div>
-                  <div class="excerpt ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><%- post.excerpt %></div>
+    <% if(swiperLength > 0) { %>
+      <% site.posts.each(function (post) { %>
+        <%
+            var index = Math.floor((Math.random()*imgArr.length)); 
+        %>
+        <% if(post.swiper === true) { %>
+          <swiper-slide>
+            
+            <div class="item" style="background-image: url('<%- theme.root_url %><% if(post.swiperImg) { %><%=post.swiperImg%><% } else { %><%-imgArr[index]%><% }%>'); background-size: 40000px; 
+            background-position: center center;">
+              <div class="flag">
+                <img class="homeSwiper img-mask" src="<%- theme.root_url %><% if(post.swiperImg) { %><%=post.swiperImg%><% } else { %><%-imgArr[index]%><% }%>" alt="<%=post.title%>" style="width: 100%;background-size: cover; 
+                background-position: center center;">
+                <div class="flag-text">
+                  <div>
+                    <div class="title ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><%=post.title%></div>
+                    <div class="excerpt ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><%- post.excerpt || post.content %></div>
+                  </div>
+                  <div class="ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><a href="<%- url_for(post.path) %>" class="read-more border-color bg-color" style="display: inline-block; z-index:1;">阅读更多</a></div>
                 </div>
-                <div class="ani animated" swiper-animate-effect="fadeInDown" swiper-animate-duration="0.2s" swiper-animate-delay="0.1s"><a href="<%- url_for(post.path) %>" class="read-more border-color bg-color" style="display: inline-block; z-index:1;">阅读更多</a></div>
               </div>
             </div>
-          </div>
 
-        </swiper-slide>
-      <% } %>
-    <% }) %>
-    <div class="swiper-pagination" slot="pagination"></div>
-    <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
-    <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
-    
+          </swiper-slide>
+        <% } %>
+      <% }) %>
+    <div class="swiper-pagination" slot="pagination" style="<% if(!theme.swiper.showIndicators || swiperLength <= 1) { %>display: none;<% } %>"></div>
+    <div class="swiper-button-prev swiper-button-white" slot="button-prev" style="<% if(!theme.swiper.showPrevNext || swiperLength <= 1) { %>display: none;<% } %>"></div>
+    <div class="swiper-button-next swiper-button-white" slot="button-next" style="<% if(!theme.swiper.showPrevNext || swiperLength <= 1) { %>display: none;<% } %>"></div>
+    <% } else { %>
+      <swiper-slide>lalal</swiper-slide>
+    <% } %>
   </swiper>
 </div>
 
@@ -48,6 +54,11 @@ var imgArr = ['https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/aa85e7943d51
   Vue.use(window.VueAwesomeSwiper)
 </script>
 <script>
+  let autoplay = '<%= theme.swiper.autoplay %>';
+  let delay = '<%= theme.swiper.delay %>';
+  let loop = JSON.parse('<%= theme.swiper.loop %>');
+  let effect = '<%= theme.swiper.effect %>';
+  let swiperLength = parseInt(document.querySelector(".swiper-length").innerText);
   var vm = new Vue({
     el: '#appSwiper',
     data: {
@@ -56,12 +67,12 @@ var imgArr = ['https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/aa85e7943d51
           el: '.swiper-pagination',
           clickable: true // 允许点击小圆点跳转
         },
-        effect: 'slide', // fade
-        autoplay: {
-  　　　　delay: 5000,
+        loop: loop ? true : false,
+        effect, // fade
+        autoplay: (autoplay && swiperLength > 1) ? {
+  　　　　delay,
   　　　　disableOnInteraction: false // 手动切换之后继续自动轮播
-    　　},
-        loop: true,
+    　　} : false,
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev',
@@ -89,10 +100,10 @@ var imgArr = ['https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/aa85e7943d51
     },
     methods: {
       stopAutoPlay() {
-        this.swiper.autoplay.stop();
+        (autoplay && swiperLength > 1) && this.swiper.autoplay.stop();
       },
       startAutoPlay() {
-        this.swiper.autoplay.start();
+        (autoplay && swiperLength > 1) && this.swiper.autoplay.start();
       }
     },
     created() {}
@@ -146,6 +157,7 @@ var imgArr = ['https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/aa85e7943d51
 }
 .flag-text .excerpt {
   width: 70%;
+  line-height: 27px;
   height: 135px;
   margin-top: 2%;
   display: -webkit-box;
@@ -174,6 +186,15 @@ var imgArr = ['https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/aa85e7943d51
     margin-right: 20%;
     transform: translateX(180%);
   }
+  .flag-text .title {
+    width: 80%;
+    line-height: 35px;
+    max-height: 70px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
 }
 @media (max-width: 992px) {
   .flag {
@@ -189,21 +210,20 @@ var imgArr = ['https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/aa85e7943d51
     left: 0;
     width: 80%;
     height: 100%;
-    /* text-align: center; */
     margin-left: 50%;
     transform: translateX(-50%);
   }
   .flag-text .excerpt {
     width: 100%;
-    height: 90px;
-    /* text-align: center; */
+    line-height: 20px;
+    height: 100px;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 5;
     overflow: hidden;
   }
   .flag-text .read-more {
-    margin-bottom: 50px;
+    margin-bottom: 100px;
   }
 }
 @media (max-width: 992px) and (min-width: 551px) {
@@ -215,11 +235,27 @@ var imgArr = ['https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/aa85e7943d51
   .swiper-slide {
     height: 250px;
   }
-  .flag-text .excerpt { 
+  .flag-text .title {
+    line-height: 30px;
+    max-height: 60px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+  .flag-text .excerpt {
     font-size: 1rem;
+    line-height: 20px;
+    height: 80px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
   }
   .flag-text .excerpt { 
-    margin-top: 0;
+    margin-top: 10px;
+  }
+  .flag-text .read-more {
+    margin-top: 10px;
   }
 }
 </style>

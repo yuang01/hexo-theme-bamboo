@@ -6,7 +6,7 @@
   <!-- <script src="https://cdn.bootcdn.net/ajax/libs/ant-design-vue/2.0.0-beta.1/antd.min.js"></script> -->
   <body>
     <%- partial('_partial/header') %>
-    <main class="main">
+    <main class="main" style="<% if(theme.headMenuFixed) { %>margin-top: 60px;<% } %>">
       <%- body %>
     </main>
     <%- partial('_partial/footer') %>

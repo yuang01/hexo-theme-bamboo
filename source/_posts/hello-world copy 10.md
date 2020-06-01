@@ -10,7 +10,9 @@ Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [docume
 ## Quick Start
 
 ### Create a new post
-
+我都大大大大哇多无大大无哇
+其味无穷二无群二群翁无群二无群二无群二无群二无群二无群二无群二无群二无群二无群二无群二无群委屈二无群二群翁
+企鹅翁无群二无群二无群二
 ``` bash
 $ hexo new "My New Post"
 ```

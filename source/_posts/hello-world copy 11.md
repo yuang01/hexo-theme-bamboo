@@ -7,22 +7,10 @@ tags: [Hexo, hexo-theme-matery]
 swiper: true
 swiperImg: 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/663afbe7197941039f65afd048223aff.jpg!sswm'
 ---
-基于<a href="https://getbootstrapadmin.com/remark/base/index.html">remark UI</a>的样式，使用vue.js编写了左侧导航栏（侧边栏）和tab切换页面功能，基于<a href="https://getbootstrapadmin.com/remark/base/index.html">remark UI</a>的样式
 <!-- more -->
-[English Document](README.md) | [演示示例](https://blinkfox.github.io/) | QQ交流群:`926552981`
+[English Document](README.md) | [演示示例](https://blinkfox.github.io/) | QQ交流:`1730241541`
 
 > 这是一个采用`Material Design`和响应式设计的 Hexo 博客主题。
-### Attributes
-|参数|说明|类型|可选值|默认值
-|:---|:---|:---|:---|:---
-|size|按钮大小|String|large/medium/small/mini|medium
-|type|按钮类型|String|default/primary/success/info/warning/danger|default
-|round|是否圆角按钮|Boolean|true/false|false
-|circle|是否圆形按钮|Boolean|true/false|false
-|outline|是否为朴素按钮|Boolean|true/false|false
-|icon|图标类名|String|-|-
-|disabled|是否禁用按钮|Boolean|true/false|false
-|loading|是否开启加载状态|Boolean|true|false
 
 ## 特性
 
