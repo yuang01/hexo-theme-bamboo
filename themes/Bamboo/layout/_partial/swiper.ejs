@@ -1,8 +1,14 @@
 <link href="https://cdn.bootcdn.net/ajax/libs/Swiper/5.4.1/css/swiper.min.css" rel="stylesheet">
 <%
-var imgArr = ['https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/aa85e7943d514609b6a7e526298ffa60.jpg!sswm', '/medias/comment_bg.png', 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/0df374e14f61415088dcc202aca968f6.jpg!sswm', '/medias/comment_bg.png',];
+var imgArr = [
+  'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/aa85e7943d514609b6a7e526298ffa60.jpg!sswm', 
+  'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/0df374e14f61415088dcc202aca968f6.jpg!sswm', 
+  'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/0df374e14f61415088dcc202aca968f6.jpg!sswm', 
+  'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/663afbe7197941039f65afd048223aff.jpg!sswm'
+];
 var swpiers = site.posts.filter(function(post) {return post.swiper});
 var swiperLength = swpiers.length;
+var defaultIndex = Math.floor((Math.random()*imgArr.length)); 
 %>
 <div class="swiper-length" style="display: none;"><%- swiperLength %></div>
 <div id="appSwiper"
@@ -19,7 +25,6 @@ var swiperLength = swpiers.length;
         %>
         <% if(post.swiper === true) { %>
           <swiper-slide>
-            
             <div class="item" style="background-image: url('<%- theme.root_url %><% if(post.swiperImg) { %><%=post.swiperImg%><% } else { %><%-imgArr[index]%><% }%>'); background-size: 40000px; 
             background-position: center center;">
               <div class="flag">
@@ -42,7 +47,25 @@ var swiperLength = swpiers.length;
     <div class="swiper-button-prev swiper-button-white" slot="button-prev" style="<% if(!theme.swiper.showPrevNext || swiperLength <= 1) { %>display: none;<% } %>"></div>
     <div class="swiper-button-next swiper-button-white" slot="button-next" style="<% if(!theme.swiper.showPrevNext || swiperLength <= 1) { %>display: none;<% } %>"></div>
     <% } else { %>
-      <swiper-slide>lalal</swiper-slide>
+      <swiper-slide>
+        <div class="item" style="background-image: url('<%- theme.root_url %><%-imgArr[defaultIndex]%>'); background-size: 40000px; 
+          background-position: center center;">
+            <div class="flag">
+              <img class="homeSwiper img-mask" src="<%- theme.root_url %><%-imgArr[defaultIndex]%>" alt="" style="width: 100%;background-size: cover; 
+              background-position: center center;">
+              <div class="flag-text">
+                <div>
+                  <div class="title ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>">我是title</div>
+                  <div class="excerpt ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>">我是文章摘要哦，点我有惊喜</div>
+                </div>
+                <div style="display: flex;">
+                  <div class="ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><a href="#" class="read-more border-color bg-color" style="display: inline-block; z-index:1;">阅读更多</a></div>
+                  <div class="ani animated" style="margin-left: 10px;" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><a href="#" class="read-more " style="display: inline-block; z-index:1;border: 1px solid white;">下载主题</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </swiper-slide>
     <% } %>
   </swiper>
 </div>
