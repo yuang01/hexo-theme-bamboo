@@ -33,7 +33,7 @@ var defaultIndex = Math.floor((Math.random()*imgArr.length));
                 <div class="flag-text">
                   <div>
                     <div class="title ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><%=post.title%></div>
-                    <div class="excerpt ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><%- post.excerpt || post.content %></div>
+                    <div class="excerpt ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><%- post.excerpt || strip_html(post.content).substring(0, 120) %></div>
                   </div>
                   <div class="ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><a href="<%- url_for(post.path) %>" class="read-more border-color bg-color" style="display: inline-block; z-index:1;">阅读更多</a></div>
                 </div>
@@ -69,8 +69,7 @@ var defaultIndex = Math.floor((Math.random()*imgArr.length));
     <% } %>
   </swiper>
 </div>
-
-<script src="https://cdn.bootcdn.net/ajax/libs/Swiper/5.4.1/js/swiper.min.js"></script>
+<%- js(['js/swiper.min.js']) %>
 <%- js(['js/vue-awesome-swiper.js']) %>
 <%- js(['js/swiper.animate1.0.3.min.js']) %>
 <script type="text/javascript">
