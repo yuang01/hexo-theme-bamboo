@@ -23,12 +23,13 @@
 </div>
 <%- js(['js/local_search.js']) %>
 <script>
-  var body = document.body;
+  var body = document.body || document.documentElement || window;
   var vm = new Vue({
     el: '#appSearch',
     data: {
       dialogVisible: false,
       searchInput: '',
+      top: 0,
     },
     computed: {
     },
@@ -38,8 +39,8 @@
       showDialog() {
         this.dialogVisible = true;
         // 防止页面滚动，只能让弹框滚动
-        var top = body.scrollTop;
-        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + top + 'px; left: 0; overflow: hidden;';
+        this.top = $(document).scrollTop()
+        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + this.top  + 'px; left: 0; overflow: hidden;';
       },
       getSearchFile() {
         if (!this.searchInput) {
@@ -49,7 +50,7 @@
       cancelDialogVisible() {
         this.dialogVisible = false;
         body.removeAttribute('style');
-        body.scrollTop = top;
+        $(document).scrollTop(this.top)
       },
     },
     created() {}
