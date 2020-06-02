@@ -8,7 +8,7 @@ window.onload = function () {
   window.onscroll = function () {
     if(isTop === false){
       clearInterval(timer);//当isTop变成了false的时候就停止定时器
-      backbtn.style.transform = 'translateY(0)';
+      // backbtn.style.transform = 'translateY(0)';
     }
     isTop = false; //当鼠标再次滚动的时候，isTop就变成了false
     isshow();
@@ -18,8 +18,10 @@ window.onload = function () {
     // or > document.documentElement.clientHeight 大于一个屏幕
     if (( document.documentElement.scrollTop || document.body.scrollTop ) > 100 ) {
       backbtn.style.display = 'block';//如果滚条的高度大于窗口的高度，按钮就会显示出来，否则按钮消失
+      backbtn.style.transform = 'translateY(0)';
     } else {
-      backbtn.style.display = 'none';
+      backbtn.style.transform = 'translateY(100px)';
+      // backbtn.style.display = 'none';
     }
   }
   // 当鼠标移动到返回顶部按钮时，增加类fly
