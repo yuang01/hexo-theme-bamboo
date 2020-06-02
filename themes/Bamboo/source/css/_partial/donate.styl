@@ -25,6 +25,11 @@
   color: #9d9d9d;
   font: 14px/2 "Microsoft Yahei"
 }
+.post-donate {
+  display: flex;
+  justify-content: center;  
+}
+
 .donate-box-mask {
   position: fixed;
   top: 0;
@@ -33,15 +38,13 @@
   right: 0;
   background: rgba(0, 0, 0, 0.5);
   z-index: 999;
-} 
+}
 .donate-box {
   position: fixed;
-  top: 10%;
-  left: 50%;
+  top: 15%;
   width: 300px;
   background-color: #fff;
   z-index: 999;
-  transform: translateX(-50%);
   overflow: hidden;
   padding: 10px;
 
@@ -71,7 +74,7 @@
     cursor: pointer;
     .Alipay,
     .WeChatpay {
-      width: 30%;
+      width: 20%;
       line-height: 20px;
       text-align: center;
       background-color: #ccc;
@@ -89,7 +92,6 @@
     width: 200px;
     height: 200px;
     overflow: hidden;
-    background-color: red;
     margin: 10px auto;
     .AlipayImg,
     .WeChatpayImg {
