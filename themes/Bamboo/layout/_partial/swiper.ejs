@@ -17,7 +17,7 @@ var defaultIndex = Math.floor((Math.random()*imgArr.length));
   @mouseleave="startAutoPlay()" 
   style="<% if(theme.headMenuFixed) { %>margin-top: 60px;<% } %>"
 >
-  <swiper v-cloak ref="mySwiper" :options="swiperOptions">
+  <swiper v-cloak ref="mySwiper" :options="swiperOptions" @slideChangeTransitionEnd="slideChangeTransitionEnd">
     <% if(swiperLength > 0) { %>
       <% site.posts.each(function (post) { %>
         <%
@@ -126,6 +126,9 @@ var defaultIndex = Math.floor((Math.random()*imgArr.length));
       },
       startAutoPlay() {
         (autoplay && swiperLength > 1) && this.swiper.autoplay.start();
+      },
+      slideChangeTransitionEnd() {
+        console.log('1');
       }
     },
     created() {}
@@ -224,7 +227,7 @@ var defaultIndex = Math.floor((Math.random()*imgArr.length));
   }
   .flag-text .title {
     font-size: 1.5rem;
-    margin-top: 20px;
+    margin-top: 50px;
   }
   .flag-text {
     position: absolute;
@@ -245,7 +248,7 @@ var defaultIndex = Math.floor((Math.random()*imgArr.length));
     overflow: hidden;
   }
   .flag-text .read-more {
-    margin-bottom: 100px;
+    margin-bottom: 80px;
   }
 }
 @media (max-width: 992px) and (min-width: 551px) {
@@ -264,6 +267,7 @@ var defaultIndex = Math.floor((Math.random()*imgArr.length));
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     overflow: hidden;
+    margin-top: 20px;
   }
   .flag-text .excerpt {
     font-size: 1rem;
@@ -278,6 +282,7 @@ var defaultIndex = Math.floor((Math.random()*imgArr.length));
   }
   .flag-text .read-more {
     margin-top: 10px;
+    margin-bottom: 50px;
   }
 }
 </style>

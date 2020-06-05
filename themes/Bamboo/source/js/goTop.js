@@ -1,4 +1,4 @@
-window.onload = function () {
+// window.onload = function () {
   let backbtn = document.getElementsByClassName('goTop')[0];
   let timer = null; // 定义定时器
   let isTop = true; // 中途可以停止返回顶部
@@ -46,4 +46,4 @@ window.onload = function () {
       }
     },30);
   }
-}
+// }
