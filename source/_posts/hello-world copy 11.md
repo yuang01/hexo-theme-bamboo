@@ -12,7 +12,7 @@ swiperImg: 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/663afbe71979410
 [English Document](README.md) | [演示示例](https://blinkfox.github.io/) | QQ交流:`1730241541`
 
 > 这是一个采用`Material Design`和响应式设计的 Hexo 博客主题。
-
+# wowaw
 ## 特性
 
 - 简单漂亮，文章内容美观易读

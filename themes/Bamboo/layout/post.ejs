@@ -11,11 +11,11 @@
    <div class="post-meta">
     <span class="post-time"><%- date(page.date, "YYYY-MM-DD") %></span>
   </div>
-  <%- partial('_partial/toc') %>
   <div class="post-content">
     <%- page.content %>
   </div>
 </article>
+<%- partial('_partial/post-detail-toc') %>
 <!-- 上一篇文章和下一篇文章 -->
 <% if (theme.postNav.on){ %>
   <%- partial('_partial/post/post-nav') %>
