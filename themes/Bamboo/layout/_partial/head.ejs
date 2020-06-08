@@ -19,7 +19,9 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
   <title><%= config.title %></title>
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <% if(theme.aos.on === true ) { %>
+    <%- css('js/aos/aos.css') %>
+  <% } %>
   <link rel="icon" type="<%= iconType %>" href="<%- url_for(theme.favicon) %>">
   <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <%- css('css/animate.min.css') %>

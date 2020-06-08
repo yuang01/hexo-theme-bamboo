@@ -2,7 +2,7 @@
 <%- partial('_partial/swiper') %>
 <section class="posts">
   <% page.posts.each(function (post) { %>
-    <article class="post" data-aos="fade-up">
+    <article class="post" data-aos="<%= theme.aos.animate || 'fade-up' %>">
       <div class="post-title">
         <a class="post-title-link" href="<%- url_for(post.path) %>"><%= post.title %></a>
       </div>
