@@ -5,17 +5,29 @@
   justify-content: center;  
 }
 .main-content {
-  width: 60%;  
+  width: 65%;
+  margin-top: -30px;
 }
 .toc-aside {
-  width: 10%;
+  color: #34495e;
+  width: 200px;
+  margin-left: 25px;
+  .toc-aside-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+    margin: 35px 0 15px 0;
+    i {
+      margin-right: 10px;
+    }
+  }
 }
 .post {
   margin: 1em auto;
   padding: 0.5rem;
   background-color: #fff;
-  border: 1px solid #ddd;
-  box-shadow: 0 0 2px #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 5px #ccc;
   img {
     max-width: 100%;
     margin: 0 50%;
@@ -24,7 +36,7 @@
 }
 
 .post-detail {
-  font-family: var(--font-sans-serif);
+  padding: 20px 40px;
   color: #34495e;
   -webkit-font-smoothing: antialiased;
   line-height: 1.6rem;

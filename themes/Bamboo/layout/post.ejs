@@ -1,9 +1,12 @@
-<div style="width: 100%;height: 300px;background-color: aquamarine;"></div>
-<div class="row justify-center ">
+<!-- <div style="width: 100%;height: 300px;background-color: aquamarine; text-align: center;color: #ffffff;;">
+  <h1 class="title" style="font-size: 2.2rem;line-height: 1.3;font-weight: bold;"><%= page.title %></h1>
+</div> -->
+<%- partial('_partial/post-detail-header', { post: page }) %>
+<div class="row justify-center">
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-title">
-        <h2 class="title"><%= page.title %></h2>
+        <!-- <h1 class="title"><%= page.title %></h1> -->
       </div>
       <div class="tags">
         <%- partial('_partial/post/tags', {post: page}) %>
@@ -19,9 +22,16 @@
       </div>
     </article>
   </div>
-  <div class="toc-aside">
-    <%- partial('_partial/post-detail-toc') %>
-  </div>
+  <% if(theme.toc.on === true) { %>
+    <div class="toc-aside">
+      <div class="toc-main">
+        <div class="toc-aside-title">
+          <i class="fa fa-list-ul" aria-hidden="true"></i><span>目录</span>
+        </div>
+        <%- partial('_partial/post-detail-toc') %>
+      </div>
+    </div>
+  <% } %>
 </div>
 <!-- 上一篇文章和下一篇文章 -->
 <% if (theme.postNav.on){ %>
