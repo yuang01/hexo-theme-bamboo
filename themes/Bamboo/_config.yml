@@ -76,7 +76,7 @@ aos:
 
 toc:
   on: true
-  heading: h1, h2, h3, h4
+  heading: h2, h3, h4
 
 # valine 评论
 valine:

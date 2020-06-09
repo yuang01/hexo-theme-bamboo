@@ -1,9 +1,10 @@
-<div class="toc"></div>
 <link href="/js/tocbot/tocbot.css" rel="stylesheet">
 <script src="/js/tocbot/tocbot.min.js"></script>
+<div class="toc"></div>
+
 <script>
   if ($('.toc').length > 0) {
-    var headerEl = 'h1,h2,h3,h4',  //headers 
+    var headerEl = '<%- theme.toc.heading %>',  //headers 
       content = '.post-detail',//文章容器
       idArr = {};  //标题数组以确定是否增加索引id
       //add #id
@@ -32,12 +33,28 @@
       contentSelector: content,
       // Which headings to grab inside of the contentSelector element.
       headingSelector: headerEl,
-      //positionFixedSelector: '.toc',
-      //positionFixedClass: 'is-position-fixed',
       scrollSmooth: true,
       scrollSmoothOffset: -80,
-      headingsOffset: -500,
+      headingsOffset: 170,
+      positionFixedSelector: '.toc',
+      positionFixedClass: 'is-position-fixed',
+      fixedSidebarOffset: 'auto',
     });
   }
 
 </script>
+
+<style>
+.toc {
+  /* float: right; */
+  /* position: fixed;
+  top: 60px;
+  background-color: #fff;
+  right: 0; */
+}
+.is-position-fixed {
+  position:fixed !important;
+  top: 64px;
+}
+
+</style>
