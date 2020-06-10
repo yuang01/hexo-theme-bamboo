@@ -22,6 +22,7 @@
     }
   }
 }
+
 .post {
   margin: 1em auto;
   padding: 0.5rem;
@@ -84,6 +85,14 @@
       font-weight: bold;
       line-height: 1.4;
       cursor: text;
+  }
+  h1:focus,
+  h2:focus,
+  h3:focus,
+  h4:focus,
+  h5:focus,
+  h6:focus {
+    outline: none;
   }
 
   h1:hover a.anchor,
@@ -283,5 +292,19 @@
     margin: 2px 2px 10px;
     font-size: 1.05rem;
     line-height: 1.85rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .main-content {
+    width: 90%;
+  }
+  .toc-aside {
+    display: none;   
+  }
+}
+@media (max-width: 551px) {
+  .post-detail {
+    padding: 0 15px 20px 18px; 
   }
 }
