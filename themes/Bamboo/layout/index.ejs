@@ -1,23 +1,38 @@
 
 <%- partial('_partial/swiper') %>
 <section class="posts">
-  <% page.posts.each(function (post) { %>
-    <article class="post" data-aos="<%= theme.aos.animate || 'fade-up' %>">
-      <div class="post-title">
-        <a class="post-title-link" href="<%- url_for(post.path) %>"><%= post.title %></a>
+  <% page.posts.each(function (post, i) { %>
+    <article class="post" data-aos="<%= theme.aos.animate || 'fade-up' %>" style="<% if(i % 2 == 0) { %>flex-direction: row-reverse;<% } %>">
+      <div class="post-main">
+        <div class="post-info">
+          <div class="post-time">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            <span class="post-time"><%- date(post.date, "YYYY-MM-DD") %></span>
+          </div>
+          <div class="post-title">
+            <a class="post-title-link" href="<%- url_for(post.path) %>"><%= post.title %></a>
+          </div>
+          <div class="post-meta">
+            <div class="post-tags">
+              <%- partial('_partial/post/tags', {post: post}) %>
+            </div>
+            <div class="post-categories">
+              <%- partial('_partial/post/categories', {post: post}) %>
+            </div>
+          </div>
+          <div class="post-content">
+            <%- post.excerpt || strip_html(post.content).substring(0, 120) %>
+          </div>
+        </div>
+        <div class="post-more">
+          <i class="iconfont iconmore" style="<% if(i % 2 == 0) { %>float: right;<% } %>" title="阅读更多"></i>
+        </div>
       </div>
-      <div class="post-tags">
-        <%- partial('_partial/post/tags', {post: post}) %>
-      </div>
-      <div class="post-categories">
-        <%- partial('_partial/post/categories', {post: post}) %>
-      </div>
-      <div class="post-content">
-        <%- post.excerpt %>
-      </div>
-      <div class="post-meta">
-        <span class="post-time"><%- date(post.date, "YYYY-MM-DD") %></span>
-      </div>
+      <div class="post-img">
+        <a href="<%- url_for(post.path) %>">
+          <img src="https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm" alt="">
+        </a>
+        </div>
     </article>
   <% }) %>
 </section>
