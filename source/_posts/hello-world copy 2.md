@@ -1,5 +1,6 @@
 ---
 title: Hello World2
+img: 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/f1a263df32cb476ab7d3f0904331c183.jpg!sswm'
 ---
 Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 

@@ -20,19 +20,26 @@
               <%- partial('_partial/post/categories', {post: post}) %>
             </div>
           </div>
+          <div class="post-img-mobile">
+            <a href="<%- url_for(post.path) %>">
+              <img src="<%= post.img  || 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm' %> " alt="">
+            </a>
+          </div>
           <div class="post-content">
             <%- post.excerpt || strip_html(post.content).substring(0, 120) %>
           </div>
         </div>
         <div class="post-more">
-          <i class="iconfont iconmore" style="<% if(i % 2 == 0) { %>float: right;<% } %>" title="阅读更多"></i>
+          <a href="<%- url_for(post.path) %>">
+            <i class="iconfont iconmore" style="<% if(i % 2 == 0) { %>float: right;<% } %>" title="阅读更多"></i>
+          </a>
         </div>
       </div>
       <div class="post-img">
         <a href="<%- url_for(post.path) %>">
-          <img src="https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm" alt="">
+          <img src="<%= post.img  || 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm' %> " alt="">
         </a>
-        </div>
+      </div>
     </article>
   <% }) %>
 </section>
