@@ -4,7 +4,7 @@ date: 2019-01-20 21:11
 categories: "vue.js"
 tags: 'vue.js'
 swiper: true
-swiperImg: 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/0df374e14f61415088dcc202aca968f6.jpg!sswm'
+swiperImg: 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/80d3dbf06f6949e685113f94c7adf9cf.jpg!sswm'
 ---
 基于<a href="https://getbootstrapadmin.com/remark/base/index.html">remark UI</a>的样式，使用vue.js编写了左侧导航栏（侧边栏）和tab切换页面功能。基于<a href="https://getbootstrapadmin.com/remark/base/index.html">remark UI</a>的样式敖德萨多撒多撒多撒多敖德萨多撒多大大撒多所大声道撒多大大的撒旦撒旦大萨达所所多
 
