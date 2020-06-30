@@ -25,7 +25,7 @@ var defaultIndex = Math.floor((Math.random()*imgArr.length));
         %>
         <% if(post.swiper === true) { %>
           <swiper-slide>
-            <div class="item" style="background-image: url('<%- theme.root_url %><% if(post.swiperImg) { %><%=post.swiperImg%><% } else { %><%-imgArr[index]%><% }%>'); background-size: 40000px; 
+            <div class="item" style="background-image: url('<%- theme.root_url %><% if(post.swiperImg) { %><%=post.swiperImg%><% } else { %><%-imgArr[index]%><% }%>'); background-size: 90000px; 
             background-position: center center;">
               <div class="flag">
                 <img class="homeSwiper img-mask" src="<%- theme.root_url %><% if(post.swiperImg) { %><%=post.swiperImg%><% } else { %><%-imgArr[index]%><% }%>" alt="<%=post.title%>" style="width: 100%;background-size: cover; 

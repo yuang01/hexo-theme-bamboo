@@ -1,7 +1,7 @@
 ---
 title: Hello World7
 swiper: true
-swiperImg: https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/69153345ad154f6688db079703c3d62b.jpg!sswm
+swiperImg: https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/42b59dba971644fca2efa928be502f28.jpg!sswm
 img: https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/b81138e9e7794cbfa4e05dd5d3e1ecad.png!sswm
 ---
 Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
