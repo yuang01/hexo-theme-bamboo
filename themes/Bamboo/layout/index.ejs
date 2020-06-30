@@ -21,8 +21,8 @@
             </div>
           </div>
           <div class="post-img-mobile">
-            <a href="<%- url_for(post.path) %>">
-              <img src="<%= post.img  || 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm' %> " alt="">
+            <a href="<%- url_for(post.path) %>" style="background: url('<%= post.img  || 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm' %>');background-size: cover; 
+              background-position: center center;">
             </a>
           </div>
           <div class="post-content">
@@ -36,8 +36,8 @@
         </div>
       </div>
       <div class="post-img">
-        <a href="<%- url_for(post.path) %>">
-          <img src="<%= post.img  || 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm' %> " alt="">
+        <a href="<%- url_for(post.path) %>" style="background: url('<%= post.img  || 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm' %>');background-size: cover; 
+          background-position: center center;">
         </a>
       </div>
     </article>
