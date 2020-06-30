@@ -1,6 +1,16 @@
-<div class="footer">
-  这是页脚
-  <% if(theme.busuanzi.on === true ) { %>
-    <%- partial('_partial/busuanzi') %>
-  <% } %>
+<div class="footer bg-color">
+  <div class="footer-main">
+    <div class="link">
+      <i class="fa fa-github" aria-hidden="true"></i>
+      <i class="fa fa-envelope-o" aria-hidden="true"></i>
+      <i class="fa fa-qq" aria-hidden="true"></i>
+      <i class="fa fa-rss" aria-hidden="true"></i>
+    </div>
+    <div class="copyright">
+      Copyright © 2019 - 2020 blinkfox | Powered by Hexo | Theme Bamboo 
+    </div>
+    <% if(theme.busuanzi.on === true ) { %>
+      <%- partial('_partial/busuanzi') %>
+    <% } %>
+  </div>
 </div>
