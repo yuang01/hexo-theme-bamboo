@@ -1,0 +1,16 @@
+<div>
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+    <strong><%= __('copyright.author') %> </strong><%= config.author%></a>
+    </li>
+    <li class="post-copyright-link">
+    <strong><%= __('copyright.link') %> </strong>
+    <a href="<%- config.root %><%- post.path %>" target="_blank" title="<%= post.title %>"><%- config.url %>/<%- post.path %></a>
+    </li>
+    <li class="post-copyright-license">
+      <strong><%= __('copyright.license_title') %>  </strong>
+      <%= __('copyright.left_license_content') %><a rel="license" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" title="Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0)">CC BY-NC-ND 4.0</a>
+      <%= __('copyright.right_license_content') %>
+    </li>
+  </ul>
+<div>

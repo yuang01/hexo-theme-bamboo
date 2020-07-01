@@ -1,18 +1,47 @@
 <link href="https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.css" rel="stylesheet">
-<div id="aplayer"></div>
+<style>
+.aplayer .aplayer-lrc p {
+  <%if(theme.music.hideLrc){%>
+  display: none;
+  <%}%>
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 16px !important;
+}
 
-<meting-js 
-	server="netease" 
-	type="playlist" 
-	id="442274724"
-	fixed="true" 
-	autoplay="true"
-	loop="all"
-	order="random"
-	preload="auto"
-	list-folded="ture"
-	list-max-height="500px"
-	lrc-type="1">
+.aplayer .aplayer-lrc p.aplayer-lrc-current {
+  <%if(theme.music.hideLrc){%>
+  display: none;
+  <%}%>
+  font-size: 15px;
+  color: <%- theme.music.theme %>;
+}
+
+<%if(theme.music.autoHide){%>
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+  left: -66px !important;
+}
+
+.aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+  left: 0px !important;
+}
+
+<%}%>
+</style>
+<meting-js  
+  class=""
+  server="<%- theme.music.server %>"
+  type="<%- theme.music.type %>"
+  id="<%- theme.music.id %>"
+  fixed='<%- theme.music.fixed ? 'true' : 'false' %>'
+  autoplay='<%- theme.music.autoplay === true %>'
+  theme='<%- theme.music.theme %>'
+  loop='<%- theme.music.loop %>'
+  order='<%- theme.music.order %>'
+  preload='<%- theme.music.preload %>'
+  volume='<%- Number(theme.music.volume) %>'
+  list-folded='<%- theme.music.listFolded ? 'true' : 'false' %>'
+>
 </meting-js>
 
 <!-- <style>
