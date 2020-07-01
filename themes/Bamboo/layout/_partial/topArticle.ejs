@@ -1,0 +1,15 @@
+<div class="topArticle">
+	<!-- <h3>推荐文章</h3> -->
+	<div class="articles">
+		<% page.posts.each(function (post, i) { %>
+			<% if(post.top) { %>
+				<a href="" class="article-link">
+					<div class="article" style="background: url('<%= post.img  || 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm' %>');background-size: cover; 
+						background-position: center center;">
+					</div>
+					<div class="title"><%= post.title %></div>
+				</a>
+			<% } %>
+		<% }) %>
+	</div>
+</div>
