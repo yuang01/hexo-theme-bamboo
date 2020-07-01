@@ -28,8 +28,10 @@ var defaultIndex = Math.floor((Math.random()*imgArr.length));
             <div class="item" style="background-image: url('<%- theme.root_url %><% if(post.swiperImg) { %><%=post.swiperImg%><% } else { %><%-imgArr[index]%><% }%>'); background-size: 90000px; 
             background-position: center center;">
               <div class="flag">
-                <img class="homeSwiper img-mask" src="<%- theme.root_url %><% if(post.swiperImg) { %><%=post.swiperImg%><% } else { %><%-imgArr[index]%><% }%>" alt="<%=post.title%>" style="width: 100%;background-size: cover; 
-                background-position: center center;">
+                <div class="img-mask" style="height: 100%;background-image: url('<%- theme.root_url %><% if(post.swiperImg) { %><%=post.swiperImg%><% } else { %><%-imgArr[index]%><% }%>'); background-size: cover; 
+                  background-position: center center;"></div>
+                <!-- <img class="homeSwiper img-mask" src="<%- theme.root_url %><% if(post.swiperImg) { %><%=post.swiperImg%><% } else { %><%-imgArr[index]%><% }%>" alt="<%=post.title%>" style="width: 100%;background-size: cover; 
+                background-position: center center;"> -->
                 <div class="flag-text">
                   <div>
                     <div class="title ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><%=post.title%></div>
@@ -51,8 +53,10 @@ var defaultIndex = Math.floor((Math.random()*imgArr.length));
         <div class="item" style="background-image: url('<%- theme.root_url %><%-imgArr[defaultIndex]%>'); background-size: 40000px; 
           background-position: center center;">
             <div class="flag">
-              <img class="homeSwiper img-mask" src="<%- theme.root_url %><%-imgArr[defaultIndex]%>" alt="" style="width: 100%;background-size: cover; 
-              background-position: center center;">
+              <div class="img-mask" style="height: 100%;background-image: url('<%- theme.root_url %><% if(post.swiperImg) { %><%=post.swiperImg%><% } else { %><%-imgArr[index]%><% }%>'); background-size: cover; 
+                background-position: center center;"></div>
+              <!-- <img class="homeSwiper img-mask" src="<%- theme.root_url %><%-imgArr[defaultIndex]%>" alt="" style="width: 100%;background-size: cover; 
+              background-position: center center;"> -->
               <div class="flag-text">
                 <div>
                   <div class="title ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>">我是title</div>
