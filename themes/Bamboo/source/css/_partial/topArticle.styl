@@ -9,6 +9,9 @@
   box-sizing: border-box;
   h3 {
     color: #34495e;
+    i {
+      margin-right: 5px;
+    }
   }
   .articles {
     display: flex;
@@ -30,14 +33,34 @@
         height: 100%;
         opacity: 0.6;
       }
-      .title {
+      .text {
+        width: 80%;
+        height: 100%;
         color: #ffffff;
-        font-weight: 700;
-        font-size: 1.2em;
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
         top: 20px;
+        .title {
+          font-weight: 700;
+          font-size: 1.2em;
+        }
+        .content {
+          color: hsla(0, 0%, 100%, .78);
+          margin-bottom: 20px;
+        }
+        .more {
+          i {
+            margin-right: 5px;
+          }
+          padding: 10px 20px;
+          border-radius: 20px;
+          color: #ffffff;
+          transition: all 0.3s;
+          &:hover {
+            color: #42b983;
+          }
+        }
       }
     }
   }
