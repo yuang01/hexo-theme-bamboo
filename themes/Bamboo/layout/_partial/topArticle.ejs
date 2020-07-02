@@ -1,3 +1,4 @@
+<% if (page.current === 1) { %>
 <div class="topArticle" data-aos="<%= theme.aos.animate || 'fade-up' %>">
 	<h3><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>推荐文章</h3>
 	<div class="articles">
@@ -9,7 +10,7 @@
 					</div>
 					<div class="text">
 						<div class="text-main">
-							<div class="title"><%= post.title %></div>
+							<div class="title"><a href="<%- url_for(post.path) %>"><%= post.title %></a></div>
 							<p class="content">
 								<%- post.excerpt || strip_html(post.content).substring(0, 60) %>
 							</p>
@@ -23,3 +24,4 @@
 		<% }) %>
 	</div>
 </div>
+<% } %>
