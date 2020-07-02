@@ -1,12 +1,14 @@
 <!-- https://github.com/overtrue/share.js -->
 
-<div class="social-share" data-initialized="true">
-  <a href="#" class="social-share-icon icon-weibo"></a>
-  <a href="#" class="social-share-icon icon-qq"></a>
-  <a href="#" class="social-share-icon icon-qzone"></a>
-</div>
+<div class="social-share" data-sites="<%- theme.sharejs.sites %>" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
 
 
 <%- js(['js/shareJs/social-share.min.js']) %>
 </script>
+
+<style>
+  .social-share {
+    margin: 20px 0;
+  }
+</style>
 

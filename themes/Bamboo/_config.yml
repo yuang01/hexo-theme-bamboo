@@ -49,6 +49,7 @@ WeChatpay: '/img/520.jpg'
 # 分享功能
 sharejs: 
   on: true
+  sites: twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin
 
 # 点击出现爱心效果
 clicklove:
