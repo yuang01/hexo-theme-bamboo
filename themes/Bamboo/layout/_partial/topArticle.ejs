@@ -8,10 +8,12 @@
 						background-position: center center;">
 					</div>
 					<div class="text">
-						<div class="title"><%= post.title %></div>
-						<p class="content">
-							<%- post.excerpt || strip_html(post.content).substring(0, 60) %>
-						</p>
+						<div class="text-main">
+							<div class="title"><%= post.title %></div>
+							<p class="content">
+								<%- post.excerpt || strip_html(post.content).substring(0, 60) %>
+							</p>
+						</div>
 						<a href="<%- url_for(post.path) %>" class="more">
 							<i class="fa fa-eye" aria-hidden="true"></i>阅读更多
 						</a>
