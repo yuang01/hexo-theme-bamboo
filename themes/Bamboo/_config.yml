@@ -100,6 +100,11 @@ music:
   listFolded: true  # 列表默认折叠
   hideLrc: true     # 隐藏歌词
 
+# coryRyght
+#版权信息
+copyright:
+  on: true
+
 # valine 评论
 valine:
   on: true
