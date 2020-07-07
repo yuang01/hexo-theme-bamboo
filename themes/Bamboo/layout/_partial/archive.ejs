@@ -1,11 +1,21 @@
 <section class="archive">
-  <ul class="post-archive">
-    <% page.posts.each(function (post) { %>
-      <li class="post-item">
-        <span class="post-date"><%= date(post.date, "YYYY-MM-DD") %></span>
-        <a class="post-title" href="<%- url_for(post.path) %>"><%= post.title %></a>
-      </li>
-    <% }) %>
-  </ul>
+  <div class="archive-content">
+    <ul class="post-archive">
+      <% var year = '1970'; %>
+      <% page.posts.each(function (post) { %>
+        <% if (date(post.date, 'YYYY') != year) { %>
+          <% year = date(post.date, 'YYYY'); %>
+          <div class="year" data-aos="zoom-in-up">
+              <div class="bullet"></div>
+              <a href="<%- url_for('/archives/' + year) %>"><%- year %></a>
+          </div>
+        <% } %>
+        <li class="post-item" data-aos="fade-left">
+          <span class="post-date"><%= date(post.date, "MM-DD") %></span>
+          <a class="post-title" href="<%- url_for(post.path) %>"><%= post.title %></a>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
 </section>
 <%- partial('_partial/paginator') %>
