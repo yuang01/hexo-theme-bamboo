@@ -14,8 +14,7 @@ var defaultIndex = Math.floor((Math.random()*imgArr.length));
 <div id="appSwiper"
   class="<% if(swiperLength <= 1) { %>swiper-no-swiping<% } %>"
   @mouseenter="stopAutoPlay()" 
-  @mouseleave="startAutoPlay()" 
-  style="<% if(theme.headMenuFixed) { %>margin-top: 60px;<% } %>"
+  @mouseleave="startAutoPlay()"
 >
   <swiper v-cloak ref="mySwiper" :options="swiperOptions" @slideChangeTransitionEnd="slideChangeTransitionEnd">
     <% if(swiperLength > 0) { %>

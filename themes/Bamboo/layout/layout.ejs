@@ -8,9 +8,9 @@
     <main class="main" style="<% if(theme.headMenuFixed) { %>margin-top: 60px;<% } %>">
       <%- body %>
     </main>
+    <%- partial('_partial/footer') %>
     <%- partial('_partial/goTop') %>
     <%- partial('_partial/aplayer') %>
-    <%- partial('_partial/footer') %>
     <!-- 图片放大 -->
     <% if(theme.fancybox.on === true ) { %>
       <%- js(['js/fancybox/jquery.fancybox.min.js', 'js/wrapImage.js']) %>

@@ -105,6 +105,10 @@ music:
 copyright:
   on: true
 
+# 文章置顶
+tocArticle:
+  on: true
+
 # valine 评论
 valine:
   on: true
