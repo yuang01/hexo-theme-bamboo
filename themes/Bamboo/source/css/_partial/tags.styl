@@ -16,3 +16,38 @@
     }
   }
 }
+
+// 标签页面的tags样式
+#tags {
+  .card {
+    .card-content {
+      .tag-title {
+        font-size: 1.6em;
+        color: #34495e;
+        text-align: center;
+        padding: 15px 0;
+      }
+      .tag-chips {
+        text-align: center;
+        a {
+          margin: 0 5px;
+          .tag-content {
+            padding: 5px 10px;
+            display: inline-block;
+            border-radius: 10px;
+            color: #34495e;
+            box-shadow: 0 1px 10px -3px rgba(0,0,0,.5);
+            transition: all 0.3s;
+            margin-top: 20px;
+            &:hover {
+              transform:scale(1.2);  
+            }
+            .tag-length {
+              color: #49b1f5;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -20,7 +20,7 @@ var i = 0;
     <div class="card">
         <div class="card-content">
             <div class="tag-title center-align">
-                <i class="fas fa-tags"></i>&nbsp;&nbsp;<%= __('postTagTitle') %>
+                <i class="fa fa-tags"></i>&nbsp;&nbsp;<%= __('postTagTitle') %>
             </div>
             <div class="tag-chips">
                 <% site.tags.map(function(tag) { %>
@@ -30,7 +30,7 @@ var i = 0;
                             : colorArr[i - 1];
                 %>
                 <a href="<%- url_for(tag.path) %>" title="<%- tag.name %>: <%- tag.length %>">
-                    <span
+                    <span class="tag-content"
                         title="<%- tag.name %>" style="background-color: <%- color %>;"><%- tag.name %>
                         <span class="tag-length"><%- tag.length %></span>
                     </span>
