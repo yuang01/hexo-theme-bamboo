@@ -14,10 +14,9 @@ var hashCode = function (str) {
     return hash;
 };
 var i = 0;
-var isTag = is_tag();
 %>
 
-<div id="tags" class="container chip-container">
+<div id="tags" class="container">
     <div class="card">
         <div class="card-content">
             <div class="tag-title center-align">
@@ -31,9 +30,8 @@ var isTag = is_tag();
                             : colorArr[i - 1];
                 %>
                 <a href="<%- url_for(tag.path) %>" title="<%- tag.name %>: <%- tag.length %>">
-                    <span class="chip center-align waves-effect waves-light
-                            <% if (isTag && tag.name == page.tag) { %> chip-active <% } else { %> chip-default <% } %>"
-                            data-tagname="<%- tag.name %>" style="background-color: <%- color %>;"><%- tag.name %>
+                    <span
+                        title="<%- tag.name %>" style="background-color: <%- color %>;"><%- tag.name %>
                         <span class="tag-length"><%- tag.length %></span>
                     </span>
                 </a>

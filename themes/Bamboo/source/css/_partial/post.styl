@@ -43,7 +43,28 @@
     }  
   }
   .post-content {
-    margin-top: 20px;  
+    margin-top: 20px;
+    .headerlink {
+      position: relative;
+    }
+    h1:hover .headerlink::before,
+    h2:hover .headerlink::before,
+    h3:hover .headerlink::before,
+    h4:hover .headerlink::before,
+    h5:hover .headerlink::before,
+    h6:hover .headerlink::before {
+      opacity: 1; 
+    }
+    .headerlink::before{
+      content: '#';
+      position: absolute;
+      left: -15px;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0;
+      transition: all 0.3s;
+      color: #34495e;
+    }
   }
   img {
     max-width: 100%;
