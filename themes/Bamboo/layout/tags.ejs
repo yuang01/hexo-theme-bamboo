@@ -26,8 +26,7 @@ var i = 0;
                 <% site.tags.map(function(tag) { %>
                 <%
                     i++;
-                    var color = i >= colorCount ? colorArr[Math.abs(hashCode(tag.name) % colorCount)]
-                            : colorArr[i - 1];
+                    var color = colorArr[Math.abs(hashCode(tag.name) % colorCount)];
                 %>
                 <a href="<%- url_for(tag.path) %>" title="<%- tag.name %>: <%- tag.length %>">
                     <span class="tag-content"
@@ -40,3 +39,4 @@ var i = 0;
         </div>
     </div>
 </div>
+<%- partial('_partial/tag-chart') %>

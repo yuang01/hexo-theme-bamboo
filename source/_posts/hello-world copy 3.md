@@ -1,6 +1,7 @@
 ---
 title: 这是一个推荐页面
 date: 2019-08-20 21:11
+tags: ['vue', 'test1', 'test2', 'test3', 'test4', 'test5', 'test6', 'test7']
 img: 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/08225d395fc144328ff19097d79147d2.jpg!sswm'
 top: true
 ---

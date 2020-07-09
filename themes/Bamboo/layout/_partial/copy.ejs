@@ -1,0 +1,54 @@
+<div id="appCopy">
+</div>
+<script>
+  var vm = new Vue({
+    el: '#appCopy',
+    data: {
+    },
+    computed: {
+    },
+    mounted() {
+      const that = this;
+      //  监听 ctrl + c事件  
+      $(document).unbind('keydown').bind('keydown', function (e) {
+        if (e.ctrlKey && e.keyCode == 67) {
+          doSomething();
+          // 返回false, 防止重复触发copy事件  
+          return false;
+        }
+      })
+
+      // 鼠标右键的复制事件  
+      $(document).unbind('copy').bind('copy', function (e) {
+        setTime();
+        that.$notify({
+          title: '成功',
+          content: '复制成功了哦',
+          type: 'success'
+        })
+        // console.log('右键复制 监听成功');
+      });
+
+      function doSomething() {
+        setTime();
+        that.$notify({
+          title: '成功',
+          content: '复制成功了哦',
+          type: 'success'
+        })
+        // console.log('ctrl + c 监听成功');  
+      }
+
+      function setTime() {
+        if (window.localStorage) {
+          let time = localStorage.getItem('time');
+          time ? time++ : time = 1;
+          localStorage.setItem('time', time);
+        }
+      }
+    },
+    methods: {
+    },
+    created() { }
+  })
+</script>
