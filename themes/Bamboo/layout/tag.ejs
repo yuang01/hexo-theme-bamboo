@@ -1,4 +1,5 @@
 <section class="posts">
+  <div><%= page.tag %>标签</div>
   <% page.posts.each(function (post, i) { %>
   <article class="post" data-aos="<%= theme.aos.animate || 'fade-up' %>"
     style="<% if(i % 2 == 0) { %>flex-direction: row-reverse;<% } %>">
