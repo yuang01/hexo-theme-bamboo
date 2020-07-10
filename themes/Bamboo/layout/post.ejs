@@ -44,12 +44,12 @@
     
 
     <!-- 打赏 -->
-    <% if (theme.donate.on){ %>
+    <% if (theme.donate.on && page.donate !== false){ %>
       <%- partial('_partial/donate') %>
     <% } %>
 
     <!-- 分享 -->
-    <% if(theme.sharejs.on) { %>
+    <% if(theme.sharejs.on && page.share !== false) { %>
       <%- partial('_partial/share') %>
     <% } %>
 
@@ -71,7 +71,7 @@
     <% } %>
   </div>
 
-  <% if(theme.toc.on === true) { %>
+  <% if(theme.toc.on === true && page.toc !== false) { %>
     <div class="toc-aside">
       <div class="toc-main">
         <div class="toc-aside-title">
