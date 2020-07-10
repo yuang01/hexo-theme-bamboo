@@ -14,37 +14,28 @@ var hashCode = function (str) {
     return hash;
 };
 var i = 0;
-var isCategory = is_category();
 %>
 
-<div id="category-cloud" class="container chip-container">
-  <div class="card">
-    <div class="card-content">
-      <div class="tag-title center-align">
-        <i class="fas fa-bookmark"></i>&nbsp;&nbsp;<%= __('postCategoryTitle') %>
-      </div>
-      <div class="tag-chips">
-        <% if (site.categories && site.categories.length > 0) { %>
-        <% site.categories.map(function(category) { %>
-        <%
+<div id="categories" class="container">
+    <div class="card">
+        <div class="card-content">
+            <div class="category-title center-align">
+                <i class="fa fa-tags"></i>&nbsp;&nbsp;<%= __('postCategoryTitle') %>
+            </div>
+            <div class="category-chips">
+                <% site.categories.map(function(category) { %>
+                <%
                     i++;
-                    var color = i >= colorCount
-                            ? colorArr[Math.abs(hashCode(category.name) % colorCount)]
-                            : colorArr[i - 1];
+                    var color = colorArr[Math.abs(hashCode(category.name) % colorCount)];
                 %>
-        <a href="<%- url_for(category.path) %>" title="<%- category.name %>: <%- category.length %>">
-          <span
-            class="chip center-align waves-effect waves-light
-                            <% if (isCategory && category.name == page.category) { %> chip-active <% } else { %> chip-default <% } %>"
-            style="background-color: <%- color %>;"><%- category.name %>
-            <span class="tag-length"><%- category.length %></span>
-          </span>
-        </a>
-        <% }); %>
-        <% } else { %>
-        <%= __('categoryEmptyTip') %>
-        <% } %>
-      </div>
+                <a href="<%- url_for(category.path) %>" title="<%- category.name %>: <%- category.length %>">
+                    <span class="category-content"
+                        title="<%- category.name %>" style="background-color: <%- color %>;"><%- category.name %>
+                        <span class="category-length"><%- category.length %></span>
+                    </span>
+                </a>
+                <% }); %>
+            </div>
+        </div>
     </div>
-  </div>
 </div>

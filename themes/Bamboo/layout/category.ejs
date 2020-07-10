@@ -1,0 +1,71 @@
+<%
+var colorArr = ['#F9EBEA', '#F5EEF8', '#D5F5E3', '#E8F8F5', '#FEF9E7',
+    '#F8F9F9', '#82E0AA', '#D7BDE2', '#A3E4D7', '#85C1E9', '#F8C471', '#F9E79F', '#FFF'];
+var colorCount = colorArr.length;
+var hashCode = function (str) {
+    if (!str && str.length === 0) {
+        return 0;
+    }
+    var hash = 0;
+    for (var i = 0, len = str.length; i < len; i++) {
+        hash = ((hash << 5) - hash) + str.charCodeAt(i);
+        hash |= 0;
+    }
+    return hash;
+};
+var i = 0;
+%>
+<%
+    i++;
+    var color = colorArr[Math.abs(hashCode(page.category) % colorCount)];
+%>
+<div class="category">
+  <div class="category-name">
+    <div class="name" style="background-color: <%- color %>;"><%= page.category %> 分类</div>
+  </div>
+  <section class="posts">
+    <% page.posts.each(function (post, i) { %>
+    <article class="post" data-aos="<%= theme.aos.animate || 'fade-up' %>"
+      style="<% if(i % 2 == 0) { %>flex-direction: row-reverse;<% } %>">
+      <div class="post-main">
+        <div class="post-info">
+          <div class="post-time">
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+            <span class="post-time"><%- date(post.date, "YYYY-MM-DD") %></span>
+          </div>
+          <div class="post-title">
+            <a class="post-title-link" href="<%- url_for(post.path) %>"><%= post.title %></a>
+          </div>
+          <div class="post-meta">
+            <div class="post-tags">
+              <%- partial('_partial/post/tags', {post: post}) %>
+            </div>
+            <div class="post-categories">
+              <%- partial('_partial/post/categories', {post: post}) %>
+            </div>
+          </div>
+          <div class="post-img-mobile">
+            <a href="<%- url_for(post.path) %>" style="background: url('<%= post.img  || 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm' %>');background-size: cover; 
+              background-position: center center;">
+            </a>
+          </div>
+          <div class="post-content">
+            <%- post.excerpt || strip_html(post.content).substring(0, 120) %>
+          </div>
+        </div>
+        <div class="post-more">
+          <a href="<%- url_for(post.path) %>">
+            <i class="iconfont iconmore" style="<% if(i % 2 == 0) { %>float: right;<% } %>" title="阅读更多"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post-img">
+        <a href="<%- url_for(post.path) %>" style="background: url('<%= post.img  || 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm' %>');background-size: cover; 
+          background-position: center center;">
+        </a>
+      </div>
+    </article>
+    <% }) %>
+  </section>
+</div>
+<%- partial('_partial/paginator') %>
