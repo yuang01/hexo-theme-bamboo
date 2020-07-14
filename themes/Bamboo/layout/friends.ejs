@@ -2,7 +2,7 @@
 background-position: center center;">
 <!-- <img src="https://pic4.zhimg.com/80/v2-1a6ab86d51b8abb6be95c970e054adf6_1440w.jpg" alt="" style="width: 100%;"> -->
 </div>
-<div class="container">
+<div class="container" id="friends">
   <div class="friends-title">
     <i class="fa fa-link" aria-hidden="true"></i><%= __('friends') %>
   </div>
@@ -25,4 +25,18 @@ background-position: center center;">
       </div>
     <% } %>
   </div>
+  <!-- 评论 -->
+  <% if(theme.valine.on === true ) { %>
+    <%- partial('_partial/comment/valine') %>
+  <% } else if(theme.gitment.on === true) { %>
+    <%- partial('_partial/comment/gitment') %>
+  <% } else if(theme.livere.on === true) {  %>
+    <%- partial('_partial/comment/livere') %>
+  <% } else if(theme.changyan.on === true) {  %>
+    <%- partial('_partial/comment/changyan') %>
+  <% } else if(theme.gitalk.on === true) {  %>
+    <%- partial('_partial/comment/gitalk') %>
+  <% } else if(theme.miniValine.on === true) { %>
+    <%- partial('_partial/comment/miniValine') %>
+  <% } %>
 </div>
