@@ -2,6 +2,11 @@
 <div class="row justify-center">
   <div class="main-content">
     <article class="post post-detail">
+      <% if (theme.postTitleTop.on === false){ %>
+        <div class="post-title">
+          <%- page.title %>
+        </div>
+      <% } %>
       <% if (page.date) { %>
       <div class="post-meta">
         <i class="fa fa-clock-o" aria-hidden="true"></i>
@@ -33,7 +38,7 @@
       <div class="post-content">
         <%- page.content %>
       </div>
-      <% if (theme.copyright.on){ %>
+      <% if (theme.copyright.on && page.copyright !== false) { %>
         <%- partial('_partial/copyright', { post: page }) %>
       <% } %>
     </article>

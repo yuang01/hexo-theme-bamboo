@@ -1,3 +1,5 @@
 <div class="post-detail-header">
-  <span class="title"><%= post.title %></span>
+  <% if (theme.postTitleTop.on === true){ %>
+    <span class="title"><%= post.title %></span>
+  <% } %>
 </div>

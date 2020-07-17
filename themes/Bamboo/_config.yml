@@ -63,6 +63,14 @@ search:
 postNav:
   on: true
 
+# 复制成功提示
+copy:
+  on: true
+
+# 文章详情页的标题是否显示在顶部（顶部图片中）, false则显示在文章内容顶部
+postTitleTop:
+  on: true
+
 # 滚动动画，详情参照https://github.com/michalsnik
 aos:
   on: true
