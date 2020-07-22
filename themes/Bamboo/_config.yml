@@ -25,6 +25,13 @@ swiper:
   textAnimated: 'fadeInDown' # 文字动画，属性使用 animate.css, https://daneden.github.io/animate.css/
   textDuration: '0.2s' # 文字动画持续时间（单位秒）
   textDelay: '0.1s' # 文字动画延迟时间（单位秒）
+  # 当没有文章设置swiper: true时候，轮播图会显示以下default内容，可自行切换对应内容
+  defaultImg: '' # 图片，没有则随机选取
+  defaultTile: 'Hexo-theme-Bamboo' # 标题
+  defaultDesc: '大家好，这是一个Hexo主题，希望这款主题能得到你的喜爱' #描 述
+  defaultMoreLink: 'https://github.com/yuang01/theme' # 阅读更多链接 
+  defaultBtnText: '下载主题' # 阅读更多右边的按钮的文字
+  defaultBtnLink: 'https://github.com/yuang01/theme' # 阅读更多右边的按钮的链接
 
 # 图片点击放大功能
 fancybox: 
@@ -160,6 +167,16 @@ gitalk:
   admin:   yuang01        #Github 用户名,
   clientID:  '418a1890782d27e5bc5b'      #`Github Application clientID`
   clientSecret:  '0500f22139fb648833d54076c086c3dd3c2d8ca4'  #`Github Application clientSecret`
+
+imgs:
+- 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/ada660a8c596431983dddd411a12f2b3.jpg!sswm'
+- 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/c080ff4434354e35af9dab0a3ee1b9f7.jpg!sswm'
+- 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/052352ec5be345dbac92d9e9cbb450af.jpg!sswm'
+- 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/0ad247eb4baf4df48cb58859380bdab5.jpg!sswm'
+- 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/48009613508743a699a73addd50fd768.jpg!sswm'
+- 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/42b59dba971644fca2efa928be502f28.jpg!sswm'
+- 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm'
+- 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/663afbe7197941039f65afd048223aff.jpg!sswm'
 
 CDN:
   valine: https://cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js

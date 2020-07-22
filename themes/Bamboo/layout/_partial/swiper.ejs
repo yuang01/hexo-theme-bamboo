@@ -1,11 +1,21 @@
 <link href="https://cdn.bootcdn.net/ajax/libs/Swiper/5.4.1/css/swiper.min.css" rel="stylesheet">
 <%
-var imgArr = [
-  'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/aa85e7943d514609b6a7e526298ffa60.jpg!sswm', 
-  'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/0df374e14f61415088dcc202aca968f6.jpg!sswm', 
-  'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/0df374e14f61415088dcc202aca968f6.jpg!sswm', 
-  'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/663afbe7197941039f65afd048223aff.jpg!sswm'
-];
+    var hashCode = function (str) {
+        if (!str && str.length === 0) {
+            return 0;
+        }
+
+        var hash = 0;
+        for (var i = 0, len = str.length; i < len; i++) {
+            hash = ((hash << 5) - hash) + str.charCodeAt(i);
+            hash |= 0;
+        }
+        return hash;
+    };
+%>
+
+<%
+var imgArr = theme.imgs;
 var swpiers = site.posts.filter(function(post) {return post.swiper});
 var swiperLength = swpiers.length;
 var defaultIndex = Math.floor((Math.random()*imgArr.length)); 
@@ -23,11 +33,19 @@ var defaultIndex = Math.floor((Math.random()*imgArr.length));
             var index = Math.floor((Math.random()*imgArr.length)); 
         %>
         <% if(post.swiper === true) { %>
+          <%
+            var img = 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/ada660a8c596431983dddd411a12f2b3.jpg!sswm';
+            var imgs = theme.imgs;
+            if (!imgs || imgs.length === 0) {
+                return img;
+            }
+            img = imgs[Math.abs(hashCode(post.title) % imgs.length)]
+          %>
           <swiper-slide>
-            <div class="item" style="background-image: url('<%- theme.root_url %><% if(post.swiperImg) { %><%=post.swiperImg%><% } else { %><%-imgArr[index]%><% }%>'); background-size: 90000px; 
+            <div class="item" style="background-image: url('<%- theme.root_url %><%=post.swiperImg || img%>'); background-size: 90000px; 
             background-position: center center;">
               <div class="flag">
-                <div class="img-mask" style="height: 100%;background-image: url('<%- theme.root_url %><% if(post.swiperImg) { %><%=post.swiperImg%><% } else { %><%-imgArr[index]%><% }%>'); background-size: cover; 
+                <div class="img-mask" style="height: 100%;background-image: url('<%- theme.root_url %><%=post.swiperImg || img%>'); background-size: cover; 
                   background-position: center center;"></div>
                 <!-- <img class="homeSwiper img-mask" src="<%- theme.root_url %><% if(post.swiperImg) { %><%=post.swiperImg%><% } else { %><%-imgArr[index]%><% }%>" alt="<%=post.title%>" style="width: 100%;background-size: cover; 
                 background-position: center center;"> -->
@@ -49,21 +67,21 @@ var defaultIndex = Math.floor((Math.random()*imgArr.length));
     <div class="swiper-button-next swiper-button-white" slot="button-next" style="<% if(!theme.swiper.showPrevNext || swiperLength <= 1) { %>display: none;<% } %>"></div>
     <% } else { %>
       <swiper-slide>
-        <div class="item" style="background-image: url('<%- theme.root_url %><%-imgArr[defaultIndex]%>'); background-size: 40000px; 
+        <div class="item" style="background-image: url('<%- theme.root_url %><%= theme.swiper.defaultImg || imgArr[defaultIndex] %>'); background-size: 40000px; 
           background-position: center center;">
             <div class="flag">
-              <div class="img-mask" style="height: 100%;background-image: url('<%- theme.root_url %><% if(post.swiperImg) { %><%=post.swiperImg%><% } else { %><%-imgArr[index]%><% }%>'); background-size: cover; 
+              <div class="img-mask" style="height: 100%;background-image: url('<%- theme.root_url %><%= theme.swiper.defaultImg || imgArr[defaultIndex] %>'); background-size: cover; 
                 background-position: center center;"></div>
               <!-- <img class="homeSwiper img-mask" src="<%- theme.root_url %><%-imgArr[defaultIndex]%>" alt="" style="width: 100%;background-size: cover; 
               background-position: center center;"> -->
               <div class="flag-text">
                 <div>
-                  <div class="title ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>">我是title</div>
-                  <div class="excerpt ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>">我是文章摘要哦，点我有惊喜</div>
+                  <div class="title ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><%= theme.swiper.defaultTile %></div>
+                  <div class="excerpt ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><%= theme.swiper.defaultDesc %></div>
                 </div>
                 <div style="display: flex;">
-                  <div class="ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><a href="#" class="read-more border-color bg-color" style="display: inline-block; z-index:1;">阅读更多</a></div>
-                  <div class="ani animated" style="margin-left: 10px;" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><a href="#" class="read-more " style="display: inline-block; z-index:1;border: 1px solid white;">下载主题</a></div>
+                  <div class="ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><a href="<%= theme.swiper.defaultMoreLink %>" class="read-more border-color bg-color" style="display: inline-block; z-index:1;">阅读更多</a></div>
+                  <div class="ani animated" style="margin-left: 10px;" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><a href="<%= theme.swiper.defaultBtnLink %>" class="read-more " style="display: inline-block; z-index:1;border: 1px solid white;"><%= theme.swiper.defaultBtnText %></a></div>
                 </div>
               </div>
             </div>
