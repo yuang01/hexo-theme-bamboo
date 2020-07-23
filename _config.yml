@@ -61,6 +61,10 @@ prism_plugin:
 search:
   path: search.xml
   field: post  
+
+permalink_pinyin:
+  enable: true
+  separator: '-' # default: '-'
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)

@@ -143,7 +143,7 @@ miniValine:
 # gitment 评论
 gitment:
   on: false
-  gitment_owner: '用户名'      #你的 GitHub ID
+  gitment_owner: 'yuang01'      #你的 GitHub ID
   gitment_repo: 'yuang01.github.io' #存储评论的 repo
   clientId: '418a1890782d27e5bc5b' #client ID
   clientSecret: '0500f22139fb648833d54076c086c3dd3c2d8ca4'       #client secret
