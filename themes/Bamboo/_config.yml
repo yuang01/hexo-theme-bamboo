@@ -129,7 +129,7 @@ valine:
   on: true
   appid: nmal09L0arSjEFBUUCSpWzyK-gzGzoHsz
   appkey: xiiSst0NtHRg1POFFV32iqKI
-  avatar: '' # 匿名者头像选项
+  avatar: '' # 匿名者头像选项 https://valine.js.org/avatar.html
   placeholder: '客官，说点什么吧'
 
 # miniValine
@@ -137,7 +137,7 @@ miniValine:
   on: false
   appid: nmal09L0arSjEFBUUCSpWzyK-gzGzoHsz
   appkey: xiiSst0NtHRg1POFFV32iqKI
-  avatar: '' # 匿名者头像选项
+  avatar: '' # 匿名者头像选项 https://valine.js.org/avatar.html
   placeholder: '客官，说点什么吧'
 
 # gitment 评论

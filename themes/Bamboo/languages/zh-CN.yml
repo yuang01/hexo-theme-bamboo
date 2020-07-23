@@ -15,8 +15,10 @@ older: Older
 share: Share
 powered_by: Powered by
 rss_feed: RSS Feed
-category: Category
-tag: Tag
+tag: 标签
+category: 分类
+archives: 归档
+friends: 友情链接
 
 Menu:
   Home: 首页

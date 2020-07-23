@@ -15,10 +15,43 @@
       iconType = 'image/x-icon, image/vnd.microsoft.icon'
   }
 %>
+
+<%
+    var title = page.title;
+
+    // tags, categories, about pages title
+    if (title == 'tags') {
+        title = __('tags');
+    } else if (title == 'categories') {
+        title = __('categories');
+    } else if (title == 'about') {
+        title = __('about');
+    } else if (title == 'friends') {
+      title = __('friends');
+    }
+
+    // archives, category, tag pages title
+    if (is_archive()) {
+        title = __('archives');
+        if (is_month()) {
+            title += ': ' + page.year + '/' + page.month;
+        } else if (is_year()) {
+            title += ': ' + page.year;
+        }
+    } else if (is_category()) {
+        title = __('category') + ': ' + page.category;
+    } else if (is_tag()) {
+        title = __('tag') + ': ' + page.tag;
+    }
+
+    // final page title.
+    var pageTitle = title ? title + ' | ' + config.title : config.title;
+%>
+
 <head>
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-  <title><%= config.title %></title>
+  <title><%= pageTitle %></title>
   <% if(theme.aos.on === true ) { %>
     <%- css('js/aos/aos.css') %>
   <% } %>
