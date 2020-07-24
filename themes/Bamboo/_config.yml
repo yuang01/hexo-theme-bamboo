@@ -115,6 +115,37 @@ music:
   listFolded: true  # 列表默认折叠
   hideLrc: true     # 隐藏歌词
 
+skills:  # color or #000
+  on: true
+  data:
+    HTML5:
+      background: 'linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%)'
+      percent: 90%
+    JavaScript:
+      background: 'linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%)'
+      percent: 85%
+    Node.js:
+      background: 'linear-gradient(to right, #43e97b 0%, #38f9d7 100%)'
+      percent: 50%
+    CSS:
+      background: 'linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%)'
+      percent: 70%
+    Vue:
+      background: 'linear-gradient(to top, #0ba360 0%, #3cba92 100%)'
+      percent: 90%
+    uni-app:
+      background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)'
+      percent: 75%
+    jquery: 
+      background: 'linear-gradient( 135deg, #97ABFF 10%, #123597 100%)'
+      percent: 70%
+    H5: 
+      background: 'linear-gradient(to top, #00c6fb 0%, #005bea 100%)'
+      percent: 75%
+    APP:  
+      background: 'linear-gradient( 135deg, #69FF97 10%, #00E4FF 100%)'
+      percent: 75%
+
 # coryRyght
 #版权信息
 copyright:

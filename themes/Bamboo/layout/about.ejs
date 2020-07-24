@@ -1,3 +1,149 @@
+<%
+// the skills information of theme _config.yml.
+var skills = theme.skills.data;
+%>
 <div style="width: 100%;height: 50vh;overflow: hidden;background-image: url('https://cdn.pixabay.com/photo/2016/03/04/22/54/panda-1236875_960_720.jpg');background-size: cover; 
 background-position: center center;">
+</div>
+<div id="about" class="container">
+	<div class="title">
+		<i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;<%= __('about') %>
+	</div>
+	
+	<div class="basic-info" data-aos="<%= theme.aos.animate || 'fade-up' %>">
+		<div class="subtitle">
+			<i class="fa fa-address-card-o" aria-hidden="true"></i>&nbsp;&nbsp;<%= __('aboutBasicInfo') %>
+		</div>
+		<div class="items">
+			<div class="item">
+				<div class="border">
+					<i class="fa fa-heart" aria-hidden="true"></i>
+				</div>
+				<div class="text">
+					<%= __('age') %>：23
+				</div>
+			</div>
+
+			<div class="item">
+				<div class="border">
+					<i class="fa fa-transgender" aria-hidden="true"></i>
+				</div>
+				<div class="text">
+					<%= __('sex') %>：男
+				</div>
+			</div>
+
+			<div class="item">
+				<div class="border">
+					<i class="fa fa-map-marker" aria-hidden="true"></i>
+				</div>
+				<div class="text">
+					<%= __('coordinate') %>：武汉
+				</div>
+			</div>
+
+			<div class="item">
+				<div class="border">
+					<i class="fa fa-external-link-square" aria-hidden="true"></i>
+				</div>
+				<div class="text">
+					<%= __('status') %>：在职
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="basic-info" data-aos="<%= theme.aos.animate || 'fade-up' %>">
+		<div class="subtitle">
+			<i class="fa fa-address-card-o" aria-hidden="true"></i>&nbsp;&nbsp;<%= __('skill') %>
+		</div>
+		<div class="skill">
+			<% Object.keys(skills).forEach(function(skill) { %>
+			<div class="bar-box">
+				<div class="bar" style="background: <%- skills[skill].background %>; width: <%- skills[skill].percent %>">
+					<span class="bar-name"><%- skill %></span>
+				</div>
+				<span class="bar-number"><%- skills[skill].percent %></span>
+			</div>
+			<% }); %>
+		</div>
+	</div>
+
+	<div class="basic-info" data-aos="<%= theme.aos.animate || 'fade-up' %>">
+		<div class="subtitle">
+			<i class="fa fa-address-card-o" aria-hidden="true"></i>&nbsp;&nbsp;<%= __('socialAccounts') %>
+		</div>
+		<div class="socialAccounts">
+			<div class="account">
+				<i class="fa fa-qq" aria-hidden="true"></i> QQ：<a href="#">1730241541</a> 
+			</div>
+			<div class="account">
+				<i class="fa fa-qq" aria-hidden="true"></i> QQ：<a href="#">1730241541</a> 
+			</div>
+			<div class="account">
+				<i class="fa fa-qq" aria-hidden="true"></i> QQ：<a href="#">1730241541</a> 
+			</div>
+			<div class="account">
+				<i class="fa fa-qq" aria-hidden="true"></i> QQ：<a href="#">1730241541</a> 
+			</div>
+			<div class="account">
+				<i class="fa fa-qq" aria-hidden="true"></i> QQ：<a href="#">1730241541</a> 
+			</div>
+			<div class="account">
+				<i class="fa fa-qq" aria-hidden="true"></i> QQ：<a href="#">1730241541</a> 
+			</div>
+			<div class="account">
+				<i class="fa fa-qq" aria-hidden="true"></i> QQ：<a href="#">1730241541</a> 
+			</div>
+			<div class="account">
+				<i class="fa fa-qq" aria-hidden="true"></i> QQ：<a href="#">1730241541</a> 
+			</div>
+		</div>
+	</div>
+
+	<div class="basic-info" data-aos="<%= theme.aos.animate || 'fade-up' %>">
+		<div class="subtitle">
+			<i class="fa fa-address-card-o" aria-hidden="true"></i>&nbsp;&nbsp;<%= __('game') %>
+		</div>
+		<div class="games">
+			<div class="game-item">
+				<div class="logo">
+					<img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=2822541755,3009973588&fm=26&gp=0.jpg" alt="">
+				</div>
+				<div class="name">
+					王者荣耀
+				</div>
+			</div>
+			<div class="game-item">
+				<div class="logo">
+					<img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1909008358,1888649581&fm=26&gp=0.jpg" alt="">
+				</div>
+				<div class="name">
+					英雄杀
+				</div>
+			</div>
+			<div class="game-item">
+				<div class="logo">
+					<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1595596612190&di=dbf2030780758c4724ecb1f07f2f4f73&imgtype=0&src=http%3A%2F%2Fimgup04.51wxjz.com%2F51wxjz%2F2019-06%2F05%2F09%2F15596983468928_0.png" alt="">
+				</div>
+				<div class="name">
+					和平精英
+				</div>
+			</div>
+			<div class="game-item">
+				<div class="logo">
+					<img src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3035766587,2822701570&fm=26&gp=0.jpg" alt="">
+				</div>
+				<div class="name">
+					英雄联盟
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="basic-info" data-aos="<%= theme.aos.animate || 'fade-up' %>">
+		<div class="subtitle">
+			<i class="fa fa-address-card-o" aria-hidden="true"></i>&nbsp;&nbsp;<%= __('book') %>
+		</div>
+	</div>
 </div>

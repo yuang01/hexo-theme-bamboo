@@ -19,7 +19,15 @@ tag: 标签
 category: 分类
 archives: 归档
 about: 关于
-
+aboutBasicInfo: 基本信息
+age: 年龄
+sex: 性别
+coordinate: 坐标
+status: 状态
+skill: 技能
+socialAccounts: 社交账号
+game: 游戏
+book: 书籍
 Menu:
   Home: 首页
   Archives: 归档

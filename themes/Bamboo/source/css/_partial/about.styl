@@ -1,0 +1,101 @@
+#about {
+  .title {
+    text-align: center;
+    font-size: 1.6em;
+    color: #34495e;
+    padding: 15px 0;
+  }
+  .subtitle {
+    color: #34495e;
+    font-size: 1.4em;  
+  }
+  .basic-info {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 15px;
+    .items {
+      display: flex;
+      justify-content: space-between;
+      .item {
+        flex: 0 0 100px;
+        text-align: center;
+        color: #34495e;
+        .border {
+          border: 1px solid #34495e;
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          font-size: 3.5em;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 20px;
+        } 
+      }
+    }
+
+    .skill {
+      padding: 20px;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      .bar-box {
+        position: relative;
+        width: 45%;
+        background-color: #f2f2f2;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-top: 20px;
+        margin-right: 5%;
+        .bar {
+          width: 35%;
+          background-color: #42b983;
+          border-radius: 10px;
+          .bar-name {
+            color: #fff;
+            font-size: 14px;
+            margin-left: 15px;
+          }
+        }
+        .bar-number {
+          color: rgba(0,0,0,.5);
+          font-size: 14px;
+          position: absolute;
+          right: 2%;
+          top: 0;
+        }
+      }
+    }
+
+    .socialAccounts {
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      .account {
+        margin-right: 20px;
+        margin-top: 15px;
+      }
+    }
+
+    .games {
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      .game-item {
+        text-align: center;
+        margin-right: 40px;
+        .logo {
+          width: 100px;
+          height: 100px;
+          border-radius: 10px;
+          overflow: hidden;
+          img {
+            width: 100%;
+            height: 100%;
+          }  
+        }  
+      } 
+    }
+  }
+}
