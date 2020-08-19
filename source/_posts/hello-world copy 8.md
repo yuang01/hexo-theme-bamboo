@@ -3,7 +3,7 @@ title: Hello World8
 swiper: true
 date: 2019-05-20 21:11
 swiperImg: https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/48009613508743a699a73addd50fd768.jpg!sswm
-img: https://cdn.pixabay.com/photo/2019/04/16/23/25/morning-4133099_960_720.jpg
+img: '/medias/6.jpg'
 top: true
 ---
 Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).

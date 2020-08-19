@@ -1,7 +1,7 @@
 ---
 title: Hello World6
 date: 2020-07-20 21:11
-img: https://cdn.pixabay.com/photo/2016/01/19/17/00/canoe-1149501_960_720.jpg
+img: '/medias/2.png'
 top: false
 ---
 Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
