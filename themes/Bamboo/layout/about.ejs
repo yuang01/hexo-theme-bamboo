@@ -72,6 +72,7 @@ background-position: center center;">
 		</div>
 	</div>
 	<% } %>
+	<% if(theme.socialAccounts.on) { %>
 	<div class="basic-info" data-aos="<%= theme.aos.animate || 'fade-up' %>">
 		<div class="subtitle">
 			<i class="fa fa-chain-broken" aria-hidden="true"></i>&nbsp;&nbsp;<%= __('socialAccounts') %>
@@ -84,7 +85,8 @@ background-position: center center;">
 			<% }); %>
 		</div>
 	</div>
-
+	<% } %>
+	<% if(theme.games.on) { %>
 	<div class="basic-info" data-aos="<%= theme.aos.animate || 'fade-up' %>">
 		<div class="subtitle">
 			<i class="fa fa-gamepad" aria-hidden="true"></i>&nbsp;&nbsp;<%= __('game') %>
@@ -102,7 +104,8 @@ background-position: center center;">
 			<% }); %>
 		</div>
 	</div>
-
+	<% } %>
+	<% if(theme.books.on) { %>
 	<div class="basic-info" data-aos="<%= theme.aos.animate || 'fade-up' %>">
 		<div class="subtitle">
 			<i class="fa fa-book" aria-hidden="true"></i>&nbsp;&nbsp;<%= __('book') %>
@@ -120,4 +123,5 @@ background-position: center center;">
 			<% }); %>
 		</div>
 	</div>
+	<% } %>
 </div>
