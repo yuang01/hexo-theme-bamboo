@@ -19,7 +19,7 @@ var i = 0;
     i++;
     var color = colorArr[Math.abs(hashCode(page.category) % colorCount)];
 %>
-<div style="width: 100%;height: 50vh;overflow: hidden;background-image: url('https://cdn.pixabay.com/photo/2020/01/29/22/05/china-wind-4803889_960_720.jpg');background-size: cover; 
+<div style="width: 100%;height: 50vh;overflow: hidden;background-image: url('<%- theme.root_url %><%= theme.categoryDetailImg %>');background-size: cover; 
 background-position: center center;">
 </div>
 <div class="category">

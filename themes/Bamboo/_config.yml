@@ -242,6 +242,22 @@ gitalk:
   clientID:  '418a1890782d27e5bc5b'      #`Github Application clientID`
   clientSecret:  '0500f22139fb648833d54076c086c3dd3c2d8ca4'  #`Github Application clientSecret`
 
+# 归档页面图片 or 'http://xxx'
+archiveImg: '/medias/archiveImg.png'
+# 标签页面图片
+tagImg: '/medias/tag.png'
+# 标签详情页面图片
+tagDetailImg: '/medias/tagDetail.png'
+# 分类页面图片
+categoriesImg: '/medias/categories.png'
+#分类详情页面图片
+categoryDetailImg: '/medias/categoryDetail.png'
+# 关于我页面图片
+aboutImg: '/medias/about.png'
+# 友情链接页面图片
+friendsImg: '/medias/friends.png'
+
+# 文章图片
 imgs:
 - '/medias/1.png'
 - '/medias/2.png'
