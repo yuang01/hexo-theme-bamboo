@@ -115,6 +115,14 @@ music:
   listFolded: true  # 列表默认折叠
   hideLrc: true     # 隐藏歌词
 
+# 关于我
+baseInfo:
+  age: 24 # 年龄
+  sex: '男' # 性别
+  coordinate: '武汉' # 坐标
+  status: '在职' # 状态
+
+# 关于我 技能
 skills:  # color or #000 技能
   on: true
   data:
@@ -145,8 +153,8 @@ skills:  # color or #000 技能
     APP:  
       background: 'linear-gradient( 135deg, #69FF97 10%, #00E4FF 100%)'
       percent: 75%
-
-socialAccounts: # 社交账号
+# 关于我 社交账号
+socialAccounts: 
   on: true
   data:
     QQ:
@@ -158,6 +166,7 @@ socialAccounts: # 社交账号
       name: 1730241541
       url: 'http://www.baidu.com'
 
+# 关于我 游戏
 games:
   on: true
   data:
@@ -170,6 +179,7 @@ games:
     英雄联盟:
       img: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3035766587,2822701570&fm=26&gp=0.jpg'
 
+# 关于我 书籍
 books:
   on: true
   data:
