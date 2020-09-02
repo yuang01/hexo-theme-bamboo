@@ -4,17 +4,21 @@ menu:
   Archives: /archives
   Tags: /tags
   Categories: /categories
-  # Github: https://github.com/yuang01
   About: /about
   link: /friends
-
+# github账号
 Github: https://github.com/yuang01
 
+# 网站logo
 logo: /medias/logo.png
+
+# 网站 favicon
 favicon: /favicon.ico # or .png .jpg .svg .gif .jpeg .ico
+
 # 頂部导航固定
 headMenuFixed: true
 
+# 首页轮播图设置
 swiper:
   showPrevNext: true # 是否显示左右切换按钮
   showIndicators: true  # 是否显示指示器
@@ -25,7 +29,7 @@ swiper:
   textAnimated: 'fadeInDown' # 文字动画，属性使用 animate.css, https://daneden.github.io/animate.css/
   textDuration: '0.2s' # 文字动画持续时间（单位秒）
   textDelay: '0.1s' # 文字动画延迟时间（单位秒）
-  # 当没有文章设置swiper: true时候，轮播图会显示以下default内容，可自行切换对应内容
+  # 当没有文章设置swiper: true时候，轮播图会显示以下default默认内容，可自行切换对应内容
   defaultImg: '' # 图片，没有则随机选取
   defaultTile: 'Hexo-theme-Bamboo' # 标题
   defaultDesc: '大家好，这是一个Hexo主题，希望这款主题能得到你的喜爱' #描 述
@@ -74,7 +78,7 @@ postNav:
 copy:
   on: true
 
-# 文章详情页的标题是否显示在顶部（顶部图片中）, false则显示在文章内容顶部
+# 文章详情页的标题是否显示在顶部图片中, false则显示在文章内容顶部
 postTitleTop:
   on: true
 
@@ -90,6 +94,7 @@ aos:
   mirror: false # whether elements should animate out while scrolling past them
   anchorPlacement: 'top-bottom' # defines which position of the element regarding to window should trigger the animation
 
+# 文章目录
 toc:
   on: true
   heading: h2, h3, h4
@@ -105,7 +110,7 @@ music:
   server: netease   #require	music platform: netease, tencent, kugou, xiami, baidu
   type: playlist    #require song, playlist, album, search, artist
   id: 442274724     #require	song id / playlist id / album id / search keyword
-  fixed: true       # 开启吸底模式
+  fixed: true       # 开启吸底模式，建议开启
   autoplay: false   # 是否自动播放
   theme: '#42b983'
   loop: 'all'       # 音频循环播放, 可选值: 'all', 'one', 'none'
@@ -153,6 +158,7 @@ skills:  # color or #000 技能
     APP:  
       background: 'linear-gradient( 135deg, #69FF97 10%, #00E4FF 100%)'
       percent: 75%
+
 # 关于我 社交账号
 socialAccounts: 
   on: true
@@ -214,6 +220,11 @@ miniValine:
   avatar: '' # 匿名者头像选项 https://valine.js.org/avatar.html
   placeholder: '客官，说点什么吧'
 
+# 来必力评论
+livere:
+  on: false
+  livere_uid: MTAyMC8zNTA1My8xMTU4OA
+
 # gitment 评论
 gitment:
   on: false
@@ -221,11 +232,6 @@ gitment:
   gitment_repo: 'yuang01.github.io' #存储评论的 repo
   clientId: '418a1890782d27e5bc5b' #client ID
   clientSecret: '0500f22139fb648833d54076c086c3dd3c2d8ca4'       #client secret
-
-# 来必力评论
-livere:
-  on: false
-  livere_uid: MTAyMC8zNTA1My8xMTU4OA
 
 # 畅言评论
 changyan:
@@ -271,6 +277,11 @@ imgs:
 - '/medias/10.jpg'
 - '/medias/11.png'
 - '/medias/12.png'
+- '/medias/13.png'
+- '/medias/14.png'
+- '/medias/15.png'
+- '/medias/16.png'
+- '/medias/17.png'
 
 CDN:
   valine: https://cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js
