@@ -4,11 +4,11 @@
     <div class="message-box">
       <h2>
         <i class="fa fa-search" aria-hidden="true"></i>
-        <span class="title">搜索</span>
+        <span class="title"><%= __('search') %></span>
       </h2>
       <form class="site-search-form">
         <input type="text"
-          placeholder="清输入关键字"
+          placeholder="<%= __('keyword') %>"
           id="local-search-input" 
           @click="getSearchFile()"
           class="st-search-input"

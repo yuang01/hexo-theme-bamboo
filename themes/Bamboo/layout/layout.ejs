@@ -9,16 +9,25 @@
       <%- body %>
     </main>
     <%- partial('_partial/footer') %>
-    <%- partial('_partial/goTop') %>
-    <%- partial('_partial/aplayer') %>
+
+    <% if(theme.goTop.on === true ) { %>
+      <%- partial('_partial/goTop') %>
+    <% } %>
+
+    <% if(theme.music.on === true ) { %>
+      <%- partial('_partial/aplayer') %>
+    <% } %>
+
     <!-- 图片放大 -->
     <% if(theme.fancybox.on === true ) { %>
       <%- js(['js/fancybox/jquery.fancybox.min.js', 'js/wrapImage.js']) %>
     <% } %>
+
     <!-- 爱心点击 -->
     <% if(theme.clicklove.on === true ) { %>
       <%- js(['js/clicklove.js']) %>
     <% } %>
+    
     <script type="text/javascript" size="100" alpha='0.4' zIndex="-1" src="/js/ribbon.min.js"></script>
     <% if(theme.aos.on === true ) { %>
       <%- js(['js/aos/aos.js']) %>

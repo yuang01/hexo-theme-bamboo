@@ -14,6 +14,51 @@ newer: Newer
 older: Older
 share: Share
 powered_by: Powered by
-rss_feed: RSS Feed
-category: Category
+rss_feed: RSS Feed=
 tag: Tag
+category: category
+archives: archives
+about: about
+aboutBasicInfo: BasicInfo
+age: age
+sex: sex
+coordinate: coordinate
+status: status
+skill: skill
+socialAccounts: social accounts
+game: game
+book: book
+Menu:
+  Home: Home
+  Archives: Archives
+  Tags: Tags
+  Categories: Categories
+  Github: Github
+  About: About
+  link: link
+
+Paginator:
+  Prev: Prev
+  Next: Next
+
+postCategoryTitle: Article Categories
+postTagTitle: Article Tags
+
+copyright:
+    author: "author: "
+    link: "link: "
+    license_title: "Copyright notice: "
+    left_license_content: "All articles on this website, unless otherwise stated, adopt "
+    right_license_content: "reprint polocy. If reproduced, please indicate source!"
+
+friends: friends
+keyword: Please enter keywords
+totalReading: Total reading
+totalVisits: Total visits
+numberVisitors: Number of visitors
+
+lastArticle: Prev
+nextArticle: Next
+
+times: times
+people: people

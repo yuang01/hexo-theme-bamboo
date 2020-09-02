@@ -2,7 +2,7 @@
 <% if(page.prev) { %>
   <div class="post-nav-prev post-nav-item">
     <a href="<%- url_for(page.prev.path) %>">
-      上一篇    <%= page.prev.title %>
+      <%= __('lastArticle') %>:    <%= page.prev.title %>
     </a>
   </div>
 <% } %>
@@ -10,7 +10,7 @@
 <% if(page.next) { %>
   <div class="post-nav-next post-nav-item">
     <a href="<%- url_for(page.next.path) %>">
-      下一篇    <%= page.next.title %> 
+      <%= __('nextArticle') %>:    <%= page.next.title %> 
     </a>
   </div>
 <% } %>
