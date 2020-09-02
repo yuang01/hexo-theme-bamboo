@@ -1,6 +1,6 @@
 <% if (page.current === 1 && theme.tocArticle.on === true) { %>
 <div class="topArticle" data-aos="<%= theme.aos.animate || 'fade-up' %>">
-	<h3><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>推荐文章</h3>
+	<h3><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><%= __('recommendedArticles') %></h3>
 	<div class="articles">
 		<% page.posts.each(function (post, i) { %>
 			<% if(post.top) { %>
