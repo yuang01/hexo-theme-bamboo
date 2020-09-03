@@ -57,9 +57,9 @@ donate:
   on: true
 donate_message: 你的赏识是我前进的动力
 # 支付宝打赏图片相对路径
-Alipay: '/img/54542.jpg'
+Alipay: '/medias/zfb.jpg'
 # 微信打赏图片相对路径
-WeChatpay: '/img/520.jpg'
+WeChatpay: '/medias/wx.jpg'
 
 # 分享功能
 sharejs: 
