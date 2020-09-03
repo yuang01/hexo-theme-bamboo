@@ -27,6 +27,9 @@
     <% if(theme.clicklove.on === true ) { %>
       <%- js(['js/clicklove.js']) %>
     <% } %>
+
+    <%- partial('_partial/baidu-analytics') %>
+    <%- partial('_partial/baidu-push') %>
     
     <script type="text/javascript" size="100" alpha='0.4' zIndex="-1" src="/js/ribbon.min.js"></script>
     <% if(theme.aos.on === true ) { %>

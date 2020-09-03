@@ -98,6 +98,19 @@ aos:
   mirror: false # whether elements should animate out while scrolling past them
   anchorPlacement: 'top-bottom' # defines which position of the element regarding to window should trigger the animation
 
+# 添加 Google Analytics 配置
+googleAnalytics:
+  on: false
+  id:
+
+# 添加 baidu Analytics 配置
+baiduAnalytics:
+  on: false
+  id:
+
+# 百度搜索资源平台提交链接
+baiduPush: true
+
 # 文章目录
 toc:
   on: true
