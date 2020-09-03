@@ -23,4 +23,73 @@ a {
   background-image: linear-gradient(#42b983, #42b983),
                       linear-gradient(#e4eaec, #e4eaec)!important;
 }
+// 推荐文章鼠标移入到阅读更多的颜色
+.topArticle {
+  .more {
+    &:hover {
+      color: #42b983!important;
+    }
+  }  
+}
 
+// 首页文章标题和阅读更多鼠标移入
+.posts {
+  .post-title {
+    .post-title-link {
+      &:hover {
+        color: #42b983;
+      }
+    }
+  }  
+
+  .post-more {
+    i {
+      &:hover {
+        color: #42b983;
+      } 
+    }
+  }
+}
+
+// 首页文章tag和category鼠标移入颜色
+.post-tags {
+  .article-tag-list li a {
+    &:hover {
+      color: #42b983;
+    }
+  }  
+}
+
+.post-categories {
+  .article-category {
+    .article-category-link {
+      &:hover {
+        color: #42b983;
+      }
+    }  
+  }
+}
+
+// 文章详情页的a链接颜色
+.post-detail {
+  a {
+    color: #42b983!important;
+  }  
+}
+
+// copyright的左边框颜色
+.post-copyright {
+  border-left: 3px solid #42b983;
+}
+
+// 文章详情页的blockquote，md中的 > 标签的左边框和背景颜色
+.post-detail {
+  blockquote {
+      border-left: 4px solid #42b983;
+      background-color: rgba(66, 185, 131, .1);
+  }
+}
+// 文章详情页的目录的做边框
+.toc-link.is-active-link::before {
+  background-color: #42b983;
+}
