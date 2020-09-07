@@ -1,13 +1,13 @@
 categories: 分類
-search: 搜尋
-tags: 標籤
-tagcloud: 標籤雲
+search: 搜索
+tags: 標簽
+tagcloud: 標簽雲
 tweets: 推文
-prev: 上一頁
-next: 下一頁
+prev: 上壹頁
+next: 下壹頁
 comment: 留言
-archive_a: 彙整
-archive_b: 彙整：%s
+archive_a: 歸檔
+archive_b: 歸檔：%s
 page: 第 %d 頁
 recent_posts: 最新文章
 newer: Newer
@@ -15,5 +15,52 @@ older: Older
 share: Share
 powered_by: Powered by
 rss_feed: RSS Feed
-category: Category
-tag: Tag
+tag: 標簽
+category: 分類
+archives: 歸檔
+about: 關於
+aboutBasicInfo: 基本信息
+age: 年齡
+sex: 性别
+coordinate: 坐標
+status: 狀態
+skill: 技能
+socialAccounts: 社交賬號
+game: 遊戲
+book: 書籍
+Menu:
+  Home: 首頁
+  Archives: 歸檔
+  Tags: 標簽
+  Categories: 分類
+  Github: Github
+  About: 關於
+  link: 友情鏈接
+
+Paginator:
+  Prev: 上壹頁
+  Next: 下壹頁
+
+postCategoryTitle: 文章分類
+postTagTitle: 文章標簽
+
+copyright:
+    author: "作者: "
+    link: "文章鏈接: "
+    license_title: "版權聲明: "
+    left_license_content: "本網站所有文章除特別聲明外,均采用 "
+    right_license_content: "許可協議。轉載請註明出處!"
+
+friends: 友情鏈接
+keyword: 請輸入關鍵字
+totalReading: 本站總閱讀量
+totalVisits: 本站總訪問量
+numberVisitors: 本站訪客數
+
+lastArticle: 上壹篇
+nextArticle: 下壹篇
+
+times: 次
+people: 人
+
+recommendedArticles: 推薦文章
