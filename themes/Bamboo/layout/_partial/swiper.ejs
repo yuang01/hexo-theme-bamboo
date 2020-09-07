@@ -54,7 +54,7 @@ var defaultIndex = Math.floor((Math.random()*imgArr.length));
                     <div class="title ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><%=post.title%></div>
                     <div class="excerpt ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><%- post.excerpt || strip_html(post.content).substring(0, 120) %></div>
                   </div>
-                  <div class="ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><a href="<%- url_for(post.path) %>" class="read-more border-color bg-color" style="display: inline-block; z-index:1;">阅读更多</a></div>
+                  <div class="ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><a href="<%- url_for(post.path) %>" class="read-more border-color bg-color" style="display: inline-block; z-index:1;"><%= __('readMore') %></a></div>
                 </div>
               </div>
             </div>
@@ -80,7 +80,7 @@ var defaultIndex = Math.floor((Math.random()*imgArr.length));
                   <div class="excerpt ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><%= theme.swiper.defaultDesc %></div>
                 </div>
                 <div style="display: flex;">
-                  <div class="ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><a href="<%= theme.swiper.defaultMoreLink %>" class="read-more border-color bg-color" style="display: inline-block; z-index:1;">阅读更多</a></div>
+                  <div class="ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><a href="<%= theme.swiper.defaultMoreLink %>" class="read-more border-color bg-color" style="display: inline-block; z-index:1;"><%= __('readMore') %></a></div>
                   <div class="ani animated" style="margin-left: 10px;" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><a href="<%= theme.swiper.defaultBtnLink %>" class="read-more " style="display: inline-block; z-index:1;border: 1px solid white;"><%= theme.swiper.defaultBtnText %></a></div>
                 </div>
               </div>
