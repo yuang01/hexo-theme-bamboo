@@ -1,3 +1,18 @@
+<%
+  var hashCode = function (str) {
+      if (!str && str.length === 0) {
+          return 0;
+      }
+
+      var hash = 0;
+      for (var i = 0, len = str.length; i < len; i++) {
+          hash = ((hash << 5) - hash) + str.charCodeAt(i);
+          hash |= 0;
+      }
+      return hash;
+  };
+%>
+
 <% if (page.current === 1 && theme.tocArticle.on === true) { %>
 <div class="topArticle" data-aos="<%= theme.aos.animate || 'fade-up' %>">
 	<h3><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><%= __('recommendedArticles') %></h3>
@@ -5,15 +20,23 @@
 		<% page.posts.each(function (post, i) { %>
 			<% if(post.top) { %>
 				<div class="article-link">
-					<div class="article" style="background: url('<%= post.img  || 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm' %>');background-size: cover; 
+					<%
+						var img = 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/ada660a8c596431983dddd411a12f2b3.jpg!sswm';
+						var imgs = theme.imgs;
+						if (!imgs || imgs.length === 0) {
+							return img;
+						}
+						img = imgs[Math.abs(hashCode(post.title) % imgs.length)]
+					%>
+					<div class="article" style="background: url('<%= post.img  || img %>');background-size: cover; 
 						background-position: center center;">
 					</div>
 					<div class="text">
 						<div class="text-main">
 							<div class="title"><a href="<%- url_for(post.path) %>"><%= post.title %></a></div>
-							<p class="content">
+							<div class="content">
 								<%- post.excerpt || strip_html(post.content).substring(0, 60) %>
-							</p>
+							</div>
 						</div>
 						<a href="<%- url_for(post.path) %>" class="more">
 							<i class="fa fa-eye" aria-hidden="true"></i>阅读更多
