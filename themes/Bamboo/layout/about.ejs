@@ -12,7 +12,7 @@ background-position: center center;">
 	<div class="title">
 		<i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;<%= __('about') %>
 	</div>
-	
+	<% if(theme.baseInfo.on) { %>
 	<div class="basic-info" data-aos="<%= theme.aos.animate || 'fade-up' %>">
 		<div class="subtitle">
 			<i class="fa fa-address-card-o" aria-hidden="true"></i>&nbsp;&nbsp;<%= __('aboutBasicInfo') %>
@@ -55,6 +55,7 @@ background-position: center center;">
 			</div>
 		</div>
 	</div>
+	<% } %>
 	<% if(theme.skills.on) { %>
 	<div class="basic-info" data-aos="<%= theme.aos.animate || 'fade-up' %>">
 		<div class="subtitle">

@@ -136,6 +136,7 @@ music:
 
 # 关于我
 baseInfo:
+  on: true
   age: 24 # 年龄
   sex: '男' # 性别
   coordinate: '武汉' # 坐标
