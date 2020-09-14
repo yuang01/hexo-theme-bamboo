@@ -4,7 +4,7 @@ date: 2018-09-28 13:34:00
 author: blinkfox
 categories: 前端
 tags: [Hexo, hexo-theme-Bamboo]
-swiper: true
+swiper: false
 swiperImg: 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/663afbe7197941039f65afd048223aff.jpg!sswm'
 img: '/medias/8.png'
 ---
