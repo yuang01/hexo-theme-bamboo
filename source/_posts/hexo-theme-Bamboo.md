@@ -4,7 +4,6 @@ date: 2020-09-14 14:06
 swiper: true
 categories: 前端
 tags: [Hexo, hexo-theme-Bamboo]
-swiperImg: https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/ada660a8c596431983dddd411a12f2b3.jpg!sswm
 top: true
 ---
 
