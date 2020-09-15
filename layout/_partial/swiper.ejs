@@ -28,7 +28,7 @@ var defaultIndex = Math.floor((Math.random()*imgArr.length));
 >
   <swiper v-cloak ref="mySwiper" :options="swiperOptions" @slideChangeTransitionEnd="slideChangeTransitionEnd">
     <% if(swiperLength > 0) { %>
-      <% site.posts.reverse().each(function (post) { %>
+      <% site.posts.sort('-date').each(function (post) { %>
         <%
             var index = Math.floor((Math.random()*imgArr.length)); 
         %>
