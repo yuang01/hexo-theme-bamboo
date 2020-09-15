@@ -7,7 +7,7 @@ menu:
   About: /about
   link: /friends
 # github账号
-Github: https://github.com/yuang01
+Github: https://github.com/yuang01/hexo-theme-bamboo
 
 # 网站logo
 logo: /medias/logo.png
@@ -33,9 +33,9 @@ swiper:
   defaultImg: '' # 图片，没有则随机选取
   defaultTile: 'Hexo-theme-Bamboo' # 标题
   defaultDesc: '大家好，这是一个Hexo主题，希望这款主题能得到你的喜爱' #描 述
-  defaultMoreLink: 'https://github.com/yuang01/theme' # 阅读更多链接 
+  defaultMoreLink: 'https://github.com/yuang01/hexo-theme-bamboo' # 阅读更多链接 
   defaultBtnText: '下载主题' # 阅读更多右边的按钮的文字
-  defaultBtnLink: 'https://github.com/yuang01/theme' # 阅读更多右边的按钮的链接
+  defaultBtnLink: 'https://github.com/yuang01/hexo-theme-bamboo' # 阅读更多右边的按钮的链接
 
 # 回到顶部
 goTop: 
