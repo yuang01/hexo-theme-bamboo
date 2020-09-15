@@ -13,7 +13,7 @@ top: true
 首先你需要有一个[Hexo](https://hexo.io/zh-cn/)，按照官网的方法，很容易的就能创建一个hexo博客。
 当你有了hexo博客之后，进入`themes`文件夹下使用 `Git clone` 命令来下载:
 ``` bash
-git clone https://github.com/yuang01/theme.git
+git clone https://github.com/yuang01/hexo-theme-bamboo.git
 ```
 ## 配置
 ### 切换主题
