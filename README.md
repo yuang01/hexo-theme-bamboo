@@ -1,4 +1,4 @@
-# Hexo主题--Bamboo介绍
+<center># Hexo主题--Bamboo介绍</center>
 
 这是一个基于Hexo的响应式博客主题，[演示示例](https://yuang01.github.io/)，| QQ交流:`1730241541`
 <!-- more -->
