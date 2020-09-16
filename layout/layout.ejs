@@ -66,8 +66,19 @@
         });
       </script>
     <% } %>
+
     <% if (theme.copy.on){ %>
       <%- partial('_partial/copy') %>
+    <% } %>
+
+    <!-- 输入框打字特效 -->
+    <% if (theme.inputEffects.on){ %>
+      <%- js(['js/activate-power-mode.js']) %>
+      <script>
+          POWERMODE.colorful = true;  // 打开随机颜色特效
+          POWERMODE.shake = false;    // 关闭输入框抖动
+          document.body.addEventListener('input', POWERMODE);//监听打字事件
+      </script>
     <% } %>
   </body>
 </html>

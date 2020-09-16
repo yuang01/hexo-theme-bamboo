@@ -86,6 +86,10 @@ copy:
 postTitleTop:
   on: true
 
+# 输入框打字特效
+inputEffects:
+  on: true
+
 # 滚动动画，详情参照https://github.com/michalsnik
 aos:
   on: true
