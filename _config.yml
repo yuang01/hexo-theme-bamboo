@@ -216,7 +216,7 @@ copyright:
   on: true
 
 # 文章置顶
-tocArticle:
+topArticle:
   on: true
 
 # valine 评论
