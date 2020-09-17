@@ -90,7 +90,7 @@ postTitleTop:
 inputEffects:
   on: true
 
-# 滚动动画，详情参照https://github.com/michalsnik
+# 首页文章列表滚动动画，详情参照https://github.com/michalsnik
 aos:
   on: true
   animate: 'fade-up' # animate, 更多选项请参考 https://github.com/michalsnik/aos#animations
