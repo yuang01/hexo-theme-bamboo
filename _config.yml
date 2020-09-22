@@ -90,6 +90,10 @@ postTitleTop:
 inputEffects:
   on: true
 
+# live-2d(左下角动画人物)
+live2d:
+  on: true
+
 # 首页文章列表滚动动画，详情参照https://github.com/michalsnik
 aos:
   on: true
@@ -318,3 +322,4 @@ CDN:
   ayuCss: https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.css
   ayuJs: https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.umd.min.js
   copyRight: https://creativecommons.org/licenses/by-nc-nd/4.0/
+  live2d: https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js

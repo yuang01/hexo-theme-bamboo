@@ -59,6 +59,9 @@
   <link rel="icon" type="<%= iconType %>" href="<%- url_for(theme.favicon) %>">
   <link rel="stylesheet" href="<%= theme.CDN.iconfont %>">
   <link href="<%= theme.CDN.fontAwesome %>" rel="stylesheet">
+  <% if(theme.live2d.on === true ) { %>
+    <script src="<%= theme.CDN.live2d %>"></script>
+  <% } %>
   <%- css('css/animate.min.css') %>
   <%- css('css/style.css') %>
   
@@ -68,4 +71,11 @@
   <% if(theme.sharejs.on === true ) { %>
     <%- css(['js/shareJs/share.min.css']) %>
   <% } %>
+  <style>
+        @media (max-width: 992px) {
+            #waifu {
+                display: none;
+            }
+        }
+    </style>
 </head>
