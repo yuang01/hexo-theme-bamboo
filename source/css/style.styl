@@ -43,6 +43,15 @@ a {
   max-width: 960px;
   margin: 0 auto;
 }
+::-webkit-scrollbar-thumb {
+    background-color: #42b983;
+    background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,.4) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.4) 50%,rgba(255,255,255,.4) 75%,transparent 75%,transparent);
+    border-radius: 3em;
+}
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
 @media (max-width: 551px) {
   html {
     font-size: 14px;

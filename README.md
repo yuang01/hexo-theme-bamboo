@@ -212,7 +212,6 @@ swiperImg: 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/c080ff4434354e3
 ### 点击出现爱心效果
 设置主题文件夹下的`_config.yml`文件中的`clicklove`属性true或者false即可
 
-
 ### 复制成功提醒
 当复制内容时候，是否显示复制成功提示 
 设置主题文件夹下的`_config.yml`文件中的`copy`属性true或者false即可
