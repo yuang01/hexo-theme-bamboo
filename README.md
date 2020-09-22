@@ -279,7 +279,7 @@ blockquote样式指的是下面这个
 > 我是blockquote
 
 例如，我将该文件下的所有颜色设置为`skyblue`，显示效果如下
-![theme-color](http://riyugo.com/i/2020/09/16/ig4oy6.png)
+![theme-color](https://img13.360buyimg.com/ddimg/jfs/t1/120336/2/13322/273081/5f69b8d1E737e6277/8fdc796d2d3a82b3.png)
 
 代码高亮颜色，可以通过之前介绍的代码高亮进行更改
 
