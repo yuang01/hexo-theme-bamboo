@@ -223,6 +223,9 @@ swiperImg: 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/c080ff4434354e3
 ### 输入框打字特效
 搜索弹框中的输入框打字特效，设置主题文件夹下的`_config.yml`文件中的`inputEffects`属性为true或者false即可。
 
+### live-2d人物
+设置主题文件夹下的`_config.yml`文件中的`live2d`属性为true或者false，注意，live-2d人物只有在屏幕宽度最小为992px的时候才显示
+
 ### 滚动动画
 设置主题文件夹下的`_config.yml`文件中的`aos`属性对首页中的文章列表动画进行控制，具体参考官网[aos.js](https://github.com/michalsnik/aos#animations)
 
