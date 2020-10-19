@@ -1,5 +1,5 @@
 # Hexo主题--bamboo介绍</font>
-这是一个基于Hexo的响应式博客主题，[演示示例](https://yuang01.github.io/)，| QQ交流:`1730241541`
+这是一个基于Hexo的响应式博客主题，[演示示例](https://yuang01.github.io/)
 <!-- more -->
 ## 下载
 首先你需要有一个[Hexo](https://hexo.io/zh-cn/)，按照官网的方法，很容易的就能创建一个hexo博客。
