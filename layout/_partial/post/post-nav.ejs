@@ -10,7 +10,9 @@
 <% if(page.next) { %>
   <div class="post-nav-next post-nav-item">
     <a href="<%- url_for(page.next.path) %>">
-      <%= __('nextArticle') %>:    <%= page.next.title %> 
+      <span>
+        <%= __('nextArticle') %>:    <%= page.next.title %> 
+      </span>
     </a>
   </div>
 <% } %>

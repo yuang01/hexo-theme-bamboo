@@ -1,10 +1,15 @@
 .post-nav {
   margin: 20px 0;
   overflow: hidden;
+  display: flex;
+  justify-content: space-between;
   .post-nav-prev {
-    float: left ;  
+    flex: 1;
   }
   .post-nav-next {
-    float: right;  
+    flex: 1;
+    span {
+      float: right;
+    }
   }
 }
