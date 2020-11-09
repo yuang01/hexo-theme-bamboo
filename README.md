@@ -298,5 +298,3 @@ blockquote样式指的是下面这个
 | categories | 无                          | 文章分类，本主题的分类表示宏观上大的分类，只建议一篇文章一个分类 |
 | tags       | 无                          | 文章标签，一篇文章可以多个标签  
 
-## 感谢
-本博客主题灵感来源于[闪烁之狐](https://github.com/blinkfox/hexo-theme-matery), 大佬的主题做的很好
