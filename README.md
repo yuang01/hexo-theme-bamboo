@@ -1,4 +1,4 @@
-# Hexo主题--bamboo介绍</font>
+# Hexo主题--bamboo介绍
 这是一个基于Hexo的响应式博客主题，[演示示例](https://yuang01.github.io/)
 <!-- more -->
 ## 下载
@@ -95,6 +95,76 @@ socialAccounts # 社交账号
 games   # 游戏
 books   #书籍
 ```
+`baseInfo`主要包含年龄，性别，坐标，状态，格式如下，**注意空格缩进哦**
+``` yaml
+baseInfo:
+  on: true # 是否显示
+  age: 99 # 年龄
+  sex: '男' # 性别
+  coordinate: '火星' # 坐标
+  status: '划水中' # 状态
+```
+
+`skills` 填写我的技能，格式如下，**注意空格缩进哦**
+``` yaml
+# 关于我 技能
+skills:
+  on: true # 是否显示
+  data: # 这个data不能忘了，下面的字段注意缩进
+    HTML5: # 这里写你的技能名称，如 HTML5或者java
+      background: 'red' # 进度条颜色
+      percent: 90% # 进度条百分比
+    JavaScript:
+      background: 'linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%)'
+      percent: 85%
+    CSS:
+      background: '#000'
+      percent: 70%
+```
+`socialAccounts`填写我的社交账号，格式如下，**注意空格缩进哦**
+``` yaml
+socialAccounts: 
+  on: true
+  data: # 这个data不能忘了，下面的字段注意缩进
+    QQ: # 社交软件名称
+      icon: fa fa-qq  # 图标，可以为空，前面加上fa，假如图标名称叫fa-quora，就是 fa fa-quora, 
+      name: 1730241541 # 账号名称
+      url: 'http://www.baidu.com' # 账号链接地址
+    微信:
+      icon: fa fa-weixin
+      name: 1730241541
+      url: 'http://www.baidu.com'
+```
+> **注意**: icon使用的 [Font Awesome](https://fontawesome.dashgame.com/) 版本为 `4.7.0`。
+
+`games` 填写我的游戏，格式如下，**注意空格缩进哦**
+```yaml
+games:
+  on: true # 是否显示
+  data: # 这个data不能忘了，下面的字段注意缩进
+    王者荣耀: # 游戏名称，下面的img是游戏图片
+      img: 'https://pic2.zhimg.com/80/v2-54730a36304842b86a57a237b8b39945_720w.jpg?source=1940ef5c'
+    英雄杀:
+      img: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1909008358,1888649581&fm=26&gp=0.jpg'
+    和平精英:
+      img: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1595596612190&di=dbf2030780758c4724ecb1f07f2f4f73&imgtype=0&src=http%3A%2F%2Fimgup04.51wxjz.com%2F51wxjz%2F2019-06%2F05%2F09%2F15596983468928_0.png'
+    英雄联盟:
+      img: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3035766587,2822701570&fm=26&gp=0.jpg'
+```
+
+`books` 填写我的书籍，格式如下，**注意空格缩进哦**
+```yaml
+books:
+  on: true # 是否显示
+  data: # 这个data不能忘了，下面的字段注意缩进
+    明朝那些事儿: # 书籍名称，下面的img是书籍图片
+      img: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2736238052,2078148140&fm=26&gp=0.jpg'
+    春秋左传:
+      img: 'https://pic2.zhimg.com/50/v2-6f33f60312de25ddcb795fc81ee91b38_720w.jpg?source=54b3c3a5'
+    孙子兵法:
+      img: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=710999414,899378807&fm=26&gp=0.jpg'
+```
+
 
 ### 新建友情连接 friends 页
 
@@ -212,6 +282,7 @@ swiperImg: 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/c080ff4434354e3
 ### 点击出现爱心效果
 设置主题文件夹下的`_config.yml`文件中的`clicklove`属性true或者false即可
 
+
 ### 复制成功提醒
 当复制内容时候，是否显示复制成功提示 
 设置主题文件夹下的`_config.yml`文件中的`copy`属性true或者false即可
@@ -233,12 +304,37 @@ swiperImg: 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/c080ff4434354e3
 
 ### 音乐 
 设置主题文件夹下的`_config.yml`文件中的`music`属性，控制其显示隐藏和其他一些调整, `music`中的`fixed`属性建议使用`true`
+```yaml
+music:
+  on: true
+  autoHide: true    # hide automaticaly
+  server: netease   # 平台名称。netease：网易；tencent：腾讯；xiami：虾米；kugou：酷狗；baidu：百度
+  type: playlist    # playlist：歌单；song：单曲；专辑：album；关键词：search；歌手：artist
+  id: 442274724     # 音乐页面链接上的id号
+  fixed: true       # 开启吸底模式，建议开启
+  autoplay: false   # 是否自动播放
+  theme: '#42b983'
+  loop: 'all'       # 音频循环播放, 可选值: 'all', 'one', 'none'
+  order: 'random'   # 音频循环顺序, 可选值: 'list', 'random'
+  preload: 'auto'   # 预加载，可选值: 'none', 'metadata', 'auto'
+  volume: 0.7       # 默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效
+  listFolded: true  # 列表默认折叠
+  hideLrc: true     # 隐藏歌词
+```
 
 ### 版权信息
 可以在`source/_posts/xxx.md`文件中设置`copyright`true或者false，单独设置某个文章的版权信息是否显示，也可以在主题文件夹下的`_config.yml`文件中的`copyright`属性设置true或者false对所有文章的版权信息进行显示隐藏控制
 
 ### 文章置顶
 可以在`source/_posts/xxx.md`文件中设置`top: true`，将该文章放在首页的文章置顶栏目中，可以在主题文件夹下的`_config.yml`文件中的`topArticle`属性设置true或者false控制首页的文章置顶栏目显示和隐藏。
+```yaml
+---
+title: Hello World
+date: 2019-05-21 21:11
+top: true
+---
+我是文章内容
+```
 
 ### 评论
 主题中内置了`valine`, `miniValine`, `livere`, `gitment`, `gitalk`, `changyan`评论
@@ -265,7 +361,7 @@ friendsImg: '/medias/friends.png'
 ```
 
 ### 更改主题颜色
-默认主题颜色是绿色(#42b983)，可以通更改`themes\Bamboo\source\css\_partial\custom.styl`这个文件，将文件中的所有(#42b983)颜色值替换成你想要的颜色，然后更改该文件下的`blockquote`背景颜色，代码如下:
+默认主题颜色是绿色(#42b983)，可以通过更改主题文件夹`hexo-theme-bamboo`下的文件：`source/css/_partial/custom.styl`,将文件中的所有(#42b983)颜色值替换成你想要的颜色，然后更改该文件下的`blockquote`背景颜色，代码如下:
 ```css
 // 文章详情页的blockquote，md中的 > 标签的左边框和背景颜色
 .post-detail {
@@ -297,4 +393,3 @@ blockquote样式指的是下面这个
 | img        | 无                          | 文章特征图，该文章显示的图片，没有则默认使用文章的特色图片
 | categories | 无                          | 文章分类，本主题的分类表示宏观上大的分类，只建议一篇文章一个分类 |
 | tags       | 无                          | 文章标签，一篇文章可以多个标签  
-
