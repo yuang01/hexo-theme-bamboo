@@ -60,6 +60,13 @@
   <link rel="stylesheet" href="<%= theme.CDN.iconfont %>">
   <link href="<%= theme.CDN.fontAwesome %>" rel="stylesheet">
   <% if(theme.live2d.on === true ) { %>
+    <script>
+        var themeModelId = '<%= theme.live2d.modelId %>';
+        if (themeModelId) {
+            localStorage.setItem('modelId', themeModelId);
+        }
+    </script>
+    
     <script src="<%= theme.CDN.live2d %>"></script>
   <% } %>
   <%- css('css/animate.min.css') %>

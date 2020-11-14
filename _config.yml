@@ -93,6 +93,7 @@ inputEffects:
 # live-2d(左下角动画人物)
 live2d:
   on: true
+  modelId:  # 0 or 1 or 2 or 3 or 4 or 5 or 6
 
 # 首页文章列表滚动动画，详情参照https://github.com/michalsnik
 aos:
@@ -322,4 +323,4 @@ CDN:
   ayuCss: https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.css
   ayuJs: https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.umd.min.js
   copyRight: https://creativecommons.org/licenses/by-nc-nd/4.0/
-  live2d: https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js
+  live2d: https://cdn.jsdelivr.net/gh/yuang01/live2d-widget@latest/autoload.js
