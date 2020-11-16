@@ -273,39 +273,37 @@ gitalk:
   clientSecret:  #`Github Application clientSecret`
 
 # 归档页面图片 or 'http://xxx'
-archiveImg: '/medias/archiveImg.png'
+archiveImg: '/medias/archive.jpg'
 # 标签页面图片
-tagImg: '/medias/tag.png'
+tagImg: '/medias/tag.jpg'
 # 标签详情页面图片
-tagDetailImg: '/medias/tagDetail.png'
+tagDetailImg: '/medias/tagDetail.jpg'
 # 分类页面图片
-categoriesImg: '/medias/categories.png'
+categoriesImg: '/medias/categories.jpg'
 #分类详情页面图片
-categoryDetailImg: '/medias/categoryDetail.png'
+categoryDetailImg: '/medias/categoryDetail.jpg'
 # 关于我页面图片
-aboutImg: '/medias/about.png'
+aboutImg: '/medias/about.jpg'
 # 友情链接页面图片
-friendsImg: '/medias/friends.png'
+friendsImg: '/medias/friend.jpg'
 
 # 文章图片
 imgs:
-- '/medias/1.png'
-- '/medias/2.png'
-- '/medias/3.png'
-- '/medias/4.png'
+- '/medias/1.jpg'
+- '/medias/2.jpg'
+- '/medias/3.jpg'
+- '/medias/4.jpg'
 - '/medias/5.jpg'
 - '/medias/6.jpg'
 - '/medias/7.jpg'
-- '/medias/8.png'
-- '/medias/9.png'
+- '/medias/8.jpg'
+- '/medias/9.jpg'
 - '/medias/10.jpg'
-- '/medias/11.png'
-- '/medias/12.png'
-- '/medias/13.png'
-- '/medias/14.png'
-- '/medias/15.png'
-- '/medias/16.png'
-- '/medias/17.png'
+- '/medias/11.jpg'
+- '/medias/12.jpg'
+- '/medias/13.jpg'
+- '/medias/14.jpg'
+- '/medias/15.jpg'
 
 CDN:
   valine: https://cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js
