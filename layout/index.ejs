@@ -39,7 +39,7 @@
           </div>
           <div class="post-img-mobile">
             <% if (post.img) { %>
-              <a href="<%- url_for(post.path) %>" class="lazyload" data-original="<%= post.img %>" style="background-size: cover; 
+              <a href="<%- url_for(post.path) %>" style="background: url('<%= post.img %>');background-size: cover; 
                 background-position: center center;">
               </a>
             <% } else { %>
@@ -51,7 +51,7 @@
                 }
                 img = imgs[Math.abs(hashCode(post.title) % imgs.length)]
               %>
-              <a href="<%- url_for(post.path) %>" class="lazyload" data-original="<%-img%>" style="background-size: cover; 
+              <a href="<%- url_for(post.path) %>" style="background: url('<%-img%>');background-size: cover; 
                 background-position: center center;">
               </a>
             <% } %>
@@ -68,11 +68,11 @@
       </div>
       <div class="post-img">
         <% if (post.img) { %>
-          <a href="<%- url_for(post.path) %>" class="lazyload" data-original="<%= post.img %>" style="background-size: cover; 
+          <a href="<%- url_for(post.path) %>" style="background: url('<%= post.img %>');background-size: cover; 
             background-position: center center;">
           </a>
         <% } else { %>
-          <a href="<%- url_for(post.path) %>" class="lazyload" data-original="<%-img%>" style="background-size: cover; 
+          <a href="<%- url_for(post.path) %>" style="background: url('<%-img%>');background-size: cover; 
             background-position: center center;">
           </a>
         <% } %>
