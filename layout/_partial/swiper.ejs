@@ -47,7 +47,7 @@ var defaultIndex = Math.floor((Math.random()*imgArr.length));
               <div class="flag">
                 <div class="img-mask swiper-lazy" data-background="<%- theme.root_url %><%=post.swiperImg || img%>" style="height: 100%; background-size: cover; 
                   background-position: center center;">
-                  <div class="swiper-lazy-preloader"></div>  
+                  <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>  
                 </div>
                 <div class="flag-text">
                   <div>
@@ -71,9 +71,9 @@ var defaultIndex = Math.floor((Math.random()*imgArr.length));
           background-position: center center;">
             <div class="flag">
               <div class="img-mask swiper-lazy" data-background="<%- theme.root_url %><%= theme.swiper.defaultImg || imgArr[defaultIndex] %>" style="height: 100%; background-size: cover; 
-                background-position: center center;"></div>
-              <!-- <img class="homeSwiper img-mask" src="<%- theme.root_url %><%-imgArr[defaultIndex]%>" alt="" style="width: 100%;background-size: cover; 
-              background-position: center center;"> -->
+                background-position: center center;">
+                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>   
+              </div>
               <div class="flag-text">
                 <div>
                   <div class="title ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><%= theme.swiper.defaultTile %></div>

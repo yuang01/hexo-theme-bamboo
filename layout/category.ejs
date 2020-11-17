@@ -19,7 +19,7 @@ var i = 0;
     i++;
     var color = colorArr[Math.abs(hashCode(page.category) % colorCount)];
 %>
-<div style="width: 100%;height: 50vh;overflow: hidden;background-image: url('<%- theme.root_url %><%= theme.categoryDetailImg %>');background-size: cover; 
+<div class="lazyload" data-original="<%- theme.root_url %><%= theme.categoryDetailImg %>" style="width: 100%;height: 50vh;overflow: hidden;background-size: cover; 
 background-position: center center;">
 </div>
 <div class="category">

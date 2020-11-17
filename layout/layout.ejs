@@ -102,6 +102,23 @@
         initCopyCode();
       }(window, document);
     </script>
-  
+
+    <%- js(['js/lazyload/lazyload@1.9.1.js']) %>
+    <script>
+      $(function() {
+        $("div.lazyload").lazyload(
+            {
+                effect: "fadeIn",
+                placeholder: "https://cdn.pixabay.com/photo/2020/10/24/03/09/street-5680458__340.jpg"    //图片未加载出来时显示的占位图
+            }
+        );
+        $("img.lazyload").lazyload(
+            {
+                effect: "fadeIn",
+                placeholder: "https://cdn.pixabay.com/photo/2020/10/24/03/09/street-5680458__340.jpg"    //图片未加载出来时显示的占位图
+            }
+        );
+    });
+    </script>
   </body>
 </html>

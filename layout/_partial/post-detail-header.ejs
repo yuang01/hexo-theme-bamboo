@@ -21,7 +21,7 @@
   }
   img = imgs[Math.abs(hashCode(post.title) % imgs.length)]
 %>
-<div class="post-detail-header" style="background: url(<%=post.img || img %>) no-repeat; background-size: cover; 
+<div class="post-detail-header lazyload" data-original="<%=post.img || img %>" style="background: no-repeat; background-size: cover; 
   background-position: center center;">
   <% if (theme.postTitleTop.on === true){ %>
     <span class="title"><%= post.title %></span>
