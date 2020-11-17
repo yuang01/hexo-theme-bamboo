@@ -67,10 +67,10 @@ var defaultIndex = Math.floor((Math.random()*imgArr.length));
     <div class="swiper-button-next swiper-button-white" slot="button-next" style="<% if(!theme.swiper.showPrevNext || swiperLength <= 1) { %>display: none;<% } %>"></div>
     <% } else { %>
       <swiper-slide>
-        <div class="item" style="background-image: url('<%- theme.root_url %><%= theme.swiper.defaultImg || imgArr[defaultIndex] %>'); background-size: 40000px; 
+        <div class="item swiper-lazy" data-background="<%- theme.root_url %><%= theme.swiper.defaultImg || imgArr[defaultIndex] %>" style="background-size: 90000px; 
           background-position: center center;">
             <div class="flag">
-              <div class="img-mask" style="height: 100%;background-image: url('<%- theme.root_url %><%= theme.swiper.defaultImg || imgArr[defaultIndex] %>'); background-size: cover; 
+              <div class="img-mask swiper-lazy" data-background="<%- theme.root_url %><%= theme.swiper.defaultImg || imgArr[defaultIndex] %>" style="height: 100%; background-size: cover; 
                 background-position: center center;"></div>
               <!-- <img class="homeSwiper img-mask" src="<%- theme.root_url %><%-imgArr[defaultIndex]%>" alt="" style="width: 100%;background-size: cover; 
               background-position: center center;"> -->
