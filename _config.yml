@@ -30,7 +30,7 @@ swiper:
   textDuration: '0.2s' # 文字动画持续时间（单位秒）
   textDelay: '0.1s' # 文字动画延迟时间（单位秒）
   # 当没有文章设置swiper: true时候，轮播图会显示以下default默认内容，可自行切换对应内容
-  defaultImg: '/medias/14.png' # 图片，没有则随机选取
+  defaultImg: '/medias/1.jpg' # 图片，没有则随机选取
   defaultTile: 'Hexo-theme-Bamboo' # 标题
   defaultDesc: '大家好，这是一个Hexo主题，希望这款主题能得到你的喜爱' #描 述
   defaultMoreLink: 'https://github.com/yuang01/hexo-theme-bamboo' # 阅读更多链接 
