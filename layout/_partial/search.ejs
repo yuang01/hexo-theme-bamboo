@@ -1,25 +1,28 @@
 <div id="appSearch">
   <div class="search"  @click="showDialog()"><i class="fa fa-search" aria-hidden="true"></i></div>
-  <div class="message-box_wrapper" style="display: none;" v-cloak v-show="dialogVisible" @click.self="cancelDialogVisible()">
-    <div class="message-box">
-      <h2>
-        <i class="fa fa-search" aria-hidden="true"></i>
-        <span class="title"><%= __('search') %></span>
-      </h2>
-      <form class="site-search-form">
-        <input type="text"
-          placeholder="<%= __('keyword') %>"
-          id="local-search-input" 
-          @click="getSearchFile()"
-          class="st-search-input"
-          v-model="searchInput"
-        />
-      </form>
-      <div class="result-wrapper">
-        <div id="local-search-result" class="local-search-result-cls"></div>
+  <transition name="fade">
+    <div class="message-box_wrapper" style="display: none;" v-cloak v-show="dialogVisible" @click.self="cancelDialogVisible()">
+      <div class="message-box animated bounceInDown">
+        <h2>
+          <i class="fa fa-search" aria-hidden="true"></i>
+          <span class="title"><%= __('search') %></span>
+          <!-- <i class="fa fa-close" style="float:right;" aria-hidden="true" @click.self="cancelDialogVisible()"></i> -->
+        </h2>
+        <form class="site-search-form">
+          <input type="text"
+            placeholder="<%= __('keyword') %>"
+            id="local-search-input" 
+            @click="getSearchFile()"
+            class="st-search-input"
+            v-model="searchInput"
+          />
+        </form>
+        <div class="result-wrapper">
+          <div id="local-search-result" class="local-search-result-cls"></div>
+        </div>
       </div>
     </div>
-  </div>
+  </transition>
 </div>
 <%- js(['js/local_search.js']) %>
 <script>

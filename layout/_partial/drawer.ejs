@@ -1,7 +1,9 @@
 <div id="appDrawer" class="sidebar-image">
   <i class="fa fa-bars" aria-hidden="true" @click="showDialogDrawer"></i>
-  <div class="drawer-box_mask" v-cloak style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
-  </div>
+  <transition name="fade">
+    <div class="drawer-box_mask" v-cloak style="display: none;" v-show="visible" @click.self="cancelDialogDrawer">
+    </div>
+  </transition>
   <div class="drawer-box" :class="{'active': visible}">
     <div class="drawer-box-head bg-color">
       <img class="drawer-box-head_logo" src="<%- theme.root_url %><%- theme.logo %>" alt="logo">
