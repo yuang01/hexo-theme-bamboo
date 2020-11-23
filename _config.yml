@@ -81,6 +81,8 @@ postNav:
 # 复制成功提示
 copy:
   on: true
+  title: '成功'
+  content: '复制成功了哦'
 
 # 文章详情页的标题是否显示在顶部图片中, false则显示在文章内容顶部
 postTitleTop:
