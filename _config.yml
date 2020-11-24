@@ -106,6 +106,7 @@ snow:
 sakura:
   on: false
   onlyPc: false # 设为true，只有pc端显示花瓣特效
+
 # 首页文章列表滚动动画，详情参照https://github.com/michalsnik
 aos:
   on: true
