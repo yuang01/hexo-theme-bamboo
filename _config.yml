@@ -97,6 +97,15 @@ live2d:
   on: true
   modelId:  # 0 or 1 or 2 or 3 or 4 or 5 or 6
 
+# 首页雪花飘落效果--冬天
+snow:
+  on: false
+  onlyPc: false # 设为true，只有pc端显示雪花特效
+
+# 首页花瓣飘落效果--春天
+sakura:
+  on: false
+  onlyPc: false # 设为true，只有pc端显示花瓣特效
 # 首页文章列表滚动动画，详情参照https://github.com/michalsnik
 aos:
   on: true
