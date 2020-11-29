@@ -242,11 +242,14 @@ topArticle:
 
 # valine 评论
 valine:
-  on: false
+  on: true
   appid:
   appkey:
   avatar: '' # 匿名者头像选项 https://valine.js.org/avatar.html
-  placeholder: '客官，说点什么吧'
+  placeholder: '客官，说点什么吧' # 评论内容输入框的 placeholder
+  master: '' # 博主标签识别，博主邮箱md5 可以去md5加密网站，例如 https://md5jiami.51240.com/ ，将自己的邮箱输入， 得到 32位小写 的字符串
+  friends: [] # 小伙伴的 邮箱md5， 是个数组
+  requiredFields: ['nick', 'mail'] # 设置必填项 ['nick', 'mail'] nick为昵称必填， mail为邮箱必填，建议设置必填，填写qq邮箱，会使用qq头像作为头像
 
 # miniValine
 miniValine:
@@ -318,7 +321,7 @@ imgs:
 - '/medias/15.jpg'
 
 CDN:
-  valine: https://cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js
+  valine: https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js
   iconfont: https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css
   fontAwesome: https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
   aplayer: https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.js
