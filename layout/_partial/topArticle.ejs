@@ -17,7 +17,7 @@
 <div class="topArticle" data-aos="<%= theme.aos.animate || 'fade-up' %>">
 	<h3><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><%= __('recommendedArticles') %></h3>
 	<div class="articles">
-		<% site.posts.each(function (post, i) { %>
+		<% site.posts.sort('-date').each(function (post, i) { %>
 			<% if(post.top) { %>
 				<div class="article-link">
 					<%
@@ -28,7 +28,7 @@
 						}
 						img = imgs[Math.abs(hashCode(post.title) % imgs.length)]
 					%>
-					<div class="article" style="background: url('<%= post.img  || img %>');background-size: cover; 
+					<div class="article lazyload" data-original="<%= post.img  || post.swiperImg || img %>" style="background-size: cover; 
 						background-position: center center;">
 					</div>
 					<div class="text">
