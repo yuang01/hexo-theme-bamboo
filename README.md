@@ -363,7 +363,18 @@ top: true
 主题中内置了`valine`, `miniValine`, `livere`, `gitment`, `gitalk`, `changyan`评论
 通过主题文件夹下的`_config.yml`文件中的相应属性进行设置
 推荐使用`valine`和`livere`
-
+这里重点说一下`valine`评论配置
+```yaml
+valine:
+  on: true # 是否启用
+  appid: # 你的appid --> https://valine.js.org/quickstart.html，请阅读这个获取appid和appkey
+  appkey: # 你的key
+  avatar: '' # 匿名者头像选项 https://valine.js.org/avatar.html 访客的头像,最好启用下面的`requiredFields`中的邮箱必填，填写qq邮箱，头像会变成qq头像
+  placeholder: '客官，说点什么吧' # 评论内容输入框的 placeholder
+  master: 'xxxxxx' # 博主标签识别，博主邮箱md5 可以去md5加密网站，例如 https://md5jiami.51240.com/ ，将自己的邮箱输入， 得到 32位小写 的字符串填入这里
+  friends: ['xxxxxxx', 'xxxxxx'] # 小伙伴的 邮箱md5， 是个数组
+  requiredFields: ['nick', 'mail'] # 设置必填项 ['nick', 'mail'] nick为昵称必填， mail为邮箱必填, 空数组，则不校验
+```
 ### 归档、标签、分类、关于我、友情链接页面图片自定义
 通过主题文件夹下的`_config.yml`文件中的相应属性进行设置，属性如下：
 ``` yaml
@@ -419,3 +430,4 @@ blockquote样式指的是下面这个
 
 ## 常见问题
 代码高亮如遇到花括号变成了`&#123;&#125;`这样的字符串，在根目录下输入npm install hexo@4.2.1即可。
+
