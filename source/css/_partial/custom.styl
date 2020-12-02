@@ -1,33 +1,18 @@
-// 全局背景颜色
-.bg-color {
-  // background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%); 42b983
-  background: #42b983;
-}
-// 全局字体颜色
-.color-primary {
-  color: #42b983!important;
-}
-// 边框颜色
-.border-color {
-  border: 1px solid #42b983
-}
-a {
-  color: #42b983;
-}
+
 // 轮播图底部小点点的背景颜色
 .swiper-pagination-bullet-active {
-  background-color: #42b983!important;
+  background-color: $color-default!important;
 }
 // 搜索输入框聚焦时候的颜色
 #local-search-input:focus {
-  background-image: linear-gradient(#42b983, #42b983),
+  background-image: linear-gradient($color-default, $color-default),
                       linear-gradient(#e4eaec, #e4eaec)!important;
 }
 // 推荐文章鼠标移入到阅读更多的颜色
 .topArticle {
   .more {
     &:hover {
-      color: #42b983!important;
+      color: $color-default!important;
     }
   }  
 }
@@ -37,7 +22,7 @@ a {
   .post-title {
     .post-title-link {
       &:hover {
-        color: #42b983;
+        color: $color-default;
       }
     }
   }  
@@ -45,7 +30,7 @@ a {
   .post-more {
     i {
       &:hover {
-        color: #42b983;
+        color: $color-default;
       } 
     }
   }
@@ -55,7 +40,7 @@ a {
 .post-tags {
   .article-tag-list li a {
     &:hover {
-      color: #42b983;
+      color: $color-default;
     }
   }  
 }
@@ -64,41 +49,34 @@ a {
   .article-category {
     .article-category-link {
       &:hover {
-        color: #42b983;
+        color: $color-default;
       }
     }  
   }
 }
 
-// 滚动条颜色
-::-webkit-scrollbar-thumb {
-    background-color: #42b983;
-    background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,.4) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.4) 50%,rgba(255,255,255,.4) 75%,transparent 75%,transparent);
-    border-radius: 3em;
-}
-
 // 文章详情页的a链接颜色
 .post-detail {
   a {
-    color: #42b983!important;
+    color: $color-default!important;
   }  
 }
 
 // copyright的左边框颜色
 .post-copyright {
-  border-left: 3px solid #42b983;
+  border-left: 3px solid $color-default;
 }
 
 // 文章详情页的blockquote，md中的 > 标签的左边框和背景颜色
 .post-detail {
   blockquote {
-      border-left: 4px solid #42b983;
-      background-color: rgba(66, 185, 131, .1);
+      border-left: 4px solid $color-default;
+      background-color: $color-default-shallow;
   }
 }
 // 文章详情页的目录的左边框
 .toc-link.is-active-link::before {
-  background-color: #42b983;
+  background-color: $color-default;
 }
 
 // 归档页面文章日期的背景颜色
@@ -106,11 +84,11 @@ a {
     .post-archive {
       .post-item {
         .post-date {
-          background-color: #42b983;
+          background-color: $color-default;
         }
         .post-title {
           &:hover {
-            color: #42b983;
+            color: $color-default;
           }
         }
       }
@@ -120,12 +98,12 @@ a {
 // valine评论颜色
 // valine 访客-标签的背景色
 #vcomment .vcards .vcard .vh .vhead .vtag.vvisitor {
-  background-color: #42b983!important;
+  background-color: $color-default!important;
 }
 // valine 按钮的背景色
 .v[data-class=v] .vbtn:active, .v[data-class=v] .vbtn:hover {
-  color: #42b983!important;
-  border-color: #42b983!important;
+  color: $color-default!important;
+  border-color: $color-default!important;
 }
 // valine ‘回复’ 字体颜色， 默认是 #ef2f11 红色， 您可以将此红色改成你设置的主题颜色
 // #vcomment .vcards .vcard .vh .vmeta .vat {

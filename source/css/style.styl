@@ -1,62 +1,6 @@
-body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td { margin:0; padding:0; } 
-body, button, input, select, textarea { font:12px/1.5tahoma, arial, \5b8b\4f53; } 
-h1, h2, h3, h4, h5, h6{ font-size:100%; } 
-address, cite, dfn, em, var { font-style:normal; } 
-code, kbd, pre, samp { font-family:couriernew, courier, monospace; } 
-small{ font-size:12px; } 
-ul, ol { list-style:none; } 
-a { text-decoration:none; } 
-a:hover { text-decoration:none; } 
-sup { vertical-align:text-top; } 
-sub{ vertical-align:text-bottom; } 
-legend { color:#000; } 
-fieldset, img { border:0; } 
-button, input, select, textarea { font-size:100%; } 
-table { border-collapse:collapse; border-spacing:0; }
-// 以上为css初始化
-html {
-  background-color: #F2F2F2;
-  line-height: 1.5;
-  font-size: 16px;
-}
-.main {
-  min-height: calc(100vh - 190px);
-  box-sizing: border-box;
-}
-.bg-color {
-  background-color: #42b983;
-}
-.color-primary {
-  color: #42b983!important;
-}
-a {
-  color: #42b983;
-  text-decoration: none;
-}
-.border-color {
-  border: 1px solid #42b983;
-}
-[v-cloak] {
-  display: none; 
-} 
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-}
-::-webkit-scrollbar-thumb {
-    background-color: #42b983;
-    background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,.4) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.4) 50%,rgba(255,255,255,.4) 75%,transparent 75%,transparent);
-    border-radius: 3em;
-}
-::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
-}
-@media (max-width: 551px) {
-  html {
-    font-size: 14px;
-  }
-}
+@import "_defines/color";
+
+@import "_partial/base";
 @import "_partial/transition";
 @import "_partial/header";
 @import "_partial/posts";
@@ -83,3 +27,5 @@ a {
 @import "_partial/drawer";
 @import "_partial/goTop";
 @import "_partial/custom";
+
+@import "_tag/note";
