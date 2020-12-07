@@ -1,9 +1,40 @@
 .note {
-    padding: 1rem 1.5rem;
-    border-left-width: .5rem;
+    padding: 12px 24px 12px 30px;
+    border-left-width: 4px;
     border-left-style: solid;
+    border-radius: 4px;
     margin: 1rem 0;
     background-color: #f3f5f7;
-    border-color: $color-default;
+    border-color: $color-primary;
     color: #2c3e50;
+    position: relative;
+}
+
+.note.warning {
+    border-color: $color-warning;
+    background-color: rgba(255,229,100,.3);
+}
+.note.danger::before {
+    content: '!';
+    background-color: $color-danger ;
+    position: absolute;
+    top: 14px;
+    left: -12px;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 20px;
+    font-weight: bold;
+    font-family: "Dosis", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+}
+.note.danger {
+    border-color: $color-danger;
+    background-color: #ffe6e6;
+}
+.note.success {
+    border-color: $color-success;
+    background-color: #f3f5f7;
 }
