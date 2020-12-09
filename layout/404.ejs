@@ -1,10 +1,38 @@
-<!DOCTYPE HTML> 
-<html> 
-<head> 
-<meta http-equiv="content-type" content="text/html;charset=utf-8;"/> 
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" /> 
-</head> 
-    <script type="text/javascript" src="https://www.qq.com/404/search_children.js" charset="utf-8" homePageUrl="https://yuang01.github.io/" homePageName="回到我的主页"> 
-    </script> 
-</body> 
-</html>
+
+<style type="text/css">
+    /* don't remove. */
+    .page404-cover {
+        /* height: 75vh; */
+        height: 88vh;
+    }
+ 
+    #svgContainer {
+      width: 100%;
+      height: 100%;
+      background-color: white;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+    }
+</style>
+ 
+ 
+<script src="/js/bodymovin.js"></script>
+<script src="/js/data.js"></script>
+ 
+<div class="bg-cover pd-header page404-cover">
+    <div id="svgContainer"></div>
+ 
+    <script type="text/javascript">
+        var svgContainer = document.getElementById('svgContainer');
+        var animItem = bodymovin.loadAnimation({
+          wrapper: svgContainer,
+          animType: 'svg',
+          loop: true,
+          animationData: JSON.parse(animationData)
+        });
+    </script>
+</div>
