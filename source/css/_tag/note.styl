@@ -12,10 +12,62 @@
 
 .note.warning {
     border-color: $color-warning;
-    background-color: rgba(255,229,100,.3);
+    background-color: $color-warning + 11.3 * 8% + 1 * .5deg;
+}
+.note.info {
+    border-color: $color-info;
+    background-color: $color-info + 11.3 * 8% + 1 * .5deg;
+}
+.note.info::before {
+    content: '\f129';
+    background-color: $color-info ;
+    position: absolute;
+    top: 14px;
+    left: -12px;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 20px;
+    font-weight: bold;
+    font-family: FontAwesome;
+    font-size: 14px;
+}
+.note.quote::before {
+    content: '\f10d';
+    background-color: $color-primary ;
+    position: absolute;
+    top: 14px;
+    left: -12px;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 20px;
+    font-weight: bold;
+    font-family: FontAwesome;
+    font-size: 14px;
+}
+.note.warning::before {
+    content: '!';
+    background-color: $color-warning ;
+    position: absolute;
+    top: 14px;
+    left: -12px;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 20px;
+    font-weight: bold;
+    font-family: FontAwesome;
+    font-size: 14px;
 }
 .note.danger::before {
-    content: '!';
+    content: '\f188';
     background-color: $color-danger ;
     position: absolute;
     top: 14px;
@@ -27,14 +79,30 @@
     text-align: center;
     line-height: 20px;
     font-weight: bold;
-    font-family: "Dosis", "Source Sans Pro", "Helvetica Neue", Arial, sans-serif;
+    font-family: FontAwesome;
     font-size: 14px;
 }
 .note.danger {
     border-color: $color-danger;
-    background-color: #ffe6e6;
+    background-color: $color-danger + 11.3 * 8% + 1 * .5deg;
 }
 .note.success {
     border-color: $color-success;
-    background-color: #f3f5f7;
+    background-color: $color-success + 11.3 * 8% + 1 * .5deg;
+}
+.note.success::before {
+    content: '\f00c';
+    background-color: $color-success;
+    position: absolute;
+    top: 14px;
+    left: -12px;
+    color: #fff;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    text-align: center;
+    line-height: 20px;
+    font-weight: bold;
+    font-family: FontAwesome;
+    font-size: 14px;
 }
