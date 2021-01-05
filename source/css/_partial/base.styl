@@ -3,8 +3,7 @@ body, button, input, select, textarea { font:12px/1.5tahoma, arial, \5b8b\4f53; 
 h1, h2, h3, h4, h5, h6{ font-size:100%; } 
 address, cite, dfn, em, var { font-style:normal; } 
 code, kbd, pre, samp { font-family:couriernew, courier, monospace; } 
-small{ font-size:12px; } 
-ul, ol { list-style:none; } 
+small{ font-size:12px; }
 a { text-decoration:none; } 
 a:hover { text-decoration:none; } 
 sup { vertical-align:text-top; } 
@@ -14,11 +13,23 @@ fieldset, img { border:0; }
 button, input, select, textarea { font-size:100%; } 
 table { border-collapse:collapse; border-spacing:0; }
 // 以上为css初始化
+
 html {
   background-color: #F2F2F2;
   line-height: 1.5;
   font-size: 16px;
+  cursor: $cursor-default,auto;
 }
+a:hover {
+  cursor: $cursor-pointer,pointer;
+}
+p,
+input,
+pre code,
+textarea, {
+  cursor: $cursor-text,text;
+}
+
 .main {
   min-height: calc(100vh - 190px);
   box-sizing: border-box;
@@ -27,18 +38,22 @@ html {
 .bg-color {
   background-color: $color-primary;
 }
+// 回到顶部按钮背景
+.top-btn-color {
+  background-color: $color-primary;
+}
 // 字体
 .color-primary {
   color: $color-primary!important;
 }
 // a链接
 a {
-  color: $color-primary;
+  color: $color-link;
   text-decoration: none;
 }
 // border
 .border-color {
-  border: 1px solid $color-primary;
+  border: $border;
 }
 [v-cloak] {
   display: none; 
@@ -49,7 +64,12 @@ a {
 }
 // 滚动条
 ::-webkit-scrollbar-thumb {
-    background-color: $color-primary;
+    if hexo-config('color_scheme.common.scroll') {
+      background-color: $color-scroll;
+    } else {
+      background-color: $color-primary;
+    }
+    
     background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,.4) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.4) 50%,rgba(255,255,255,.4) 75%,transparent 75%,transparent);
     border-radius: 3em;
 }
@@ -65,10 +85,15 @@ a {
 }
 // 鼠标选择背景色
 ::-moz-selection{
-  background:$color-primary;
+  background:$color-selection;
   color: #fff;
 }
 ::selection {
-  background:$color-primary; 
+  background:$color-selection; 
   color:#fff;
-} 
+}
+.bg-floor {
+  background: $bg-floor;
+  background-size: cover;
+  transition: all 0.3s;
+}

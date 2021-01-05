@@ -7,7 +7,7 @@
          if (typeof LivereTower === 'function') { return; }
   
          j = d.createElement(s);
-         j.src = '<%= theme.CDN.livere %>';
+         j.src = '<%- url_for(theme.CDN.livere) %>';
          j.async = true;
   
          e.parentNode.insertBefore(j, e);
@@ -16,3 +16,4 @@
   <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
   </div>
   <!-- City版安装代码已完成 -->
+  

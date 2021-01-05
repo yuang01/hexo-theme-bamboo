@@ -1,4 +1,4 @@
-<link href="https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.css" rel="stylesheet">
+<link rel="stylesheet" href="<%- url_for('/js/aplayer/APlayer@1.10.1.min.css') %>">
 <style>
 .aplayer .aplayer-lrc p {
   <%if(theme.music.hideLrc){%>
@@ -51,5 +51,5 @@
     bottom: 300px;
   }
 </style> -->
-<script src="<%= theme.CDN.aplayer %>"></script>
-<script src="<%= theme.CDN.Meting %>"></script>
+<script src="<%- url_for(theme.CDN.aplayer) %>"></script>
+<script src="<%- url_for(theme.CDN.Meting) %>"></script>

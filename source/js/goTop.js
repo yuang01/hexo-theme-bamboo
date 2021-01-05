@@ -20,7 +20,7 @@
       backbtn.style.display = 'block';//如果滚条的高度大于窗口的高度，按钮就会显示出来，否则按钮消失
       backbtn.style.transform = 'translateY(0)';
     } else {
-      backbtn.style.transform = 'translateY(100px)';
+      backbtn.style.transform = 'translateY(120px)';
       // backbtn.style.display = 'none';
     }
   }

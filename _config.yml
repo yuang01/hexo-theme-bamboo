@@ -66,8 +66,13 @@ sharejs:
   on: true
   sites: twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin
 
-# 点击出现爱心效果
-clicklove:
+# 鼠标点击特效
+cursor_effect:
+  on: true
+  type: explosion  # fireworks: 礼花 | explosion: 爆炸 | love: 浮出爱心 | text: 浮出文字
+
+# 头部导航是否显示天气
+weather:
   on: true
 
 # 全文搜索功能
@@ -94,8 +99,9 @@ inputEffects:
 
 # live-2d(左下角动画人物)
 live2d:
-  on: true
+  on: true # 控制显示或者隐藏
   modelId:  # 0 or 1 or 2 or 3 or 4 or 5 or 6
+  open: true # 默认展开，false则收缩，通过点左下角的方块点击，控制展开或者收缩
 
 # 首页雪花飘落效果--冬天
 snow:
@@ -134,8 +140,9 @@ baiduPush: true
 
 # 文章目录
 toc:
-  on: true
+  on: true # 是否显示
   heading: h2, h3, h4
+  open: true # 是否展开，false则收缩
 
 # 音乐
 # 是否在首页显示音乐.
@@ -250,6 +257,8 @@ valine:
   master: '' # 博主标签识别，博主邮箱md5 可以去md5加密网站，例如 https://md5jiami.51240.com/ ，将自己的邮箱输入， 得到 32位小写 的字符串
   friends: [] # 小伙伴的 邮箱md5， 是个数组
   requiredFields: ['nick', 'mail'] # 设置必填项 ['nick', 'mail'] nick为昵称必填， mail为邮箱必填，建议设置必填，填写qq邮箱，会使用qq头像作为头像
+  backgroundImg: '/medias/comment-bg.gif' # 右下角背景图片
+  backgroundColor: 'rgba(255,255,255,0.9)' # 背景颜色
 
 # miniValine
 miniValine:
@@ -302,6 +311,64 @@ aboutImg: '/medias/about.jpg'
 # 友情链接页面图片
 friendsImg: '/medias/friend.jpg'
 
+# 黑夜模式, 关灯
+dark:
+  on: true # 是否在头部导航上显示开关灯
+  default: false  # true为默认关灯状态（刷新页面和跳转页面都是关灯状态），false为默认开灯状态(网页第一次打开的时候为开灯状态)
+
+# 主题颜色
+color_scheme:
+  # ------------
+  # 通用颜色
+  common:
+    # 主题色
+    theme: '#42b983'
+    # 主题色块内部的文字颜色
+    inner: '#fff'
+    # 链接色 a标签
+    link: '#42b983'
+    # border颜色，目前轮播图的 阅读更多按钮 和 回到顶部按钮 有用到该border，可自行配置该颜色
+    border: '2px solid #42b983'
+    # 选中区域文字的背景颜色, 后面的小数代表透明度
+    selection: 'alpha(#42b983, 0.8)'
+    # 顶部页面加载进度条颜色
+    pace: '#f6a427'
+    # 滚动条颜色, 空字符串则滚动条使用 主题色，否则强制使用该颜色
+    scroll: '#42b983'
+    # 整个页面的底部背景颜色，默认透明，可以是白色等颜色, 也可以是图片，例如  url("https://img11.360buyimg.com/ddimg/jfs/t1/169624/29/16/4603017/5fec2c79Eecbd536a/308b28b82a013cd2.png");
+    bgFloor: 'transparent' # 如果是图片地址，url里面请用双引号
+  # 文章详情页 颜色属性
+  post:
+    # 文章详情页面-->标题在图片上时候的颜色
+    headerTitle: '#fff'
+    # 文章详情页面-->标题在图片上时候字体粗细
+    headerTitleFontWeight: 'normal' # 100-900 or bold, normal, bolder, lighter
+    #文章详情页面--> copy按钮背景色, 空字符串则copy按钮背景为 主题颜色，否则强制使用该颜色
+    copyBackground: ''
+    #文章详情页面--> copy按钮文字颜色, 空字符串则copy按钮字体颜色为 主题色块内部的文字颜色，否则强制使用该颜色
+    copyColor: ''
+    # 代码高亮部分的背景色, 空字符串则使用-代码高亮插件-的背景颜色，否则强制使用该颜色作为代码高亮背景色
+    codeBackground: ''
+    # 文章详情页面--> p标签使用 ``符号 突出的文字颜色
+    pLight: '#d63200'
+    # 文章详情-页面-> p标签颜色
+    p: '#273849'
+    # 文章详情页面--> title颜色， h1, h2, h3..
+    title: '#273849'
+    # 文章详情页面 -->右侧目录文字颜色
+    toc: '#273849'
+
+    
+
+# 鼠标手势
+cursor:
+  pointer: https://cdn.jsdelivr.net/gh/inkss/common@master/cursor/pointer.png
+  default: https://cdn.jsdelivr.net/gh/inkss/common@master/cursor/left_ptr.png
+  text: https://cdn.jsdelivr.net/gh/inkss/common@master/cursor/text.png
+
+# loading图片地址，为空则不使用loading图片
+loadingImg: 'http://images.bokee.com/artpic_upload/2/0/6/2067714892/3191445171775.gif'
+
 # 文章图片
 imgs:
 - '/medias/1.jpg'
@@ -337,3 +404,6 @@ CDN:
   ayuJs: https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.umd.min.js
   copyRight: https://creativecommons.org/licenses/by-nc-nd/4.0/
   live2d: https://cdn.jsdelivr.net/gh/yuang01/live2d-widget@latest/autoload.js
+  paceJs: //cdn.bootcss.com/pace/1.0.2/pace.min.js
+  paceCss: //cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css
+  weather: https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0

@@ -31,10 +31,10 @@
       </div>
       <div class="donate-box_img">
         <div class="AlipayImg" v-if="tabActive === 'Alipay'">
-          <img src="<%- theme.root_url %><%=theme.Alipay%>" alt="支付宝打赏" />
+          <img src="<%- url_for(theme.Alipay) %>" alt="支付宝打赏" />
         </div> 
         <div class="WeChatpayImg" v-if="tabActive === 'WeChatpay'">
-          <img src="<%- theme.root_url %><%=theme.WeChatpay%>" alt="微信打赏" />
+          <img src="<%- url_for(theme.WeChatpay) %>" alt="微信打赏" />
         </div>
       </div>
     </div>
@@ -65,7 +65,8 @@
         //   };
         // }
         this.top = $(document).scrollTop() // or getScroll().top
-        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + this.top + 'px; left: 0; overflow: hidden;';
+        // console.log('aa', $('.main-content'));
+        body.style.cssText = 'overflow: hidden;';
       },
       cancelDialogDrawer() {
         this.visible = false;

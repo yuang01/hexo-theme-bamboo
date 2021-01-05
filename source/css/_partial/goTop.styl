@@ -6,12 +6,20 @@
   text-align: center;
   // background-color: rgb(240, 124, 130); // http://zhongguose.com/#xiangyehong
   cursor: pointer;
-  z-index: 999;
-  bottom: 50px;
-  right: 20px;
+  z-index: 1;
+  bottom: 20px;
+  right: 17px;
   border-radius: 50%;
-  color: white;
-  transform: translateY(100px);
+  color: $color-inner;
+  transform: translateY(120px);
   transition: transform .2s;
   box-shadow:-2px 2px 2px 2px rgba(255,255,255,0.5);
+}
+@media (max-width: 551px) {
+  .goTop {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    right: 5px;
+  }
 }

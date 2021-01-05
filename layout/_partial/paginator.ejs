@@ -1,8 +1,25 @@
 <% if (page.total > 1){ %>
-  <nav class="page-nav">
+  <!-- <nav class="page-nav">
     <%- paginator({
       prev_text: __('Paginator.Prev'),
       next_text: __('Paginator.Next')
     }) %>
-  </nav>
+  </nav> -->
+  <div class="page-nav">
+    <% if (page.prev) { %>
+      <a href="<%- url_for(page.prev_link) %>"
+         class="page-nav-pre">
+         <i class="fa fa-angle-left"></i><span class="ml-5">上一页</span>
+      </a>
+    <% } %>
+    <div class="page-info">
+        <div class="page-info-text"><%- page.current %> / <%- page.total %></div>
+    </div>
+    <% if (page.next) { %>
+      <a href="<%- url_for(page.next_link) %>"
+         class="page-nav-next">
+          <span class="mr-5">下一页</span><i class="fa fa-angle-right"></i>
+      </a>
+      <% } %>
+  </div>
 <% } %>

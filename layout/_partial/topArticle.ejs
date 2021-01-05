@@ -28,7 +28,7 @@
 						}
 						img = imgs[Math.abs(hashCode(post.title) % imgs.length)]
 					%>
-					<div class="article lazyload" data-original="<%= post.img  || post.swiperImg || img %>" style="background-size: cover; 
+					<div class="article lazyload" data-original="<%- url_for(post.img  || post.swiperImg || img) %>" style="background-size: cover; 
 						background-position: center center;">
 					</div>
 					<div class="text">

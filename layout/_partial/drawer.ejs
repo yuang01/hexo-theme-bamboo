@@ -6,7 +6,7 @@
   </transition>
   <div class="drawer-box" :class="{'active': visible}">
     <div class="drawer-box-head bg-color">
-      <img class="drawer-box-head_logo" src="<%- theme.root_url %><%- theme.logo %>" alt="logo">
+      <img class="drawer-box-head_logo" src="<%- url_for(theme.logo) %>" alt="logo">
       <h3 class="drawer-box-head_title"><%= config.title %></h3>
       <h5 class="drawer-box-head_desc"><%= config.description %></h5>
     </div>

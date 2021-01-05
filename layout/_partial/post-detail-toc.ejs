@@ -1,5 +1,5 @@
-<link href="/js/tocbot/tocbot.css" rel="stylesheet">
-<script src="/js/tocbot/tocbot.min.js"></script>
+<link href="<%- url_for('/js/tocbot/tocbot.css') %>" rel="stylesheet">
+<script src="<%- url_for('/js/tocbot/tocbot.min.js') %>"></script>
 <div class="toc"></div>
 
 <script>
@@ -49,5 +49,23 @@
   position:fixed !important;
   top: 64px;
 }
-
+.toc-main ul {
+  counter-reset: show-list;
+}
+.toc-main ul li::before {
+  content: counter(item)".";
+  display: block;
+  position: absolute;
+  left: 12px;
+  top:0;
+}
+.toc > .toc-list {
+  padding-left: 35px;
+}
+.toc>.toc-list li {
+  list-style: decimal;
+}
+.toc-list {
+  padding-left: 25px;
+}
 </style>

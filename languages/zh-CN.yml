@@ -1,5 +1,5 @@
 categories: 分类
-search: 搜索
+search: 本地搜索
 tags: 标签
 tagcloud: 标签云
 tweets: 推文
@@ -66,3 +66,4 @@ people: 人
 recommendedArticles: 推荐文章
 readMore: 阅读更多
 copy: 复制
+paperCatalog: 本文目录

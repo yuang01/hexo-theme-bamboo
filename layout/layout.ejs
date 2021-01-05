@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html>
   <%- partial('_partial/head') %>
-  <%- js(['js/jquery3.5.1.js']) %>
-  <%- js(['js/vue2.6.11.js']) %>
+  <script src="<%- url_for('/js/jquery3.5.1.js') %>"></script>
+  <script src="<%- url_for('/js/vue2.6.11.js') %>"></script>
   <body>
+    <!-- 判断是否为黑夜模式 -->
+    <script>
+      let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('<%= theme.dark.default %>');
+
+      if (isDark) {
+        $(document.body).addClass('darkModel');
+      }
+    </script>
+
     <%- partial('_partial/header') %>
+    <div class="bg-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
     <main class="main" style="<% if(theme.headMenuFixed) { %>margin-top: 60px;<% } %>">
       <%- body %>
     </main>
@@ -20,28 +30,39 @@
 
     <!-- 图片放大 -->
     <% if(theme.fancybox.on === true ) { %>
-      <%- js(['js/fancybox/jquery.fancybox.min.js', 'js/wrapImage.js']) %>
+      <script src="<%- url_for('/js/fancybox/jquery.fancybox.min.js') %>"></script>
+      <script src="<%- url_for('/js/wrapImage.js') %>"></script>
     <% } %>
 
     <!-- 爱心点击 -->
-    <% if(theme.clicklove.on === true ) { %>
-      <%- js(['js/clicklove.js']) %>
+    <% if(theme.cursor_effect.on === true) { %>
+      <% if(theme.cursor_effect.type == "fireworks") { %>
+        <script src="<%- url_for('/js/cursor/fireworks.js') %>"></script>
+      <% } else if(theme.cursor_effect.type == "explosion") { %>
+        <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 999; pointer-events: none;" ></canvas>
+        <script src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+        <script src="<%- url_for('/js/cursor/explosion.min.js') %>"></script>
+      <% } else if(theme.cursor_effect.type == "love") { %> 
+        <script src="<%- url_for('/js/cursor/clicklove.js') %>"></script> 
+      <% } else if(theme.cursor_effect.type == "text") { %>
+        <script src="<%- url_for('/js/cursor/text.js') %>"></script>
+      <% } %>
     <% } %>
 
     <%- partial('_partial/baidu-analytics') %>
     <%- partial('_partial/baidu-push') %>
     
-    <script type="text/javascript" size="100" alpha='0.4' zIndex="-1" src="/js/ribbon.min.js"></script>
+    <script type="text/javascript" size="100" alpha='0.4' zIndex="-1" src="<%- url_for('/js/ribbon.min.js') %>"></script>
     <% if(theme.aos.on === true ) { %>
-      <%- js(['js/aos/aos.js']) %>
+      <script src="<%- url_for('/js/aos/aos.js') %>"></script>
       <script>
         // https://github.com/michalsnik/aos
         const themeOffset = parseInt('<%= theme.aos.offset %>') || 120;
         const themeDelay = parseInt('<%= theme.aos.delay %>')|| 0;
         const themeDuration = parseInt('<%= theme.aos.duration %>') || 400;
         const themeEasing = '<%= theme.aos.easing %>' || 'ease';
-        const themeOnce = JSON.parse('<%= theme.aos.once %>' || true);
-        const themeMirror = JSON.parse('<%= theme.aos.mirror %>' || false);
+        const themeOnce = eval('<%= theme.aos.once %>') || false;
+        const themeMirror = eval('<%= theme.aos.mirror %>') || false;
         const themeAnchorPlacement = '<%= theme.aos.anchorPlacement %>' || 'top-bottom';
         AOS.init({
           // Global settings:
@@ -73,7 +94,7 @@
 
     <!-- 输入框打字特效 -->
     <% if (theme.inputEffects.on){ %>
-      <%- js(['js/activate-power-mode.js']) %>
+      <script src="<%- url_for('/js/activate-power-mode.js') %>"></script>
       <script>
           POWERMODE.colorful = true;  // 打开随机颜色特效
           POWERMODE.shake = false;    // 关闭输入框抖动
@@ -82,17 +103,18 @@
     <% } %>
 
     <!-- markdown代码一键复制功能 -->
-    <%- js(['js/clipboard/clipboard.min.js']) %>
+    <script src="<%- url_for('/js/clipboard/clipboard.min.js') %>"></script>
     <script>
       !function (e, t, a) {
         var copy = '<%= __("copy") %>';
         /* code */
         var initCopyCode = function(){
           var copyHtml = '';
-          copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
-          copyHtml += '<i class="fa fa-globe"></i><span>' + copy + '</span>';
+          copyHtml += '<button class="btn-copy" data-clipboard-snippet="" style="position:absolute;top:0;right:0;z-index:1;">';
+          copyHtml += '<i class="fa fa-copy"></i><span>' + copy + '</span>';
           copyHtml += '</button>';
-          $(".post-detail pre code").before(copyHtml);
+          $(".post-detail pre").wrap("<div class='codeBox' style='position:relative;width:100%;'></div>")
+          $(".post-detail pre").before(copyHtml);
           new ClipboardJS('.btn-copy', {
               target: function(trigger) {
                   return trigger.nextElementSibling;
@@ -102,8 +124,7 @@
         initCopyCode();
       }(window, document);
     </script>
-
-    <%- js(['js/lazyload/lazyload@1.9.1.js']) %>
+    <script src="<%- url_for('/js/lazyload/lazyload@1.9.1.js') %>"></script>
     <script>
       $(function() {
         $("div.lazyload, img.lazyload, a.lazyload").lazyload(

@@ -68,6 +68,12 @@
     </script>
     
     <script src="<%= theme.CDN.live2d %>"></script>
+    <script>
+        var live2dOpen = eval('<%= theme.live2d.open %>') || false;
+        if (!live2dOpen) {
+            localStorage.setItem('waifu-display', 1609323474481);
+        }
+    </script>
   <% } %>
   <%- css('css/animate.min.css') %>
   <%- css('css/style.css') %>
@@ -85,4 +91,6 @@
             }
         }
     </style>
+    <script src="<%- url_for(theme.CDN.paceJs) %>"></script>
+    <link href="<%- url_for(theme.CDN.paceCss) %>" rel="stylesheet">
 </head>

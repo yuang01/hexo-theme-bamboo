@@ -1,18 +1,67 @@
+
 <div class="post-nav">
+<%
+  var hashCode = function (str) {
+      if (!str && str.length === 0) {
+          return 0;
+      }
+
+      var hash = 0;
+      for (var i = 0, len = str.length; i < len; i++) {
+          hash = ((hash << 5) - hash) + str.charCodeAt(i);
+          hash |= 0;
+      }
+      return hash;
+  };
+%>
+
 <% if(page.prev) { %>
+  <%
+    var img = 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/ada660a8c596431983dddd411a12f2b3.jpg!sswm';
+    var imgs = theme.imgs;
+    if (!imgs || imgs.length === 0) {
+        return img;
+    }
+    img = imgs[Math.abs(hashCode(page.prev.title) % imgs.length)]
+  %>
   <div class="post-nav-prev post-nav-item">
-    <a href="<%- url_for(page.prev.path) %>">
-      <%= __('lastArticle') %>:    <%= page.prev.title %>
+    <div class="post-nav-img lazyload" data-original="<%- url_for(page.prev.img  || page.prev.swiperImg || img) %>" style="background-size: cover; 
+      background-position: center center;">
+    </div>
+    <a href="<%- url_for(page.prev.path) %>" class="post-nav-link">
+      <div class="title">
+        <i class="fa fa-angle-left"></i> <%= __('lastArticle') %>:
+        <div><%= page.prev.title %></div>
+      </div>
+      
+      <!-- <div class="content">
+        <%- strip_html(page.prev.content).substring(0, 60) %>
+      </div> -->
     </a>
   </div>
 <% } %>
 
 <% if(page.next) { %>
+  <%
+    var img = 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/ada660a8c596431983dddd411a12f2b3.jpg!sswm';
+    var imgs = theme.imgs;
+    if (!imgs || imgs.length === 0) {
+        return img;
+    }
+    img = imgs[Math.abs(hashCode(page.next.title) % imgs.length)]
+  %>
   <div class="post-nav-next post-nav-item">
-    <a href="<%- url_for(page.next.path) %>">
-      <span>
-        <%= __('nextArticle') %>:    <%= page.next.title %> 
-      </span>
+    <div class="post-nav-img lazyload" data-original="<%- url_for(page.next.img  || page.next.swiperImg || img) %>" style="background-size: cover; 
+      background-position: center center;">
+    </div>
+    <a href="<%- url_for(page.next.path) %>" class="post-nav-link">
+      <div class="title">
+        <%= __('nextArticle') %>: <i class="fa fa-angle-right"></i>
+        <div><%= page.next.title %></div>
+      </div>
+      <!-- <div class="content">
+        <%- strip_html(page.next.content).substring(0, 60) %>
+      </div> -->
     </a>
   </div>
 <% } %>

@@ -19,12 +19,12 @@ var i = 0;
     i++;
     var color = colorArr[Math.abs(hashCode(page.category) % colorCount)];
 %>
-<div class="lazyload" data-original="<%- theme.root_url %><%= theme.categoryDetailImg %>" style="width: 100%;height: 50vh;overflow: hidden;background-size: cover; 
+<div class="lazyload category-header" data-original="<%- url_for(theme.categoryDetailImg) %>" style="width: 100%;height: 50vh;overflow: hidden;background-size: cover; 
 background-position: center center;">
 </div>
 <div class="category">
   <div class="category-name">
-    <div class="name" style="background-color: <%- color %>;"><%= page.category %> 分类</div>
+    <div class="name" style="background-color: <%- color %>;"><%= page.category %> <%= __('category') %></div>
   </div>
   <section class="posts">
     <% page.posts.each(function (post, i) { %>
@@ -48,7 +48,7 @@ background-position: center center;">
             </div>
           </div>
           <div class="post-img-mobile">
-            <a href="<%- url_for(post.path) %>" style="background: url('<%= post.img  || 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm' %>');background-size: cover; 
+            <a href="<%- url_for(post.path) %>" style="background: url('<%- url_for(post.img  || 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm') %>');background-size: cover; 
               background-position: center center;">
             </a>
           </div>
@@ -63,7 +63,7 @@ background-position: center center;">
         </div>
       </div>
       <div class="post-img">
-        <a href="<%- url_for(post.path) %>" style="background: url('<%= post.img  || 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm' %>');background-size: cover; 
+        <a href="<%- url_for(post.path) %>" style="background: url('<%- url_for(post.img  || 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/56d7b34ee52046a3af719a1c9b1e0753.jpg!sswm') %>');background-size: cover; 
           background-position: center center;">
         </a>
       </div>

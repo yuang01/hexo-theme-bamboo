@@ -1,0 +1,365 @@
+.dark {
+  color: $color-inner;
+  background-color: #222;
+  position: fixed;
+  right: 0;
+  bottom: 80px;
+  right: 17px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50%;
+  line-height: 50px;
+  text-align: center;
+  border: 2px solid #222;
+  box-shadow:-2px 2px 2px 2px rgba(255,255,255,0.5);
+  font-size: 1.5em;
+  cursor $cursor-pointer,pointer;
+  transition: background-color 0.3s;
+}
+@media (max-width: 551px) {
+  .dark {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    bottom: 70px;
+    right: 5px;
+  }
+}
+// 以下是其他元素在关灯模式下的样式，强制使用该样式 0.0。。。
+.darkModel {
+  // color: #b8c3d3;
+  .header .header-content .navbar .menu .menu-item a,
+  .dark,
+  .search,
+  .header .blog-title a,
+  .header #he-plugin-simple .s-sticker-tmp, .header #he-plugin-simple .s-sticker-city,
+  .flag-text {
+    color: #f0f6fc;
+  }
+  .dark {
+    background-color: #ffeb3b;
+    border: 2px solid #ffeb3b;  
+  }
+  .read-more {
+    color: #f0f6fc!important;  
+  }
+  .bg-floor {
+    background: #282c34;  
+  }
+  .img-mask {
+    transition: opacity 0.3s;
+    opacity: 0.4;
+  }
+  .swiper-bgmask {
+    transition: opacity 0.3s;
+    opacity: 0.4;
+    background: #000;  
+  }
+  // #c9d1d9  #8b949e
+  .topArticle .articles .article-link .text .title a,
+  .topArticle .articles .article-link .text .more {
+    color: #c9d1d9;
+  }
+  .topArticle .articles .article-link .text .content {
+    color: #8b949e;
+  }
+  .topArticle {
+    transition: background 0.3s;
+    h3 {
+      color: #c9d1d9;
+    }
+    background: #2d3032;
+    .article-link {
+      .article {
+        transition: opacity 0.3s;
+        opacity: 0.4;
+      }
+    }
+  }
+  .posts {
+    .post {
+      transition: all 0.3s;
+      background-color: #2d3032;
+      .post-img a {
+        transition: all 0.3s;
+        filter: brightness(0.6);
+      }
+    }
+    .post-img-mobile a {
+      transition: all 0.3s;
+      filter: brightness(0.6);
+    }
+    .post-time {
+      color: #8b949e;
+    }
+    .post-title .post-title-link {
+      color: #c9d1d9;
+    }
+    .post-tags {
+      color: #8b949e;
+    }
+    .post-content {
+      color: #c9d1d9;
+    }
+  }
+  .page-nav .page-nav-pre, .page-nav .page-nav-next,
+  .page-nav .page-nav-pre, .page-nav .page-nav-prev{
+    background-color: #222;
+    color: #f0f6fc;
+    transition: background-color 0.3s;
+    &:hover {
+      background-color: $color-primary;  
+    }
+  }
+  .color-primary {
+    color: #222;
+  }
+  .page-info-text {
+    color: #f0f6fc;
+  }
+
+  .top-btn-color {
+    background-color: #222;
+    color: #f0f6fc;
+    &:hover {
+      border: 1px solid #222;
+    }
+  }
+  .swiper-btn-color {
+    background-color: #2d3032;
+    transition: all 0.3s;
+    &:hover {
+      background-color: $color-primary;
+    }
+  }
+  .border-color {
+    border: 1px solid #222;
+    &:hover {
+      border: 1px solid $color-primary;
+    }
+  }
+  .footer {
+      color: #f0f6fc;
+  }
+  .post-detail-header {
+    position: relative;
+    .post-detail-header-mask {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #000;
+      opacity: 0.6;
+      z-index: 1;  
+    }
+    .title {
+      z-index: 2;
+      color: f0f6fc;
+    }
+    // filter: brightness(0.5);
+  }
+  .post-detail {
+    background-color: #2d3032;
+    color: #f0f6fc;
+    .post-title { 
+      color: #f0f6fc;
+    }
+    p {
+      color: #f0f6fc;
+      
+    }
+    code {
+      background-color: #f0f6fc26;
+      color: #f0f6fc;
+    }
+    pre code {
+      background-color: transparent;
+    }
+    blockquote {
+      background-color: #f0f6fc26;
+    }
+    blockquote p {
+      color: #f0f6fc;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6  {
+        color: #f0f6fc;
+    }
+    table tr:nth-child(2n),
+    thead {
+        background-color: #f0f6fc26;
+    }
+    table tr th,
+    table tr td {
+      border: 1px solid #f0f6fc26;
+    }
+    .post-copyright {
+      background-color: #f0f6fc26;
+    }
+    img {
+      filter: brightness(0.6);
+    }
+  }
+  #lv-ad-976 #container .reply-content {
+    color: #f0f6fc;
+  }
+  #comments {
+    background-color:  #2d3032;
+    color: #f0f6fc;
+  }
+  #vcomment .vheader .vnick {
+    color: #f0f6fc;
+	}
+
+	#vcomment .vheader .vmail {
+    color: #f0f6fc;
+	}
+
+	#vcomment .vheader .vlink {
+    color: #f0f6fc;
+	}
+  .v[data-class=v] .status-bar, .v[data-class=v] .veditor, .v[data-class=v] .vinput, .v[data-class=v] p, .v[data-class=v] pre code {
+    color: #f0f6fc;
+  }
+  .v[data-class=v] code {
+    background-color: #f0f6fc26;
+  }
+  .v[data-class=v] .vbtn {
+    color: #f0f6fc;
+  }
+  .post-nav .post-nav-prev .post-nav-img, .post-nav .post-nav-next .post-nav-img {
+    opacity: 0.4;  
+  }
+  .v[data-class=v] .vicon {
+    fill: #f0f6fc;
+  }
+  .toc-aside {
+    background-color: alpha(#2d3032, 0.6);
+    color: #f0f6fc;
+    .is-active-link {
+      color: $color-primary;  
+    }
+  }
+  .archive .post-archive .year a {
+    color: #f0f6fc;
+  }
+  .archive .post-archive .post-item .post-title {
+    color: #f0f6fc;
+  }
+  #categories .card .card-content .category-title,
+  #tags .card .card-content .tag-title {
+    color: #f0f6fc;
+  }
+  .tag-content {
+    background-color:  #2d3032!important; 
+  }
+  #tags .card .card-content .tag-chips a .tag-content {
+    color: #f0f6fc;
+  }
+  .category-content {
+    background-color:  #2d3032!important; 
+  }
+  #categories .card .card-content .category-chips a .category-content {
+    color: #f0f6fc;
+  }
+  .archive-header,
+  .tags-header,
+  .tag-header,
+  .categories-header
+  .category-header,
+  .about-header,
+  .friends-header {
+    filter: brightness(0.5);
+  }
+  .tag-name .name,
+  .category-name .name,
+  .friends .friend {
+    background-color:  #2d3032!important;
+    color: #f0f6fc;
+  }
+  .friends-title {
+    color: #f0f6fc;
+  }
+  .friends .friend .friend-info .friend-introduction {
+    color: #8b949e;
+  }
+  #about .title {
+    color: #f0f6fc;
+  }
+  #about .basic-info {
+    background-color:  #2d3032;
+    color: #f0f6fc;
+  }
+  #about .subtitle,
+  #about .basic-info .items .item {
+    color: #f0f6fc;
+  }
+  .skill,
+  #about .basic-info .games .game-item .logo img,
+  #about .basic-info .books .book-item .logo img {
+    filter: brightness(0.6);
+  }
+  #about .basic-info .games .game-item,
+  #about .basic-info .books .book-item {
+    color: #8b949e;
+  }
+  #about .basic-info .socialAccounts .account {
+    color: #8b949e;
+  }
+  .message-box_wrapper .message-box {
+    background-color: #2d3032;
+    h2,
+    .search-result,
+    .close,
+    #local-search-input {
+      color: #8b949e;
+    }
+    .result-wrapper {
+      .local-search-empty {
+        color: #8b949e;
+      }
+      ul li {
+        box-shadow: 0 0 4px 1px rgba(255, 255, 255, .12);
+        &:hover {
+          box-shadow: 0 0 8px 3px rgba(255, 255, 255, .12);  
+        }
+      }
+    }
+  }
+  .post-donate {
+    .donate_bar a.btn_donate {
+      filter: brightness(0.7);
+    }
+  }
+  .donate-box {
+    background-color: #2d3032;
+    .donate-box_title h4,
+    .donate-box_close i {
+      color: #8b949e;
+    }
+  }
+  #appDrawer .drawer-box {
+    background-color: #2d3032;
+  }
+  #appDrawer .drawer-box .drawer-box-content .drawer-box-content_menu .drawer-box-content_item a {
+    color: #f0f6fc;
+  }
+  .bg-color {
+    background-color: #222;
+  }
+  .github-corner {
+    svg {
+      fill: #f0f6fc!important;
+      color: #222;
+    }
+  }
+  .header #he-plugin-simple .s-sticker-tmp, .header #he-plugin-simple .s-sticker-city {
+    color: #f0f6fc!important;
+  }
+}

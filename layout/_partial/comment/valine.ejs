@@ -1,8 +1,8 @@
-<section id="comments" style="padding: 1em; background: rgba(255, 255, 255, 0.9); margin: 15px auto;"
-	data-aos="<%= theme.aos.animate || 'fade-up' %>">
+<section id="comments" style="padding: 1em; margin: 15px auto;"
+	class="animated bounceInUp">
 	<div id="vcomment" class="comment"></div>
-	<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-	<script src="<%- theme.CDN.valine %>"></script>
+	<script src="<%- url_for('/js/valine/av-min@3.0.4.js') %>"></script>
+	<script src="<%- url_for(theme.CDN.valine) %>"></script>
 	<script>
 
 		var requiredFields = '<%= theme.valine.requiredFields %>';
@@ -700,8 +700,11 @@
 	</script>
 </section>
 <style>
+	#comments {
+		background: <%- theme.valine.backgroundColor %>;
+	}
 	#veditor {
-		background-image: url('https://cdn.jsdelivr.net/gh/drew233/cdn/20200409110727.webp');
+		background-image: url('<%- url_for(theme.valine.backgroundImg) %>');
 		background-size: contain;
 		background-repeat: no-repeat;
 		background-position: right;

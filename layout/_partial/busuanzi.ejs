@@ -10,5 +10,5 @@
   <span id="busuanzi_container_site_uv" style='display:none'>
         <i class="fa fa-users" aria-hidden="true"></i><%= __('numberVisitors') %>：<span id="busuanzi_value_site_uv"></span> <%= __('people') %>
   </span>
-  <script async src="<%= theme.CDN.busuanzi %>"></script>
+  <script async src="<%- url_for(theme.CDN.busuanzi) %>"></script>
 <% } %>

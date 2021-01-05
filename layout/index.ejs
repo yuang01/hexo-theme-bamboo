@@ -38,8 +38,8 @@
             </div>
           </div>
           <div class="post-img-mobile">
-            <% if (post.img) { %>
-              <a href="<%- url_for(post.path) %>" class="lazyload" data-original="<%= post.img %>" style="background-size: cover; 
+            <% if (post.img || post.swiperImg) { %>
+              <a href="<%- url_for(post.path) %>" class="lazyload" data-original="<%- url_for(post.img || post.swiperImg) %>" style="background-size: cover; 
                 background-position: center center;">
               </a>
             <% } else { %>
@@ -51,7 +51,7 @@
                 }
                 img = imgs[Math.abs(hashCode(post.title) % imgs.length)]
               %>
-              <a href="<%- url_for(post.path) %>" class="lazyload" data-original="<%-img%>" style="background-size: cover; 
+              <a href="<%- url_for(post.path) %>" class="lazyload" data-original="<%- url_for(img)%>" style="background-size: cover; 
                 background-position: center center;">
               </a>
             <% } %>
@@ -67,12 +67,12 @@
         </div>
       </div>
       <div class="post-img">
-        <% if (post.img) { %>
-          <a href="<%- url_for(post.path) %>" class="lazyload" data-original="<%- theme.root_url %><%= post.img %>" style="background-size: cover; 
+        <% if (post.img || post.swiperImg) { %>
+          <a href="<%- url_for(post.path) %>" class="lazyload" data-original="<%- url_for(post.img || post.swiperImg) %>" style="background-size: cover; 
             background-position: center center;">
           </a>
         <% } else { %>
-          <a href="<%- url_for(post.path) %>" class="lazyload" data-original="<%- theme.root_url %><%-img%>" style="background-size: cover; 
+          <a href="<%- url_for(post.path) %>" class="lazyload" data-original="<%- url_for(img) %>" style="background-size: cover; 
             background-position: center center;">
           </a>
         <% } %>
@@ -89,11 +89,11 @@
       //只在桌面版网页启用特效
       var windowWidth = $(window).width();
       if (windowWidth > 768) {
-          document.write('<script type="text/javascript" src="/js/snow.js"><\/script>');
+          document.write('<script type="text/javascript" src="<%- url_for("/js/snow.js") %>"><\/script>');
       }
     </script>
   <% } else {  %>
-    <script src="/js/snow.js"></script>
+    <script src="<%- url_for('/js/snow.js') %>"></script>
   <% } %>
 <% } else if(theme.sakura.on === true) { %>
   <% if(theme.sakura.onlyPc === true ) { %>
@@ -101,11 +101,11 @@
       //只在桌面版网页启用特效
       var windowWidth = $(window).width();
       if (windowWidth > 768) {
-          document.write('<script type="text/javascript" src="/js/sakura.js"><\/script>');
+          document.write('<script type="text/javascript" src="<%- url_for("/js/sakura.js") %>"><\/script>');
       }
     </script>
   <% } else { %>
-    <script src="/js/sakura.js"></script>
+    <script src="<%- url_for('/js/sakura.js') %>"></script>
   <% } %>
 <% } %>
 

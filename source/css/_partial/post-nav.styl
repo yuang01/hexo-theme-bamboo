@@ -3,13 +3,75 @@
   overflow: hidden;
   display: flex;
   justify-content: space-between;
-  .post-nav-prev {
+  flex-wrap: wrap;
+  .post-nav-prev,
+  .post-nav-next {
+    &:hover {
+      .post-nav-img {
+        opacity: 0.9;  
+      }
+    }
+    background: #000;
     flex: 1;
+    height: 150px;
+    position: relative;
+    .post-nav-img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0.6;
+      transition: all 0.3s;
+      if hexo-config('loadingImg') {
+        background-image: url(hexo-config('loadingImg'));
+      }
+    }
+    .post-nav-link {
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+  }
+
+  .post-nav-prev {
+    .title {
+      text-align: left;
+      position: absolute;
+      top: 40px;
+      left: 40px;
+    }
+    .content {
+      text-align: left;
+    }
+    // padding: 10px;
+    // margin-right: 20px;
+    a {
+      color: $color-inner;
+    }
+    
   }
   .post-nav-next {
-    flex: 1;
-    span {
-      float: right;
+    .title {
+      text-align: right;
+      position: absolute;
+      top: 40px;
+      right: 40px;
+    }
+    .content {
+      text-align: right;
+    }
+    // padding: 10px;
+    a {
+      color: $color-inner;
+    }
+  }
+}
+@media (max-width: 551px) {
+  .post-nav { 
+    .post-nav-prev,
+    .post-nav-next {
+      flex: 0 0 100%;  
     }
   }
 }

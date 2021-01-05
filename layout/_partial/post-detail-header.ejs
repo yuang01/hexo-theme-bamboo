@@ -21,9 +21,13 @@
   }
   img = imgs[Math.abs(hashCode(post.title) % imgs.length)]
 %>
-<div class="post-detail-header lazyload" data-original="<%=post.img || img %>" style="background: no-repeat; background-size: cover; 
-  background-position: center center;">
+<div class="post-detail-header lazyload" id="thumbnail_canvas" data-original="<%- url_for(post.img || img) %>" style="background-repeat: no-repeat; background-size: cover; 
+  background-position: center center;position: relative;">
+  <div class="post-detail-header-mask"></div>
+  <canvas id="header_canvas"style="position:absolute;bottom:0"></canvas>
   <% if (theme.postTitleTop.on === true){ %>
     <span class="title"><%= post.title %></span>
   <% } %>
 </div>
+
+<script src="<%- url_for('/js/bubble/bubble.js') %>"></script>

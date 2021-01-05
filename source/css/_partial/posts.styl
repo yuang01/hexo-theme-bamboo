@@ -34,6 +34,9 @@
         width: 100%;
         height: 100%;
         transition: all 0.5s;
+        if hexo-config('loadingImg') {
+          background-image: url(hexo-config('loadingImg'));
+        }
         &:hover {
           transform:scale(1.2);
         }
@@ -59,7 +62,7 @@
       font-weight: 700;
       transition: all 0.3s;
       &:hover {
-        color: #42b983;
+        color: #42b983!important;
       }
     }
   }
@@ -77,6 +80,9 @@
       width: 100%;
       height: 100%;
       transition: all 0.5s;
+      if hexo-config('loadingImg') {
+        background-image: url(hexo-config('loadingImg'));
+      }
       &:hover {
         transform:scale(1.2);
       }

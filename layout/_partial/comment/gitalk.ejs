@@ -1,6 +1,6 @@
 <link rel="stylesheet" href="<% theme.CDN.gitalkCss %>">
 <div id="gitalk-container"></div>
-<script src="<% theme.CDN.gitalkJs %>"></script>
+<script src="<%- url_for(theme.CDN.gitalkJs) %>"></script>
 <script type="text/javascript">
     var gitalk = new Gitalk({
         clientID: '<%= theme.gitalk.clientID %>',

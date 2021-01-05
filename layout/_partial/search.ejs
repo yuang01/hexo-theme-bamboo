@@ -3,6 +3,9 @@
   <transition name="fade">
     <div class="message-box_wrapper" style="display: none;" v-cloak v-show="dialogVisible" @click.self="cancelDialogVisible()">
       <div class="message-box animated bounceInDown">
+        <div class="close" style="overflow: hidden;">
+          <i class="fa fa-close" aria-hidden="true" style="float:right;" @click.self="cancelDialogVisible()"></i>
+        </div>
         <h2>
           <i class="fa fa-search" aria-hidden="true"></i>
           <span class="title"><%= __('search') %></span>
@@ -24,7 +27,7 @@
     </div>
   </transition>
 </div>
-<%- js(['js/local_search.js']) %>
+<script src="<%- url_for('/js/local_search.js') %>"></script>
 <script>
   var body = document.body || document.documentElement || window;
   var vm = new Vue({
@@ -43,11 +46,11 @@
         this.dialogVisible = true;
         // 防止页面滚动，只能让弹框滚动
         this.top = $(document).scrollTop()
-        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + this.top  + 'px; left: 0; overflow: hidden;';
+        body.style.cssText = 'overflow: hidden;';
       },
       getSearchFile() {
         if (!this.searchInput) {
-          getSearchFile();
+          getSearchFile("<%- url_for('search.xml') %>");
         }
       },
       cancelDialogVisible() {
