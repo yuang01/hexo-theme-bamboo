@@ -1,5 +1,5 @@
 # Hexo主题--bamboo介绍
-这是一个基于Hexo的响应式博客主题，[演示示例](https://yuang01.github.io/)
+这是一个基于Hexo的响应式博客主题，[演示示例](https://yuang01.gitee.io/)
 <!-- more -->
 ## 下载
 首先你需要有一个[Hexo](https://hexo.io/zh-cn/)，按照官网的方法，很容易的就能创建一个hexo博客。
@@ -7,7 +7,7 @@
 ``` bash
 git clone https://github.com/yuang01/hexo-theme-bamboo.git
 ```
-## 配置
+## 基本配置
 ### 切换主题
 
 修改 Hexo 根目录下的 `_config.yml` 的  `theme` 的值：`theme: hexo-theme-bamboo`
@@ -86,6 +86,15 @@ layout: "tags"
 
 ```bash
 hexo new page "about"
+```
+编辑你刚刚新建的页面文件 `/source/about/index.md`，至少需要以下内容：
+```yaml
+---
+title: about
+date: 2020-09-14 15:30:30 # 时间随便写
+type: "about"
+layout: "about"
+---
 ```
 然后可以在本主题下的`_config.yml`文件下，编辑以下字段进行关于我页面信息的更改
 ``` yaml
@@ -241,7 +250,7 @@ feed:
   content_limit_delim: ' '
   order_by: -date
 ```
-
+## 页面功能配置
 ### 首页轮播图
 首页轮播图在`source/_posts/xxx.md`也就是文章页面配置，如果你想让某个文章放在首页轮播中，只用设置`swiper: true`即可，可以通过`swiperImg: xxx`来配置轮播图片，如下所示
 ```yaml
@@ -277,10 +286,22 @@ swiperImg: 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/c080ff4434354e3
 设置主题文件夹下的`_config.yml`文件中的`donate`属性为true，然后更改`Alipay`和`WeChatpay`图片路径即可
 
 ### 文章详情页分享功能
-设置主题文件夹下的`_config.yml`文件中的`sharejs`属性true或者false即可
+设置主题文件夹下的`_config.yml`文件中的`sharejs`属性true或者false即可，通过sites配置需要分享的网站
+```yaml
+# 分享功能
+sharejs: 
+  on: true
+  sites: twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin
+```
 
-### 点击出现爱心效果
-设置主题文件夹下的`_config.yml`文件中的`clicklove`属性true或者false即可
+### 鼠标点击出现爱心，爆炸等效果
+设置主题文件夹下的`_config.yml`文件中的`cursor_effect`属性true或者false，通过`type`属性选择效果类别，例如:
+```yaml
+# 鼠标点击特效
+cursor_effect:
+  on: true
+  type: explosion  # fireworks: 礼花 | explosion: 爆炸 | love: 浮出爱心 | text: 浮出文字
+```
 
 ### 复制成功提醒
 当复制内容时候，是否显示复制成功提示 
@@ -316,14 +337,38 @@ sakura:
 ### live-2d人物
 设置主题文件夹下的`_config.yml`文件中的`live2d`属性为true或者false，可以通过`modelId`属性选择模型，注意，live-2d人物只有在屏幕宽度最小为992px的时候才显示
 ```yaml
-modelId: 2  # 0 or 1 or 2 or 3 or 4 or 5 or 6
+# live-2d(左下角动画人物)
+live2d:
+  on: true # 控制显示或者隐藏
+  modelId:  # 0 or 1 or 2 or 3 or 4 or 5 or 6 #人物模型
+  open: true # 默认展开，false则收缩，通过点左下角的方块点击，控制展开或者收缩
 ```
 
 ### 滚动动画
 设置主题文件夹下的`_config.yml`文件中的`aos`属性对首页中的文章列表动画进行控制，具体参考官网[aos.js](https://github.com/michalsnik/aos#animations)
 
 ### 文章详情页目录 
-设置主题文件夹下的`_config.yml`文件中的`toc`属性，控制其显示隐藏
+设置主题文件夹下的`_config.yml`文件中的`toc`的`on`属性，控制所有文章是否显示，还可以在在单个文章md页面里通过`toc`属性控制该文章的目录是否显示。
+`toc`下的`open`参数控制所有的文章默认是否展开或者收缩，还可以在单个文章md页面里通过`tocOpen`参数控制该文章(具体某个文章)的目录默认是否展开收缩,参数如下:
+```yaml
+# 主题文件夹下的`_config.yml`文件中的`toc`属性
+# 文章目录
+toc:
+  on: true # 所有文章目录是否显示
+  heading: h2, h3, h4
+  open: true # 所有文章目录是否展开，false则收缩
+```
+```yaml
+# 单个文章里控制显示和隐藏，展开和收缩
+---
+title: 我是文章标题
+tags: ['vue', 'html']
+categories: ['前端', '运维', '攻城狮']
+toc: false # 该文章目录不显示
+tocOpen: false # 该文章目录收缩
+---
+我是文章内容
+```
 
 ### 音乐 
 设置主题文件夹下的`_config.yml`文件中的`music`属性，控制其显示隐藏和其他一些调整, `music`中的`fixed`属性建议使用`true`
@@ -374,7 +419,38 @@ valine:
   master: 'xxxxxx' # 博主标签识别，博主邮箱md5 可以去md5加密网站，例如 https://md5jiami.51240.com/ ，将自己的邮箱输入， 得到 32位小写 的字符串填入这里
   friends: ['xxxxxxx', 'xxxxxx'] # 小伙伴的 邮箱md5， 是个数组
   requiredFields: ['nick', 'mail'] # 设置必填项 ['nick', 'mail'] nick为昵称必填， mail为邮箱必填, 空数组，则不校验
+  backgroundImg: '/medias/comment-bg.gif' # 右下角背景图片, or http://xxx.gif
+  backgroundColor: 'rgba(255,255,255,0.9)' # 背景颜色, 0.9标是透明度
 ```
+
+### 鼠标手势
+设置主题文件夹下的`_config.yml`文件中的`cursor`属性，可自行替换链接，参数如下:
+```yaml
+# 鼠标手势
+cursor:
+  pointer: https://cdn.jsdelivr.net/gh/inkss/common@master/cursor/pointer.png
+  default: https://cdn.jsdelivr.net/gh/inkss/common@master/cursor/left_ptr.png
+  text: https://cdn.jsdelivr.net/gh/inkss/common@master/cursor/text.png
+```
+### 天气
+设置主题文件夹_config.yml的`weather`属性true或者false，控制显示和隐藏
+
+### 背景图预加载图片
+设置主题文件夹下的`_config.yml`文件中的`loadingImg`属性，可自行修改预加载图片链接
+```yaml
+# loading图片地址，为空则不使用loading图片
+loadingImg: 'http://images.bokee.com/artpic_upload/2/0/6/2067714892/3191445171775.gif'
+```
+
+### 关灯
+设置主题文件夹下的`_config.yml`文件中的`dark`属性，控制头部导航的开关灯按钮是否显示，控制是否默认显示关灯, 具体如下
+```yaml
+# 黑夜模式, 关灯
+dark:
+  on: true # 是否在头部导航上显示开关灯
+  default: false  # true为默认关灯状态（刷新页面和跳转页面都是关灯状态），false为默认开灯状态(网页第一次打开的时候为开灯状态)
+```
+## 主题更改
 ### 归档、标签、分类、关于我、友情链接页面图片自定义
 通过主题文件夹下的`_config.yml`文件中的相应属性进行设置，属性如下：
 ``` yaml
@@ -395,25 +471,69 @@ friendsImg: '/medias/friend.jpg'
 ```
 
 ### 更改主题颜色
-默认主题颜色是绿色(#42b983)，可以通过更改主题文件夹`hexo-theme-bamboo`下的文件：`source/css/_partial/custom.styl`,将文件中的所有(#42b983)颜色值替换成你想要的颜色，然后更改该文件下的`blockquote`背景颜色，代码如下:
-```css
-// 文章详情页的blockquote，md中的 > 标签的左边框和背景颜色
-.post-detail {
-  blockquote {
-      border-left: 4px solid #42b983;
-      background-color: rgba(66, 185, 131, .1); // 更改这个背景颜色为你想要的的颜色值
-  }
-}
-```
-blockquote样式指的是下面这个
-> 我是blockquote
+默认主题颜色是绿色`#42b983`，可以通过设置主题文件夹下的`_config.yml`文件中的`color_scheme`属性，进行配置，参数如下:
+```yaml
+# 主题颜色
+color_scheme:
+  # ------------
+  # 通用颜色
+  common:
+    # 主题色
+    theme: '#42b983'
+    # 主题色块内部的文字颜色
+    inner: '#fff'
+    # 链接色 a标签
+    link: '#42b983'
+    # border颜色，目前轮播图的 阅读更多按钮 和 回到顶部按钮 有用到该border，可自行配置该颜色
+    border: '2px solid #42b983'
+    # 选中区域文字的背景颜色, 后面的小数代表透明度
+    selection: 'alpha(#42b983, 0.8)'
+    # 顶部页面加载进度条颜色
+    pace: '#f6a427'
+    # 滚动条颜色, 空字符串则滚动条使用 主题色，否则强制使用该颜色
+    scroll: '#42b983'
+    # 整个页面的底部背景颜色，默认透明，可以是白色等颜色, 也可以是图片，例如  url("https://img11.360buyimg.com/ddimg/jfs/t1/169624/29/16/4603017/5fec2c79Eecbd536a/308b28b82a013cd2.png");
+    bgFloor: 'transparent' # 如果是图片地址，url里面请用双引号
+  # 文章详情页 颜色属性
+  post:
+    # 文章详情页面-->标题在图片上时候的颜色
+    headerTitle: '#fff'
+    # 文章详情页面-->标题在图片上时候字体粗细
+    headerTitleFontWeight: 'normal' # 100-900 or bold, normal, bolder, lighter
+    #文章详情页面--> copy按钮背景色, 空字符串则copy按钮背景为 主题颜色，否则强制使用该颜色
+    copyBackground: ''
+    #文章详情页面--> copy按钮文字颜色, 空字符串则copy按钮字体颜色为 主题色块内部的文字颜色，否则强制使用该颜色
+    copyColor: ''
+    # 代码高亮部分的背景色, 空字符串则使用-代码高亮插件-的背景颜色，否则强制使用该颜色作为代码高亮背景色
+    codeBackground: ''
+    # 文章详情页面--> p标签使用 ``符号 突出的文字颜色
+    pLight: '#d63200'
+    # 文章详情-页面-> p标签颜色
+    p: '#273849'
+    # 文章详情页面--> title颜色， h1, h2, h3..
+    title: '#273849'
+    # 文章详情页面 -->右侧目录文字颜色
+    toc: '#273849'
 
-例如，我将该文件下的所有颜色设置为`skyblue`，显示效果如下
-![theme-color](https://img13.360buyimg.com/ddimg/jfs/t1/120336/2/13322/273081/5f69b8d1E737e6277/8fdc796d2d3a82b3.png)
+```
 
 代码高亮颜色，可以通过之前介绍的代码高亮进行更改
 
 ## 文章 Front-matter 介绍
+这个指的是你在你的文章页面里面写的参数，例如
+```yaml
+---
+title: Hexo主题--Bamboo介绍
+date: 2020-09-14 14:06
+swiper: true # 将改文章放入轮播图中
+swiperImg: '/medias/1.jpg' # 该文章在轮播图中的图片，可以是本地目录下图片也可以是http://xxx图片
+img: '/medias/1.jpg' # 该文章图片，可以是本地目录下图片也可以是http://xxx图片
+categories: 前端
+tags: [Hexo, hexo-theme-bamboo]
+top: true
+
+---
+```
 `Front-matter` 选项中的所有内容均为**非必填**的。但我仍然建议至少填写 `title` 和 `date` 的值。
 
 | 配置选项   | 默认值                      | 描述                                                         |
@@ -423,11 +543,54 @@ blockquote样式指的是下面这个
 | swiper     | false                       | 表示该文章是否需要加入到首页轮播封面中
 | swiperImg  | 无                       | 表示该文章在首页轮播封面需要显示的图片路径，如果没有，则默认使用文章的特色图片
 | top        | false                       | 表示该文章是否需要加入到首页的文章置顶栏目中
+| toc        | true                       | 表示该文章目录是否显示, true为显示
+| tocOpen    | true                       | 表示该文章目录是否展开， true为展开
 | comments   | false                       | 表示该文章是否需要评论
 | img        | 无                          | 文章特征图，该文章显示的图片，没有则默认使用文章的特色图片
 | categories | 无                          | 文章分类，本主题的分类表示宏观上大的分类，只建议一篇文章一个分类 |
 | tags       | 无                          | 文章标签，一篇文章可以多个标签  
 
 ## 常见问题
-代码高亮如遇到花括号变成了`&#123;&#125;`这样的字符串，在根目录下输入npm install hexo@4.2.1即可。
+代码高亮如遇到花括号变成了`&#123;&#125;`这样的字符串，两种方式可解决：
+1.在根目录下输入
+```bash
+npm install hexo@4.2.1
+```
+即可。
+2.将`node_modules\hexo-prism-plugin\src\index.js`中的map改为如下
+```javascript
+const map = {
+  '&#39;': '\'',
+  '&amp;': '&',
+  '&gt;': '>',
+  '&lt;': '<',
+  '&quot;': '"',
+  '&#123;': '{',
+  '&#125;': '}'
+};
+```
+然后重启服务，`hexo clean` && `hexo g` && `hexo s`即可 
 
+## 更改日志
+* 更改主题颜色配置功能，主题文件夹_config.yml的color_scheme参数
+* 增加鼠标手势，主题文件夹_config.yml的cursor参数
+* 增加头部loading加载条，主题文件夹_config.yml的loadingImg参数
+* 增加鼠标点击特效，主题文件夹_config.yml的cursor_effect参数
+* 将图片路径和js，css路径改为相对地址，兼容用户修改根目录下的_config.yml中的root为其他路径
+* 翻页样式和代码高亮copy样式更改和其他一些样式更改
+* 增加预加载图片
+* 更改推荐文章，只有两个文章，中间会空出一个空白列问题
+* 文章详情页，目录样式调整
+* 解决打赏弹出来时候，目录消失问题
+* valine评论增加背景图片和背景颜色配置参数
+* 头部增加天气插件
+* 文章目录，在主题文件夹_config.yml的toc下增加open参数，true则所有的文章目录默认展开，false则收缩
+* 文章目录，可以在单个文章md页面里通过tocOpen参数控制该文章的目录默认是否展开收缩
+* 增加天气插件，在主题文件夹_config.yml的weather属性，控制显示和隐藏
+* live2d增加open参数，true则展开，false则收缩
+* 更改搜索框样式
+* 增加关灯模式，on控制显示隐藏，default控制是否默认显示关灯
+* 搜索框样式修改
+* 文章详情页图片增加气泡上升效果
+* 文章中无序列表和有序列表显示问题
+* 文章目录增加序号
