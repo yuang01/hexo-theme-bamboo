@@ -1,6 +1,3 @@
-/**
- * note.js
- */
 
 'use strict';
 

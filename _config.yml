@@ -367,7 +367,7 @@ cursor:
   text: https://cdn.jsdelivr.net/gh/inkss/common@master/cursor/text.png
 
 # loading图片地址，为空则不使用loading图片
-loadingImg: 'http://images.bokee.com/artpic_upload/2/0/6/2067714892/3191445171775.gif'
+loadingImg: 'https://img10.360buyimg.com/ddimg/jfs/t1/159345/8/2271/222193/5ff7b36fEe49f5663/a95287c20385127f.gif'
 
 # 文章图片
 imgs:
