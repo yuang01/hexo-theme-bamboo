@@ -4,8 +4,11 @@ h1, h2, h3, h4, h5, h6{ font-size:100%; }
 address, cite, dfn, em, var { font-style:normal; } 
 code, kbd, pre, samp { font-family:couriernew, courier, monospace; } 
 small{ font-size:12px; }
-a { text-decoration:none; } 
+a { text-decoration:none; }
 a:hover { text-decoration:none; } 
+*, a:active, a:hover {
+    outline: 0;
+}
 sup { vertical-align:text-top; } 
 sub{ vertical-align:text-bottom; } 
 legend { color:#000; } 
@@ -16,7 +19,7 @@ table { border-collapse:collapse; border-spacing:0; }
 
 html {
   background-color: #F2F2F2;
-  line-height: 1.5;
+  // line-height: 1.5;
   font-size: 16px;
   cursor: $cursor-default,auto;
 }

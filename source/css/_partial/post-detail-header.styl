@@ -7,22 +7,27 @@
   background-position: center center;
   display: flex;
   align-items: center;
+  .title-box {
+    width: 100%;
+    text-align: center;  
+  }
   .title {
     font-family: '楷体';
     font-size: 2.0rem;
     line-height: 1.3;
     color: $color-post-header-title;
-    display: inline-block;
     width: 100%;
     text-align: center;
     font-weight: $color-post-header-title-font-weight;
+  }
+  .typed-cursor {
+    font-size: 2.0rem;
+    color: $color-post-header-title;
   }
 }
 @media (max-width: 992px) {
   .post-detail-header {
     .title {
-      // margin-left: calc(50%);
-      // transform: translateX(-50%);
     }
   }
 }

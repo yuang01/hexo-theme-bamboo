@@ -1,3 +1,5 @@
+<div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
+<%- partial('_partial/bgSwiper', { post: page }) %>
 <%- partial('_partial/post-detail-header', { post: page }) %>
 <div class="row justify-position">
   <div class="main-content">
@@ -14,7 +16,7 @@
       </div>
       <% } %>
       <div class="post-tags-categories">
-        <% if (page.tags.length > 0) { %>
+        <% if (page.tags && page.tags.length > 0) { %>
         <div class="tags">
           <i class="iconfont icontag"></i>
           <% page.tags.map(function(tag) { %>
@@ -24,7 +26,7 @@
           <% }) %>
         </div>
         <% } %>
-        <% if (page.categories.length > 0) { %>
+        <% if (page.categories && page.categories.length > 0) { %>
         <div class="categories">
           <i class="iconfont iconbookmark1"></i>
           <% page.categories.map(function(category) { %>

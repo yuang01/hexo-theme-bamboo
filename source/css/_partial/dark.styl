@@ -44,7 +44,8 @@
   .read-more {
     color: #f0f6fc!important;  
   }
-  .bg-floor {
+  .bg-floor,
+  .bg-dark-floor {
     background: #282c34;  
   }
   .img-mask {
@@ -161,19 +162,32 @@
     // filter: brightness(0.5);
   }
   .post-detail {
+    .tagLink .link-card {
+      background: #222;
+    }
     background-color: #2d3032;
     color: #f0f6fc;
     .post-title { 
       color: #f0f6fc;
     }
-    p {
-      color: #f0f6fc;
+    p,
+    .p {
+      color: #f0f6fc!important;
       
     }
-    code,
+    code:not([class *='language'] ),
     .pbg {
       background-color: #f0f6fc26;
       color: #f0f6fc;
+    }
+    details {
+      border: 1px solid #222;
+      background: #222;
+    }
+    .timenode {
+      .body {
+        background-color: #f0f6fc26;
+      }  
     }
     pre code {
       background-color: transparent;

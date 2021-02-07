@@ -1,0 +1,123 @@
+.post-detail {
+  span.btn {
+    display: inline;
+    a {
+      text-decoration: none
+      border-bottom: none
+      display: inline-block
+      padding: 3px 4px 2px 4px
+      margin: 2px
+      line-height: 1.1
+      border-radius: 2px
+      font-weight: normal
+      i {
+        margin-right: 2px
+      }
+    }
+    & a, &.hollow a {
+      color: $color-primary
+      border: 1px solid $color-primary
+      transition: all 0.3s;
+      &:hover {
+        color: $color-danger!important
+        border-color: $color-danger
+      }
+      i {
+        margin-right: 4px
+      }
+    }
+    &.hollow a, &.solid a {
+      padding: 8px 12px
+    }
+    &.solid a {
+      border: none
+      background: $color-primary
+      color: $color-inner!important
+      &:hover {
+        background: $color-danger
+      }
+    }
+    &.large a {
+      font-size: 1rem
+      padding: 12px 32px
+      i {
+        margin-right: 8px
+      }
+    }
+    &.center {
+      display: block
+      text-align: center
+    }
+    &.round a {
+      border-radius: 20px;  
+    }
+    &.warning a {
+      background-color: $color-warning
+      color: $color-inner!important
+      border: none
+      &:hover {
+        background-color: $color-warning + 3 * 8% + 1 * .5deg 
+      }
+    }
+    &.warning.hollow a {
+      border: 1px solid $color-warning + 4 * 8% + 1 * .5deg 
+      background-color: $color-warning + 8 * 10% + 1 * .5deg
+      color: $color-warning!important
+      &:hover {
+        background-color: $color-warning
+        color: #fff!important
+      }
+    }
+    &.info a {
+      background-color: $color-info
+      color: $color-inner!important
+      border: none
+      &:hover {
+        background-color: $color-info + 3 * 8% + 1 * .5deg 
+      }
+    }
+    &.info.hollow a {
+      border: 1px solid $color-info + 4 * 8% + 1 * .5deg 
+      background-color: $color-info + 8 * 10% + 1 * .5deg
+      color: $color-info!important
+      &:hover {
+        background-color: $color-info
+        color: #fff!important
+      }
+    }
+    &.success a {
+      background-color: $color-success
+      color: $color-inner!important
+      border: none
+      &:hover {
+        background-color: $color-success + 3 * 8% + 1 * .5deg 
+      }
+    }
+    &.success.hollow a {
+      border: 1px solid $color-success + 4 * 8% + 1 * .5deg 
+      background-color: $color-success + 8 * 10% + 1 * .5deg
+      color: $color-success!important
+      &:hover {
+        background-color: $color-success
+        color: #fff!important
+      }
+    }
+    &.danger a {
+      background-color: $color-danger
+      color: $color-inner!important
+      border: none
+      &:hover {
+        background-color: $color-danger + 3 * 8% + 1 * .5deg 
+      }
+    }
+    &.danger.hollow a {
+      border: 1px solid $color-danger + 4 * 8% + 1 * .5deg 
+      background-color: $color-danger + 8 * 10% + 1 * .5deg
+      color: $color-danger!important
+      &:hover {
+        background-color: $color-danger
+        color: #fff!important
+      }
+    }
+  }
+}

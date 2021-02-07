@@ -87,7 +87,7 @@ postNav:
 copy:
   on: true
   title: '成功'
-  content: '复制成功了哦'
+  content: '代码已复制，请遵守相关授权协议。'
 
 # 文章详情页的标题是否显示在顶部图片中, false则显示在文章内容顶部
 postTitleTop:
@@ -247,6 +247,19 @@ copyright:
 topArticle:
   on: true
 
+# 文章详情页图片上的标题打字效果
+typed:
+  on: true
+  loop: false # 是否循环
+  showCursor: false # 是否显示光标
+  startDelay: 100 # 开始延迟
+  typeSpeed: 100 # 打字速度
+  backSpeed: 50 # 删除速度
+
+# 文章详情页图片上的气泡效果
+bubble:
+  on: true
+
 # valine 评论
 valine:
   on: true
@@ -335,8 +348,8 @@ color_scheme:
     pace: '#f6a427'
     # 滚动条颜色, 空字符串则滚动条使用 主题色，否则强制使用该颜色
     scroll: '#42b983'
-    # 整个页面的底部背景颜色，默认透明，可以是白色等颜色, 也可以是图片，例如  url("https://img11.360buyimg.com/ddimg/jfs/t1/169624/29/16/4603017/5fec2c79Eecbd536a/308b28b82a013cd2.png");
-    bgFloor: 'transparent' # 如果是图片地址，url里面请用双引号
+    # 首页页面的底部背景颜色，默认透明('transparent')，可以是白色('#fff')等颜色, 也可以是图片，例如  'url("https://img11.360buyimg.com/ddimg/jfs/t1/169624/29/16/4603017/5fec2c79Eecbd536a/308b28b82a013cd2.png")'
+    bgFloor: 'url("https://img11.360buyimg.com/ddimg/jfs/t1/169624/29/16/4603017/5fec2c79Eecbd536a/308b28b82a013cd2.png")' # 如果是图片地址，url里面请用双引号
   # 文章详情页 颜色属性
   post:
     # 文章详情页面-->标题在图片上时候的颜色
@@ -357,6 +370,46 @@ color_scheme:
     title: '#273849'
     # 文章详情页面 -->右侧目录文字颜色
     toc: '#273849'
+    # 文章详情页面 --> font-family
+    fontFamily: '-apple-system,BlinkMacSystemFont,PingFang SC,Segoe UI,Microsoft YaHei,Hiragino Sans GB,Helvetica Neue,Helvetica,Arial,sans-serif'
+    # 文章详情页面 --> 透明度, 左侧文章内容背景颜色的透明度
+    contentOpacity: '0.9'
+    # 文章详情页面 --> 透明度, 右侧文章目录背景颜色的透明度
+    tocOpacity: '0.8'
+    # bgPost -- 文章详情页背景图, 针对所有的文章详情页背景
+    # 可以是数组（数组里面是图片地址，多个图片地址会采用 幻灯片 循环显示），
+    # 如果背景只想要一个图片：可以使用 ['http://xxxxxx'] 或者 'http://xxxxxxx'，这样的写法, 图片地址也可以是本地路径('/img/xxx.png' or '/medias/xxx.png')
+    # 也可以是颜色字符串（例如'#C7EDCC', 或者rgba(0 ,0 ,0, 0.8) 那么会使用该颜色作为背景）
+    # 空字符串则背景颜色为透明
+    bgPost: [
+      'https://pic2.zhimg.com/80/v2-bcb819edb98e081817066eb6b0e6a2ef_1440w.jpg?source=1940ef5c', 
+      'https://pic2.zhimg.com/80/v2-f1b467abef1caeb5537f399da4ddbc9d_1440w.jpg?source=1940ef5c',
+      'https://pic2.zhimg.com/80/v2-c513cb0d2eff43b5391ea682f1ba07c6_1440w.jpg?source=1940ef5c',
+      'https://pic2.zhimg.com/80/v2-d0fe3a2cc79628c6a017f0066d4dee63_1440w.jpg?source=1940ef5c'
+    ]
+    # 背景图幻灯片模式--延迟时间
+    # 如果bgPost设置为数组，数组里面是多个图片地址,则 bgImgDelay表示背景图幻灯片的 延迟间隔时间
+    bgImgDelay: 180000 # 默认三分钟，切换一张图片
+    # 如果bgPost设置为数组，数组里面是多个图片地址,则 bgImgTransition表示背景图幻灯片的 动画效果
+    bgImgTransition: 'fade' # fade, scale, translate-fade,
+    ## bgPost，bgImgDelay，bgImgTransition三个属性除了可以在这里全局配置，还可以在单独的文章里配置
+    ## 单独的文章里配置，则这bgPost，bgImgDelay，bgImgTransition三个属性优先使用单独的文章里配置的
+
+
+# tag标签 按钮，文本高亮等等..
+tag_plugins:
+  # 所有标签用到的颜色值，可自行修改
+  warningColor: '#e6a23c'
+  dangerColor: '#f66'
+  successColor: '#67c23a'
+  infoColor: '#409eff'
+  yellow: '#f9ed69'
+  red: '#f47983'
+  green: '#16a951'
+  blue: '#177cb0'
+  cyan: '#00e09e'
+  # link标签的左侧默认图片
+  linkImg: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/256/safari.png'
 
     
 
@@ -368,6 +421,26 @@ cursor:
 
 # loading图片地址，为空则不使用loading图片
 loadingImg: 'https://img10.360buyimg.com/ddimg/jfs/t1/159345/8/2271/222193/5ff7b36fEe49f5663/a95287c20385127f.gif'
+
+# prismjs代码高亮，在根目录下的_config.yml文件中将prismjs.enable设为true的时候, 在这里选择主题样式
+prismjs:
+  theme: 'default' # default, coy, dark, funky, okaidia, solarizedlight, tomorrow, twilight
+
+# highlight代码高亮，在根目录下的_config.yml文件中将highlight设为true的时候，在这里自定义颜色值
+# https://github.com/chriskempson/tomorrow-theme
+highlight:
+  background: '#2d2d2d'
+  currentLine: '#393939'
+  selection: '#515151'
+  foreground: '#cccccc'
+  comment: '#999999'
+  red: '#f2777a'
+  orange: '#f99157'
+  yellow: '#ffcc66'
+  green: '#99cc99'
+  aqua: '#66cccc'
+  blue: '#6699cc'
+  purple: '#cc99cc'
 
 # 文章图片
 imgs:

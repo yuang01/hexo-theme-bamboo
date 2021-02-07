@@ -4,7 +4,7 @@
     border-left-style: solid;
     border-radius: 4px;
     margin: 1rem 0;
-    background-color: #f3f5f7;
+    background-color: alpha(#f3f5f7, $color-post-contentOpacity)
     border-color: $color-primary;
     color: #2c3e50;
     position: relative;
@@ -12,11 +12,11 @@
 
 .note.warning {
     border-color: $color-warning;
-    background-color: $color-warning + 11.3 * 8% + 1 * .5deg;
+    background-color: alpha($color-warning + 11.3 * 8% + 1 * .5deg, $color-post-contentOpacity)
 }
 .note.info {
     border-color: $color-info;
-    background-color: $color-info + 11.3 * 8% + 1 * .5deg;
+    background-color: alpha($color-info + 11.3 * 8% + 1 * .5deg, $color-post-contentOpacity)
 }
 .note.info::before {
     content: '\f129';
@@ -84,11 +84,11 @@
 }
 .note.danger {
     border-color: $color-danger;
-    background-color: $color-danger + 11.3 * 8% + 1 * .5deg;
+    background-color: alpha($color-danger + 11.3 * 8% + 1 * .5deg, $color-post-contentOpacity)
 }
 .note.success {
     border-color: $color-success;
-    background-color: $color-success + 11.3 * 8% + 1 * .5deg;
+    background-color: alpha($color-success + 11.3 * 8% + 1 * .5deg, $color-post-contentOpacity)
 }
 .note.success::before {
     content: '\f00c';

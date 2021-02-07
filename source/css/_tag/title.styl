@@ -1,0 +1,105 @@
+.bamboo-h {
+    display: inline-block;
+    font-weight: 700;
+    background: $color-primary;
+    color: #fff!important;
+    padding: 6px 8px 0 0!important;
+    border-top-right-radius: 6px;
+    margin-right: 2px;
+    box-shadow: 6px 3px 0 0 rgba(47,132,194,.2);
+}
+.bamboo-h:before {
+    content: " ";
+    display: inline-block;
+    width: 8px;
+}
+.bamboo-h:after {
+    content: " ";
+    position: absolute;
+    display: block;
+    width: calc(100% - 80px);
+    @media (max-width: 551px) { 
+      width: calc(100% - 50px);
+    }
+    border-bottom: 3px solid $color-primary;
+}
+.bamboo-h.warning {
+    background-color: $color-warning;
+}
+.bamboo-h.warning:after {
+    border-color: $color-warning;
+}
+.bamboo-h.success {
+    background-color: $color-success;
+}
+.bamboo-h.success:after {
+    border-color: $color-success;
+}
+.bamboo-h.info {
+    background-color: $color-info;
+}
+.bamboo-h.info:after {
+    border-color: $color-info;
+}
+.bamboo-h.danger {
+    background-color: $color-danger;
+}
+.bamboo-h.danger:after {
+    border-color: $color-danger;
+}
+.bamboo-h.yellow {
+    background-color: $color-tag-yellow;
+}
+.bamboo-h.yellow:after {
+    border-color: $color-tag-yellow;
+}
+.bamboo-h.red {
+    background-color: $color-tag-red;
+}
+.bamboo-h.red:after {
+    border-color: $color-tag-red;
+}
+.bamboo-h.blue {
+    background-color: $color-tag-blue;
+}
+.bamboo-h.blue:after {
+    border-color: $color-tag-blue;
+}
+.bamboo-h.cyan {
+    background-color: $color-tag-cyan;
+}
+.bamboo-h.cyan:after {
+    border-color: $color-tag-cyan;
+}
+.bamboo-h.green {
+    background-color: $color-tag-green;
+}
+.bamboo-h.green:after {
+    border-color: $color-tag-green;
+}
+
+.bamboo-h-b {
+    color: $color-primary!important;  
+    position: relative;
+    padding-left: 20px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    font-size: 24px;
+    border-bottom: 1px solid #ececec;
+    margin-top: 36px;
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+.bamboo-h-b:before {
+    content: "「";
+    position: absolute;
+    top: -6px;
+    left: -10px;
+}
+.bamboo-h-b:after {
+    content: "」";
+    position: absolute;
+    top: 6px;
+    right: auto;
+}
+

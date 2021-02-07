@@ -1,10 +1,15 @@
 $color-primary = convert(hexo-config('color_scheme.common.theme')); // 默认颜色
 $color-primary-shallow = $color-primary + 10 * 8% + 1 * .5deg;
 $color-primary-deep = $color-primary - 4 * 8% + 1 * .5deg;
-$color-warning = #e6a23c;
-$color-danger =  #f66;
-$color-success = #67c23a;
-$color-info = #409eff;
+$color-warning = convert(hexo-config('tag_plugins.warningColor'));
+$color-danger =  convert(hexo-config('tag_plugins.dangerColor'));
+$color-success = convert(hexo-config('tag_plugins.successColor'));
+$color-info = convert(hexo-config('tag_plugins.infoColor'));
+$color-tag-yellow = convert(hexo-config('tag_plugins.yellow'));
+$color-tag-red = convert(hexo-config('tag_plugins.red'));
+$color-tag-green = convert(hexo-config('tag_plugins.green'));
+$color-tag-blue = convert(hexo-config('tag_plugins.blue'));
+$color-tag-cyan = convert(hexo-config('tag_plugins.cyan'));
 
 $color-link = convert(hexo-config('color_scheme.common.link'));
 $border = convert(hexo-config('color_scheme.common.border'));
@@ -22,6 +27,9 @@ $color-post-p-light = convert(hexo-config('color_scheme.post.pLight'));
 $color-post-p = convert(hexo-config('color_scheme.post.p'));
 $color-post-title = convert(hexo-config('color_scheme.post.title'));
 $color-post-toc = convert(hexo-config('color_scheme.post.toc'));
+$color-post-fontFamily = convert(hexo-config('color_scheme.post.fontFamily'));
+$color-post-contentOpacity = convert(hexo-config('color_scheme.post.contentOpacity'));
+$color-post-tocOpacity = convert(hexo-config('color_scheme.post.tocOpacity'));
 
 $cursor-default = url(hexo-config('cursor.default'));
 $cursor-pointer = url(hexo-config('cursor.pointer'));

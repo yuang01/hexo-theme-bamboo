@@ -1,10 +1,9 @@
 .fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
+  transition: opacity .8s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.fade-enter, .fade-leave-to {
   opacity: 0;
 }
-
 .bounce-enter-active {
   animation: bounce-in .5s;
 }
@@ -21,4 +20,29 @@
   100% {
     transform: scale(1);
   }
+}
+.translate-fade-enter-active, .translate-fade-leave-active {
+  transition: all 1s;
+}
+.translate-fade-enter, .translate-fade-leave-active {
+  opacity: 0;
+}
+.translate-fade-enter {
+  transform: translateX(31px);
+}
+.translate-fade-leave-active {
+  transform: translateX(-31px);
+}
+
+.scale-enter-active, .scale-leave-active {
+  transition: all 2s;
+}
+.scale-enter, .scale-leave-active {
+  opacity: 0;
+}
+.scale-enter {
+  transform: scale(1.5);
+}
+.scale-leave-active {
+  transform: scale(1);
 }

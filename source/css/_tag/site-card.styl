@@ -1,0 +1,70 @@
+.site-card-group
+  display: flex
+  flex-wrap: wrap
+  justify-content: flex-start
+  margin: -0.5 * 1em
+  align-items: stretch
+.site-card
+  margin: 1em * 0.5
+  width: "calc(100% / 4.2 - %s)" % 1em
+  @media screen and (min-width: 2048px)
+      width: "calc(100% / 5 - %s)" % 1em
+  @media screen and (max-width: 768px)
+      width: "calc(100% / 3 - %s)" % 1em
+  @media screen and (max-width: 551px)
+      width: "calc(100% / 2.1 - %s)" % 1em
+  display: block
+  line-height: 1.4
+  height 100%
+  .img
+    width: 100%
+    height 120px
+    @media screen and (max-width: 551px)
+      height 100px
+    overflow: hidden
+    border-radius: 4px * 0.5
+    box-shadow: 0 1px 2px 0px rgba(0, 0, 0, 0.2)
+    background: #3a3a3a
+    img
+      width: 100%
+      height 100%
+      // trans(.75s)
+      transition: transform 2s ease
+      object-fit: cover
+
+  .info
+    margin-top: 1em * 0.5
+    img
+      width: 32px
+      height: 32px
+      border-radius: 16px
+      float: left
+      margin-right: 8px
+      margin-top: 2px
+    span
+      display: block
+    .title
+      font-weight: 600
+      font-size: 0.9375rem
+      color: #bbb
+      display: -webkit-box
+      -webkit-box-orient: vertical
+      overflow: hidden
+      -webkit-line-clamp: 1
+      transition: all 0.3s
+    .desc
+      font-size: 0.8125rem
+      word-wrap: break-word;
+      line-height: 1.2
+      color: #888
+      display: -webkit-box
+      -webkit-box-orient: vertical
+      overflow: hidden
+      -webkit-line-clamp: 2
+  .img
+    transition: all 0.3s
+  &:hover
+    .img
+      box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.1), 0 2px 4px 0px rgba(0, 0, 0, 0.1), 0 4px 8px 0px rgba(0, 0, 0, 0.1), 0 8px 16px 0px rgba(0, 0, 0, 0.1)
+    .info .title
+      color: #ff5722

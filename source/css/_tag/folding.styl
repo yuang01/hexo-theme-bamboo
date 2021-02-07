@@ -1,0 +1,100 @@
+details
+  display: block
+  padding: 16px
+  margin: 1em 0
+  border-radius: 4px
+  background: #fff
+  font-size: 0.9375rem
+  transition: all 0.3s
+  summary
+    cursor: pointer
+    padding: 16px
+    margin: 0 - 16px
+    border-radius: 4px
+    color: alpha(#444, .7)
+    font-size: 0.875rem
+    font-weight: bold
+    position: relative
+    line-height: normal
+    >
+      p,h1,h2,h3,h4,h5,h6
+        display: inline
+        border-bottom: none !important
+    &:hover
+      color: #444
+      &:after
+        position: absolute
+        content: '+'
+        text-align: center
+        top: 50%
+        transform: translateY(-50%)
+        right: 16px
+
+  border: 1px solid #f6f6f6
+  >summary
+    background: #f6f6f6
+  &[blue]
+    border-color: $color-tag-blue + 10 * 8% + 1 * .5deg
+    >summary
+      background: $color-tag-blue + 10 * 8% + 1 * .5deg
+  &[cyan]
+    border-color: $color-tag-cyan + 10 * 8% + 1 * .5deg
+    >summary
+      background: $color-tag-cyan + 10 * 8% + 1 * .5deg
+  &[green]
+    border-color: $color-tag-green + 10 * 8% + 1 * .5deg
+    >summary
+      background: $color-tag-green + 10 * 8% + 1 * .5deg
+  &[yellow]
+    border-color: $color-tag-yellow + 10 * 8% + 1 * .5deg
+    >summary
+      background: $color-tag-yellow + 10 * 8% + 1 * .5deg
+  &[red]
+    border-color: $color-tag-red + 10 * 8% + 1 * .5deg
+    >summary
+      background: $color-tag-red + 10 * 8% + 1 * .5deg
+
+details[open]
+  border-color: alpha(#444, .2)
+  >summary
+    border-bottom: 1px solid alpha(#444, .2)
+    border-bottom-left-radius: 0
+    border-bottom-right-radius: 0
+  &[blue]
+    border-color: alpha($color-tag-blue, .3)
+    >summary
+      border-bottom-color: alpha($color-tag-blue, .3)
+  &[cyan]
+    border-color: alpha($color-tag-cyan, .3)
+    >summary
+      border-bottom-color: alpha($color-tag-cyan, .3)
+  &[green]
+    border-color: alpha($color-tag-green, .3)
+    >summary
+      border-bottom-color: alpha($color-tag-green, .3)
+  &[yellow]
+    border-color: alpha($color-tag-yellow, .3)
+    >summary
+      border-bottom-color: alpha($color-tag-yellow, .3)
+  &[red]
+    border-color: alpha($color-tag-red, .3)
+    >summary
+      border-bottom-color: alpha($color-tag-red, .3)
+  >summary
+    color: #444
+    margin-bottom: 0
+    &:hover
+      &:after
+        content: '-'
+  >div.content
+    padding: 16px
+    margin: 0 - 16px
+    margin-top: 0
+    p>a:hover
+      text-decoration: underline
+    >
+      p,.tabs,ul,ol,.highlight,.note,details
+        &:first-child
+          margin-top: 0
+        &:last-child
+          margin-bottom: 0
