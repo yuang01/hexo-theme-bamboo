@@ -3,6 +3,8 @@
   <%- partial('_partial/head') %>
   <script src="<%- url_for('/js/jquery3.5.1.js') %>"></script>
   <script src="<%- url_for('/js/vue2.6.11.js') %>"></script>
+  <link href="<%- url_for('/js/danmu/barrager.css') %>" rel="stylesheet">
+<script src="<%- url_for('/js/danmu/jquery.barrager.js') %>"></script>
   <body>
     <!-- 判断是否为黑夜模式 -->
     <script>
@@ -136,5 +138,7 @@
         );
     });
     </script>
+    
+    <script src="<%- url_for('/js/app.js') %>"></script>
   </body>
 </html>

@@ -19,7 +19,7 @@
 <div class="bg-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
 <section class="posts">
   <% page.posts.each(function (post, i) { %>
-    <article class="post" data-aos="<%= theme.aos.animate || 'fade-up' %>" style="<% if(i % 2 == 0) { %>flex-direction: row-reverse;<% } %>">
+    <article class="post" data-aos="<%= theme.aos.animate || 'fade-up' %>" style="<% if(i % 2 == 0 && theme.homePostImgsPosition.on) { %>flex-direction: row-reverse;<% } %>   <% if(theme.homePostImgsPosition.on === false && theme.homePostImgsPosition.left) { %>flex-direction: row-reverse;<% } %>">
       <div class="post-main">
         <div class="post-info">
           <div class="post-time">
@@ -62,7 +62,7 @@
         </div>
         <div class="post-more">
           <a href="<%- url_for(post.path) %>">
-            <i class="iconfont iconmore" style="<% if(i % 2 == 0) { %>float: right;<% } %>" title="阅读更多"></i>
+            <i class="iconfont iconmore" style="<% if(i % 2 == 0 && theme.homePostImgsPosition) { %>float: right;<% } %>  <% if(theme.homePostImgsPosition.on === false && theme.homePostImgsPosition.left) { %>flex-direction: row-reverse;<% } %>" title="阅读更多"></i>
           </a>
         </div>
       </div>
@@ -109,4 +109,26 @@
   <% } %>
 <% } %>
 
-  
+<% if(theme.lantern.on === true ) { %>
+<!-- 灯笼1 -->
+<div class="deng-box">
+  <div class="deng">
+      <div class="xian"></div>
+      <div class="deng-a">
+          <div class="deng-b"><div class="deng-t"><%= theme.lantern.right %></div></div>
+      </div>
+      <div class="shui shui-a"><div class="shui-c"></div><div class="shui-b"></div></div>
+  </div>
+</div>
+
+<!-- 灯笼2 -->
+<div class="deng-box1">
+  <div class="deng">
+      <div class="xian"></div>
+      <div class="deng-a">
+          <div class="deng-b"><div class="deng-t"><%= theme.lantern.left %></div></div>
+      </div>
+      <div class="shui shui-a"><div class="shui-c"></div><div class="shui-b"></div></div>
+  </div>
+</div>
+<% } %>

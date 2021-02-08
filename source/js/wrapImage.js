@@ -5,7 +5,7 @@ $(document).ready(function () {
 * Wrap images with fancybox support.
 */
 function wrapImageWithFancyBox() {
-  $(".post-detail").find("img").not('.swiper-slide img').not('.sidebar-image img').not('#author-avatar img').not(".post-donate img").not(".post-donate img").not(".friend-avatar img").not('[title=notice]').not("#myComment img").not(".social-share .qrcode img").not(".ghcard img").not('img.inline').not(".site-card img").not(".link-card img").each(function () {
+  $(".post-detail").find("img").not('.swiper-slide img').not('.sidebar-image img').not('#author-avatar img').not(".post-donate img").not(".post-donate img").not(".friend-avatar img").not('[title=notice]').not("#myComment img").not(".social-share .qrcode img").not(".ghcard img").not('img.inline').not(".site-card img").not(".link-card img").not('.btns img').each(function () {
     var $image = $(this);
     var imageCaption = $image.attr('alt');
     var $imageWrapLink = $image.parent('a');

@@ -1,3 +1,6 @@
+
+<%- partial('_partial/prismjs', { post: page }) %>
+
 <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
 <%- partial('_partial/bgSwiper', { post: page }) %>
 <%- partial('_partial/post-detail-header', { post: page }) %>
@@ -59,12 +62,12 @@
     <% if(theme.sharejs.on && page.share !== false) { %>
       <%- partial('_partial/share') %>
     <% } %>
-
+    
     <!-- 评论 -->
       <% if(page.comments !== false ) { %>
         <div id="myComment">
           <% if(theme.valine.on === true ) { %>
-            <%- partial('_partial/comment/valine') %>
+            <%- partial('_partial/comment/valine', { post: page }) %>
           <% } else if(theme.gitment.on === true) { %>
             <%- partial('_partial/comment/gitment') %>
           <% } else if(theme.livere.on === true) {  %>
@@ -123,3 +126,4 @@
     </script>
   <% } %>
 </div>
+

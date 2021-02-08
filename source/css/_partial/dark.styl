@@ -16,6 +16,7 @@
   font-size: 1.5em;
   cursor $cursor-pointer,pointer;
   transition: background-color 0.3s;
+  z-index: 999;
 }
 @media (max-width: 551px) {
   .dark {
@@ -162,6 +163,9 @@
     // filter: brightness(0.5);
   }
   .post-detail {
+    :not(pre)>code[class*=language-], pre[class*=language-] {
+      filter: brightness(0.8)!important;
+    }
     .tagLink .link-card {
       background: #222;
     }
@@ -195,6 +199,19 @@
     blockquote,
     .note {
       background-color: #f0f6fc26;
+    }
+    div.tabs,
+    div.tabs ul.nav-tabs,
+    div.tabs ul.nav-tabs li.tab.active a
+    {
+      background-color: #f0f6fc26;
+    }
+    div.tabs ul.nav-tabs li.tab.active a {
+      border-bottom: 1px solid  #f0f6fc26;
+    }
+    div.btns a, .md div.btns a,
+    span.btn a{
+      background-color: #f0f6fc26!important;
     }
     blockquote p {
       color: #f0f6fc;

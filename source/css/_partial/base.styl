@@ -72,13 +72,28 @@ a {
     } else {
       background-color: $color-primary;
     }
-    
-    background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,.4) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.4) 50%,rgba(255,255,255,.4) 75%,transparent 75%,transparent);
+    // background-image: -webkit-linear-gradient(45deg,rgba(255,255,255,.4) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.4) 50%,rgba(255,255,255,.4) 75%,transparent 75%,transparent);
     border-radius: 3em;
 }
 ::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+    width: 6px;
+    height: 6px;
+}
+pre::-webkit-scrollbar-thumb,
+.toc-aside .toc-content::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+pre:hover::-webkit-scrollbar-thumb,
+.toc-aside .toc-content:hover::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+}
+pre:hover::-webkit-scrollbar-thumb:hover,
+.toc-aside .toc-content:hover::-webkit-scrollbar-thumb:hover {
+  if hexo-config('color_scheme.common.scroll') {
+      background-color: $color-scroll;
+    } else {
+      background-color: $color-primary;
+    }
 }
 // 媒体查询
 @media (max-width: 551px) {

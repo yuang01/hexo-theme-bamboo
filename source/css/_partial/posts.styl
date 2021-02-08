@@ -22,6 +22,8 @@
     .post-main {
       flex: 1;
       padding: 20px 40px;
+      box-sizing: border-box;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
     }
@@ -114,14 +116,15 @@
   .post-content {
     color: rgba(0,0,0,.66);
     margin-top: 10px;
-    height: 85px;
+    min-height: 85px;
+    max-height: 105px;
     a {
       text-decoration: none;
     }
     line-height: 27px;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 4;
     overflow: hidden;
   }
 

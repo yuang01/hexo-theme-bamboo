@@ -62,33 +62,6 @@
   <link rel="stylesheet" href="<%= theme.CDN.iconfont %>">
   <link href="<%= theme.CDN.fontAwesome %>" rel="stylesheet">
 
-  <!-- prismjs 代码高亮 -->
-  <% if(config.prismjs.enable === true ) { %>
-    <% 
-        var themeName = theme.prismjs.theme;
-    %>
-    <link href="<%- url_for('/js/prism/prism-line-numbers.css') %>" rel="stylesheet">
-    <% if(themeName == 'default' ) { %>
-        <link href="<%- url_for('/js/prism/prism.min.css') %>" rel="stylesheet">
-    <% } else if(themeName == 'coy') { %>
-        <link href="<%- url_for('/js/prism/prism-coy.min.css') %>" rel="stylesheet">
-    <% }  else if(themeName == 'dark') { %>
-        <link href="<%- url_for('/js/prism/prism-dark.min.css') %>" rel="stylesheet">
-    <% } else if(themeName == 'funky') { %>
-        <link href="<%- url_for('/js/prism/prism-funky.min.css') %>" rel="stylesheet">
-    <% } else if(themeName == 'okaidia') { %>
-        <link href="<%- url_for('/js/prism/prism-okaidia.min.css') %>" rel="stylesheet">
-    <% } else if(themeName == 'solarizedlight') { %>
-        <link href="<%- url_for('/js/prism/prism-solarizedlight.min.css') %>" rel="stylesheet">
-    <% } else if(themeName == 'tomorrow') { %>
-        <link href="<%- url_for('/js/prism/prism-tomorrow.min.css') %>" rel="stylesheet">
-    <% } else if(themeName == 'twilight') {  %>
-        <link href="<%- url_for('/js/prism/prism-twilight.min.css') %>" rel="stylesheet">
-    <% } else { %>
-        <link href="<%- url_for('/js/prism/prism.min.css') %>" rel="stylesheet">
-    <% } %>
-  <% } %>
-
   <% if(theme.live2d.on === true ) { %>
     <script>
         var themeModelId = '<%= theme.live2d.modelId %>';

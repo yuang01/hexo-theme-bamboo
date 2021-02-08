@@ -27,21 +27,25 @@
   <canvas id="header_canvas"style="position:absolute;bottom:0"></canvas>
   <% if (theme.postTitleTop.on === true){ %>
     <div class="title-box">
-      <span class="title" id="post-detail-header-title"></span>
+      <% if (theme.typed.on === true) { %>
+        <span class="title" id="post-detail-header-title"></span>
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+          <script>
+            var typed = new Typed("#post-detail-header-title", {
+              strings: ['<%= post.title %>'],
+              startDelay: <%= theme.typed.startDelay %>,
+              typeSpeed: <%= theme.typed.typeSpeed %>,
+              loop: <%= theme.typed.loop %>,
+              backSpeed: <%= theme.typed.backSpeed %>,
+              showCursor: <%= theme.typed.showCursor %>
+            });
+          </script>
+        <% } else {  %>
+          <span class="title">
+            <%= post.title %>
+          </span>
+        <% } %>
     </div>
-    <% if (theme.typed.on === true) { %>
-      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-        <script>
-          var typed = new Typed("#post-detail-header-title", {
-            strings: ['<%= post.title %>'],
-            startDelay: <%= theme.typed.startDelay %>,
-            typeSpeed: <%= theme.typed.typeSpeed %>,
-            loop: <%= theme.typed.loop %>,
-            backSpeed: <%= theme.typed.backSpeed %>,
-            showCursor: <%= theme.typed.showCursor %>
-          });
-        </script>
-      <% } %>
   <% } %>
   
   <% if (theme.bubble.on === true) { %>

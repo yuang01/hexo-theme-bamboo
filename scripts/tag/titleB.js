@@ -13,19 +13,19 @@ function postTitleB(args) {
         }
     }
     if (h == 'h1') {
-        return `<h1 class="bamboo-h-b" id="${text}" style="color:${bg}!important">${text}</h1><br/>`
+        return `<h1 class="bamboo-h-b" id="${text}" style="color:${bg}!important">${text}</h1><div></div>`
     } else if (h == 'h2') {
-        return `<h2 class="bamboo-h-b" id="${text}" style="color:${bg}!important">${text}</h2><br/>`
+        return `<h2 class="bamboo-h-b" id="${text}" style="color:${bg}!important">${text}</h2><div></div>`
     } else if (h == 'h3') {
-        return `<h3 class="bamboo-h-b" id="${text}" style="color:${bg}!important">${text}</h3><br/>`
+        return `<h3 class="bamboo-h-b" id="${text}" style="color:${bg}!important">${text}</h3><div></div>`
     } else if (h == 'h4') {
-        return `<h4 class="bamboo-h-b" id="${text}" style="color:${bg}!important">${text}</h4><br/>`
+        return `<h4 class="bamboo-h-b" id="${text}" style="color:${bg}!important">${text}</h4><div></div>`
     } else if (h == 'h5') {
-        return `<h5 class="bamboo-h-b" id="${text}" style="color:${bg}!important">${text}</h5><br/>`
+        return `<h5 class="bamboo-h-b" id="${text}" style="color:${bg}!important">${text}</h5><div></div>`
     } else if (h == 'h6') {
-        return `<h6 class="bamboo-h-b" id="${text}" style="color:${bg}!important">${text}</h6><br/>`
+        return `<h6 class="bamboo-h-b" id="${text}" style="color:${bg}!important">${text}</h6><div></div>`
     } else {
-        return `<h2 class="bamboo-h-b" id="${text}" style="color:${bg}!important">${text}</h2><br/>`
+        return `<h2 class="bamboo-h-b" id="${text}" style="color:${bg}!important">${text}</h2><div></div>`
     }
 }
 

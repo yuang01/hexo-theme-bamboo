@@ -113,6 +113,17 @@ sakura:
   on: false
   onlyPc: false # 设为true，只有pc端显示花瓣特效
 
+# 首页文章图片是否一左一右交错显示
+homePostImgsPosition:
+  on: true
+  left: true # 当上面的on设置为false（不交叉显示），则指定left为true的时候，图片在左边显示
+
+# 灯笼
+lantern:
+  on: true
+  left: '春' # 左边灯笼的文字， 空字符串则没有文字
+  right: '节' # 右边灯笼的文字
+
 # 首页文章列表滚动动画，详情参照https://github.com/michalsnik
 aos:
   on: true
@@ -309,6 +320,13 @@ gitalk:
   clientID:      #`Github Application clientID`
   clientSecret:  #`Github Application clientSecret`
 
+# 弹幕 只对valine评论有效
+danmu:
+  on: false
+  loop: false # 设为true，则弹幕完了之后，继续查询评论接口，将该篇文章的评论再显示在弹幕里
+  delay: 5000 # 每条弹幕之间出现的间隔时间
+  speed: 20 # 弹幕运行的速度, 越小越快
+
 # 归档页面图片 or 'http://xxx'
 archiveImg: '/medias/archive.jpg'
 # 标签页面图片
@@ -373,7 +391,7 @@ color_scheme:
     # 文章详情页面 --> font-family
     fontFamily: '-apple-system,BlinkMacSystemFont,PingFang SC,Segoe UI,Microsoft YaHei,Hiragino Sans GB,Helvetica Neue,Helvetica,Arial,sans-serif'
     # 文章详情页面 --> 透明度, 左侧文章内容背景颜色的透明度
-    contentOpacity: '0.9'
+    contentOpacity: '1'
     # 文章详情页面 --> 透明度, 右侧文章目录背景颜色的透明度
     tocOpacity: '0.8'
     # bgPost -- 文章详情页背景图, 针对所有的文章详情页背景
@@ -381,12 +399,7 @@ color_scheme:
     # 如果背景只想要一个图片：可以使用 ['http://xxxxxx'] 或者 'http://xxxxxxx'，这样的写法, 图片地址也可以是本地路径('/img/xxx.png' or '/medias/xxx.png')
     # 也可以是颜色字符串（例如'#C7EDCC', 或者rgba(0 ,0 ,0, 0.8) 那么会使用该颜色作为背景）
     # 空字符串则背景颜色为透明
-    bgPost: [
-      'https://pic2.zhimg.com/80/v2-bcb819edb98e081817066eb6b0e6a2ef_1440w.jpg?source=1940ef5c', 
-      'https://pic2.zhimg.com/80/v2-f1b467abef1caeb5537f399da4ddbc9d_1440w.jpg?source=1940ef5c',
-      'https://pic2.zhimg.com/80/v2-c513cb0d2eff43b5391ea682f1ba07c6_1440w.jpg?source=1940ef5c',
-      'https://pic2.zhimg.com/80/v2-d0fe3a2cc79628c6a017f0066d4dee63_1440w.jpg?source=1940ef5c'
-    ]
+    bgImg: ''
     # 背景图幻灯片模式--延迟时间
     # 如果bgPost设置为数组，数组里面是多个图片地址,则 bgImgDelay表示背景图幻灯片的 延迟间隔时间
     bgImgDelay: 180000 # 默认三分钟，切换一张图片
@@ -409,7 +422,7 @@ tag_plugins:
   blue: '#177cb0'
   cyan: '#00e09e'
   # link标签的左侧默认图片
-  linkImg: 'https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/256/safari.png'
+  linkImg: 'https://cdn.pixabay.com/photo/2018/12/05/13/41/panda-3857754__340.jpg'
 
     
 

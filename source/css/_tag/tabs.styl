@@ -1,0 +1,70 @@
+$border-color = alpha(#444, .2)
+$tbr = 4px
+
+div.tabs
+  display: block
+  position: relative
+  margin-top: 1em
+  margin-bottom: 1em
+  border-radius: $tbr
+  background: #fff
+  border: 1px solid $border-color
+  font-size: 0.9375rem
+  .highlight,p,ul,ol,div.note,details
+    margin-top: 1em
+    margin-bottom: 1em
+
+div.tabs
+  ul.nav-tabs
+    display: flex
+    overflow-x: auto
+    white-space: nowrap
+    justify-content: flex-start
+    margin: 0 !important
+    padding: 8px 8px 0 8px
+    background: #f6f6f6
+    border-radius: $tbr $tbr 0 0
+    line-height: 1.5
+    li.tab
+      list-style-type: none
+      margin-top: 0
+      margin-bottom: 0
+      &:last-child
+        padding-right: 16px
+      a
+        display: block
+        cursor: pointer
+        border-radius: $tbr $tbr 0 0
+        padding: 16px * 0.5
+        text-align: center
+        font-size: 0.875rem
+        line-height: inherit
+        font-weight: bold
+        color: #888!important
+        border: 1px solid transparent
+        &:hover
+          color: $color-primary!important
+        i
+          pointer-events: none
+      &.active a
+        cursor: default
+        color: $color-primary!important
+        background: #fff
+        border: 1px solid $border-color
+        border-bottom: 1px solid #fff
+
+  .tab-content
+    border-top: 1px solid $border-color
+    margin-top: -1px
+    .tab-pane
+      padding: 16px
+      &:not(.active)
+        display: none
+      &.active
+        display: block
+      >
+        p,.tabs,ul,ol,.highlight,.note
+          &:first-child
+            margin-top: 0
+          &:last-child
+            margin-bottom: 0
