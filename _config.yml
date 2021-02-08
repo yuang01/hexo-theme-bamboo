@@ -120,7 +120,7 @@ homePostImgsPosition:
 
 # 灯笼
 lantern:
-  on: true
+  on: false
   left: '春' # 左边灯笼的文字， 空字符串则没有文字
   right: '节' # 右边灯笼的文字
 
