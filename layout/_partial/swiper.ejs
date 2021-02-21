@@ -82,8 +82,12 @@ var defaultIndex = Math.floor((Math.random()*imgArr.length));
                   <div class="excerpt ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><%= theme.swiper.defaultDesc %></div>
                 </div>
                 <div style="display: flex;">
-                  <div class="ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><a href="<%= theme.swiper.defaultMoreLink %>" class="read-more border-color swiper-btn-color" style="display: inline-block; z-index:1;"><%= __('readMore') %></a></div>
-                  <div class="ani animated" style="margin-left: 10px;" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><a href="<%= theme.swiper.defaultBtnLink %>" class="read-more " style="display: inline-block; z-index:1;border: 1px solid white;"><%= theme.swiper.defaultBtnText %></a></div>
+                  <% if(theme.swiper.defaultMoreLink) { %>
+                    <div class="ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><a href="<%= theme.swiper.defaultMoreLink %>" class="read-more border-color swiper-btn-color" style="display: inline-block; z-index:1;"><%= __('readMore') %></a></div>
+                  <% } %>
+                  <% if(theme.swiper.defaultBtnText) { %>
+                    <div class="ani animated" style="margin-left: 10px;" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><a href="<%= theme.swiper.defaultBtnLink %>" class="read-more " style="display: inline-block; z-index:1;border: 1px solid white;"><%= theme.swiper.defaultBtnText %></a></div>
+                  <% } %>
                 </div>
               </div>
             </div>

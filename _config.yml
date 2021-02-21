@@ -33,8 +33,8 @@ swiper:
   defaultImg: '/medias/1.jpg' # 图片，没有则随机选取
   defaultTile: 'Hexo-theme-Bamboo' # 标题
   defaultDesc: '大家好，这是一个Hexo主题，希望这款主题能得到你的喜爱' #描 述
-  defaultMoreLink: 'https://github.com/yuang01/hexo-theme-bamboo' # 阅读更多链接 
-  defaultBtnText: 'Download theme' # 阅读更多右边的按钮的文字
+  defaultMoreLink: 'https://github.com/yuang01/hexo-theme-bamboo' # 阅读更多按钮链接 , 空字符串则不显示
+  defaultBtnText: 'Download theme' # 阅读更多右边的按钮的文字，空字符串则不显示
   defaultBtnLink: 'https://github.com/yuang01/hexo-theme-bamboo' # 阅读更多右边的按钮的链接
 
 # 回到顶部
