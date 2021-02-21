@@ -4,7 +4,7 @@
 .barrage_box .portrait img{width: 100%;height: 100%;}
 .barrage_box div.p a{
     display: inline-block;
-    max-width: 400px;
+    max-width: 370px;
     margin-right: 2px; font-size: 14px;color: #fff;line-height: 40px;margin-left: 18px;
     overflow: hidden;/*超出部分隐藏*/
     white-space: nowrap;/*不换行*/
