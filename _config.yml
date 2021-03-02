@@ -432,8 +432,10 @@ cursor:
   default: https://cdn.jsdelivr.net/gh/inkss/common@master/cursor/left_ptr.png
   text: https://cdn.jsdelivr.net/gh/inkss/common@master/cursor/text.png
 
-# loading图片地址，为空则不使用loading图片
+# loading图片地址，为空则不使用loading图片，文章详情页的loading图片可从`postLoadingImg`参数控制
 loadingImg: 'https://img10.360buyimg.com/ddimg/jfs/t1/159345/8/2271/222193/5ff7b36fEe49f5663/a95287c20385127f.gif'
+# 文章详情页的loading图片地址，为空则不使用loading图片
+postLoadingImg: 'https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif'
 
 # prismjs代码高亮，在根目录下的_config.yml文件中将prismjs.enable设为true的时候, 在这里选择主题样式
 prismjs:
