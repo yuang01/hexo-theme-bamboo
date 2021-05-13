@@ -624,8 +624,8 @@ CDN:
   Meting: https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js
   MiniValine: https://unpkg.com/minivaline/dist/MiniValine.min.js
   livere: https://cdn-city.livere.com/js/embed.dist.js
-  gitmentCss: https://imsun.github.io/gitment/style/default.css
-  gitmentJs: https://imsun.github.io/gitment/dist/gitment.browser.js
+  gitmentCss: https://cdn.bootcdn.net/ajax/libs/gitment/0.0.3/default.min.css
+  gitmentJs: https://cdn.bootcdn.net/ajax/libs/gitment/0.0.3/gitment.browser.min.js
   gitalkCss: https://cdn.bootcdn.net/ajax/libs/gitalk/1.7.2/gitalk.css
   gitalkJs: https://cdn.bootcdn.net/ajax/libs/gitalk/1.7.2/gitalk.js
   busuanzi: //busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js # 卜算子
