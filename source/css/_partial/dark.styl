@@ -58,6 +58,27 @@
     opacity: 0.4;
     background: #000;  
   }
+  .motto {
+    transition: background 0.3s;
+    .motto-content {
+      color: #8b949e;
+    }
+    h3 {
+      color: #c9d1d9;
+    }
+    background: #2d3032;
+  }
+  .index-notice {
+    transition: background 0.3s;
+    .index-notice-content__title a, .index-notice-content__title span,
+    .index-notice-content__date {
+      color: #8b949e;
+    }
+    h3 {
+      color: #c9d1d9;
+    }
+    background: #2d3032;
+  }
   // #c9d1d9  #8b949e
   .topArticle .articles .article-link .text .title a,
   .topArticle .articles .article-link .text .more {
@@ -308,7 +329,9 @@
   .category-header,
   .about-header,
   .friends-header {
-    filter: brightness(0.5);
+    .mask-box {
+      opacity: 0.6;
+    }
   }
   .tag-name .name,
   .category-name .name,
@@ -344,6 +367,9 @@
   }
   #about .basic-info .socialAccounts .account {
     color: #8b949e;
+  }
+  video {
+    filter: brightness(0.6);
   }
   .message-box_wrapper .message-box {
     background-color: #2d3032;
@@ -383,7 +409,9 @@
   #appDrawer .drawer-box .drawer-box-content .drawer-box-content_menu .drawer-box-content_item a {
     color: #f0f6fc;
   }
-  .bg-color {
+  .bg-color,
+  .header-bg-color,
+  .header .header-content .navbar .menu .menu-item .sub-menu li {
     background-color: #222;
   }
   .github-corner {

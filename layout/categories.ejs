@@ -16,9 +16,63 @@ var hashCode = function (str) {
 var i = 0;
 %>
 <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
-<div class="lazyload categories-header" data-original="<%- url_for(theme.categoriesImg) %>" style="width: 100%;height: 50vh;overflow: hidden;background-size: cover; 
-background-position: center center;">
+<div class="lazyload categories-header" data-original="<%- url_for(theme.categories.img) %>">
+    <div class="categories-header-title">
+        <%= theme.categories.title %>
+      </div>
+      <div class="categories-header-desc">
+      <% if (theme.typed.on === true) { %>
+        <span class="title" id="categories-header-desc"></span>
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+            <script>
+            var typed = new Typed("#categories-header-desc", {
+                strings: ['<%= theme.categories.desc %>'],
+                startDelay: <%= theme.typed.startDelay %>,
+                typeSpeed: <%= theme.typed.typeSpeed %>,
+                loop: true,
+                backSpeed: <%= theme.typed.backSpeed %>,
+                showCursor: true
+            });
+            </script>
+        <% } else {  %>
+            <span class="title">
+            <%= theme.categories.desc %>
+            </span>
+        <% } %>
+      </div>
+      <div class="mask-box"></div>
 </div>
+
+<div class="categories-video">
+    <video class="full-video" autoplay loop muted>
+        <source style="width: 100%;height: 100vh;" src="<%- url_for(theme.categories.video) %>">
+    </video>
+    <div class="video-header-title">
+        <%= theme.categories.title %>
+    </div>
+    <div class="video-header-desc">
+    <% if (theme.typed.on === true) { %>
+        <span class="title" id="video-header-desc"></span>
+        <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+            <script>
+            var typed = new Typed("#video-header-desc", {
+                strings: ['<%= theme.categories.desc %>'],
+                startDelay: <%= theme.typed.startDelay %>,
+                typeSpeed: <%= theme.typed.typeSpeed %>,
+                loop: true,
+                backSpeed: <%= theme.typed.backSpeed %>,
+                showCursor: true
+            });
+            </script>
+        <% } else {  %>
+            <span class="title">
+            <%= theme.categories.desc %>
+            </span>
+        <% } %>
+    </div>
+    <div class="mask-box"></div>
+</div>
+
 <div id="categories" class="container">
     <div class="card">
         <div class="card-content">

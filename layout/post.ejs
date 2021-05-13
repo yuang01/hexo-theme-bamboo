@@ -68,6 +68,8 @@
         <div id="myComment">
           <% if(theme.valine.on === true ) { %>
             <%- partial('_partial/comment/valine', { post: page }) %>
+          <% } else if(theme.twikoo.on === true) { %>
+            <%- partial('_partial/comment/twikoo') %>
           <% } else if(theme.gitment.on === true) { %>
             <%- partial('_partial/comment/gitment') %>
           <% } else if(theme.livere.on === true) {  %>
@@ -98,10 +100,10 @@
 
     <% if(theme.toc.open === false || page.tocOpen === false) { %>
       <script>
-          $(".toc-aside").css({'width': 0, 'padding': 0});
-          $(".toc-content").css({'width': 0});
-          $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
-          $(".main-content").css({'width': '75%', 'margin': '10px auto'});
+        $(".toc-aside").css({'width': 0, 'padding': 0});
+        $(".toc-content").css({'width': 0});
+        $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
+        $(".main-content").css({'width': '75%', 'margin': '10px auto'});
       </script>
     <% } %>
 
@@ -124,6 +126,15 @@
         }
       });
     </script>
+  <% } else { %>
+    <script>
+      $(".toc-aside").css({'width': 0, 'padding': 0});
+      $(".toc-content").css({'width': 0});
+      $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
+      $(".main-content").css({'width': '75%', 'margin': '10px auto'});
+    </script>
   <% } %>
+
+
 </div>
 

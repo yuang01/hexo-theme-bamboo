@@ -1,5 +1,15 @@
-<header class="header bg-color" 
-  style="<% if(theme.headMenuFixed) { %>position: fixed; <% } %>
+<%
+    var menuMap = new Map();
+    menuMap.set("Home", "首页");
+    menuMap.set("Tags", "标签");
+    menuMap.set("Categories", "分类");
+    menuMap.set("Archives", "归档");
+    menuMap.set("About", "关于");
+    menuMap.set("Contact", "留言板");
+    menuMap.set("Friends", "友情链接");
+%>
+<header class="header <% if(!theme.color_scheme.common.headerMenuTransparent) { %>header-bg-color<% } %>" id="navHeader"
+  style="position: fixed;
   left: 0; top: 0; z-index: 10;width: 100%;"
 >
   <div class="header-content">
@@ -7,33 +17,47 @@
       <%- partial('_partial/drawer') %>
     </div>
     <div class="blog-title" id="author-avatar">
-      <div class="avatar">
-        <img src="<%- url_for(theme.logo) %>" alt="logo">
-      </div>
+      <% if(theme.logo) { %>
+        <div class="avatar">
+          <img src="<%- url_for(theme.logo) %>" alt="logo">
+        </div>
+      <% }%>
       <a href="<%- url_for() %>" class="logo"><%= config.title %></a>
     </div>
     <nav class="navbar">
       <ul class="menu">
-        <% for (name in theme.menu) { %>
-          <li class="menu-item">
-            <a href="<%- url_for(theme.menu[name]) %>" class="menu-item-link">
-              <% if(name === 'Home') { %>
-                <i class="fa fa-home" aria-hidden="true"></i>
-              <% } else if (name === 'Archives') { %>
-                <i class="fa fa-archive" aria-hidden="true"></i>
-              <% } else if (name === 'Tags') { %>
-                <i class="fa fa-tags" aria-hidden="true"></i>
-              <% } else if (name === 'Categories') { %>
-                <i class="fa fa-bookmark" aria-hidden="true"></i>
-              <% } else if (name === 'About') { %>
-                <i class="fa fa-user" aria-hidden="true"></i>
-              <% } else if (name === 'link') { %>
-                <i class="fa fa-link" aria-hidden="true"></i>
-              <% } %>
-              <span><%- __('Menu.' + name) %></span>
-            </a>
+        <% Object.keys(theme.menu).forEach(function(key) { %>
+          <li class="menu-item" style="position: relative;">
+            <% if(!theme.menu[key].children) { %>
+              <a href="<%- url_for(theme.menu[key].url) %>" class="menu-item-link">
+                <% if (theme.menu[key].icon && theme.menu[key].icon.length > 0) { %>
+                  <i class="<%- theme.menu[key].icon %>" aria-hidden="true"></i>
+                <% } %>
+                <span class="name"><%- (config.language === 'zh-CN' && menuMap.has(key)) ? menuMap.get(key) : key %></span>
+              </a>
+            <% } else { %>
+              <a href="javascript:;" class="menu-item-link">
+                <% if (theme.menu[key].icon && theme.menu[key].icon.length > 0) { %>
+                  <i class="<%- theme.menu[key].icon %>"></i>
+                <% } %>
+                <span class="name"><%- (config.language === 'zh-CN' && menuMap.has(key)) ? menuMap.get(key) : key %></span>
+                <i class="fa fa-chevron-down arrow" aria-hidden="true"></i>
+              </a>
+              <ul class="sub-menu">
+                <% for(let childrenLink of theme.menu[key].children){ %>
+                <li>
+                  <a href="<%- url_for(childrenLink.url)%>">
+                    <% if (childrenLink.icon && childrenLink.icon.length > 0) { %>
+                    <i class="<%- childrenLink.icon %>" style="margin-top: -20px;"></i>
+                    <% } %>
+                    <span><%- childrenLink.name %></span>
+                  </a>
+                </li>
+                <% } %>
+              </ul>
+            <% } %>
           </li>
-        <% } %>
+        <% }); %>
       </ul>
       <% if(theme.dark.on === true) { %>
         <%- partial('_partial/dark') %>
@@ -72,5 +96,10 @@
       }
     </script>
     <script src="<%- url_for(theme.CDN.weather) %>"></script> 
+    <% } %>
+
+    <!-- 当头部导航设置为背景透明的时候  -->
+    <% if(theme.color_scheme.common.headerMenuTransparent) { %>
+      <script src="<%- url_for('/js/header/index.js') %>"></script>
     <% } %>
 </header>

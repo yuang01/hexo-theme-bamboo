@@ -1,41 +1,85 @@
 # 菜单
 menu:
-  Home: /
-  Archives: /archives
-  Tags: /tags
-  Categories: /categories
-  About: /about
-  link: /friends
+  Home:
+    url: /
+    icon: fa fa-home
+  Archives:
+    url: /archives
+    icon: fa fa-archive
+  Tags:
+    url: /tags
+    icon: fa fa-tags
+  Categories:
+    url: /categories
+    icon: fa fa-bookmark
+  About:
+    url: /about
+    icon: fa fa-user
+  Friends:
+    url: /friends
+  更多: # 这是二级菜单的写法
+   icon: fa fa-link
+   children:
+    - name: 图库
+      url: /gallery
+      icon: fa fa-music
+    - name: 友情连接
+      url: /huoban
+      icon: fa fa-film
+    - name: 关于我
+      url: /me
+      icon: fa fa-film
+    - name: 百度
+      url: http://baidu.com
+      icon: fa fa-film
+
 # github账号
 Github: https://github.com/yuang01/hexo-theme-bamboo
 
 # 网站logo
-logo: /medias/logo.png
+logo: /medias/logo.png # 为空则不显示
 
 # 网站 favicon
 favicon: /favicon.ico # or .png .jpg .svg .gif .jpeg .ico
 
-# 頂部导航固定
-headMenuFixed: true
+# 页面预加载动画
+preloader:
+  enable: false
 
 # 首页轮播图设置
 swiper:
+  # 当在.md文件中，设置swiper:true，会将该文章放到轮播中，
   showPrevNext: true # 是否显示左右切换按钮
   showIndicators: true  # 是否显示指示器
-  autoplay: true # 是否自动轮播
+  autoplay: false # 是否自动轮播
   loop: true # 让轮播看起来是循环的, 例如false的话，到达最后一个轮播图的时候，右按钮不能点击
   delay: 5000 # 切换延迟时间
   effect: 'slide' # 'fade': 淡入淡出效果
   textAnimated: 'fadeInDown' # 文字动画，属性使用 animate.css, https://daneden.github.io/animate.css/
   textDuration: '0.2s' # 文字动画持续时间（单位秒）
   textDelay: '0.1s' # 文字动画延迟时间（单位秒）
+  readMoreBtn: true # 阅读更多按钮是否显示
+  readMoreBtnBackgroundColor: '' # 阅读更多按钮背景颜色,空字符串则默认使用主题颜色
+  bubble: true # 轮播图是否显示气泡,也可以打开底下的花瓣或者雪花特效 sakura（花瓣）: true snow(雪花): true
   # 当没有文章设置swiper: true时候，轮播图会显示以下default默认内容，可自行切换对应内容
-  defaultImg: '/medias/1.jpg' # 图片，没有则随机选取
-  defaultTile: 'Hexo-theme-Bamboo' # 标题
-  defaultDesc: '大家好，这是一个Hexo主题，希望这款主题能得到你的喜爱' #描 述
-  defaultMoreLink: 'https://github.com/yuang01/hexo-theme-bamboo' # 阅读更多按钮链接 , 空字符串则不显示
-  defaultBtnText: 'Download theme' # 阅读更多右边的按钮的文字，空字符串则不显示
-  defaultBtnLink: 'https://github.com/yuang01/hexo-theme-bamboo' # 阅读更多右边的按钮的链接
+  defaultImg: 'https://img11.360buyimg.com/ddimg/jfs/t1/160978/33/20686/2476596/6083e62dEa588862b/63f8f2163ab61b2f.png' # 图片，没有则随机选取
+  defaultTile: '青墨书晚风' # 标题
+  defaultDesc: ['煮酒洗净尘嚣，论知交', '万般付之一笑，共偕老'] #描 述
+  defaultLeftBtnText: '阅读文档' # 左边按钮文字, 空字符串则不显示
+  defaultLeftBtnLink: 'https://yuang01.gitee.io/2021/02/08/hexo-theme-bamboo-new/' # 左边按钮链接 
+  defaultRightBtnText: '下载主题' # 右边按钮的文字，空字符串则不显示
+  defaultRightBtnLink: 'https://gitee.com/yuang01/hexo-theme-bamboo/repository/archive/dev.zip' # 右边的按钮的链接
+  defaultDescTyped: true # defaultDesc文字是否开启打字特效
+  defaultDescTypedLoop: true # defaultDesc文字的打字特效是否循环
+  # defaultAddToSwiper表示：当有文章设置了swiper: true的时候，将上面的 默认内容 放在轮播图的第一页
+  defaultAddToSwiper: true # 开启这个，则loop默认为false
+  ## 轮播图样式更改
+  # 轮播图的文字和按钮居中显示 (针对 imgwidthFull和 full都是false的时候)
+  textCenter: true
+  # 图片宽度为100% (轮播图的文字和按钮只能居中显示)
+  imgwidthFull: false
+  # 整个轮播图宽高都是100%  (轮播图的文字和按钮只能居中显示)
+  full: true # full 优先级大于 imgwidthFull
 
 # 回到顶部
 goTop: 
@@ -184,7 +228,7 @@ baseInfo:
 # 关于我 技能
 skills:  # color or #000 技能
   on: true
-  data:
+  data: # data下面的值，不是固定个数的，可以自己增加或者删除
     HTML5:
       background: 'linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%)'
       percent: 90%
@@ -216,7 +260,7 @@ skills:  # color or #000 技能
 # 关于我 社交账号
 socialAccounts: 
   on: true
-  data:
+  data: # data下面的值，不是固定个数的，可以自己增加或者删除
     QQ:
       icon: fa fa-qq
       name: 1730241541
@@ -229,7 +273,7 @@ socialAccounts:
 # 关于我 游戏
 games:
   on: true
-  data:
+  data: # data下面的值，不是固定个数的，可以自己增加或者删除
     王者荣耀:
       img: 'https://pic2.zhimg.com/80/v2-54730a36304842b86a57a237b8b39945_720w.jpg?source=1940ef5c'
     英雄杀:
@@ -242,7 +286,7 @@ games:
 # 关于我 书籍
 books:
   on: true
-  data:
+  data: # data下面的值，不是固定个数的，可以自己增加或者删除
     明朝那些事儿:
       img: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2736238052,2078148140&fm=26&gp=0.jpg'
     春秋左传:
@@ -254,9 +298,49 @@ books:
 copyright:
   on: true
 
+# 首页座右铭
+motto:
+  on: true
+  title: '座右铭'
+  content: '沉淀后我愿意做个温暖的人，有自己的喜好，有自己的原则，有自己的信仰，不急功近利，不浮夸轻薄。宠辱不惊，淡定安逸，心静如水，不忘初心，方得始终。——凌茜'
+  background: 'url("https://img10.360buyimg.com/ddimg/jfs/t1/166587/8/21344/72069/6088c24fEda5fdeb6/f9730ab637b7ca47.png")' # url("xxx") or red or #000 or rgba() ..
+
+# 首页公告
+notice:
+  on: true
+  seamless: false # 为true时，则无缝不停止滚动，false是会停一下的滚动
+  title: '公告'
+  background: 'url("https://img10.360buyimg.com/ddimg/jfs/t1/166587/8/21344/72069/6088c24fEda5fdeb6/f9730ab637b7ca47.png")' # url("xxx") or red or #000 or rgba() ..
+  list: # list相当于数组对象，[{title:'xx',date: 'xx', url: 'xxx', color: 'red'}]根据自己实际情况，增加或者删除
+    - title: '#博客更新到2.0了'
+      date: '2021-04-28'
+      url: '/archives'   # 可以为空, 也可以是本地页面地址如 '/archives'
+      color: red   # 字体颜色
+    - title: '#新增 轮播图支持三种模式了，功能也增强了 ~'
+      date: '2021-04-28'
+      url: 'http://baidu.com'
+      color: red
+    - title: '#新增 支持二级导航'
+      date: '2021-04-28'
+      url: 'http://baidu.com'
+      color: blue
+    - title: '#新增 归档，分类等页面头部图片位置可以设置为视频 ~'
+      date: '2021-04-28'
+      url: 'http://baidu.com'
+      color: '#42b983'
+    - title: '#新增 头部导航可以设置为在顶部透明，并且可以任意设置背景颜色了 ~'
+      date: '2021-04-28'
+      url: 'http://baidu.com'
+    - title: '#新增 首页增加了座右铭和公告栏目 ~'
+      date: '2021-04-28'
+      url: 'http://baidu.com'
+    
+  
+
 # 文章置顶
 topArticle:
   on: true
+  background: 'rgba(255,255,255,1)' # url("http://xxx.png") or red or #000 or rgba() ..
 
 # 文章详情页图片上的标题打字效果
 typed:
@@ -274,8 +358,8 @@ bubble:
 # valine 评论
 valine:
   on: true
-  appid:
-  appkey:
+  appid: 
+  appkey: 
   avatar: '' # 匿名者头像选项 https://valine.js.org/avatar.html
   placeholder: '客官，说点什么吧' # 评论内容输入框的 placeholder
   master: '' # 博主标签识别，博主邮箱md5 可以去md5加密网站，例如 https://md5jiami.51240.com/ ，将自己的邮箱输入， 得到 32位小写 的字符串
@@ -283,6 +367,14 @@ valine:
   requiredFields: ['nick', 'mail'] # 设置必填项 ['nick', 'mail'] nick为昵称必填， mail为邮箱必填，建议设置必填，填写qq邮箱，会使用qq头像作为头像
   backgroundImg: '/medias/comment-bg.gif' # 右下角背景图片
   backgroundColor: 'rgba(255,255,255,0.9)' # 背景颜色
+
+# twikoo评论
+# https://twikoo.js.org
+twikoo:
+  on: false
+  envId: twikoo-1gs9l0fb17e7897a # 环境 ID，搭建教程：https://twikoo.js.org/quick-start.html
+  # region: ap-guangzhou # 环境地域，默认为 ap-shanghai
+  # path: 'window.location.pathname' # 自定义文章路径
 
 # miniValine
 miniValine:
@@ -327,20 +419,61 @@ danmu:
   delay: 5000 # 每条弹幕之间出现的间隔时间
   speed: 20 # 弹幕运行的速度, 越小越快
 
-# 归档页面图片 or 'http://xxx'
-archiveImg: '/medias/archive.jpg'
-# 标签页面图片
-tagImg: '/medias/tag.jpg'
-# 标签详情页面图片
-tagDetailImg: '/medias/tagDetail.jpg'
-# 分类页面图片
-categoriesImg: '/medias/categories.jpg'
-#分类详情页面图片
-categoryDetailImg: '/medias/categoryDetail.jpg'
-# 关于我页面图片
-aboutImg: '/medias/about.jpg'
-# 友情链接页面图片
-friendsImg: '/medias/friend.jpg'
+# 归档页面图片、描述、视频，全屏 or 'http://xxx'
+archive:
+  title: 'archive'
+  img: 'https://pic1.zhimg.com/80/v2-1414b3a4b205e19060db18a20d08723a_1440w.jpg?source=1940ef5c'
+  desc: '愿你如风，被人温柔以待'
+  full: true # 设置为true，则图片全屏显示
+  video: '' # 如果有值，则在屏幕大于920px的时候，全屏显示视频，为空则显示图片(img)
+
+# 标签页面，配置同上
+tag:
+  title: 'tags'
+  img: 'https://pic2.zhimg.com/80/v2-bf6c555e7c61a57ba4a1fd95a9a32975_1440w.jpg' # 标签页上面的图片
+  desc: '愿你如风，被人温柔以待'
+  full: false # 标签页上面的图片是否全屏显示
+  video: '' # 如果有值，则在屏幕大于920px的时候，全屏显示视频
+
+# 标签详情页面，配置同上
+tagDetail:
+  title: 'tag'
+  img: 'https://pic1.zhimg.com/80/v2-604a15cef201cf177943af2d915eb2e7_1440w.jpg?source=1940ef5c'
+  desc: '愿你如风，被人温柔以待' # 标签页详情上上面的图片上的文字
+  full: false
+  video: ''
+
+# 分类页面，配置同上
+categories:
+  title: 'categories'
+  img: 'https://pic2.zhimg.com/80/v2-7c496c95897fb15768593cc5170c8b1a_1440w.jpg?source=1940ef5c'
+  desc: '愿你如风，被人温柔以待'
+  full: false
+  video: 'https://assets.mixkit.co/videos/preview/mixkit-flying-through-the-clouds-with-the-radiant-sun-14171-large.mp4'
+
+#分类详情页面，配置同上
+categoryDetail:
+  title: 'category'
+  img: 'https://pic3.zhimg.com/80/v2-98dcd81cb0d1fee52a807c13cedb8338_1440w.jpg?source=1940ef5c'
+  desc: '愿你如风，被人温柔以待'
+  full: false
+  video: ''
+
+# 关于我页面，配置同上
+about:
+  title: 'about'
+  img: 'https://pic4.zhimg.com/80/v2-d12b0c9802720897793993a5a199720f_1440w.jpg'
+  desc: '愿你如风，被人温柔以待'
+  full: false
+  video: ''
+
+# 友情链接页面，配置同上
+friends:
+  title: 'friends'
+  img: 'https://pic2.zhimg.com/80/v2-2407599a217ba89f9499c282f129d44d_1440w.jpg?source=1940ef5c'
+  desc: '愿你如风，被人温柔以待'
+  full: true
+  video: ''
 
 # 黑夜模式, 关灯
 dark:
@@ -366,8 +499,13 @@ color_scheme:
     pace: '#f6a427'
     # 滚动条颜色, 空字符串则滚动条使用 主题色，否则强制使用该颜色
     scroll: '#42b983'
-    # 首页页面的底部背景颜色，默认透明('transparent')，可以是白色('#fff')等颜色, 也可以是图片，例如  'url("https://img11.360buyimg.com/ddimg/jfs/t1/169624/29/16/4603017/5fec2c79Eecbd536a/308b28b82a013cd2.png")'
-    bgFloor: 'url("https://img11.360buyimg.com/ddimg/jfs/t1/169624/29/16/4603017/5fec2c79Eecbd536a/308b28b82a013cd2.png")' # 如果是图片地址，url里面请用双引号
+    # 首页文章列表的背景颜色, url("http://xxx.png") or red or #000 or rgba() ..
+    postListBackground: 'rgba(255,255,255,1)'
+    # 首页页面的底部背景颜色，空字符串透明('transparent')，可以是白色('#fff')等颜色, 也可以是图片，例如  'url("https://img11.360buyimg.com/ddimg/jfs/t1/169624/29/16/4603017/5fec2c79Eecbd536a/308b28b82a013cd2.png")'
+    bgFloor: 'url("https://pic1.zhimg.com/80/v2-b4b71405d08bc1952025ba1bd5db54f3_1440w.jpg?source=1940ef5c")' # 如果是图片地址，url里面请用双引号
+    # 头部导航是否背景透明，滚动条在对顶端的时候,头部导航背景透明
+    headerMenuTransparent: true
+    headerMenuBackgroundColor: '' # 头部导航背景颜色, 为空则使用主题色, 写法: alpha(#42b983, 0.8) or rgba(268, 264, 269, 0.8) or #42b983 or red
   # 文章详情页 颜色属性
   post:
     # 文章详情页面-->标题在图片上时候的颜色
@@ -378,7 +516,7 @@ color_scheme:
     copyBackground: ''
     #文章详情页面--> copy按钮文字颜色, 空字符串则copy按钮字体颜色为 主题色块内部的文字颜色，否则强制使用该颜色
     copyColor: ''
-    # 代码高亮部分的背景色, 空字符串则使用-代码高亮插件-的背景颜色，否则强制使用该颜色作为代码高亮背景色
+    # 代码高亮部分的背景色, 空字符串则使用-代码高亮配置-的背景颜色，否则强制使用该颜色作为代码高亮背景色
     codeBackground: ''
     # 文章详情页面--> p标签使用 ``符号 突出的文字颜色
     pLight: '#d63200'
@@ -394,19 +532,22 @@ color_scheme:
     contentOpacity: '1'
     # 文章详情页面 --> 透明度, 右侧文章目录背景颜色的透明度
     tocOpacity: '0.8'
-    # bgPost -- 文章详情页背景图, 针对所有的文章详情页背景
+    # bgImg -- 文章详情页背景图, 针对所有的文章详情页背景
     # 可以是数组（数组里面是图片地址，多个图片地址会采用 幻灯片 循环显示），
     # 如果背景只想要一个图片：可以使用 ['http://xxxxxx'] 或者 'http://xxxxxxx'，这样的写法, 图片地址也可以是本地路径('/img/xxx.png' or '/medias/xxx.png')
     # 也可以是颜色字符串（例如'#C7EDCC', 或者rgba(0 ,0 ,0, 0.8) 那么会使用该颜色作为背景）
     # 空字符串则背景颜色为透明
-    bgImg: ''
+    bgImg: [
+      'https://pic4.zhimg.com/80/v2-5030587bac1b856d09e0a119ff6d7c04_1440w.jpg',
+      'https://api.btstu.cn/sjbz/api.php'
+    ]
     # 背景图幻灯片模式--延迟时间
-    # 如果bgPost设置为数组，数组里面是多个图片地址,则 bgImgDelay表示背景图幻灯片的 延迟间隔时间
+    # 如果bgImg设置为数组，数组里面是多个图片地址,则 bgImgDelay表示背景图幻灯片的 延迟间隔时间
     bgImgDelay: 180000 # 默认三分钟，切换一张图片
-    # 如果bgPost设置为数组，数组里面是多个图片地址,则 bgImgTransition表示背景图幻灯片的 动画效果
+    # 如果bgImg设置为数组，数组里面是多个图片地址,则 bgImgTransition表示背景图幻灯片的 动画效果
     bgImgTransition: 'fade' # fade, scale, translate-fade,
-    ## bgPost，bgImgDelay，bgImgTransition三个属性除了可以在这里全局配置，还可以在单独的文章里配置
-    ## 单独的文章里配置，则这bgPost，bgImgDelay，bgImgTransition三个属性优先使用单独的文章里配置的
+    ## bgImg，bgImgDelay，bgImgTransition三个属性除了可以在这里全局配置，还可以在单独的文章里配置
+    ## 单独的文章里配置，则这bgImg，bgImgDelay，bgImgTransition三个属性优先使用单独的文章里配置的
 
 
 # tag标签 按钮，文本高亮等等..
@@ -487,7 +628,7 @@ CDN:
   gitmentJs: https://imsun.github.io/gitment/dist/gitment.browser.js
   gitalkCss: https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css
   gitalkJs: https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js
-  busuanzi: //busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js
+  busuanzi: //busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js # 卜算子
   ayuCss: https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.css
   ayuJs: https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.umd.min.js
   copyRight: https://creativecommons.org/licenses/by-nc-nd/4.0/

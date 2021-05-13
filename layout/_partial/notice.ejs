@@ -1,0 +1,126 @@
+<% if (theme.notice.on && page.current === 1) { %>
+<style>
+  .index-notice-content {
+    margin-top: 10px;
+  }
+  .warp {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .index-notice-content__ul {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+  }
+  .index-notice-content__ul li,
+  .index-notice-content__ul a {
+    display: block;
+    height: 30px;
+    line-height: 30px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+  }
+  .index-notice-content__title {
+    flex: 1;
+    overflow: hidden;
+  }
+  .index-notice-content__title a,
+  .index-notice-content__title span {
+    overflow: hidden;
+    display: block;
+    text-overflow:ellipsis; 
+    white-space: nowrap;
+    height: 100%;
+    width: 100%;
+    color: #000;
+  }
+  .index-notice-content__title a:hover,
+  .index-notice-content__title span:hover {
+    text-decoration: underline;
+  }
+  .index-notice-content__date {
+    min-width: 80px;
+    margin-left: 5px;
+    color: #000;
+  }
+</style>
+<div class="index-notice" id="appIndexNotice">
+    <h3>
+      <i class="fa fa-bullhorn index-notice-icon"></i><%=theme.notice.title %>
+    </h3>
+    <div class="index-notice-content">
+      <%
+        let notice_list = theme.notice.list;
+        let wrapheight = notice_list.length * 30 + 'px'
+      %>
+      <vue-seamless-scroll
+        :data="listData"
+        :class-option="classOption"
+        class="warp"
+        style="height: <%=wrapheight%>"
+      >
+        <ul class="index-notice-content__ul">
+          
+          <% notice_list.forEach(function (item) { %>
+            <li>
+              <% if(item.title) { %>
+                <div class="index-notice-content__title">
+                  <% if(item.url) { %>
+                    <a href="<%=item.url%>" title="<%=item.title%>" style="<% if(item.color) { %>color:<%=item.color %><% }%>">
+                      <%=item.title%>
+                    </a>
+                  <% } else {%>
+                    <span title="<%=item.title%>" style="<% if(item.color) { %>color:<%=item.color %><% }%>">
+                      <%=item.title%>
+                    </span>
+                  <% }%>
+                </div>
+                <% if(item.date) { %>
+                  <div class="index-notice-content__date" style="<% if(item.color) { %>color:<%=item.color %><% }%>">
+                    <%=item.date%>
+                  </div>
+                <% }%>
+              <% }%>
+            </li>
+          <% }); %> 
+        </ul>
+      </vue-seamless-scroll>
+    </div>
+</div>
+<script src="<%- url_for('/js/vue-seamless-scroll/index.js') %>"></script>
+
+<!-- 滚动插件采用 vue-seamless-scroll
+  https://chenxuan0000.github.io/vue-seamless-scroll/zh/guide/06-singleStop.html 
+-->
+
+<script>
+  let seamless = JSON.parse('<%= theme.notice.seamless %>');
+  seamless = seamless ? 0 : 30;
+  let listData = '<%= theme.notice.list %>';
+  listData = listData.split(',');
+  var vm = new Vue({
+    el: '#appIndexNotice',
+    data: {
+      listData: listData,
+      moveNum: 2,
+      classOption: {
+        singleHeight: seamless,
+        limitMoveNum: listData.length
+      },
+    },
+    computed: {
+    },
+    mounted() {
+    },
+    methods: {
+    },
+    created() {
+      this.moveNum = parseInt(this.listData.length);
+    }
+  })
+</script>
+
+
+<% } %>

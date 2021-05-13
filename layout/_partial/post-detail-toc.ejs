@@ -35,7 +35,7 @@
       headingSelector: headerEl,
       scrollSmooth: true,
       scrollSmoothOffset: -80,
-      headingsOffset: 130,
+      headingsOffset: -($(window).height() * 0.4 - 45),
       positionFixedSelector: '.toc-main',
       positionFixedClass: 'is-position-fixed',
       fixedSidebarOffset: 'auto',
@@ -46,8 +46,8 @@
 
 <style>
 .is-position-fixed {
-  position:fixed !important;
-  top: 64px;
+  position:sticky !important;
+  top: 74px;
 }
 .toc-main ul {
   counter-reset: show-list;

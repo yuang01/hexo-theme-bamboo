@@ -10,28 +10,52 @@
       <h3 class="drawer-box-head_title"><%= config.title %></h3>
       <h5 class="drawer-box-head_desc"><%= config.description %></h5>
     </div>
+    <%
+      var menuMap = new Map();
+      menuMap.set("Home", "首页");
+      menuMap.set("Tags", "标签");
+      menuMap.set("Categories", "分类");
+      menuMap.set("Archives", "归档");
+      menuMap.set("About", "关于");
+      menuMap.set("Contact", "留言板");
+      menuMap.set("Friends", "友情链接");
+    %>
     <div class="drawer-box-content">
       <ul class="drawer-box-content_menu">
-        <% for (name in theme.menu) { %>
-          <li class="drawer-box-content_item">
-            <a href="<%- url_for(theme.menu[name]) %>" class="menu-item-link">
-              <% if(name === 'Home') { %>
-                <i class="fa fa-home" aria-hidden="true"></i>
-              <% } else if (name === 'Archives') { %>
-                <i class="fa fa-home" aria-hidden="true"></i>
-              <% } else if (name === 'Tags') { %>
-                <i class="fa fa-tags" aria-hidden="true"></i>
-              <% } else if (name === 'Categories') { %>
-                <i class="fa fa-bookmark" aria-hidden="true"></i>
-              <% } else if (name === 'About') { %>
-                <i class="fa fa-user" aria-hidden="true"></i>
-              <% } else if (name === 'link') { %>
-                <i class="fa fa-link" aria-hidden="true"></i>
-              <% } %>
-              <span><%- __('Menu.' + name) %></span>
-            </a>
+        <% Object.keys(theme.menu).forEach(function(key, index) { %>
+          <li class="drawer-box-content_item" style="position: relative;">
+            <% if(!theme.menu[key].children) { %>
+              <a href="<%- url_for(theme.menu[key].url) %>" class="drawer-menu-item-link">
+                <% if (theme.menu[key].icon && theme.menu[key].icon.length > 0) { %>
+                  <i class="<%- theme.menu[key].icon %>" aria-hidden="true"></i>
+                <% } %>
+                <span class="name"><%- (config.language === 'zh-CN' && menuMap.has(key)) ? menuMap.get(key) : key %></span>
+              </a>
+            <% } else { %>
+              <a href="javascript:;" class="drawer-menu-item-link has-children" @click="openOrCloseMenu(<%- index %>)">
+                <span>
+                  <% if (theme.menu[key].icon && theme.menu[key].icon.length > 0) { %>
+                    <i class="<%- theme.menu[key].icon %>"></i>
+                  <% } %>
+                  <span class="name"><%- (config.language === 'zh-CN' && menuMap.has(key)) ? menuMap.get(key) : key %></span>
+                </span>
+                <i class="fa fa-chevron-left arrow " :class="{'icon-rotate': isOpen(<%- index %>)}" aria-hidden="true"></i>
+              </a>
+              <ul class="drawer-sub-menu" v-if="isOpen(<%- index %>)">
+                <% for(let childrenLink of theme.menu[key].children){ %>
+                <li>
+                  <a href="<%- url_for(childrenLink.url)%>">
+                    <% if (childrenLink.icon && childrenLink.icon.length > 0) { %>
+                    <i class="<%- childrenLink.icon %>" style="margin-top: -20px;"></i>
+                    <% } %>
+                    <span><%- childrenLink.name %></span>
+                  </a>
+                </li>
+                <% } %>
+              </ul>
+            <% } %>
           </li>
-        <% } %>
+        <% }); %>
         <li class="drawer-box-content_item">
           <a href="<%- url_for(theme.Github) %>">
             <i class="fa fa-github" aria-hidden="true"></i>
@@ -50,17 +74,33 @@
     data: {
       visible: false,
       top: 0,
+      openArr: [],
     },
     computed: {
     },
     mounted() {
     },
     methods: {
+      isOpen(index) {
+        if (this.openArr.includes(index)) {
+          return true;
+        } else {
+          return false;
+        }
+      },
+      openOrCloseMenu(curIndex) {
+        const index = this.openArr.indexOf(curIndex);
+        if (index !== -1) {
+          this.openArr.splice(index, 1);
+        } else {
+          this.openArr.push(curIndex);
+        }
+      },
       showDialogDrawer() {
         this.visible = true;
         // 防止页面滚动，只能让弹框滚动
         this.top = $(document).scrollTop()
-        body.style.cssText = 'width: 100%; height: 100%; position: fixed; top: -' + this.top  + 'px; left: 0; overflow: hidden;';
+        body.style.cssText = 'width: 100%; height: 100%;overflow: hidden;';
       },
       cancelDialogDrawer() {
         this.visible = false;

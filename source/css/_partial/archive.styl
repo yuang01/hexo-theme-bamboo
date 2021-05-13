@@ -1,17 +1,120 @@
 .archive-main {
 }
 .archive-header {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  if hexo-config('color_scheme.common.headerMenuTransparent') {
+    height: 60vh;
+  }
+  if hexo-config('archive.full') {
+    height: 100vh;
+  }
+  overflow: hidden;
+  background-size: cover; 
+  background-position: center center;
   background-color: $color-primary;
-  text-align: center;
   display: flex;
-  align-items: center;
   justify-content: center;
-  .title {
-    color: $color-inner;
-    font-size: 2em;
-    letter-spacing: 10px;
+  align-items: center;
+  flex-direction: column;
+  color: $color-inner;
+  .archive-header-title {
+    z-index: 2;
+    font-size: 2.5rem;
+    font-family: MV Boli;
+  }
+  .archive-header-desc {
+    z-index: 2;
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 1.4em;
+    font-family: 'Architects Daughter', cursive!important;
+    color: #fff; 
+    min-height: 1.4em;
+  }
+  .mask-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    opacity: 0.2;
+    z-index: 1;
   }
 }
+
+.archive-video {
+  width: 100%;
+  height: 100vh;
+  color: $color-inner;
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .video-header-title {
+    z-index: 2;
+    font-size: 2.5rem;
+    font-family: MV Boli;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .video-header-desc {
+    z-index: 2;
+    font-weight: 500;
+    font-size: 1.25rem;
+    line-height: 1.4em;
+    font-family: 'Architects Daughter', cursive!important;
+    color: #fff; 
+    min-height: 1.4em;
+    position: absolute;
+    left: 50%;
+    top: calc(50% + 50px);
+    transform: translate(-50%, -50%);
+  }
+  .mask-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #000;
+    opacity: 0.2;
+    z-index: 1;
+  }
+}
+
+@media (min-width: 992px) {
+  if hexo-config('archive.video') {
+    .archive-video {
+      display: block;
+    }
+    .archive-header {
+      display: none;  
+    }
+  } else {
+    .archive-video {
+      display: none;
+    }
+    .archive-header {
+      display: flex;  
+    }
+  }
+  
+}
+@media (max-width: 992px) {
+  .archive-video {
+    display: none;
+  }
+  .archive-header {
+    display: flex;  
+  }
+}
+
 .archive {
   width: 100%;
   display: flex;

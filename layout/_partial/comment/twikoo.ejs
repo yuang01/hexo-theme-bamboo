@@ -1,0 +1,10 @@
+<div id="tcomment"></div>
+<script src="<%- url_for('/js/twikoo/twikoo.all.min.js') %>"></script>
+<script>
+twikoo.init({
+    envId: '<%- theme.twikoo.envId %>',
+    el: '#tcomments',
+    region: '<%- theme.twikoo.region %>',
+    path: '<%- theme.twikoo.path %>'
+})
+</script>

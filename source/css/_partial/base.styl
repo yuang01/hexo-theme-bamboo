@@ -7,7 +7,7 @@ small{ font-size:12px; }
 a { text-decoration:none; }
 a:hover { text-decoration:none; } 
 *, a:active, a:hover {
-    outline: 0;
+  outline: 0;
 }
 sup { vertical-align:text-top; } 
 sub{ vertical-align:text-bottom; } 
@@ -34,7 +34,11 @@ textarea, {
 }
 
 .main {
-  min-height: calc(100vh - 190px);
+  if hexo-config('color_scheme.common.headerMenuTransparent') {
+    min-height: calc(100vh - 130px);
+  } else {
+    min-height: calc(100vh - 190px);
+  }
   box-sizing: border-box;
 }
 // 背景

@@ -1,0 +1,55 @@
+.index-notice {
+  width: 60%;
+  margin: 20px auto;
+  margin-bottom: 0;
+  background: #fff;
+  box-shadow: 0 1px 20px -6px rgba(0,0,0,.5);
+  padding: 20px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  transition: all 0.3s;
+  background: convert(hexo-config('notice.background'));
+  .index-notice-icon {
+    color: red;
+    font-size: 1.2rem;
+    margin-right: 5px;
+    animation: mymove 1.5s infinite;
+  }
+}
+@media (max-width: 992px) {
+  .index-notice {
+    width: 95%;  
+  }
+}
+@keyframes mymove
+{
+    0%{
+    transform: scale(1);  /*开始为原始大小*/
+    }
+    25%{
+        transform: scale(1.2); /*放大1.2倍*/
+    }
+    50%{
+        transform: scale(1);
+    }
+    75%{
+        transform: scale(1.2);
+    }
+
+}
+
+@-webkit-keyframes mymove /*Safari and Chrome*/
+{
+    0%{
+    transform: scale(1);  /*开始为原始大小*/
+    }
+    25%{
+        transform: scale(1.2); /*放大1.2倍*/
+    }
+    50%{
+        transform: scale(1);
+    }
+    75%{
+        transform: scale(1.2);
+    }
+}

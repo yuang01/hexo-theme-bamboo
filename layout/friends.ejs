@@ -1,8 +1,61 @@
 <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
-<div class="lazyload friends-header" data-original="<%- url_for(theme.friendsImg) %>" style="width: 100%;height: 50vh;overflow: hidden;background-size: cover; 
-background-position: center center;">
-<!-- <img src="https://pic4.zhimg.com/80/v2-1a6ab86d51b8abb6be95c970e054adf6_1440w.jpg" alt="" style="width: 100%;"> -->
+<div class="lazyload friends-header" data-original="<%- url_for(theme.friends.img) %>">
+  <div class="friends-header-title">
+    <%= theme.friends.title %>
+    </div>
+    <div class="friends-header-desc">
+    <% if (theme.typed.on === true) { %>
+    <span class="title" id="friends-header-desc"></span>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+        <script>
+        var typed = new Typed("#friends-header-desc", {
+            strings: ['<%= theme.friends.desc %>'],
+            startDelay: <%= theme.typed.startDelay %>,
+            typeSpeed: <%= theme.typed.typeSpeed %>,
+            loop: true,
+            backSpeed: <%= theme.typed.backSpeed %>,
+            showCursor: true
+        });
+        </script>
+    <% } else {  %>
+        <span class="title">
+        <%= theme.friends.desc %>
+        </span>
+    <% } %>
+    </div>
+    <div class="mask-box"></div>
 </div>
+
+<div class="friends-video">
+	<video class="full-video" autoplay loop muted>
+		<source style="width: 100%;height: 100vh;" src="<%- url_for(theme.friends.video) %>">
+	</video>
+	<div class="video-header-title">
+		<%= theme.friends.title %>
+	</div>
+	<div class="video-header-desc">
+	<% if (theme.typed.on === true) { %>
+		<span class="title" id="video-header-desc"></span>
+		<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+			<script>
+			var typed = new Typed("#video-header-desc", {
+				strings: ['<%= theme.friends.desc %>'],
+				startDelay: <%= theme.typed.startDelay %>,
+				typeSpeed: <%= theme.typed.typeSpeed %>,
+				loop: true,
+				backSpeed: <%= theme.typed.backSpeed %>,
+				showCursor: true
+			});
+			</script>
+		<% } else {  %>
+			<span class="title">
+			<%= theme.friends.desc %>
+			</span>
+		<% } %>
+	</div>
+	<div class="mask-box"></div>
+</div>
+
 <div class="container" id="friends">
   <div class="friends-title">
     <i class="fa fa-link" aria-hidden="true"></i>&nbsp;&nbsp;<%= __('friends') %>
