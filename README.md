@@ -1,5 +1,5 @@
 # hexo-theme-bamboo
-这是一个基于Hexo的响应式博客主题，[演示示例](https://yuang01.gitee.io/)
+这是一个基于Hexo的响应式博客主题
 
 最新文档，请[点击这个查看（github）](https://yuang01.github.io/2021/02/08/hexo-theme-bamboo-new/)，或者[点击这个查看（gitee）](https://yuang01.gitee.io/2021/02/08/hexo-theme-bamboo-new/)，
 <!-- more -->
