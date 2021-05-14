@@ -1,5 +1,8 @@
 # hexo-theme-bamboo
-这是一个基于Hexo的响应式博客主题
+
+![master version](https://img.shields.io/github/package-json/v/yuang01/hexo-theme-bamboo/dev?label=dev)
+![https://img.shields.io/npm/v/hexo-theme-bamboo?color=%09%23bf00ff](https://img.shields.io/npm/v/hexo-theme-bamboo?color=%09%23bf00ff)
+![hexo version](https://img.shields.io/badge/hexo-5.0+-0e83c)
 
 最新文档，请[点击这个查看（github）](https://yuang01.github.io/2021/02/08/hexo-theme-bamboo-new/)，或者[点击这个查看（gitee）](https://yuang01.gitee.io/2021/02/08/hexo-theme-bamboo-new/)，
 
