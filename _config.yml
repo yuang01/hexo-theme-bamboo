@@ -44,7 +44,7 @@ favicon: /favicon.ico # or .png .jpg .svg .gif .jpeg .ico
 
 # 页面预加载动画
 preloader:
-  enable: false
+  on: false
 
 # 首页轮播图设置
 swiper:
