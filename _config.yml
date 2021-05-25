@@ -505,7 +505,9 @@ color_scheme:
     bgFloor: 'url("https://pic1.zhimg.com/80/v2-b4b71405d08bc1952025ba1bd5db54f3_1440w.jpg?source=1940ef5c")' # 如果是图片地址，url里面请用双引号
     # 头部导航是否背景透明，滚动条在对顶端的时候,头部导航背景透明
     headerMenuTransparent: true
-    headerMenuBackgroundColor: '' # 头部导航背景颜色, 为空则使用主题色, 写法: alpha(#42b983, 0.8) or rgba(268, 264, 269, 0.8) or #42b983 or red
+    headerMenuBackgroundColor: '' 
+    # headerMenuBackgroundColor:头部导航背景颜色, 为空则使用theme主题色, 
+    # headerMenuBackgroundColor写法: alpha(#42b983, 0.8) or rgba(268, 264, 269, 0.8) or #42b983 or red or 也可以是渐变颜色 linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%)  or 也可以是url("图片地址")
   # 文章详情页 颜色属性
   post:
     # 文章详情页面-->标题在图片上时候的颜色
@@ -548,7 +550,9 @@ color_scheme:
     bgImgTransition: 'fade' # fade, scale, translate-fade,
     ## bgImg，bgImgDelay，bgImgTransition三个属性除了可以在这里全局配置，还可以在单独的文章里配置
     ## 单独的文章里配置，则这bgImg，bgImgDelay，bgImgTransition三个属性优先使用单独的文章里配置的
-
+  footer:
+    background: '' 
+    # 为空则使用 theme主题色，写法: alpha(#42b983, 0.8) or rgba(268, 264, 269, 0.8) or #42b983 or red or 也可以是渐变颜色 linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%) or 也可以是url("图片地址")
 
 # tag标签 按钮，文本高亮等等..
 tag_plugins:

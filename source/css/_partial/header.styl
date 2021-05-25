@@ -17,7 +17,6 @@ $borderRadius = 10px
   height: $height;
   box-sizing: border-box;
   transition: all 0.3s;
-  // background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
   
   .header-content {
     min-width: calc(60% + 150px);
@@ -105,7 +104,11 @@ $borderRadius = 10px
             transition: all 0.3s;
             opacity: 0;
             li {
-              background-color: $color-primary;
+              if hexo-config('color_scheme.common.headerMenuBackgroundColor') {
+                background: convert(hexo-config('color_scheme.common.headerMenuBackgroundColor'));
+              }  else {
+                background: $color-primary
+              }
               width: 140px;
               text-align: center;
               line-height: 45px;
