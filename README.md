@@ -48,3 +48,7 @@ npm i hexo-theme-bamboo
 修改hexo根目录下的站点配置文件`_config.yml`，把主题改为`bamboo`
 
 接着在hexo根目录下新建文件`_config.bamboo.yml`,从`node_modules`文件夹下找到`hexo-theme-bamboo`文件夹下的`_config.yml`，将里面的内容复制到`_config.bamboo.yml`文件中即可，在`_config.bamboo.yml`文件中对主题进行配置
+
+## Stargazers over time
+
+[![Stargazers over time](https://starchart.cc/yuang01/hexo-theme-bamboo.svg)](https://starchart.cc/yuang01/hexo-theme-bamboo)
