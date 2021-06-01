@@ -23,4 +23,13 @@
     <% } else { %>
         <link href="<%- url_for('/js/prism/prism.min.css') %>" rel="stylesheet">
     <% } %>
+
+    <style>
+        pre[class*="language-"] {
+            overflow-y: hidden;
+        }
+        .line-numbers .line-numbers-rows {
+            border: none;
+        }
+    </style>
   <% } %>
