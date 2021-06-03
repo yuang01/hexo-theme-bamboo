@@ -1,6 +1,7 @@
 # hexo-theme-bamboo
 
 ![master version](https://img.shields.io/github/package-json/v/yuang01/hexo-theme-bamboo/dev?label=dev)
+![master version](https://img.shields.io/github/package-json/v/yuang01/hexo-theme-bamboo/dev?label=master)
 ![https://img.shields.io/npm/v/hexo-theme-bamboo?color=%09%23bf00ff](https://img.shields.io/npm/v/hexo-theme-bamboo?color=%09%23bf00ff)
 ![hexo version](https://img.shields.io/badge/hexo-5.0+-0e83c)
 
