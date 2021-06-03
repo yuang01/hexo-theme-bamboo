@@ -5,7 +5,18 @@ function postprogress(args) {
     let cls = args[0].trim()
     let clsa = args[1].trim()
     let text = args[2].trim()
-    return `<div class="progress"><div class="progress-bar-animated progress-bar progress-bar-striped bg-${clsa}"  style="width: ${cls}%" aria-valuenow="${cls}" aria-valuemin="0" aria-valuemax="100">${hexo.render.renderSync({text: text, engine: 'markdown'}).split('\n').join('')}</div></div>`;
+    const obj = {
+      'primary': hexo.theme.config.color_scheme.common.theme,
+      'success': hexo.theme.config.tag_plugins.successColor,
+      'info': hexo.theme.config.tag_plugins.infoColor,
+      'warning': hexo.theme.config.tag_plugins.warningColor,
+      'danger': hexo.theme.config.tag_plugins.dangerColor
+    };
+    if (obj[clsa]) {
+      return `<div class="progress"><div class="progress-bar-animated progress-bar progress-bar-striped bg-${clsa}"  style="width: ${cls}%" aria-valuenow="${cls}" aria-valuemin="0" aria-valuemax="100">${hexo.render.renderSync({text: text, engine: 'markdown'}).split('\n').join('')}</div></div>`;
+    } else {
+      return `<div class="progress"><div class="progress-bar-animated progress-bar progress-bar-striped" style="background-color: ${clsa}!important; width: ${cls}%" aria-valuenow="${cls}" aria-valuemin="0" aria-valuemax="100">${hexo.render.renderSync({text: text, engine: 'markdown'}).split('\n').join('')}</div></div>`;
+    }
   }
 }
 function postProgressCircle(args) {
