@@ -9,7 +9,7 @@
     <% if (page.prev) { %>
       <a href="<%- url_for(page.prev_link) %>"
          class="page-nav-pre">
-         <i class="fa fa-angle-left"></i><span class="ml-5">上一页</span>
+         <i class="fa fa-angle-left"></i><span class="ml-5"><%= __('Paginator.Prev') %></span>
       </a>
     <% } %>
     <div class="page-info">
@@ -18,7 +18,7 @@
     <% if (page.next) { %>
       <a href="<%- url_for(page.next_link) %>"
          class="page-nav-next">
-          <span class="mr-5">下一页</span><i class="fa fa-angle-right"></i>
+          <span class="mr-5"><%= __('Paginator.Next') %></span><i class="fa fa-angle-right"></i>
       </a>
       <% } %>
   </div>
