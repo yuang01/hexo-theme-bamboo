@@ -34,13 +34,21 @@
 >
   <swiper v-cloak ref="mySwiper" :options="swiperOptions" @slideChangeTransitionEnd="slideChangeTransitionEnd">
     <% if(swiperLength > 0) { %>
-      <% if(theme.swiper.defaultAddToSwiper > 0) { %>
+      <% if(theme.swiper.defaultAddToSwiper) { %>
         <swiper-slide>
           <div class="item swiper-lazy" data-background="<%- url_for(theme.swiper.defaultImg || imgArr[defaultIndex]) %>" style="background-size: 90000px; 
             background-position: left center;" style="position: relative;">
             <div class="swiper-bgmask" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;"></div>
               <div class="flag">
-                <div class="img-mask swiper-lazy" data-background="<%- url_for(theme.swiper.defaultImg || imgArr[defaultIndex]) %>" style="height: 100%; background-size: cover; 
+                <% if(theme.swiper.defaultVideo) { %>
+                <div class="swiper-video">
+                  <video class="full-video" poster="<%- url_for(theme.swiper.defaultVideoLoadingImg) %>" autoplay loop muted style="width: 100%;height:100%;object-fit: cover;">
+                    <source style="width: 100%;height: 100vh;"  src="<%- url_for(theme.swiper.defaultVideo) %>">
+                  </video>
+                  <div class="swiper-video-maskBox"></div>
+                </div>
+                <% } %>
+                <div class="img-mask swiper-lazy swiper-default-bgImg" data-background="<%- url_for(theme.swiper.defaultImg || imgArr[defaultIndex]) %>" style="height: 100%; background-size: cover; 
                   background-position: center center;">
                   <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>   
                 </div>
@@ -118,7 +126,15 @@
           background-position: left center;" style="position: relative;">
           <div class="swiper-bgmask" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;"></div>
             <div class="flag">
-              <div class="img-mask swiper-lazy" data-background="<%- url_for(theme.swiper.defaultImg || imgArr[defaultIndex]) %>" style="height: 100%; background-size: cover; 
+              <% if(theme.swiper.defaultVideo) { %>
+              <div class="swiper-video">
+                <video class="full-video" poster="<%- url_for(theme.swiper.defaultVideoLoadingImg) %>" autoplay loop muted style="width: 100%;height:100%;object-fit: cover;">
+                  <source style="width: 100%;height: 100vh;" src="<%- url_for(theme.swiper.defaultVideo) %>">
+                </video>
+                <div class="swiper-video-maskBox"></div>
+              </div>
+              <% } %>
+              <div class="img-mask swiper-lazy swiper-default-bgImg" data-background="<%- url_for(theme.swiper.defaultImg || imgArr[defaultIndex]) %>" style="height: 100%; background-size: cover; 
                 background-position: center center;">
                 <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>   
               </div>
@@ -751,4 +767,49 @@
     }
   }
 <% } %>
+
+/* video */
+.swiper-video {
+  width: 100%;
+  height: 100%;
+}
+.swiper-video video {
+  pointer-events: none;
+}
+.swiper-video-maskBox{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  opacity: 0.2;
+  z-index: 1;
+}
+@media (min-width: 992px) {
+  <% if(theme.swiper.defaultVideo) { %>
+    .swiper-video {
+      display: block;
+    }
+    .swiper-default-bgImg {
+      display: none;  
+    }
+  <% } else { %>
+    .swiper-video {
+      display: none;
+    }
+    .swiper-default-bgImg {
+      display: block;  
+    }
+  <% } %>
+}
+@media (max-width: 992px) {
+  .swiper-video {
+    display: none;
+  }
+  .swiper-default-bgImg {
+    display: block;  
+  }
+}
+/* video-end */
 </style>
