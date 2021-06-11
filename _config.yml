@@ -135,10 +135,6 @@ copy:
   title: '成功'
   content: '代码已复制，请遵守相关授权协议。'
 
-# 文章详情页的标题是否显示在顶部图片中, false则显示在文章内容顶部
-postTitleTop:
-  on: true
-
 # 输入框打字特效
 inputEffects:
   on: true
@@ -344,7 +340,7 @@ topArticle:
   on: true
   background: 'rgba(255,255,255,1)' # url("http://xxx.png") or red or #000 or rgba() ..
 
-# 文章详情页图片上的标题打字效果
+# 归档，标签，分类页图片上的打字效果
 typed:
   on: true
   loop: false # 是否循环
