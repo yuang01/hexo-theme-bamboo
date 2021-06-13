@@ -1,37 +1,37 @@
 # 菜单
 menu:
-  Home:
-    url: /
-    icon: fa fa-home
-  Archives:
-    url: /archives
-    icon: fa fa-archive
-  Tags:
-    url: /tags
-    icon: fa fa-tags
-  Categories:
-    url: /categories
-    icon: fa fa-bookmark
-  About:
-    url: /about
-    icon: fa fa-user
-  Friends:
-    url: /friends
-  更多: # 这是二级菜单的写法
-   icon: fa fa-link
-   children:
-    - name: 图库
-      url: /gallery
-      icon: fa fa-music
-    - name: 友情连接
-      url: /huoban
-      icon: fa fa-film
-    - name: 关于我
-      url: /me
-      icon: fa fa-film
-    - name: 百度
-      url: http://baidu.com
-      icon: fa fa-film
+  # Home:
+  #   url: /
+  #   icon: fa fa-home
+  # Archives:
+  #   url: /archives
+  #   icon: fa fa-archive
+  # Tags:
+  #   url: /tags
+  #   icon: fa fa-tags
+  # Categories:
+  #   url: /categories
+  #   icon: fa fa-bookmark
+  # About:
+  #   url: /about
+  #   icon: fa fa-user
+  # Friends:
+  #   url: /friends
+  # 更多: # 这是二级菜单的写法
+  #  icon: fa fa-link
+  #  children:
+  #   - name: 图库
+  #     url: /gallery
+  #     icon: fa fa-music
+  #   - name: 友情连接
+  #     url: /huoban
+  #     icon: fa fa-film
+  #   - name: 关于我
+  #     url: /me
+  #     icon: fa fa-film
+  #   - name: 百度
+  #     url: http://baidu.com
+  #     icon: fa fa-film
 
 # github账号
 Github: https://github.com/yuang01/hexo-theme-bamboo

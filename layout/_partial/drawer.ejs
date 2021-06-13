@@ -22,40 +22,42 @@
     %>
     <div class="drawer-box-content">
       <ul class="drawer-box-content_menu">
-        <% Object.keys(theme.menu).forEach(function(key, index) { %>
-          <li class="drawer-box-content_item" style="position: relative;">
-            <% if(!theme.menu[key].children) { %>
-              <a href="<%- url_for(theme.menu[key].url) %>" class="drawer-menu-item-link">
-                <% if (theme.menu[key].icon && theme.menu[key].icon.length > 0) { %>
-                  <i class="<%- theme.menu[key].icon %>" aria-hidden="true"></i>
-                <% } %>
-                <span class="name"><%- (config.language === 'zh-CN' && menuMap.has(key)) ? menuMap.get(key) : key %></span>
-              </a>
-            <% } else { %>
-              <a href="javascript:;" class="drawer-menu-item-link has-children" @click="openOrCloseMenu(<%- index %>)">
-                <span>
+        <% if(theme.menu) { %>
+          <% Object.keys(theme.menu).forEach(function(key, index) { %>
+            <li class="drawer-box-content_item" style="position: relative;">
+              <% if(!theme.menu[key].children) { %>
+                <a href="<%- url_for(theme.menu[key].url) %>" class="drawer-menu-item-link">
                   <% if (theme.menu[key].icon && theme.menu[key].icon.length > 0) { %>
-                    <i class="<%- theme.menu[key].icon %>"></i>
+                    <i class="<%- theme.menu[key].icon %>" aria-hidden="true"></i>
                   <% } %>
                   <span class="name"><%- (config.language === 'zh-CN' && menuMap.has(key)) ? menuMap.get(key) : key %></span>
-                </span>
-                <i class="fa fa-chevron-left arrow " :class="{'icon-rotate': isOpen(<%- index %>)}" aria-hidden="true"></i>
-              </a>
-              <ul class="drawer-sub-menu" v-if="isOpen(<%- index %>)">
-                <% for(let childrenLink of theme.menu[key].children){ %>
-                <li>
-                  <a href="<%- url_for(childrenLink.url)%>">
-                    <% if (childrenLink.icon && childrenLink.icon.length > 0) { %>
-                    <i class="<%- childrenLink.icon %>" style="margin-top: -20px;"></i>
+                </a>
+              <% } else { %>
+                <a href="javascript:;" class="drawer-menu-item-link has-children" @click="openOrCloseMenu(<%- index %>)">
+                  <span>
+                    <% if (theme.menu[key].icon && theme.menu[key].icon.length > 0) { %>
+                      <i class="<%- theme.menu[key].icon %>"></i>
                     <% } %>
-                    <span><%- childrenLink.name %></span>
-                  </a>
-                </li>
-                <% } %>
-              </ul>
-            <% } %>
-          </li>
-        <% }); %>
+                    <span class="name"><%- (config.language === 'zh-CN' && menuMap.has(key)) ? menuMap.get(key) : key %></span>
+                  </span>
+                  <i class="fa fa-chevron-left arrow " :class="{'icon-rotate': isOpen(<%- index %>)}" aria-hidden="true"></i>
+                </a>
+                <ul class="drawer-sub-menu" v-if="isOpen(<%- index %>)">
+                  <% for(let childrenLink of theme.menu[key].children){ %>
+                  <li>
+                    <a href="<%- url_for(childrenLink.url)%>">
+                      <% if (childrenLink.icon && childrenLink.icon.length > 0) { %>
+                      <i class="<%- childrenLink.icon %>" style="margin-top: -20px;"></i>
+                      <% } %>
+                      <span><%- childrenLink.name %></span>
+                    </a>
+                  </li>
+                  <% } %>
+                </ul>
+              <% } %>
+            </li>
+          <% }); %>
+        <% }%>
         <li class="drawer-box-content_item">
           <a href="<%- url_for(theme.Github) %>">
             <i class="fa fa-github" aria-hidden="true"></i>
