@@ -535,6 +535,7 @@ color_scheme:
     ## 单独的文章里配置，则这bgImg，bgImgDelay，bgImgTransition三个属性优先使用单独的文章里配置的
   footer:
     background: '' 
+    aHover: 'orangered' # 页脚里面的a标签鼠标移入时候的颜色 red or #000 or other color
     # 为空则使用 theme主题色，写法: alpha(#42b983, 0.8) or rgba(268, 264, 269, 0.8) or #42b983 or red or 也可以是渐变颜色 linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%) or 也可以是url("图片地址")
 
 

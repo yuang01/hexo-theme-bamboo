@@ -3,7 +3,7 @@
     <div class="link">
       <% (theme.site_footer.social||[]).forEach(function(value) { %>
         <% if (value.url && (value.icon || value.img || value.avatar)) { %>
-          <a href="<%= url_for(value.url) %>">
+          <a href="<%= url_for(value.url) %>" class="social">
             <% if (value.icon) { %>
               <i class="<%- value.icon %>" aria-hidden="true"></i>
             <% } else if (value.img) { %>

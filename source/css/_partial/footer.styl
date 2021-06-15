@@ -16,23 +16,38 @@
     a {
       color: $color-inner;
     }
-    i {
-      margin-right: 10px;  
-      margin-left: 5px;
-    }
     .link {
+      .social {
+        display: inline-block;
+        padding: 5px;
+        margin: 0 5px;
+      }
+      .social:hover {
+        color: convert(hexo-config('color_scheme.footer.aHover'));;
+        background: rgba(255,87,34,.1);
+      }
       i {
         cursor: pointer;
       }  
+      img {
+        margin: 8px;
+        height: 24px;
+      }
     }
     .footer-copyright {
       a {
-        text-decoration: underline;  
+        text-decoration: underline;
+        &:hover {
+          color: convert(hexo-config('color_scheme.footer.aHover'));;  
+        }
       }
     }
     .footer-custom {
       a {
         text-decoration: underline;  
+        &:hover {
+          color: convert(hexo-config('color_scheme.footer.aHover'));;  
+        }
       }
     }
   }
