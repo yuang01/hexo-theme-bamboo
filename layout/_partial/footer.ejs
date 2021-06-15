@@ -1,21 +1,27 @@
 <div class="footer bg-color">
   <div class="footer-main">
     <div class="link">
-      <a href="https://github.com/yuang01/hexo-theme-bamboo">
-        <i class="fa fa-github" aria-hidden="true"></i>
-      </a>
-      <a href="mailto:1730241541@qq.com">
-        <i class="fa fa-envelope-o" aria-hidden="true"></i>
-      </a>
-      <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1730241541">
-        <i class="fa fa-qq" aria-hidden="true"></i>
-      </a>
-      <a href="/atom.xml" target="_blank">
-        <i class="fa fa-rss" aria-hidden="true"></i>
-      </a>
+      <% (theme.site_footer.social||[]).forEach(function(value) { %>
+        <% if (value.url && (value.icon || value.img || value.avatar)) { %>
+          <a href="<%= url_for(value.url) %>">
+            <% if (value.icon) { %>
+              <i class="<%- value.icon %>" aria-hidden="true"></i>
+            <% } else if (value.img) { %>
+              <img src="<%- value.img %>"/>
+            <% } else if (value.avatar) { %>
+              <img src="<%- value.avatar %>" style="border-radius:120px"/>
+            <% } %>
+          </a>
+        <% } %>
+      <% }) %>
     </div>
     <div class="footer-copyright">
-      Copyright © 2019 - 2020 <a href="https://github.com/yuang01">yuang01</a> | Powered by <a href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a href="https://github.com/yuang01/theme">Bamboo</a> 
+      <%- markdown(theme.site_footer.copyright) %>
+    </div>
+    <div class="footer-custom">
+      <% (theme.site_footer.custom||[]).forEach(function(item) { %>
+        <div><%- markdown(item.label) %></div>
+      <% }) %>
     </div>
     <!-- 不蒜子统计 -->
     <% if(theme.busuanzi.on === true ) { %>

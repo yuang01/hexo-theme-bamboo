@@ -537,6 +537,23 @@ color_scheme:
     background: '' 
     # 为空则使用 theme主题色，写法: alpha(#42b983, 0.8) or rgba(268, 264, 269, 0.8) or #42b983 or red or 也可以是渐变颜色 linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%) or 也可以是url("图片地址")
 
+
+# 设置网站页脚
+site_footer:
+  social:
+    - icon: fa fa-rss
+      url: /atom.xml
+    - icon: fa fa-envelope
+      url: mailto:1730241541@qq.com
+    - icon: fa fa-github
+      url: https://github.com/yuang01/hexo-theme-bamboo
+    - icon: fa fa-qq
+      url: tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1730241541
+  copyright: 'Copyright © 2019 - 2020 <a href="https://github.com/yuang01">yuang01</a> | Powered by <a href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a href="https://github.com/yuang01/theme">Bamboo</a> '
+  custom: # 根据需要自行取消注释，label: 'markdown格式'，会在下面继续增加内容
+    # - label: '<br>'
+    # - label: '[Hello World](http://baidu.com)'
+  
 # tag标签 按钮，文本高亮等等..
 tag_plugins:
   # 所有标签用到的颜色值，可自行修改
