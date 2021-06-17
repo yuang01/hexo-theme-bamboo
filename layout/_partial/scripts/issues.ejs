@@ -1,0 +1,7 @@
+<script>
+  function loadIssuesJS() {
+    if ($(".post-detail").find(".issues-api").length == 0) return;
+    document.write('<script type="text/javascript" src="<%- url_for("/js/issues/index.js") %>"><\/script>');
+  };
+  loadIssuesJS();
+</script>

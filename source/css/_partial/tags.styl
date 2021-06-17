@@ -16,7 +16,9 @@
     }
   }
 }
-
+.bg-light-floor-tags {
+  background: convert(hexo-config('tag.background'));
+}
 .tags-header {
   position: relative;
   width: 100%;
@@ -134,13 +136,16 @@
 }
 // 标签页面的tags样式
 #tags {
-  min-height: calc(60vh - 60px); 
+  min-height: calc(70vh - 60px); 
   .card {
     .card-content {
       margin: 20px 0 40px 0;
       .tag-title {
         font-size: 1.6em;
         color: #273849;
+        if hexo-config('tag.titleColor') {
+          color: convert(hexo-config('tag.titleColor'));
+        }
         text-align: center;
         padding: 15px 0;
       }

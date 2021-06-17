@@ -13,6 +13,9 @@
     }
   }
 }
+.bg-light-floor-categories {
+  background: convert(hexo-config('categories.background'));
+}
 .categories-header {
   position: relative;
   width: 100%;
@@ -130,13 +133,16 @@
 }
 // 分类页面categories样式
 #categories {
-  min-height: calc(60vh - 60px);
+  min-height: calc(70vh - 60px);
   .card {
     .card-content {
       margin: 20px 0 40px 0;
       .category-title {
         font-size: 1.6em;
         color: #273849;
+        if hexo-config('categories.titleColor') {
+          color: convert(hexo-config('categories.titleColor'));
+        }
         text-align: center;
         padding: 15px 0;
       }

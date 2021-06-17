@@ -412,6 +412,10 @@ archive:
   desc: '愿你如风，被人温柔以待'
   full: true # 设置为true，则图片全屏显示
   video: '' # 如果有值，则在屏幕大于920px的时候，全屏显示视频，为空则显示图片(img)
+  background: '' # red or rgba(255,255,255,0.8) or other color or url("http:xxx.png")
+  yearColor: '' # 年份字体颜色
+  monthColor: '' # 月份字体颜色
+  titleColor: '' # 标题字体颜色
 
 # 标签页面，配置同上
 tag:
@@ -420,6 +424,8 @@ tag:
   desc: '愿你如风，被人温柔以待'
   full: false # 标签页上面的图片是否全屏显示
   video: '' # 如果有值，则在屏幕大于920px的时候，全屏显示视频
+  background: '' # red or rgba(255,255,255,0.8) or other color or url("http:xxx.png")
+  titleColor: '' # 标题字体颜色
 
 # 标签详情页面，配置同上
 tagDetail:
@@ -428,6 +434,7 @@ tagDetail:
   desc: '愿你如风，被人温柔以待' # 标签页详情上上面的图片上的文字
   full: false
   video: ''
+  background: '' # red or rgba(255,255,255,0.8) or other color or url("http:xxx.png")
 
 # 分类页面，配置同上
 categories:
@@ -436,6 +443,8 @@ categories:
   desc: '愿你如风，被人温柔以待'
   full: false
   video: ''
+  background: '' # red or rgba(255,255,255,0.8) or other color or url("http:xxx.png")
+  titleColor: '' # 标题字体颜色
 
 #分类详情页面，配置同上
 categoryDetail:
@@ -444,6 +453,7 @@ categoryDetail:
   desc: '愿你如风，被人温柔以待'
   full: false
   video: ''
+  background: '' # red or rgba(255,255,255,0.8) or other color or url("http:xxx.png")
 
 # 关于我页面，配置同上
 about:
@@ -452,6 +462,8 @@ about:
   desc: '愿你如风，被人温柔以待'
   full: false
   video: ''
+  background: '' # red or rgba(255,255,255,0.8) or other color or url("http:xxx.png")
+  titleColor: '' # 标题字体颜色
 
 # 友情链接页面，配置同上
 friends:
@@ -460,6 +472,8 @@ friends:
   desc: '愿你如风，被人温柔以待'
   full: false
   video: ''
+  background: '' # red or rgba(255,255,255,0.8) or other color or url("http:xxx.png")
+  titleColor: '' # 标题字体颜色
 
 # 黑夜模式, 关灯
 dark:
@@ -534,10 +548,10 @@ color_scheme:
     ## bgImg，bgImgDelay，bgImgTransition三个属性除了可以在这里全局配置，还可以在单独的文章里配置
     ## 单独的文章里配置，则这bgImg，bgImgDelay，bgImgTransition三个属性优先使用单独的文章里配置的
   footer:
-    background: '' 
-    aHover: 'orangered' # 页脚里面的a标签鼠标移入时候的颜色 red or #000 or other color
     # 为空则使用 theme主题色，写法: alpha(#42b983, 0.8) or rgba(268, 264, 269, 0.8) or #42b983 or red or 也可以是渐变颜色 linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%) or 也可以是url("图片地址")
-
+    background: '' 
+    # 页脚里面的a标签鼠标移入时候的颜色 red or #000 or other color
+    aHover: 'orangered' 
 
 # 设置网站页脚
 site_footer:

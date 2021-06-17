@@ -1,3 +1,6 @@
+.bg-light-floor-about {
+  background: convert(hexo-config('about.background'));
+}
 .about-header {
   position: relative;
   width: 100%;
@@ -118,6 +121,9 @@
     text-align: center;
     font-size: 1.6em;
     color: #273849;
+    if hexo-config('about.titleColor') {
+      color: convert(hexo-config('about.titleColor'));
+    }
     padding: 15px 0;
   }
   .subtitle {

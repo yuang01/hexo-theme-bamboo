@@ -1,4 +1,8 @@
+.bg-light-floor-archive {
+  background: convert(hexo-config('archive.background'));
+}
 .archive-main {
+  min-height: 60vh;
 }
 .archive-header {
   position: relative;
@@ -142,6 +146,9 @@
       margin-bottom: 30px;
       a {
         color: #273849;
+        if hexo-config('archive.yearColor') {
+          color: convert(hexo-config('archive.yearColor'));
+        }
         font-weight: 700;
         font-size: 2em; 
       }
@@ -165,10 +172,16 @@
         padding: 5px;
         background-color: #42b983;
         color: #ffffff;
+        if hexo-config('archive.monthColor') {
+          color: convert(hexo-config('archive.monthColor'));
+        }
         border-radius: 5px;
       }
       .post-title {
         color: #555;
+        if hexo-config('archive.titleColor') {
+          color: convert(hexo-config('archive.titleColor'));
+        }
         text-decoration: underline;
         padding: 5px;
         transition: all 0.3s;

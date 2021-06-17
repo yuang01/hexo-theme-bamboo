@@ -1,6 +1,12 @@
+.bg-light-floor-friends {
+  background: convert(hexo-config('friends.background'));
+}
 .friends-title {
   font-size: 1.6em;
   color: #273849;
+  if hexo-config('friends.titleColor') {
+    color: convert(hexo-config('friends.titleColor'));
+  }
   text-align: center;
   padding: 15px 0;
 }
