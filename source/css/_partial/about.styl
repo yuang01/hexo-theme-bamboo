@@ -136,7 +136,7 @@
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
-    margin: 15px;
+    margin: 20px;
     .items {
       display: flex;
       justify-content: space-between;
@@ -167,6 +167,7 @@
       .bar-box {
         position: relative;
         width: 45%;
+        height: 20px;
         background-color: #dddcdc;
         border-radius: 10px;
         overflow: hidden;
@@ -174,6 +175,7 @@
         margin-right: 5%;
         .bar {
           width: 35%;
+          height: 100%;
           background-color: #42b983;
           border-radius: 10px;
           .bar-name {
@@ -181,6 +183,14 @@
             font-size: 14px;
             margin-left: 15px;
           }
+        }
+        .bar-name {
+          color: #fff;
+          font-size: 14px;
+          position: absolute;
+          left: 15px;
+          top: 0;
+          line-height: 20px;
         }
         .bar-number {
           color: #fff;
