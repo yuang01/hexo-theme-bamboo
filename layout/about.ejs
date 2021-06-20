@@ -122,8 +122,7 @@ var books = theme.books.data || {};
 			<% Object.keys(skills).forEach(function(skill) { %>
 			<div class="bar-box">
 				<span class="bar-name"><%- skill %></span>
-				<div class="bar" style="background: <%- skills[skill].background %>; width: <%- skills[skill].percent %>">	
-				</div>
+				<div class="bar" style="background: <%- skills[skill].background %>; width: <%- skills[skill].percent %>"></div>
 				<span class="bar-number"><%- skills[skill].percent %></span>
 			</div>
 			<% }); %>
