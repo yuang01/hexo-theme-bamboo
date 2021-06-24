@@ -1,145 +1,74 @@
 <!DOCTYPE html>
 <html>
-  <%- partial('_partial/head') %>
+  <!-- meta/link... -->
+  <%- partial('_partial/head/head') %>
+  
+  <!-- 依赖于jquery和vue -->
   <script src="<%- url_for('/js/jquery3.5.1.js') %>"></script>
   <script src="<%- url_for('/js/vue2.6.11.js') %>"></script>
-  <link href="<%- url_for('/js/danmu/barrager.css') %>" rel="stylesheet">
-<script src="<%- url_for('/js/danmu/jquery.barrager.js') %>"></script>
+  
   <body>
+    <!-- 预加载动画 -->
     <%- partial('_partial/loaded') %>
-    <!-- 判断是否为黑夜模式 -->
-    <script>
-      let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('<%= theme.dark.default %>');
+    
+    <!-- 判断是否为暗黑风格 -->
+    <%- partial('_partial/scripts/dark') %>
 
-      if (isDark) {
-        $(document.body).addClass('darkModel');
-      }
-    </script>
+    <!-- 头部导航等 -->
+    <%- partial('_partial/head/header') %>
 
-    <%- partial('_partial/header') %>
+    <!-- 内容区域 -->
     <main class="main" style="<% if(theme.color_scheme.common.headerMenuTransparent) { %>margin-top: 0;<% } else { %>margin-top: 60px;<% } %>">
       <%- body %>
     </main>
-    <%- partial('_partial/footer') %>
 
+    <!-- 页脚 -->
+    <%- partial('_partial/footer/footer') %>
+
+    <!-- 渲染暗黑按钮 -->
+    <% if(theme.dark.on === true) { %>
+      <%- partial('_partial/dark') %>
+    <% } %>
+    <!-- 渲染回到顶部按钮 -->
     <% if(theme.goTop.on === true ) { %>
       <%- partial('_partial/goTop') %>
     <% } %>
-
+    <!-- 渲染左下角音乐播放器 -->
     <% if(theme.music.on === true ) { %>
-      <%- partial('_partial/aplayer') %>
+      <%- partial('_partial/meta/aplayer') %>
     <% } %>
 
     <!-- 图片放大 -->
     <% if(theme.fancybox.on === true ) { %>
       <script src="<%- url_for('/js/fancybox/jquery.fancybox.min.js') %>"></script>
     <% } %>
-
-    <script src="<%- url_for('/js/wrapImage.js') %>"></script>
     
-    <!-- 爱心点击 -->
-    <% if(theme.cursor_effect.on === true) { %>
-      <% if(theme.cursor_effect.type == "fireworks") { %>
-        <script src="<%- url_for('/js/cursor/fireworks.js') %>"></script>
-      <% } else if(theme.cursor_effect.type == "explosion") { %>
-        <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 999; pointer-events: none;" ></canvas>
-        <script src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
-        <script src="<%- url_for('/js/cursor/explosion.min.js') %>"></script>
-      <% } else if(theme.cursor_effect.type == "love") { %> 
-        <script src="<%- url_for('/js/cursor/clicklove.js') %>"></script> 
-      <% } else if(theme.cursor_effect.type == "text") { %>
-        <script src="<%- url_for('/js/cursor/text.js') %>"></script>
-      <% } %>
-    <% } %>
+    <!-- 鼠标点击特效 -->
+    <%- partial('_partial/scripts/cursor_effect') %>
 
-    <%- partial('_partial/baidu-analytics') %>
-    <%- partial('_partial/baidu-push') %>
+    <!-- 百度解析 -->
+    <%- partial('_partial/analytics/baidu-analytics') %>
+    <%- partial('_partial/analytics/baidu-push') %>
     
+    <!-- 背景彩带 -->
     <script type="text/javascript" size="100" alpha='0.4' zIndex="-1" src="<%- url_for('/js/ribbon.min.js') %>"></script>
-    <% if(theme.aos.on === true ) { %>
-      <script src="<%- url_for('/js/aos/aos.js') %>"></script>
-      <script>
-        // https://github.com/michalsnik/aos
-        const themeOffset = parseInt('<%= theme.aos.offset %>') || 120;
-        const themeDelay = parseInt('<%= theme.aos.delay %>')|| 0;
-        const themeDuration = parseInt('<%= theme.aos.duration %>') || 400;
-        const themeEasing = '<%= theme.aos.easing %>' || 'ease';
-        const themeOnce = eval('<%= theme.aos.once %>') || false;
-        const themeMirror = eval('<%= theme.aos.mirror %>') || false;
-        const themeAnchorPlacement = '<%= theme.aos.anchorPlacement %>' || 'top-bottom';
-        AOS.init({
-          // Global settings:
-          disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
-          startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
-          initClassName: 'aos-init', // class applied after initialization
-          animatedClassName: 'aos-animate', // class applied on animation
-          useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
-          disableMutationObserver: false, // disables automatic mutations' detections (advanced)
-          debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
-          throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
-
-          // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
-          offset: themeOffset, // offset (in px) from the original trigger point
-          delay: themeDelay, // values from 0 to 3000, with step 50ms
-          duration: themeDuration, // values from 0 to 3000, with step 50ms
-          easing: themeEasing, // default easing for AOS animations
-          once: themeOnce, // whether animation should happen only once - while scrolling down
-          mirror: themeMirror, // whether elements should animate out while scrolling past them
-          anchorPlacement: themeAnchorPlacement, // defines which position of the element regarding to window should trigger the animation
-
-        });
-      </script>
-    <% } %>
-
-    <% if (theme.copy.on){ %>
-      <%- partial('_partial/copy') %>
-    <% } %>
+    
+    <!-- div滚动到显示区域的动画 -->
+    <%- partial('_partial/scripts/aos') %>
+    
+    <!-- 复制提示 -->
+    <%- partial('_partial/scripts/copyTip') %>
 
     <!-- 输入框打字特效 -->
-    <% if (theme.inputEffects.on){ %>
-      <script src="<%- url_for('/js/activate-power-mode.js') %>"></script>
-      <script>
-          POWERMODE.colorful = true;  // 打开随机颜色特效
-          POWERMODE.shake = false;    // 关闭输入框抖动
-          document.body.addEventListener('input', POWERMODE);//监听打字事件
-      </script>
-    <% } %>
+    <%- partial('_partial/scripts/inputEffects') %>
 
     <!-- markdown代码一键复制功能 -->
-    <script src="<%- url_for('/js/clipboard/clipboard.min.js') %>"></script>
-    <script>
-      !function (e, t, a) {
-        var copy = '<%= __("copy") %>';
-        /* code */
-        var initCopyCode = function(){
-          var copyHtml = '';
-          copyHtml += '<button class="btn-copy" data-clipboard-snippet="" style="position:absolute;top:0;right:0;z-index:1;">';
-          copyHtml += '<i class="fa fa-copy"></i><span>' + copy + '</span>';
-          copyHtml += '</button>';
-          $(".post-detail pre").not('.gutter pre').wrap("<div class='codeBox' style='position:relative;width:100%;'></div>")
-          $(".post-detail pre").not('.gutter pre').before(copyHtml);
-          new ClipboardJS('.btn-copy', {
-              target: function(trigger) {
-                  return trigger.nextElementSibling;
-              }
-          });
-        }
-        initCopyCode();
-      }(window, document);
-    </script>
-
-    <script src="<%- url_for('/js/lazyload/lazyload@1.9.1.js') %>"></script>
-    <script>
-      $(function() {
-        $("div.lazyload, img.lazyload, a.lazyload").lazyload(
-            {
-                effect: "fadeIn",
-                placeholder: "<%= theme.loadingImg %>"    //图片未加载出来时显示的占位图
-            }
-        );
-    });
-    </script>
+    <%- partial('_partial/scripts/copy') %>
+    
+    <!-- 图片懒加载 -->
+    <%- partial('_partial/scripts/lazyload') %>
     
     <script src="<%- url_for('/js/app.js') %>"></script>
+
   </body>
 </html>

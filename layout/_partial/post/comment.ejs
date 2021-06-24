@@ -1,0 +1,20 @@
+<!-- 评论 -->
+<% if(page.comments !== false ) { %>
+  <div id="myComment">
+    <% if(theme.valine.on === true ) { %>
+      <%- partial('_partial/comment/valine', { post: page }) %>
+    <% } else if(theme.twikoo.on === true) { %>
+      <%- partial('_partial/comment/twikoo') %>
+    <% } else if(theme.gitment.on === true) { %>
+      <%- partial('_partial/comment/gitment') %>
+    <% } else if(theme.livere.on === true) {  %>
+      <%- partial('_partial/comment/livere') %>
+    <% } else if(theme.changyan.on === true) {  %>
+      <%- partial('_partial/comment/changyan') %>
+    <% } else if(theme.gitalk.on === true) {  %>
+      <%- partial('_partial/comment/gitalk') %>
+    <% } else if(theme.miniValine.on === true) { %>
+      <%- partial('_partial/comment/miniValine') %>
+    <% } %>
+  </div>
+<% } %>

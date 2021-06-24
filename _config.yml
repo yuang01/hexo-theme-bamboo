@@ -202,9 +202,9 @@ toc:
 music:
   on: true
   autoHide: true    # hide automaticaly
-  server: netease   #require	music platform: netease, tencent, kugou, xiami, baidu
-  type: playlist    #require song, playlist, album, search, artist
-  id: 442274724     #require	song id / playlist id / album id / search keyword
+  server: tencent   #require	music platform: netease, tencent, kugou, xiami, baidu
+  type: song    #require song, playlist, album, search, artist
+  id: 0014xbQc1w6RTJ     #require	song id / playlist id / album id / search keyword
   fixed: true       # 开启吸底模式，建议开启
   autoplay: false   # 是否自动播放
   theme: '#42b983'
@@ -556,14 +556,14 @@ color_scheme:
 # 设置网站页脚
 site_footer:
   social:
-    - icon: fa fa-rss
-      url: /atom.xml
-    - icon: fa fa-envelope
-      url: mailto:1730241541@qq.com
-    - icon: fa fa-github
-      url: https://github.com/yuang01/hexo-theme-bamboo
-    - icon: fa fa-qq
-      url: tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1730241541
+    # - icon: fa fa-rss
+    #   url: /atom.xml
+    # - icon: fa fa-envelope
+    #   url: mailto:1730241541@qq.com
+    # - icon: fa fa-github
+    #   url: https://github.com/yuang01/hexo-theme-bamboo
+    # - icon: fa fa-qq
+    #   url: tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1730241541
   copyright: 'Copyright © 2019 - 2020 <a href="https://github.com/yuang01">yuang01</a> | Powered by <a href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a href="https://github.com/yuang01/theme">Bamboo</a> '
   custom: # 根据需要自行取消注释，label: 'markdown格式'，会在下面继续增加内容
     # - label: '<br>'

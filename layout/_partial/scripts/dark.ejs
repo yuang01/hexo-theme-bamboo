@@ -1,0 +1,8 @@
+<!-- 判断是否为黑夜模式 -->
+<script>
+  let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('<%= theme.dark.default %>');
+
+  if (isDark) {
+    $(document.body).addClass('darkModel');
+  }
+</script>

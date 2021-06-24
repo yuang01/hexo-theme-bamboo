@@ -1,0 +1,50 @@
+<!-- 文章详情页右侧目录 -->
+<% if(theme.toc.on === true && page.toc !== false) { %>
+  <div class="toc-aside">
+    <div class="toc-main">
+      <div class="toc-aside-title">
+        <i class="fa fa-list-ul" aria-hidden="true"></i><span><%= __('paperCatalog') %></span>
+        <div class="toc-open-close"><%= __('paperCatalog') %></div>
+      </div>
+      <div class="toc-content">
+        <%- partial('_partial/post/post-detail-toc') %>
+      </div>
+    </div>
+  </div>
+
+  <% if(theme.toc.open === false || page.tocOpen === false) { %>
+    <script>
+      $(".toc-aside").css({'width': 0, 'padding': 0});
+      $(".toc-content").css({'width': 0});
+      $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
+      $(".main-content").css({'width': '75%', 'margin': '10px auto'});
+    </script>
+  <% } %>
+
+  <script>
+    let openOrCloseBtn = $('.toc-aside .toc-aside-title .toc-open-close');
+    let open = eval('<%= page.tocOpen %>' || '<%= theme.toc.open %>');
+    openOrCloseBtn.click(function() {
+      if (open === true) {
+        $(".toc-aside").css({'width': 0, 'padding': 0});
+        $(".toc-content").css({'width': 0});
+        $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
+        $(".main-content").css({'width': '75%', 'margin': '10px auto'});
+        open = false;
+      } else {
+        $(".toc-aside").css({'width': '300px', 'padding': '0 10px'});
+        $(".toc-content").css({'width': '300px'});
+        $(".toc-aside-title span, .toc-aside-title i").css({'display': 'inline-block'});
+        $(".main-content").css({'width': '65%', 'margin-right': '10px', 'margin-left': 'calc(35% - 350px)'});
+        open = true;
+      }
+    });
+  </script>
+<% } else { %>
+  <script>
+    $(".toc-aside").css({'width': 0, 'padding': 0});
+    $(".toc-content").css({'width': 0});
+    $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
+    $(".main-content").css({'width': '75%', 'margin': '10px auto'});
+  </script>
+<% } %>

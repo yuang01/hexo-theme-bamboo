@@ -1,0 +1,9 @@
+<!-- 输入框打字特效 -->
+<% if (theme.inputEffects.on){ %>
+  <script src="<%- url_for('/js/activate-power-mode.js') %>"></script>
+  <script>
+    POWERMODE.colorful = true;  // 打开随机颜色特效
+    POWERMODE.shake = false;    // 关闭输入框抖动
+    document.body.addEventListener('input', POWERMODE);//监听打字事件
+  </script>
+<% } %>

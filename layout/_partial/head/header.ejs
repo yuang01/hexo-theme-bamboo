@@ -14,7 +14,7 @@
 >
   <div class="header-content">
     <div class="bars">
-      <%- partial('_partial/drawer') %>
+      <%- partial('_partial/head/drawer') %>
     </div>
     <div class="blog-title" id="author-avatar">
       <% if(theme.logo) { %>
@@ -61,11 +61,9 @@
           <% }); %>
         <% }%>
       </ul>
-      <% if(theme.dark.on === true) { %>
-        <%- partial('_partial/dark') %>
-        <% } %>
+      
       <% if(theme.search.on === true) { %>
-        <%- partial('_partial/search') %>
+        <%- partial('_partial/head/search') %>
       <% } %>
 
     </nav>

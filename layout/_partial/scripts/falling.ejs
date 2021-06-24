@@ -1,0 +1,26 @@
+<!-- 雪花和花瓣特效 -->
+<% if(theme.snow.on === true ) { %>
+  <% if(theme.snow.onlyPc === true ) { %>
+    <script type="text/javascript">
+      //只在桌面版网页启用特效
+      var windowWidth = $(window).width();
+      if (windowWidth > 768) {
+          document.write('<script type="text/javascript" src="<%- url_for("/js/falling/snow.js") %>"><\/script>');
+      }
+    </script>
+  <% } else {  %>
+    <script src="<%- url_for('/js/falling/snow.js') %>"></script>
+  <% } %>
+<% } else if(theme.sakura.on === true) { %>
+  <% if(theme.sakura.onlyPc === true ) { %>
+    <script type="text/javascript">
+      //只在桌面版网页启用特效
+      var windowWidth = $(window).width();
+      if (windowWidth > 768) {
+          document.write('<script type="text/javascript" src="<%- url_for("/js/falling/sakura.js") %>"><\/script>');
+      }
+    </script>
+  <% } else { %>
+    <script src="<%- url_for('/js/falling/sakura.js') %>"></script>
+  <% } %>
+<% } %>

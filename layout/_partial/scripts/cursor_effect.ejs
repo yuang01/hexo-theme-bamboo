@@ -1,0 +1,14 @@
+<!-- 爱心点击 -->
+<% if(theme.cursor_effect.on === true) { %>
+	<% if(theme.cursor_effect.type == "fireworks") { %>
+		<script src="<%- url_for('/js/cursor/fireworks.js') %>"></script>
+	<% } else if(theme.cursor_effect.type == "explosion") { %>
+		<canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 999; pointer-events: none;" ></canvas>
+		<script src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+		<script src="<%- url_for('/js/cursor/explosion.min.js') %>"></script>
+	<% } else if(theme.cursor_effect.type == "love") { %> 
+		<script src="<%- url_for('/js/cursor/clicklove.js') %>"></script> 
+	<% } else if(theme.cursor_effect.type == "text") { %>
+		<script src="<%- url_for('/js/cursor/text.js') %>"></script>
+	<% } %>
+<% } %>

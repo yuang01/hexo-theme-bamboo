@@ -1,0 +1,11 @@
+<script src="<%- url_for('/js/lazyload/lazyload@1.9.1.js') %>"></script>
+<script>
+  $(function () {
+    $("div.lazyload, img.lazyload, a.lazyload").lazyload(
+      {
+        effect: "fadeIn",
+        placeholder: "<%= theme.loadingImg %>"    //图片未加载出来时显示的占位图
+      }
+    );
+  });
+</script>
