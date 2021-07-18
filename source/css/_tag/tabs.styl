@@ -7,7 +7,7 @@ div.tabs
   margin-top: 1em
   margin-bottom: 1em
   border-radius: $tbr
-  background: #fff
+  background: alpha(#fff, $color-post-contentOpacity)
   border: 1px solid $border-color
   font-size: 0.9375rem
   .highlight,p,ul,ol,div.note,details
@@ -22,7 +22,7 @@ div.tabs
     justify-content: flex-start
     margin: 0 !important
     padding: 8px 8px 0 8px
-    background: #f6f6f6
+    background: alpha(#f6f6f6, $color-post-contentOpacity)
     border-radius: $tbr $tbr 0 0
     line-height: 1.5
     li.tab
@@ -49,7 +49,7 @@ div.tabs
       &.active a
         cursor: default
         color: $color-primary!important
-        background: #fff
+        background: alpha(#fff, $color-post-contentOpacity)
         border: 1px solid $border-color
         border-bottom: 1px solid #fff
 

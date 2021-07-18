@@ -1,0 +1,22 @@
+<script type="text/javascript">
+  comment_el = '#lv-container';
+  load_livere = function () {
+    if ($(comment_el).length) {
+      (function(d, s) {
+          var j, e = d.getElementsByTagName(s)[0];
+
+          if (typeof LivereTower === 'function') { return; }
+
+          j = d.createElement(s);
+          j.src = '<%- url_for(theme.CDN.livere) %>';
+          j.async = true;
+
+          e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    }
+  }
+  $(document).ready(load_livere);
+  document.addEventListener('pjax:complete', function () {
+      load_livere();
+  });
+</script>

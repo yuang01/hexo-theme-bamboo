@@ -9,16 +9,13 @@
 <div class="row justify-position">
   <div class="main-content">
     <article class="post post-detail">
-      <% if (page.date) { %>
-      <div class="post-meta">
-        <i class="fa fa-clock-o" aria-hidden="true"></i>
-        <span class="post-time"><%- date(page.date, "YYYY-MM-DD") %></span>
+      
+      <div class="post-content">
+        <%- page.content %>
       </div>
-      <% } %>
       <div class="post-tags-categories">
         <% if (page.tags && page.tags.length > 0) { %>
         <div class="tags">
-          <i class="iconfont icontag"></i>
           <% page.tags.map(function(tag) { %>
             <a href="<%- url_for(tag.path) %>" class="">
               <%- tag.name %>
@@ -26,19 +23,6 @@
           <% }) %>
         </div>
         <% } %>
-        <% if (page.categories && page.categories.length > 0) { %>
-        <div class="categories">
-          <i class="iconfont iconbookmark1"></i>
-          <% page.categories.map(function(category) { %>
-            <a href="<%- url_for(category.path) %>" class="">
-              <%- category.name %>
-            </a>
-          <% }) %>
-        </div>
-        <% } %>
-      </div>
-      <div class="post-content">
-        <%- page.content %>
       </div>
       <% if (theme.copyright.on && page.copyright !== false) { %>
         <%- partial('_partial/post/copyright', { post: page }) %>
@@ -68,8 +52,7 @@
   <!-- 目录 -->
   <%- partial('_partial/post/toc', { page: page }) %>
 
-  <!-- 渲染issues标签里的内容 -->
-  <%- partial('_partial/scripts/issues') %>
+  
 
   <!-- 图片放大 Wrap images with fancybox support -->
   <script src="<%- url_for('/js/wrapImage.js') %>"></script>

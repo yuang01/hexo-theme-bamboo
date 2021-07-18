@@ -53,7 +53,7 @@ copyright:
 
 friends: 友情链接
 keyword: 请输入关键字
-totalReading: 本站总阅读量
+reading: 阅读量
 totalVisits: 本站总访问量
 numberVisitors: 本站访客数
 
@@ -68,3 +68,7 @@ readMore: 阅读更多
 copy: 复制
 paperCatalog: 本文目录
 loading: 加载中
+publishedIn: 发表于
+wordcount: '字数统计'
+min2read: '阅读时长'
+min: 分钟

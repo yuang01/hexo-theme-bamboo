@@ -1,0 +1,16 @@
+<%- partial('global') %> 
+
+<!-- 轮播图所需要的js -->
+<script src="<%- url_for('/js/swiper/swiper.min.js') %>"></script>
+<script src="<%- url_for('/js/swiper/vue-awesome-swiper.js') %>"></script>
+<script src="<%- url_for('/js/swiper/swiper.animate1.0.3.min.js') %>"></script>
+
+<% if (theme.swiper.defaultDescTyped) { %>
+  <script src="<%- url_for('/js/vue-typed-js/index.js') %>"></script>
+<% } %>
+
+<!-- 首页的公告滚动插件的js需要重新加载 -->
+<script src="<%- url_for('/js/vue-seamless-scroll/index.js') %>"></script>
+
+<!-- 打字机效果js -->
+<script src="<%- url_for(theme.CDN.typedJs) %>"></script>

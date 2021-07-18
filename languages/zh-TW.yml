@@ -53,7 +53,7 @@ copyright:
 
 friends: 友情鏈接
 keyword: 請輸入關鍵字
-totalReading: 本站總閱讀量
+reading: 閱讀量
 totalVisits: 本站總訪問量
 numberVisitors: 本站訪客數
 
@@ -68,3 +68,7 @@ readMore: 閱讀更多
 copy: 復制
 paperCatalog: 本文目錄
 loading: 加載中
+publishedIn: 發表於
+wordcount: '字數統計'
+min2read: '閱讀時長'
+min: 分鐘

@@ -3,9 +3,6 @@
   background-size: cover; 
   background-position: center center;
 }
-.archive-main {
-  min-height: 60vh;
-}
 .archive-header {
   position: relative;
   width: 100%;
@@ -121,16 +118,25 @@
   .archive-header {
     display: flex;  
   }
+  .archive-content {
+    max-width: 100%!important;  
+  }
 }
 
+.archive-main {
+  min-height: 60vh;
+}
 .archive {
   width: 100%;
+  padding: 0 40px 0 60px;
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
   margin-top: 20px;
   margin-bottom: 20px;
   .archive-content {
-    position: relative;  
+    position: relative;
+    max-width: 25%;
   }
   .post-archive {
     &::before {
@@ -145,11 +151,15 @@
     }
     .year {
       position: relative;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
       a {
         color: #273849;
         if hexo-config('archive.yearColor') {
           color: convert(hexo-config('archive.yearColor'));
+        }
+        transition: color 0.3s;
+        &:hover {
+          color: $color-primary!important;  
         }
         font-weight: 700;
         font-size: 2em; 
@@ -168,11 +178,32 @@
       }
     }
     .post-item {
-      margin-bottom: 20px;
+      margin-bottom: 40px;
       list-style: none;
+      display: flex;
+      align-items: center;
+      .post-img-box {
+        width: 80px;
+        height: 80px;
+        overflow: hidden;
+      }
+      .post-img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        transition: all 0.6s;
+        &:hover {
+          transform: scale(1.4);
+        }
+      }
+      .post-date-title {
+        margin-left: 10px;
+        flex: 1;
+      }
       .post-date {
-        padding: 5px;
-        background-color: #42b983;
+        display: inline-block;
+        padding: 0 5px;
+        background-color: $color-primary;
         color: #ffffff;
         if hexo-config('archive.monthColor') {
           color: convert(hexo-config('archive.monthColor'));
@@ -184,11 +215,18 @@
         if hexo-config('archive.titleColor') {
           color: convert(hexo-config('archive.titleColor'));
         }
-        text-decoration: underline;
-        padding: 5px;
         transition: all 0.3s;
+        text-overflow: -o-ellipsis-lastline;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+        line-height: 2;
+        
         &:hover {
-          color: #42b983;
+          color: $color-primary;  
         }
       }
       .post-title::before {

@@ -23,14 +23,27 @@ html {
   font-size: 16px;
   cursor: $cursor-default,auto;
 }
-a:hover {
-  cursor: $cursor-pointer,pointer;
+a:hover,
+.swiper-pagination-bullet,
+.danmuBtn,
+*[pointer] {
+  cursor: $cursor-pointer,pointer!important;
 }
 p,
 input,
 pre code,
-textarea, {
+textarea,
+*[text] {
   cursor: $cursor-text,text;
+}
+
+.fancybox-container .fancybox-stage {
+  cursor: $cursor-zoom-out, zoom-out !important
+}
+
+.fancybox a,
+.fancybox-can-zoomIn .fancybox-content {
+  cursor: $cursor-zoom-in, zoom-in !important
 }
 
 .main {
@@ -57,10 +70,6 @@ textarea, {
 a {
   color: $color-link;
   text-decoration: none;
-}
-// border
-.border-color {
-  border: $border;
 }
 [v-cloak] {
   display: none; 

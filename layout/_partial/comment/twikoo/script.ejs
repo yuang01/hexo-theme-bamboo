@@ -1,0 +1,19 @@
+<script src="<%- url_for('/js/twikoo/twikoo.all.min.js') %>"></script>
+
+<script type="text/javascript">
+    comment_el = '#tcomment';
+    load_twikoo = function () {
+        if ($(comment_el).length) {
+            twikoo.init({
+                envId: '<%- theme.twikoo.envId %>',
+                el: '#tcomments',
+                region: '<%- theme.twikoo.region %>',
+                path: '<%- theme.twikoo.path %>'
+            })
+        }
+    }    
+    $(document).ready(load_twikoo);
+    document.addEventListener('pjax:complete', function () {
+        load_twikoo();
+    });
+</script>

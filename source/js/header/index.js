@@ -1,5 +1,5 @@
-const nav = $('#navHeader');
-const navTop = nav.offset().top;
+var nav = $('#navHeader');
+var navTop = nav.outerHeight();
 $(window).on('scroll',function() {
     const winTop_2 = $(window).scrollTop();
     if(winTop_2 > navTop) {

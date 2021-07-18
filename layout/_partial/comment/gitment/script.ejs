@@ -1,0 +1,23 @@
+<script src='<%- url_for(theme.CDN.gitmentJs) %>'></script>
+
+<script>
+comment_el = '#gitment-ctn';
+load_gitment = function () {
+  if ($(comment_el).length) {
+    var gitment = new Gitment({
+      id: "<%= page.path %>",
+      owner: '<%= theme.gitment.gitment_owner %>',
+      repo: '<%= theme.gitment.gitment_repo %>',
+      oauth: {
+        client_id: '<%= theme.gitment.clientId %>',
+        client_secret: '<%= theme.gitment.clientSecret %>',
+      },
+    })
+    gitment.render('gitment-ctn')
+  }
+}
+$(document).ready(load_gitment);
+document.addEventListener('pjax:complete', function () {
+    load_gitment();
+});
+</script>

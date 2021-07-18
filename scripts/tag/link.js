@@ -20,6 +20,7 @@ hexo.extend.tag.register('link', function(args) {
   let result = '';
   // 发现如果不套一层 div 在其它可渲染 md 的容器中容易被分解
   result += '<div class="tagLink"><a class="link-card" title="' + text + '" href="' + url + '">';
+  result += '<span class="link-card-backdrop" style="background-image: url(' + (img || hexo.theme.config.tag_plugins.linkImg) + ')"></span>';
   // left
   result += '<div class="left">';
   result += '<img src="' + (img || hexo.theme.config.tag_plugins.linkImg) + '"/>';

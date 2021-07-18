@@ -52,8 +52,8 @@
     </h3>
     <div class="index-notice-content">
       <%
-        let notice_list = theme.notice.list || [];
-        let wrapheight = notice_list.length * 30 + 'px'
+        var notice_list = theme.notice.list || [];
+        var wrapheight = notice_list.length * 30 + 'px'
       %>
       <vue-seamless-scroll
         :data="listData"
@@ -96,9 +96,9 @@
 -->
 
 <script>
-  let seamless = JSON.parse('<%= theme.notice.seamless %>');
+  var seamless = JSON.parse('<%= theme.notice.seamless %>');
   seamless = seamless ? 0 : 30;
-  let listData = '<%= theme.notice.list %>' || [];
+  var listData = '<%= theme.notice.list %>' || [];
   listData = listData.split(',');
   var vm = new Vue({
     el: '#appIndexNotice',

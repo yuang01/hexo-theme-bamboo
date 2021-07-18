@@ -1,13 +1,26 @@
 <link href="<%- url_for('/js/tocbot/tocbot.css') %>" rel="stylesheet">
 <script src="<%- url_for('/js/tocbot/tocbot.min.js') %>"></script>
-<div class="toc"></div>
 
 <script>
-  if ($('.toc').length > 0) {
-    var headerEl = '<%- theme.toc.heading %>',  //headers 
+  var headerEl = '<%- theme.toc.heading %>',  //headers 
       content = '.post-detail',//文章容器
       idArr = {};  //标题数组以确定是否增加索引id
       //add #id
+  var option = {
+    // Where to render the table of contents.
+    tocSelector: '.toc',
+    // Where to grab the headings to build the table of contents.
+    contentSelector: content,
+    // Which headings to grab inside of the contentSelector element.
+    headingSelector: headerEl,
+    scrollSmooth: true,
+    scrollSmoothOffset: -80,
+    headingsOffset: -($(window).height() * 0.4 - 45),
+    positionFixedSelector: '.toc-main',
+    positionFixedClass: 'is-position-fixed',
+    fixedSidebarOffset: 'auto',
+  }
+  if ($('.toc').length > 0) {
 
     $(content).children(headerEl).each(function () {
       //去除空格以及多余标点
@@ -26,22 +39,24 @@
       }
     });
 
-    tocbot.init({
-      // Where to render the table of contents.
-      tocSelector: '.toc',
-      // Where to grab the headings to build the table of contents.
-      contentSelector: content,
-      // Which headings to grab inside of the contentSelector element.
-      headingSelector: headerEl,
-      scrollSmooth: true,
-      scrollSmoothOffset: -80,
-      headingsOffset: -($(window).height() * 0.4 - 45),
-      positionFixedSelector: '.toc-main',
-      positionFixedClass: 'is-position-fixed',
-      fixedSidebarOffset: 'auto',
-    });
+    tocbot.init(option);
+    
   }
 
+
+  document.addEventListener('pjax:send', function () {
+    if ($('.toc').length) {
+      tocbot.destroy();
+    }
+  });
+
+  document.addEventListener('pjax:complete', function () {
+    if ($('.toc').length) {
+      tocbot.init(option);
+    }
+  });
+
+  
 </script>
 
 <style>
@@ -59,7 +74,7 @@
   left: 12px;
   top:0;
 }
-.toc > .toc-list {
+/* .toc > .toc-list {
   padding-left: 35px;
 }
 .toc>.toc-list li {
@@ -67,5 +82,5 @@
 }
 .toc-list {
   padding-left: 25px;
-}
+} */
 </style>

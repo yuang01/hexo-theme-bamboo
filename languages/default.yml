@@ -53,7 +53,7 @@ copyright:
 
 friends: friends
 keyword: Please enter keywords
-totalReading: Total reading
+reading: reading
 totalVisits: Total visits
 numberVisitors: Number of visitors
 
@@ -68,3 +68,7 @@ readMore: Read More
 copy: copy
 paperCatalog: catalog
 loading: loading
+publishedIn: Published in
+wordcount: 'Words'
+min2read: 'Reading time'
+min: min

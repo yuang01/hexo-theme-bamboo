@@ -3,7 +3,7 @@ details
   padding: 16px
   margin: 1em 0
   border-radius: 4px
-  background: #fff
+  background: alpha(#fff, $color-post-contentOpacity)
   font-size: 0.9375rem
   transition: all 0.3s
   summary
@@ -32,27 +32,27 @@ details
 
   border: 1px solid #f6f6f6
   >summary
-    background: #f6f6f6
+    background: alpha(#f6f6f6, $color-post-contentOpacity)
   &[blue]
     border-color: $color-tag-blue + 10 * 8% + 1 * .5deg
     >summary
-      background: $color-tag-blue + 10 * 8% + 1 * .5deg
+      background: alpha($color-tag-blue + 10 * 8% + 1 * .5deg, $color-post-contentOpacity)
   &[cyan]
     border-color: $color-tag-cyan + 10 * 8% + 1 * .5deg
     >summary
-      background: $color-tag-cyan + 10 * 8% + 1 * .5deg
+      background: alpha($color-tag-cyan + 10 * 8% + 1 * .5deg, $color-post-contentOpacity)
   &[green]
     border-color: $color-tag-green + 10 * 8% + 1 * .5deg
     >summary
-      background: $color-tag-green + 10 * 8% + 1 * .5deg
+      background: alpha($color-tag-green + 10 * 8% + 1 * .5deg, $color-post-contentOpacity)
   &[yellow]
     border-color: $color-tag-yellow + 10 * 8% + 1 * .5deg
     >summary
-      background: $color-tag-yellow + 10 * 8% + 1 * .5deg
+      background: alpha($color-tag-yellow + 10 * 8% + 1 * .5deg, $color-post-contentOpacity)
   &[red]
     border-color: $color-tag-red + 10 * 8% + 1 * .5deg
     >summary
-      background: $color-tag-red + 10 * 8% + 1 * .5deg
+      background: alpha($color-tag-red + 10 * 8% + 1 * .5deg, $color-post-contentOpacity)
 
 details[open]
   border-color: alpha(#444, .2)

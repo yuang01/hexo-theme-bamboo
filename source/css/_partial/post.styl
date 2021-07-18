@@ -34,6 +34,14 @@
     overflow: auto;
     display: inline-block;
     width: 300px;
+    .toc-list {
+      padding-left: 35px;
+    }
+    if hexo-config('toc.showOrderNumber') {
+      .toc-list li {
+        list-style: decimal;
+      }
+    }
     .toc-list-item a {
       transition: color 0.3s;
     }
@@ -96,10 +104,26 @@
   }
   .post-tags-categories {
     display: flex;
+    justify-content: flex-end;
+    margin: 10px 0;
     .tags,
     .category {
       margin-right: 10px;  
     }  
+    .tags {
+      a {
+        display: inline-block;
+        border: 1px solid $color-primary;
+        color: $color-primary!important;
+        padding: 2px 20px;
+        border-radius: 20px;
+        margin-top: 10px;
+        &:hover {
+          color: $color-inner!important;
+          background-color: $color-primary;
+        }
+      }  
+    }
   }
   .post-content {
     margin-top: 20px;
@@ -478,8 +502,9 @@
     justify-content: center;  
   }
   .main-content {
-    width: 90%!important;
+    width: 100%!important;
     margin: 0 auto!important;
+    margin-top: 10px!important;
   }
   .toc-aside {
     display: none;   

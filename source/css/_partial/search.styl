@@ -22,9 +22,10 @@
   z-index: 11;
   .message-box {
     display: flex;
+    position: relative;
     flex-direction: column;
     width: 30rem;
-    height: 70%;
+    max-height: 60%;
     padding: 10px 20px;
     margin-top: 100px;
     background-color: #fff;
@@ -79,7 +80,7 @@
     }
   }
   .result-wrapper {
-    height: 80%;
+    max-height: 80%;
     overflow: auto;
     overflow-x: hidden;
     margin-top: 10px;
@@ -104,6 +105,7 @@
         margin-bottom: 15px;
         box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12);
         transition: all .3s
+        word-wrap: break-word;
         &:hover {
           box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12);  
         }

@@ -30,8 +30,8 @@
 
         //如果需要铺满内容可以换下面这个
         var panel = document.getElementById('thumbnail_canvas');
-		width=panel.offsetWidth;
-		height=panel.offsetHeight;
+		width=panel ? panel.offsetWidth : 0;
+		height=panel ? panel.offsetHeight : 0;
 
 		canvas.width = width;
 		canvas.height = height;

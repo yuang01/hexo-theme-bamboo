@@ -21,7 +21,7 @@ var i = 0;
 %>
 <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
 <div class="bg-light-floor-tagDetail" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
-
+<% if (!theme.tagDetail.video) { %>
 <div class="lazyload tag-header" data-original="<%- url_for(theme.tagDetail.img) %>">
   <div class="tag-header-title">
     <%= theme.tagDetail.title %>
@@ -29,17 +29,7 @@ var i = 0;
   <div class="tag-header-desc">
   <% if (theme.typed.on === true) { %>
     <span class="title" id="tag-header-desc"></span>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-        <script>
-        var typed = new Typed("#tag-header-desc", {
-            strings: ['<%= theme.tagDetail.desc %>'],
-            startDelay: <%= theme.typed.startDelay %>,
-            typeSpeed: <%= theme.typed.typeSpeed %>,
-            loop: true,
-            backSpeed: <%= theme.typed.backSpeed %>,
-            showCursor: true
-        });
-        </script>
+    <%- partial('_partial/scripts/typed', { el: '#tag-header-desc', type: 'tagDetail' }) %>
     <% } else {  %>
         <span class="title">
         <%= theme.tagDetail.desc %>
@@ -48,7 +38,9 @@ var i = 0;
   </div>
   <div class="mask-box"></div>
 </div>
+<% } %>
 
+<% if (theme.tagDetail.video) { %>
 <div class="tag-video">
   <video class="full-video" autoplay loop muted>
       <source style="width: 100%;height: 100vh;" src="<%- url_for(theme.tagDetail.video) %>">
@@ -59,17 +51,7 @@ var i = 0;
   <div class="video-header-desc">
   <% if (theme.typed.on === true) { %>
       <span class="title" id="video-header-desc"></span>
-      <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
-          <script>
-          var typed = new Typed("#video-header-desc", {
-              strings: ['<%= theme.tagDetail.desc %>'],
-              startDelay: <%= theme.typed.startDelay %>,
-              typeSpeed: <%= theme.typed.typeSpeed %>,
-              loop: true,
-              backSpeed: <%= theme.typed.backSpeed %>,
-              showCursor: true
-          });
-          </script>
+      <%- partial('_partial/scripts/typed', { el: '#tagDetail-video-header-desc', type: 'tagDetail' }) %>
       <% } else {  %>
           <span class="title">
           <%= theme.tagDetail.desc %>
@@ -78,6 +60,7 @@ var i = 0;
   </div>
   <div class="mask-box"></div>
 </div>
+<% } %>
 
 <div class="tag">
   <div class="tag-name">
@@ -129,7 +112,7 @@ var i = 0;
         </div>
         <div class="post-more">
           <a href="<%- url_for(post.path) %>">
-            <i class="iconfont iconmore" style="<% if(i % 2 == 0) { %>float: right;<% } %>" title="阅读更多"></i>
+            <i class="iconfont iconmore" pointer style="<% if(i % 2 == 0) { %>float: right;<% } %>" title="阅读更多"></i>
           </a>
         </div>
       </div>

@@ -1,4 +1,4 @@
-<link href="https://cdn.bootcdn.net/ajax/libs/Swiper/5.4.1/css/swiper.min.css" rel="stylesheet">
+<link href="<%- url_for('/js/swiper/swiper@5.4.1.min.css') %>" rel="stylesheet">
 
 <% if (theme.swiper.defaultDescTyped) { %>
   <link href="<%- url_for('/js/vue-typed-js/index.css') %>" rel="stylesheet">
@@ -36,7 +36,7 @@
     <% if(swiperLength > 0) { %>
       <% if(theme.swiper.defaultAddToSwiper) { %>
         <swiper-slide>
-          <div class="item swiper-lazy" data-background="<%- url_for(theme.swiper.defaultImg || imgArr[defaultIndex]) %>" style="background-size: 90000px; 
+          <div class="item swiper-lazy" data-background="<% if(!theme.swiper.bothSideTransparent) { %><%- url_for(theme.swiper.defaultImg || imgArr[defaultIndex]) %><% } %>" style="background-size: <%= theme.swiper.bothSideBlur %>; 
             background-position: left center;" style="position: relative;">
             <div class="swiper-bgmask" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;"></div>
               <div class="flag">
@@ -57,7 +57,7 @@
                     <div class="title ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><%= theme.swiper.defaultTile %></div>
                     <% if (theme.swiper.defaultDescTyped) { %>
                       <div class="ani animated default-excerpt" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>">
-                        <vue-typed-js :strings="defaultDesc" :loop="defaultDescTypedLoop" typeSpeed="10000">
+                        <vue-typed-js :strings="defaultDesc" :loop="defaultDescTypedLoop" :type-speed="<%- theme.swiper.defaultDescTypedSpeed %>" :back-speed="<%- theme.swiper.defaultDescTypedBackSpeed %>">
                           <h1 class="typing"></h1>
                         </vue-typed-js>
                       </div>
@@ -67,15 +67,15 @@
                   </div>
                   <div style="display: flex;" class="flag-text-btns">
                     <% if(theme.swiper.defaultLeftBtnText) { %>
-                      <div class="ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><a href="<%= theme.swiper.defaultLeftBtnLink %>" class="read-more border-color swiper-btn-color" style="display: inline-block; z-index:1;"><%= theme.swiper.defaultLeftBtnText %></a></div>
+                      <div class="ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><a href="<%= theme.swiper.defaultLeftBtnLink %>" class="read-more swiper-btn-color" style="display: inline-block; z-index:1;"><%= theme.swiper.defaultLeftBtnText %></a></div>
                     <% } %>
                     <% if(theme.swiper.defaultRightBtnText) { %>
-                      <div class="ani animated" style="margin-left: 10px;" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><a href="<%= theme.swiper.defaultRightBtnLink %>" class="read-more border-color swiper-btn-color2" style="display: inline-block; z-index:1;border: 1px solid white;"><%= theme.swiper.defaultRightBtnText %></a></div>
+                      <div class="ani animated" style="margin-left: 10px;" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><a href="<%= theme.swiper.defaultRightBtnLink %>" class="read-more swiper-btn-color2" style="display: inline-block; z-index:1;border: 1px solid white;"><%= theme.swiper.defaultRightBtnText %></a></div>
                     <% } %>
                   </div>
                 </div>
               </div>
-            </div>
+          </div>
         </swiper-slide>
       <% } %>
       <% site.posts.sort('-date').each(function (post) { %>
@@ -92,11 +92,11 @@
             img = imgs[Math.abs(hashCode(post.title) % imgs.length)]
           %>
           <swiper-slide>
-            <div class="item swiper-lazy" data-background="<%- url_for(post.swiperImg || img) %>" style=" background-size: 90000px; 
+            <div class="item swiper-lazy" data-background="<% if(!theme.swiper.bothSideTransparent) { %><%- url_for(post.swiperImg || post.img || img) %><% } %>" style=" background-size: <%= theme.swiper.bothSideBlur %>; 
             background-position: left center;" style="position: relative;">
-            <div class="swiper-bgmask" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;"></div>
+              <div class="swiper-bgmask" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;"></div>
               <div class="flag" style="z-index: 2;">
-                <div class="img-mask swiper-lazy" data-background="<%- url_for(post.swiperImg || img) %>" style="height: 100%; background-size: cover; 
+                <div class="img-mask swiper-lazy" data-background="<%- url_for(post.swiperImg || post.img || img) %>" style="height: 100%; background-size: cover; 
                   background-position: center center;">
                   <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>  
                 </div>
@@ -109,7 +109,7 @@
                     </div>
                     <div class="excerpt ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><%- post.swiperDesc || post.excerpt || strip_html(post.content).substring(0, 120) %></div>
                   </div>
-                  <div class="bottom-one-btn ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><a href="<%- url_for(post.path) %>" class="read-more border-color swiper-btn-color" style="display: inline-block; z-index:1;"><%= __('readMore') %></a></div>
+                  <div class="bottom-one-btn ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><a href="<%- url_for(post.path) %>" class="read-more swiper-btn-color" style="display: inline-block; z-index:1;"><%= __('readMore') %></a></div>
                 </div>
               </div>
             </div>
@@ -117,12 +117,12 @@
           </swiper-slide>
         <% } %>
       <% }) %>
-    <div class="swiper-pagination" slot="pagination" style="<% if(!theme.swiper.showIndicators || swiperLength <= 1) { %>display: none;<% } %>"></div>
-    <div class="swiper-button-prev swiper-button-white" slot="button-prev" style="<% if(!theme.swiper.showPrevNext || swiperLength <= 1) { %>display: none;<% } %>"></div>
-    <div class="swiper-button-next swiper-button-white" slot="button-next" style="<% if(!theme.swiper.showPrevNext || swiperLength <= 1) { %>display: none;<% } %>"></div>
+    <div class="swiper-pagination" slot="pagination" pointer style="<% if(!theme.swiper.showIndicators || swiperLength <= 1) { %>display: none;<% } %>"></div>
+    <div class="swiper-button-prev swiper-button-white" pointer slot="button-prev" style="<% if(!theme.swiper.showPrevNext || swiperLength <= 1) { %>display: none;<% } %>"></div>
+    <div class="swiper-button-next swiper-button-white" pointer slot="button-next" style="<% if(!theme.swiper.showPrevNext || swiperLength <= 1) { %>display: none;<% } %>"></div>
     <% } else { %>
       <swiper-slide>
-        <div class="item swiper-lazy" data-background="<%- url_for(theme.swiper.defaultImg || imgArr[defaultIndex]) %>" style="background-size: 90000px; 
+        <div class="item swiper-lazy" data-background="<% if(!theme.swiper.bothSideTransparent) { %><%- url_for(theme.swiper.defaultImg || imgArr[defaultIndex]) %><% } %>" style="background-size: <%= theme.swiper.bothSideBlur %>; 
           background-position: left center;" style="position: relative;">
           <div class="swiper-bgmask" style="position: absolute;top: 0;left: 0;width: 100%;height: 100%;"></div>
             <div class="flag">
@@ -143,7 +143,7 @@
                   <div class="title ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><%= theme.swiper.defaultTile %></div>
                   <% if (theme.swiper.defaultDescTyped) { %>
                     <div class="ani animated default-excerpt" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>">
-                      <vue-typed-js :strings="defaultDesc" :loop="defaultDescTypedLoop" :typeSpeed="1000">
+                      <vue-typed-js :strings="defaultDesc" :loop="defaultDescTypedLoop" :type-speed="<%- theme.swiper.defaultDescTypedSpeed %>" :back-speed="<%- theme.swiper.defaultDescTypedBackSpeed %>">
                         <h1 class="typing"></h1>
                       </vue-typed-js>
                     </div>
@@ -153,10 +153,10 @@
                 </div>
                 <div style="display: flex;" class="flag-text-btns">
                   <% if(theme.swiper.defaultLeftBtnText) { %>
-                    <div class="ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><a href="<%= theme.swiper.defaultLeftBtnLink %>" class="read-more border-color swiper-btn-color" style="display: inline-block; z-index:1;"><%= theme.swiper.defaultLeftBtnText %></a></div>
+                    <div class="ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><a href="<%= theme.swiper.defaultLeftBtnLink %>" class="read-more swiper-btn-color" style="display: inline-block; z-index:1;"><%= theme.swiper.defaultLeftBtnText %></a></div>
                   <% } %>
                   <% if(theme.swiper.defaultRightBtnText) { %>
-                    <div class="ani animated" style="margin-left: 10px;" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><a href="<%= theme.swiper.defaultRightBtnLink %>" class="read-more border-color swiper-btn-color2" style="display: inline-block; z-index:1;border: 1px solid white;"><%= theme.swiper.defaultRightBtnText %></a></div>
+                    <div class="ani animated" style="margin-left: 10px;" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><a href="<%= theme.swiper.defaultRightBtnLink %>" class="read-more swiper-btn-color2" style="display: inline-block; z-index:1;border: 1px solid white;"><%= theme.swiper.defaultRightBtnText %></a></div>
                   <% } %>
                 </div>
               </div>
@@ -174,26 +174,20 @@
   <% } %>
   <canvas id="header_canvas"style="position:absolute;bottom:0;width:100%;pointer-events:none;"></canvas>
 </div>
-<script src="<%- url_for('/js/swiper/swiper.min.js') %>"></script>
-<script src="<%- url_for('/js/swiper/vue-awesome-swiper.js') %>"></script>
-<script src="<%- url_for('/js/swiper/swiper.animate1.0.3.min.js') %>"></script>
+
 <script type="text/javascript">
   Vue.use(window.VueAwesomeSwiper)
 </script>
 
-<% if (theme.swiper.defaultDescTyped) { %>
-  <script src="<%- url_for('/js/vue-typed-js/index.js') %>"></script>
-<% } %>
-
 <script>
-  let autoplay = JSON.parse('<%= theme.swiper.autoplay %>');
-  let delay = '<%= theme.swiper.delay %>';
-  let loop = JSON.parse('<%= theme.swiper.defaultAddToSwiper %>') ? false : JSON.parse('<%= theme.swiper.loop %>');
-  let effect = '<%= theme.swiper.effect %>';
-  let swiperLength = parseInt(document.querySelector(".swiper-length").innerText);
-  let defaultDesc = '<%= theme.swiper.defaultDesc %>';
+  var autoplay = JSON.parse('<%= theme.swiper.autoplay %>');
+  var delay = '<%= theme.swiper.delay %>';
+  var loop = JSON.parse('<%= theme.swiper.defaultAddToSwiper %>') ? false : JSON.parse('<%= theme.swiper.loop %>');
+  var effect = '<%= theme.swiper.effect %>';
+  var swiperLength = parseInt(document.querySelector(".swiper-length").innerText);
+  var defaultDesc = '<%= theme.swiper.defaultDesc %>';
   defaultDesc = defaultDesc.split(',');
-  let defaultDescTypedLoop = JSON.parse('<%= theme.swiper.defaultDescTypedLoop %>');
+  var defaultDescTypedLoop = JSON.parse('<%= theme.swiper.defaultDescTypedLoop %>');
   var vm = new Vue({
     el: '#appSwiper',
     data: {
@@ -262,6 +256,7 @@
 <style>
 #appSwiper {
   position: relative;
+  user-select: none;
 }
 .default-excerpt {
   font-size: 1.6rem;
@@ -329,8 +324,8 @@
   color: #eee;
   font-family: Ubuntu,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
   width: 70%;
-  line-height: 27px;
-  height: 135px;
+  line-height: 30px;
+  height: 150px;
   margin-top: 2%;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -679,12 +674,12 @@
   .swiper-btn-color,
   .swiper-btn-color2 {
     background-color: transparent;
-    border: 1px solid <%- url_for(theme.color_scheme.common.inner) %>;
+    border: 1px solid #fff;
   }
   .swiper-btn-color:hover,
   .swiper-btn-color2:hover {
-    background-color: <%- url_for(theme.color_scheme.common.theme) %>;
-    border: 1px solid <%- url_for(theme.color_scheme.common.theme) %>!important;
+    background-color: <%- theme.color_scheme.common.theme %>;
+    border: 1px solid <%- theme.color_scheme.common.theme %>!important;
   }
   .flag-text-btns {
     justify-content: center;

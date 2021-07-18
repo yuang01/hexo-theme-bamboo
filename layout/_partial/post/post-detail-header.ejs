@@ -28,10 +28,49 @@
   <div class="post-detail-header-mask"></div>
   <canvas id="header_canvas"style="position:absolute;bottom:0;pointer-events:none;"></canvas>
   
-  <div class="title-box">
-    <span class="title">
-      <%= post.title %>
-    </span>
+  <div class="post-detail-header_info-box">
+    <div class="title-box">
+      <span class="title">
+        <%= post.title %>
+      </span>
+    </div>
+    
+    <% if (post.onlyTitle != true) { %>
+      <% if (post.date) { %>
+        <span class="post-detail-header_date">
+          <i class="fa fa-calendar"></i> <%= __('publishedIn') %>：<%- date(post.date, "YYYY-MM-DD") %> |
+        </span>
+      <% } %>
+
+      <% if (post.categories && post.categories.length > 0) { %>
+        <span class="post-detail-header_categories">
+          <i class="iconfont iconbookmark1"></i> <%= __('category') %>：
+          <% post.categories.map(function(category) { %>
+            <a href="<%- url_for(category.path) %>" class="post-detail-header_category">
+              <%- category.name %>
+            </a>
+          <% }) %>
+        </span>
+      <% } %>
+
+      <% if (theme.wordcount.on) { %>
+        <div class="post-detail-header_wordcount">
+          <span class="totalcount">
+            <i class="fa fa-file-text-o"></i> <%- __('wordcount')%>: <%- wordcount(post.content)%> |
+          </span>
+  
+          <span class="min2read">
+            <i class="fa fa-clock-o"></i> <%- __('min2read')%>: <%- min2read(post.content)%><%- __('min')%> |
+          </span>
+  
+          <% if(theme.busuanzi.on === true ) { %>
+            <span class="reading">
+              <i class="fa fa-eye"></i> <%= __('reading') %>：<span id="busuanzi_value_page_pv"></span>
+            </span>
+          <% } %>
+        </div>
+      <% } %>
+    <% } %>
   </div>
   
   <% if (theme.bubble.on === true) { %>

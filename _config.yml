@@ -33,8 +33,10 @@ menu:
   #     url: http://baidu.com
   #     icon: fa fa-film
 
-# github账号
-Github: https://github.com/yuang01/hexo-theme-bamboo
+# github地址, 头部导航右上角的github链接
+Github: 
+  on: true
+  url: https://github.com/yuang01/hexo-theme-bamboo
 
 # 网站logo
 logo: /medias/logo.png # 为空则不显示
@@ -42,15 +44,15 @@ logo: /medias/logo.png # 为空则不显示
 # 网站 favicon
 favicon: /favicon.ico # or .png .jpg .svg .gif .jpeg .ico
 
-# 页面预加载动画
+# 页面刷新时预加载动画
 preloader:
-  on: false
+  on: true
 
 # 首页轮播图设置
 swiper:
   # 当在.md文件中，设置swiper:true，会将该文章放到轮播中，
   showPrevNext: true # 是否显示左右切换按钮
-  showIndicators: true  # 是否显示指示器
+  showIndicators: false  # 是否显示指示器
   autoplay: false # 是否自动轮播
   loop: true # 让轮播看起来是循环的, 例如false的话，到达最后一个轮播图的时候，右按钮不能点击
   delay: 5000 # 切换延迟时间
@@ -64,24 +66,29 @@ swiper:
   # 当没有文章设置swiper: true时候，轮播图会显示以下default默认内容，可自行切换对应内容
   defaultImg: 'https://img11.360buyimg.com/ddimg/jfs/t1/160978/33/20686/2476596/6083e62dEa588862b/63f8f2163ab61b2f.png' # 图片，没有则随机选取
   defaultVideo: '' # video，min-width:992px show
-  defaultVideoLoadingImg: 'https://img14.360buyimg.com/ddimg/jfs/t1/150557/6/19578/249564/60320406Ed5c42418/0d18299f505e4268.gif' # video loading img -- use .gif img, 视频预加载动画，使用gif图片作为loading，为空则视频没有预加载动画
+  defaultVideoLoadingImg: 'https://img14.360buyimg.com/ddimg/jfs/t1/175057/18/19582/882056/60ee7ac8Ef0045710/202d2ad878684a3b.gif' # video loading img -- use .gif img, 视频预加载动画，使用gif图片作为loading，为空则视频没有预加载动画
   defaultTile: '青墨书晚风' # 标题
   defaultDesc: [] #描 述，例如 ['煮酒洗净尘嚣，论知交', '万般付之一笑，共偕老']
   defaultLeftBtnText: '阅读文档' # 左边按钮文字, 空字符串则不显示
   defaultLeftBtnLink: 'https://yuang01.gitee.io/2021/02/08/hexo-theme-bamboo-new/' # 左边按钮链接 
   defaultRightBtnText: '下载主题' # 右边按钮的文字，空字符串则不显示
   defaultRightBtnLink: 'https://gitee.com/yuang01/hexo-theme-bamboo/repository/archive/dev.zip' # 右边的按钮的链接
-  defaultDescTyped: true # defaultDesc文字是否开启打字特效
-  defaultDescTypedLoop: true # defaultDesc文字的打字特效是否循环
+  defaultDescTyped: true # defaultDesc文字是否开启打字特效  is typed
+  defaultDescTypedSpeed: 100 # defaultDesc 打字速度, typed typeSpeed
+  defaultDescTypedBackSpeed: 50 # defaultDesc 打字返回速度 typed backSpeed
+  defaultDescTypedLoop: true # defaultDesc文字的打字特效是否循环  typed loop
   # defaultAddToSwiper表示：当有文章设置了swiper: true的时候，将上面的 默认内容 放在轮播图的第一页
   defaultAddToSwiper: true # 开启这个，则loop默认为false
+  bothSideBlur: '300000px' # 轮播图两边模糊程度，px越大越模糊，针对下面的imgwidthFull、full为false的时候
   ## 轮播图样式更改
   # 轮播图的文字和按钮居中显示 (针对 imgwidthFull和 full都是false的时候)
-  textCenter: true
+  textCenter: false
   # 图片宽度为100% (轮播图的文字和按钮只能居中显示)
   imgwidthFull: false
   # 整个轮播图宽高都是100%  (轮播图的文字和按钮只能居中显示)
   full: true # full 优先级大于 imgwidthFull
+  # 两边透明，imgwidthFull/full: false的时候，设置该值为true，则两边的模糊效果为透明
+  bothSideTransparent: false
 
 # 回到顶部
 goTop: 
@@ -119,7 +126,7 @@ cursor_effect:
 
 # 头部导航是否显示天气
 weather:
-  on: true
+  on: false
 
 # 全文搜索功能
 search:
@@ -137,6 +144,10 @@ copy:
 
 # 输入框打字特效
 inputEffects:
+  on: true
+
+# 背影彩带
+ribbon:
   on: true
 
 # live-2d(左下角动画人物)
@@ -196,24 +207,25 @@ toc:
   on: true # 是否显示
   heading: h2, h3, h4
   open: true # 是否展开，false则收缩
+  showBtn: true # 是否显示展开收缩按钮
+  showOrderNumber: true # 是否显示序号
 
 # 音乐
-# 是否在首页显示音乐.
 music:
   on: true
   autoHide: true    # hide automaticaly
   server: tencent   #require	music platform: netease, tencent, kugou, xiami, baidu
-  type: song    #require song, playlist, album, search, artist
-  id: 0014xbQc1w6RTJ     #require	song id / playlist id / album id / search keyword
+  type: playlist    #require song, playlist, album, search, artist
+  id: 8062553743     #require	song id / playlist id / album id / search keyword
   fixed: true       # 开启吸底模式，建议开启
-  autoplay: false   # 是否自动播放
+  autoplay: false   # 是否自动播放, 有些浏览器会禁用自动播放，目前edge可以自动播放
   theme: '#42b983'
   loop: 'all'       # 音频循环播放, 可选值: 'all', 'one', 'none'
   order: 'random'   # 音频循环顺序, 可选值: 'list', 'random'
   preload: 'auto'   # 预加载，可选值: 'none', 'metadata', 'auto'
   volume: 0.7       # 默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效
   listFolded: true  # 列表默认折叠
-  hideLrc: true     # 隐藏歌词
+  hideLrc: false     # 隐藏歌词
 
 # 关于我
 baseInfo:
@@ -362,14 +374,6 @@ twikoo:
   # region: ap-guangzhou # 环境地域，默认为 ap-shanghai
   # path: 'window.location.pathname' # 自定义文章路径
 
-# miniValine
-miniValine:
-  on: false
-  appid: 
-  appkey: 
-  avatar: '' # 匿名者头像选项 https://valine.js.org/avatar.html
-  placeholder: '客官，说点什么吧'
-
 # 来必力评论
 livere:
   on: false
@@ -386,8 +390,8 @@ gitment:
 # 畅言评论
 changyan:
   on: false
-  appId:
-  conf:
+  appId: 
+  conf: 
 
 # gitalk评论
 gitalk:
@@ -403,7 +407,7 @@ danmu:
   on: false
   loop: false # 设为true，则弹幕完了之后，继续查询评论接口，将该篇文章的评论再显示在弹幕里
   delay: 5000 # 每条弹幕之间出现的间隔时间
-  speed: 20 # 弹幕运行的速度, 越小越快
+  speed: 40 # 弹幕运行的速度, 越小越快
 
 # 归档页面图片、描述、视频，全屏 or 'http://xxx'
 archive:
@@ -491,8 +495,6 @@ color_scheme:
     inner: '#fff'
     # 链接色 a标签
     link: '#42b983'
-    # border颜色，目前轮播图的 阅读更多按钮 和 回到顶部按钮 有用到该border，可自行配置该颜色
-    border: '2px solid #42b983'
     # 选中区域文字的背景颜色, 后面的小数代表透明度
     selection: 'alpha(#42b983, 0.8)'
     # 顶部页面加载进度条颜色
@@ -584,13 +586,24 @@ tag_plugins:
   # link标签的左侧默认图片
   linkImg: 'https://cdn.pixabay.com/photo/2018/12/05/13/41/panda-3857754__340.jpg'
 
-    
+# pjax
+pjax:
+  on: true
+  animation: circle # false, nprogress, circle
+  animationColor: 'orangered' # animation为 nprogress时候的动画颜色, red or #000 ...
+  cacheBust: false # url 地址追加时间戳，用以避免浏览器缓存
+  timeout: 5000    # The timeout in milliseconds for the XHR requests. Set to 0 to disable the timeout.
+  banUrl:          # 被屏蔽的 url 地址将不启用 pjax 跳转，可以在控制台下使用 window.location.pathname 获取
+      # - '/xxx'   # 注意， 后面不需要加斜杠，例如 '/about'
+      # - '/xxx'       
 
 # 鼠标手势
 cursor:
   pointer: https://cdn.jsdelivr.net/gh/inkss/common@master/cursor/pointer.png
   default: https://cdn.jsdelivr.net/gh/inkss/common@master/cursor/left_ptr.png
   text: https://cdn.jsdelivr.net/gh/inkss/common@master/cursor/text.png
+  zoom-in: https://cdn.jsdelivr.net/gh/inkss/common@master/cursor/zoom-in.png
+  zoom-out: https://cdn.jsdelivr.net/gh/inkss/common@master/cursor/zoom-out.png
 
 # loading图片地址，为空则不使用loading图片，文章详情页的loading图片可从`postLoadingImg`参数控制
 loadingImg: 'https://img10.360buyimg.com/ddimg/jfs/t1/159345/8/2271/222193/5ff7b36fEe49f5663/a95287c20385127f.gif'
@@ -616,6 +629,10 @@ highlight:
   aqua: '#66cccc'
   blue: '#6699cc'
   purple: '#cc99cc'
+
+# wordcount字数统计, 需要 npm i hexo-wordcount 安装
+wordcount:
+  on: true
 
 # 文章图片
 imgs:
@@ -655,3 +672,4 @@ CDN:
   paceJs: //cdn.bootcss.com/pace/1.0.2/pace.min.js
   paceCss: //cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css
   weather: https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0
+  typedJs: https://cdn.jsdelivr.net/npm/typed.js@2.0.11

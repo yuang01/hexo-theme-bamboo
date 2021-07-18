@@ -1,0 +1,16 @@
+<script>
+  function typedFn() {
+    const el = '<%= el %>';
+    const type = '<%= type %>';
+    let desc = '<%= theme[type].desc %>'
+    var typed = new Typed(el, {
+      strings: [desc],
+      startDelay: <%= theme.typed.startDelay %>,
+      typeSpeed: <%= theme.typed.typeSpeed %>,
+      loop: true,
+      backSpeed: <%= theme.typed.backSpeed %>,
+      showCursor: true
+    });
+  }
+  typedFn();
+</script>

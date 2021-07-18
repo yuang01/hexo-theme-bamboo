@@ -1,0 +1,21 @@
+<script src="<%- url_for(theme.CDN.gitalkJs) %>"></script>
+<script type="text/javascript">
+    comment_el = '#gitalk-container';
+    load_gitalk = function () {
+        if ($(comment_el).length) {
+            var gitalk = new Gitalk({
+                clientID: '<%= theme.gitalk.clientID %>',
+                clientSecret: '<%= theme.gitalk.clientSecret %>',
+                id: window.location.pathname,
+                repo: '<%= theme.gitalk.repo %>',
+                owner: '<%= theme.gitalk.owner %>',
+                admin: ['<%= theme.gitalk.admin %>']
+            })
+            gitalk.render('gitalk-container')
+        }
+    }    
+    $(document).ready(load_gitalk);
+    document.addEventListener('pjax:complete', function () {
+        load_gitalk();
+    });
+</script>

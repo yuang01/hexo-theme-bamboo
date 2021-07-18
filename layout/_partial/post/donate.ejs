@@ -14,7 +14,7 @@
   <transition name="bounce">
     <div class="donate-box" v-cloak v-if="visible">
       <div class="donate-box_close">
-        <i class="fa fa-times" aria-hidden="true" @click="cancelDialogDrawer"></i>
+        <i class="fa fa-times" aria-hidden="true" @click="cancelDialogDrawer" pointer></i>
       </div>
       <div class="donate-box_title">
         <h4>
@@ -22,10 +22,10 @@
         </h4>
       </div>
       <div class="donate-box_tab">
-        <div class="Alipay" :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
+        <div class="Alipay" pointer :class="{'active': tabActive === 'Alipay'}" @click="changeTabActive('Alipay')">
           支付宝
         </div>
-        <div class="WeChatpay" :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
+        <div class="WeChatpay" pointer :class="{'active': tabActive === 'WeChatpay'}" @click="changeTabActive('WeChatpay')">
           微信
         </div>
       </div>

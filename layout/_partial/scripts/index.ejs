@@ -1,0 +1,45 @@
+<!-- 文章目录所需js -->
+<%- partial('toc') %> 
+
+<!-- 渲染issues标签里的内容 -->
+<%- partial('issues') %>
+
+<!-- 鼠标点击特效 -->
+<%- partial('_partial/scripts/cursor_effect') %>
+
+<!-- div滚动到显示区域的动画 -->
+<%- partial('_partial/scripts/aos') %>
+    
+<!-- 复制提示 -->
+<%- partial('_partial/scripts/copyTip') %>
+
+<!-- 输入框打字特效 -->
+<%- partial('_partial/scripts/inputEffects') %>
+
+<!-- markdown代码一键复制功能 -->
+<%- partial('_partial/scripts/copy') %>
+
+<!-- 图片懒加载 -->
+<%- partial('_partial/scripts/lazyload') %>
+
+<!-- 评论所需js -->
+<% if(page.comments !== false ) { %>
+    <% if(theme.valine.on) { %>
+        <!-- 弹幕所需的css和js -->
+        <%- partial('_partial/scripts/danmu') %>
+        <%- partial('_partial/comment/valine/script') %>
+    <% } else if(theme.twikoo.on) { %>
+        <%- partial('_partial/comment/twikoo/script') %>
+    <% } else if(theme.gitment.on) { %>
+        <%- partial('_partial/comment/gitment/script') %>
+    <% } else if(theme.livere.on) {  %>
+        <%- partial('_partial/comment/livere/script') %>
+    <% } else if(theme.changyan.on) {  %>
+        <%- partial('_partial/comment/changyan/script') %>
+    <% } else if(theme.gitalk.on) {  %>
+        <%- partial('_partial/comment/gitalk/script') %>
+    <% } %>
+<% } %>
+
+
+

@@ -72,6 +72,6 @@ module.exports.processPost = function(data) {
   return data;
 };
 
-module.exports.processSite = function(htmlContent) {
-  return lazyProcess.call(this, htmlContent, 'site');
-};
+// module.exports.processSite = function(htmlContent) {
+//   return lazyProcess.call(this, htmlContent, 'site');
+// };

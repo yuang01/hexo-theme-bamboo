@@ -14,7 +14,7 @@ highlight-blue = convert(hexo-config('highlight.blue'));
 highlight-purple = convert(hexo-config('highlight.purple'));
 
 $code-block
-  background: highlight-background
+  background: alpha(highlight-background, $color-post-contentOpacity)
   // margin: 0 article-padding * -1
   padding: 15px article-padding
   border-style: solid

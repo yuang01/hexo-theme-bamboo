@@ -11,7 +11,21 @@
     align-items: center
     cursor: pointer
     border-radius: 8px
-    width: 500px - 4 * 16px
+    width: 500px - 4 * 16px;
+    position: relative;
+    overflow: hidden;
+    .link-card-backdrop {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-repeat: no-repeat;
+      -webkit-filter: blur(150px);
+      filter: blur(150px);
+      background-size: cover;
+      background-position: 50%;
+    }
     @media (max-width: 551px) { 
       width: 100%
     }

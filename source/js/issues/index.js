@@ -180,5 +180,8 @@ const IssuesAPI = {
       }
     }
   };
+IssuesAPI.request();
+document.addEventListener('pjax:complete', function() {
   IssuesAPI.request();
+});
   
