@@ -21,7 +21,7 @@ var i = 0;
 %>
 <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
 <div class="bg-light-floor-tagDetail" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
-<% if (!theme.tagDetail.video) { %>
+
 <div class="lazyload tag-header" data-original="<%- url_for(theme.tagDetail.img) %>">
   <div class="tag-header-title">
     <%= theme.tagDetail.title %>
@@ -38,7 +38,6 @@ var i = 0;
   </div>
   <div class="mask-box"></div>
 </div>
-<% } %>
 
 <% if (theme.tagDetail.video) { %>
 <div class="tag-video">
@@ -50,7 +49,7 @@ var i = 0;
   </div>
   <div class="video-header-desc">
   <% if (theme.typed.on === true) { %>
-      <span class="title" id="video-header-desc"></span>
+      <span class="title" id="tagDetail-video-header-desc"></span>
       <%- partial('_partial/scripts/typed', { el: '#tagDetail-video-header-desc', type: 'tagDetail' }) %>
       <% } else {  %>
           <span class="title">

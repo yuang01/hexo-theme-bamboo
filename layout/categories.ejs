@@ -17,7 +17,7 @@ var i = 0;
 %>
 <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
 <div class="bg-light-floor-categories" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
-<% if (!theme.categories.video) { %>
+
 <div class="lazyload categories-header" data-original="<%- url_for(theme.categories.img) %>">
     <div class="categories-header-title">
         <%= theme.categories.title %>
@@ -34,7 +34,7 @@ var i = 0;
     </div>
     <div class="mask-box"></div>
 </div>
-<% } %>
+
 <% if (theme.categories.video) { %>
 <div class="categories-video">
     <video class="full-video" autoplay loop muted>
@@ -56,6 +56,7 @@ var i = 0;
     <div class="mask-box"></div>
 </div>
 <% } %>
+
 <div id="categories" class="container">
     <div class="card">
         <div class="card-content">
