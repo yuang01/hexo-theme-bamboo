@@ -632,7 +632,7 @@ highlight:
 
 # wordcount字数统计, 需要 npm i hexo-wordcount 安装
 wordcount:
-  on: true
+  on: false
 
 # 文章图片
 imgs:
