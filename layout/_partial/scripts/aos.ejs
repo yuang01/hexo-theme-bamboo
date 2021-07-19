@@ -1,6 +1,6 @@
 <% if(theme.aos.on===true ) { %>
   <script src="<%- url_for('/js/aos/aos.js') %>"></script>
-  <script data-pjax>
+  <script>
     // https://github.com/michalsnik/aos
     var themeOffset = parseInt('<%= theme.aos.offset %>') || 120;
     var themeDelay = parseInt('<%= theme.aos.delay %>') || 0;
@@ -30,5 +30,9 @@
       anchorPlacement: themeAnchorPlacement, // defines which position of the element regarding to window should trigger the animation
 
     });
+
+    document.addEventListener('pjax:complete', function () {
+      AOS.refresh();
+    })
   </script>
 <% } %>
