@@ -363,7 +363,7 @@ valine:
   master: '' # 博主标签识别，博主邮箱md5 可以去md5加密网站，例如 https://md5jiami.51240.com/ ，将自己的邮箱输入， 得到 32位小写 的字符串
   friends: [] # 小伙伴的 邮箱md5， 是个数组
   requiredFields: [] # 设置必填项 ['nick', 'mail'] nick为昵称必填， mail为邮箱必填，建议设置必填，填写qq邮箱，会使用qq头像作为头像
-  backgroundImg: '/medias/comment-bg.gif' # 右下角背景图片
+  backgroundImg: 'https://img14.360buyimg.com/ddimg/jfs/t1/172838/19/20338/90100/60f5419aE1d5312fe/196cfcf28c8850fa.gif' # 右下角背景图片
   backgroundColor: 'rgba(255,255,255,0.9)' # 背景颜色
 
 # twikoo评论
