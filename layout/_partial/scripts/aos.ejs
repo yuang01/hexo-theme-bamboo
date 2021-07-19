@@ -1,14 +1,14 @@
 <% if(theme.aos.on===true ) { %>
   <script src="<%- url_for('/js/aos/aos.js') %>"></script>
-  <script>
+  <script data-pjax>
     // https://github.com/michalsnik/aos
-    const themeOffset = parseInt('<%= theme.aos.offset %>') || 120;
-    const themeDelay = parseInt('<%= theme.aos.delay %>') || 0;
-    const themeDuration = parseInt('<%= theme.aos.duration %>') || 400;
-    const themeEasing = '<%= theme.aos.easing %>' || 'ease';
-    const themeOnce = eval('<%= theme.aos.once %>') || false;
-    const themeMirror = eval('<%= theme.aos.mirror %>') || false;
-    const themeAnchorPlacement = '<%= theme.aos.anchorPlacement %>' || 'top-bottom';
+    var themeOffset = parseInt('<%= theme.aos.offset %>') || 120;
+    var themeDelay = parseInt('<%= theme.aos.delay %>') || 0;
+    var themeDuration = parseInt('<%= theme.aos.duration %>') || 400;
+    var themeEasing = '<%= theme.aos.easing %>' || 'ease';
+    var themeOnce = eval('<%= theme.aos.once %>') || false;
+    var themeMirror = eval('<%= theme.aos.mirror %>') || false;
+    var themeAnchorPlacement = '<%= theme.aos.anchorPlacement %>' || 'top-bottom';
     AOS.init({
       // Global settings:
       disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
