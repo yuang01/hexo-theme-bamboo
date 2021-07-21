@@ -5,7 +5,7 @@
 ![https://img.shields.io/npm/v/hexo-theme-bamboo?color=%09%23bf00ff](https://img.shields.io/npm/v/hexo-theme-bamboo?color=%09%23bf00ff)
 ![hexo version](https://img.shields.io/badge/hexo-5.0+-0e83c)
 
-最新文档，请[点击github查看](https://yuang01.github.io/2021/02/08/hexo-theme-bamboo-new/)，或者[点击gitee查看](https://yuang01.gitee.io/2021/02/08/hexo-theme-bamboo-new/)，
+最新文档，请[点击github查看](https://yuang01.github.io)，或者[点击gitee查看](https://yuang01.gitee.io)，
 
 <table>
     <tr>

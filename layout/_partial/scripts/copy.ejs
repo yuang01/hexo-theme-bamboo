@@ -30,12 +30,10 @@
         }
         initCopyCode();
         $('.btn-copy').unbind('click').bind('click', function () {
-          console.log('888');
           doSomething();
         })
         $(document).unbind('keypress').bind('keypress', function (e) {
           if (e.ctrlKey && e.keyCode == 67) {
-            console.log('111111111111111');
             doSomething();
             // 返回false, 防止重复触发copy事件  
             // return false;
@@ -44,7 +42,6 @@
         //  监听 ctrl + c事件  
         // $(document).unbind('keypress').bind('keypress', function (e) {
         //   if (e.ctrlKey && e.keyCode == 67) {
-        //     console.log('111111111111111');
         //     doSomething();
         //     // 返回false, 防止重复触发copy事件  
         //     return false;
@@ -53,9 +50,7 @@
 
         // // 鼠标右键的复制事件  
         // $(document).unbind('copy').bind('copy', function (e) {
-        //   console.log('222222222222222222');
         //   doSomething();
-        //   // console.log('右键复制 监听成功');
         // });
 
         function doSomething() {
@@ -64,7 +59,6 @@
             content: "<%= theme.copy.content %>",
             type: 'success'
           })
-          // console.log('ctrl + c 监听成功');  
         }
       },
       methods: {
