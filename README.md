@@ -6,7 +6,7 @@
 ![hexo version](https://img.shields.io/badge/hexo-5.0+-0e83c)
 
 最新文档，请[点击github查看](https://yuang01.github.io)，或者[点击gitee查看](https://yuang01.gitee.io)，
-
+github如果访问不了，可以访问 [这个](http://121.4.241.135/)
 <table>
     <tr>
             <th>首页轮播(支持三种显示方式)</th>
