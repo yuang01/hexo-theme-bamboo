@@ -363,7 +363,7 @@ valine:
   master: '' # 博主标签识别，博主邮箱md5 可以去md5加密网站，例如 https://md5jiami.51240.com/ ，将自己的邮箱输入， 得到 32位小写 的字符串
   friends: [] # 小伙伴的 邮箱md5， 是个数组
   requiredFields: [] # 设置必填项 ['nick', 'mail'] nick为昵称必填， mail为邮箱必填，建议设置必填，填写qq邮箱，会使用qq头像作为头像
-  backgroundImg: 'https://img14.360buyimg.com/ddimg/jfs/t1/172838/19/20338/90100/60f5419aE1d5312fe/196cfcf28c8850fa.gif' # 右下角背景图片
+  backgroundImg: 'https://img.zcool.cn/community/01a253594c71cfa8012193a329a77f.gif' # 右下角背景图片
   backgroundColor: 'rgba(255,255,255,0.9)' # 背景颜色
 
 # twikoo评论
@@ -655,15 +655,15 @@ imgs:
 CDN:
   valine: https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js
   iconfont: https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css
-  fontAwesome: https://cdn.bootcdn.net/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css
-  aplayer: https://cdn.bootcdn.net/ajax/libs/aplayer/1.10.1/APlayer.min.js
+  fontAwesome: https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css
+  aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js
   Meting: https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js
   MiniValine: https://unpkg.com/minivaline/dist/MiniValine.min.js
   livere: https://cdn-city.livere.com/js/embed.dist.js
-  gitmentCss: https://cdn.bootcdn.net/ajax/libs/gitment/0.0.3/default.min.css
-  gitmentJs: https://cdn.bootcdn.net/ajax/libs/gitment/0.0.3/gitment.browser.min.js
-  gitalkCss: https://cdn.bootcdn.net/ajax/libs/gitalk/1.7.2/gitalk.css
-  gitalkJs: https://cdn.bootcdn.net/ajax/libs/gitalk/1.7.2/gitalk.js
+  gitmentCss: https://cdn.jsdelivr.net/npm/gitment@0.0.3/style/default.css
+  gitmentJs: https://cdn.jsdelivr.net/npm/gitment@0.0.3/dist/gitment.browser.js
+  gitalkCss: https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css
+  gitalkJs: https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js
   busuanzi: //busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js # 卜算子
   ayuCss: https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.css
   ayuJs: https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.umd.min.js
