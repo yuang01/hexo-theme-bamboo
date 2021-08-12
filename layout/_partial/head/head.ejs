@@ -78,6 +78,7 @@
         }
     </script>
   <% } %>
+  
   <%- css('css/animate.min.css') %>
   <%- css('css/style.css') %>
   
@@ -101,4 +102,18 @@
         <script src="<%- url_for('/js/valine/av-min@3.0.4.js') %>"></script>
         <script src="<%- url_for(theme.CDN.valine) %>"></script>
     <% } %>
+
+    <!-- import link -->
+    <% if (theme.import && theme.import.link){ %>
+        <% (theme.import.link||[]).forEach(function(item){ %>
+            <%- item %>
+        <% }) %>
+    <% } %>
+    <!-- import script -->
+    <% if (theme.import && theme.import.script){ %>
+        <% (theme.import.script||[]).forEach(function(item){ %>
+            <%- item %>
+        <% }) %>
+    <% } %>
+
 </head>

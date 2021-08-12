@@ -585,6 +585,8 @@ tag_plugins:
   cyan: '#00e09e'
   # link标签的左侧默认图片
   linkImg: 'https://cdn.pixabay.com/photo/2018/12/05/13/41/panda-3857754__340.jpg'
+  # getFile标签的左侧默认图片
+  getFileImg: 'https://img.51miz.com/Element/00/37/79/59/10df0417_E377959_b7bb9dfa.png'
 
 # pjax
 pjax:
@@ -634,6 +636,17 @@ highlight:
 wordcount:
   on: false
 
+# 自己嵌入css或者script
+import:
+  link:
+    # - <link src"xxx.css"></link>
+    - 
+    - 
+  script: 
+    # - <script src="xxx.js"></script>
+    - 
+    - 
+
 # 文章图片
 imgs:
 - '/medias/1.jpg'
@@ -658,7 +671,6 @@ CDN:
   fontAwesome: https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css
   aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js
   Meting: https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js
-  MiniValine: https://unpkg.com/minivaline/dist/MiniValine.min.js
   livere: https://cdn-city.livere.com/js/embed.dist.js
   gitmentCss: https://cdn.jsdelivr.net/npm/gitment@0.0.3/style/default.css
   gitmentJs: https://cdn.jsdelivr.net/npm/gitment@0.0.3/dist/gitment.browser.js
