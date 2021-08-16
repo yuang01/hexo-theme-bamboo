@@ -402,6 +402,17 @@ gitalk:
   clientID:      #`Github Application clientID`
   clientSecret:  #`Github Application clientSecret`
 
+# utterance 评论
+utterance:
+  on: false
+  # 仓库名字，格式：你的用户 ID/ 仓库名称，如：yuang01/yuang01.github.io
+  repo: 
+  # 主题
+  theme: github-light
+  # 映射配置
+  issue_term: pathname
+  cdn: https://utteranc.es/client.js
+
 # 弹幕 只对valine评论有效
 danmu:
   on: false

@@ -13,6 +13,9 @@
       <%- partial('_partial/comment/changyan/layout') %>
     <% } else if(theme.gitalk.on) {  %>
       <%- partial('_partial/comment/gitalk/layout') %>
+    <% } else if(theme.utterance.on) {  %>
+      <%- partial('_partial/comment/utterance/layout') %>
     <% } %>
   </div>
 <% } %>
+<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->

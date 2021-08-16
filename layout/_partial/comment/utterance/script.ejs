@@ -1,0 +1,28 @@
+<script type="text/javascript">
+    comment_el = '#gitment-container';
+    load_utterance = function () {
+        if ($(comment_el).length) {
+            // 匿名函数，防止污染全局变量
+            var utterances = document.createElement('script');
+            utterances.type = 'text/javascript';
+            utterances.async = true;
+            utterances.setAttribute('issue-term','<%= theme.utterance.issue_term %>')
+            utterances.setAttribute('theme','<%= theme.utterance.theme %>')
+            utterances.setAttribute('repo','<%= theme.utterance.repo %>')
+            utterances.crossorigin = 'anonymous';
+            utterances.src = '<%= theme.utterance.cdn %>';
+            // content 是要插入评论的地方
+            document.getElementById('gitment-container').appendChild(utterances);
+        }
+    }
+    $(document).ready(load_utterance);
+    document.addEventListener('pjax:complete', function () {
+        load_utterance();
+    });
+</script>
+
+<style>
+    .utterances {
+        max-width: inherit!important;
+    }
+</style>
