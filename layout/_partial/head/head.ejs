@@ -102,6 +102,10 @@
         <script src="<%- url_for('/js/valine/av-min@3.0.4.js') %>"></script>
         <script src="<%- url_for(theme.CDN.valine) %>"></script>
     <% } %>
+    
+    <% if(theme.aos.on===true ) { %>
+        <script src="<%- url_for('/js/aos/aos.js') %>"></script>
+    <% } %>
 
     <!-- import link -->
     <% if (theme.import && theme.import.link){ %>
