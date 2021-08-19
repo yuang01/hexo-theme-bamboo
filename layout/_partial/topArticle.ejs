@@ -14,7 +14,7 @@
 %>
 
 <% if (page.current === 1 && theme.topArticle.on === true) { %>
-<div class="topArticle" data-aos="<%= theme.aos.animate || 'fade-up' %>">
+<div class="topArticle reveal">
 	<h3><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><%= __('recommendedArticles') %></h3>
 	<div class="articles">
 		<% site.posts.sort('-date').each(function (post, i) { %>

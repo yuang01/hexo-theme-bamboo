@@ -1,0 +1,24 @@
+<script type="text/javascript">
+  loadScript("<%- theme.scrollreveal.js %>")
+  function pjax_scrollrebeal() {
+    ScrollReveal().reveal('.reveal', {
+      distance: '<%- theme.scrollreveal.distance %>',
+      duration: '<%- theme.scrollreveal.duration %>',
+      interval: '<%- theme.scrollreveal.interval %>',
+      scale: '<%- theme.scrollreveal.scale %>',
+      origin: '<%- theme.scrollreveal.origin %>', // 动画开始的方向
+      easing: '<%- theme.scrollreveal.easing %>'
+    });
+  }
+  $(function () {
+    var checkScrollReveal = setInterval(function () {
+      if ($("#safearea").css("display") != "block") return
+      if (typeof ScrollReveal == "undefined") return
+      clearInterval(checkScrollReveal)
+      pjax_scrollrebeal();
+    }, 100)
+  });
+  document.addEventListener('pjax:complete', function () {
+    pjax_scrollrebeal();
+  })
+</script>

@@ -177,17 +177,16 @@ lantern:
   left: '春' # 左边灯笼的文字， 空字符串则没有文字
   right: '节' # 右边灯笼的文字
 
-# 首页文章列表滚动动画，详情参照https://github.com/michalsnik
-aos:
+# https://scrollrevealjs.org/api/reveal.html 滚动动画, 旧版本用的是aos.js(已经弃用aos.js)
+scrollreveal:
   on: true
-  animate: 'fade-up' # animate, 更多选项请参考 https://github.com/michalsnik/aos#animations
-  offset: 120 # offset (in px) from the original trigger point
-  delay: 0 # values from 0 to 3000, with step 50ms
-  duration: 400 # values from 0 to 3000, with step 50ms
-  easing: 'ease' # default easing for AOS animations
-  once: true # whether animation should happen only once - while scrolling down
-  mirror: false # whether elements should animate out while scrolling past them
-  anchorPlacement: 'top-bottom' # defines which position of the element regarding to window should trigger the animation
+  js: https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js
+  distance: 120px
+  duration: 400 # ms
+  interval: 30 # ms
+  scale: 1 # 0.1~1
+  origin: 'bottom'
+  easing: 'ease'
 
 # 添加 Google Analytics 配置
 googleAnalytics:
@@ -408,7 +407,9 @@ utterance:
   # 仓库名字，格式：你的用户 ID/ 仓库名称，如：yuang01/yuang01.github.io
   repo: 
   # 主题
-  theme: github-light
+  theme:
+    light: github-light
+    dark: github-dark
   # 映射配置
   issue_term: pathname
   cdn: https://utteranc.es/client.js

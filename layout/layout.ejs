@@ -21,9 +21,11 @@
     <%- partial('_partial/scripts/head') %>
 
     <!-- 内容区域 -->
-    <main class="main" id="pjax-container" style="<% if(theme.color_scheme.common.headerMenuTransparent) { %>margin-top: 0;<% } else { %>margin-top: 60px;<% } %>">
-      <%- body %>
-    </main>
+    <div id="safearea">
+      <main class="main" id="pjax-container" style="<% if(theme.color_scheme.common.headerMenuTransparent) { %>margin-top: 0;<% } else { %>margin-top: 60px;<% } %>">
+        <%- body %>
+      </main>
+    </div>
 
     <!-- 页脚 -->
     <%- partial('_partial/footer/footer') %>

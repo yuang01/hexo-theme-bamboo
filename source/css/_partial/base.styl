@@ -17,7 +17,8 @@ button, input, select, textarea { font-size:100%; }
 table { border-collapse:collapse; border-spacing:0; }
 // 以上为css初始化
 
-html {
+html
+*[cursor-default] {
   background-color: #F2F2F2;
   // line-height: 1.5;
   font-size: 16px;
@@ -128,3 +129,10 @@ pre:hover::-webkit-scrollbar-thumb:hover,
   background-size: cover;
   transition: all 0.3s;
 }
+
+if hexo-config('scrollreveal.on') {
+  .reveal {
+    visibility: hidden
+  }
+}
+    

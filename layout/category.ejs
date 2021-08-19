@@ -66,7 +66,7 @@ var i = 0;
   </div>
   <section class="posts">
     <% page.posts.each(function (post, i) { %>
-    <article class="post" data-aos="<%= theme.aos.animate || 'fade-up' %>"
+    <article class="post reveal"
       style="<% if(i % 2 == 0) { %>flex-direction: row-reverse;<% } %>">
       <div class="post-main">
         <div class="post-info">

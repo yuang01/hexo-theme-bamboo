@@ -4,9 +4,6 @@
 <!-- 渲染issues标签里的内容 -->
 <%- partial('issues') %>
 
-<!-- div滚动到显示区域的动画 -->
-<%- partial('_partial/scripts/aos') %>
-
 <!-- 输入框打字特效 -->
 <%- partial('_partial/scripts/inputEffects') %>
 
@@ -15,6 +12,11 @@
 
 <!-- 图片懒加载 -->
 <%- partial('_partial/scripts/lazyload') %>
+
+<!-- 卡片滚动动画 -->
+<% if(theme.scrollreveal.on) { %>
+    <%- partial('_partial/scripts/scrollreveal') %>
+<% } %>   
 
 <!-- 评论所需js -->
 <% if(page.comments !== false ) { %>

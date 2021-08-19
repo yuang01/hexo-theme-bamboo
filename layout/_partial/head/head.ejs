@@ -54,10 +54,6 @@
   <%- partial('_partial/analytics/google-analytics') %>
   <title><%= pageTitle %></title>
 
-  <% if(theme.aos.on === true ) { %>
-    <%- css('js/aos/aos.css') %>
-  <% } %>
-
   <link rel="icon" type="<%= iconType %>" href="<%- url_for(theme.favicon) %>">
   <link rel="stylesheet" href="<%= theme.CDN.iconfont %>">
   <link href="<%= theme.CDN.fontAwesome %>" rel="stylesheet">
@@ -101,10 +97,6 @@
     <% if (theme.valine.on && page.comments !== false) { %>
         <script src="<%- url_for('/js/valine/av-min@3.0.4.js') %>"></script>
         <script src="<%- url_for(theme.CDN.valine) %>"></script>
-    <% } %>
-    
-    <% if(theme.aos.on===true ) { %>
-        <script src="<%- url_for('/js/aos/aos.js') %>"></script>
     <% } %>
 
     <!-- import link -->
