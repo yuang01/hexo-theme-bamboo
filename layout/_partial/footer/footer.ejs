@@ -1,31 +1,47 @@
-<div class="footer bg-color">
-  <div class="footer-main">
-    <div class="link">
-      <% (theme.site_footer.social||[]).forEach(function(value) { %>
-        <% if (value.url && (value.icon || value.img || value.avatar)) { %>
-          <a href="<%= url_for(value.url) %>" class="social">
-            <% if (value.icon) { %>
-              <i class="<%- value.icon %>" aria-hidden="true"></i>
-            <% } else if (value.img) { %>
-              <img src="<%- value.img %>"/>
-            <% } else if (value.avatar) { %>
-              <img src="<%- value.avatar %>" style="border-radius:120px"/>
-            <% } %>
-          </a>
+<% if (theme.site_footer) { %>
+  <%
+    var layout = theme.site_footer.layout;
+  %>
+  <div class="footer bg-color">
+    <div class="footer-main">
+      <% layout.forEach(function(item){ %>
+        <% if (item == 'social') { %>
+          <div class="link">
+            <% (theme.site_footer.social||[]).forEach(function(value) { %>
+              <% if (value.url && (value.icon || value.img || value.avatar)) { %>
+                <a href="<%= url_for(value.url) %>" class="social">
+                  <% if (value.icon) { %>
+                    <i class="<%- value.icon %>" aria-hidden="true"></i>
+                  <% } else if (value.img) { %>
+                    <img src="<%- value.img %>"/>
+                  <% } else if (value.avatar) { %>
+                    <img src="<%- value.avatar %>" style="border-radius:120px"/>
+                  <% } %>
+                </a>
+              <% } %>
+            <% }) %>
+          </div>
+        <% } else if (item == 'copyright') {  %>
+          <div class="footer-copyright">
+            <%- markdown(theme.site_footer.copyright) %>
+          </div>
+        <% } else if (item == 'custom') { %>
+          <div class="footer-custom">
+            <% (theme.site_footer.custom||[]).forEach(function(item) { %>
+              <div><%- markdown(item.label) %></div>
+            <% }) %>
+          </div>
+        <% } else if (item == 'busuanzi') {  %>
+          <% if (theme.busuanzi.on) { %>
+            <!-- 不蒜子统计 -->
+            <%- partial('_partial/footer/busuanzi') %>
+          <% } %>
+        <% } else { %>
+          <% if (item in theme.site_footer) { %>
+            <div><%- markdown(theme.site_footer[item]) %></div>
+          <% } %>
         <% } %>
       <% }) %>
     </div>
-    <div class="footer-copyright">
-      <%- markdown(theme.site_footer.copyright) %>
-    </div>
-    <div class="footer-custom">
-      <% (theme.site_footer.custom||[]).forEach(function(item) { %>
-        <div><%- markdown(item.label) %></div>
-      <% }) %>
-    </div>
-    <!-- 不蒜子统计 -->
-    <% if(theme.busuanzi.on === true ) { %>
-      <%- partial('_partial/footer/busuanzi') %>
-    <% } %>
   </div>
-</div>
+<% } %>

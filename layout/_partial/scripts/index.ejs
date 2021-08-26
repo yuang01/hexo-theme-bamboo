@@ -42,3 +42,6 @@
 <!-- 鼠标点击特效 -->
 <%- partial('_partial/scripts/cursor_effect') %>
 
+<% if (theme.busuanzi.on) { %>
+    <script async src="<%- url_for(theme.CDN.busuanzi) %>" data-pjax></script>
+<% } %>

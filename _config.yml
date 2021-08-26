@@ -569,6 +569,9 @@ color_scheme:
 
 # 设置网站页脚
 site_footer:
+  # 通过layout控制页脚元素的显示和顺序
+  # busuanzi是访客数那个,假如说你想在 social和 copyright中间加一个自定义内容, 可以这样写 layout: [social, aaa ,copyright, busuanzi, custom], 然后在下面写上aaa: 'markdown格式', aaa这个名称随便取
+  layout: [social, copyright, busuanzi, custom]
   social:
     # - icon: fa fa-rss
     #   url: /atom.xml
@@ -659,7 +662,7 @@ import:
     - 
     - 
 
-# 文章图片
+# 文章图片,不指定 img:xxx 的时候随机取下面的图片
 imgs:
 - '/medias/1.jpg'
 - '/medias/2.jpg'
