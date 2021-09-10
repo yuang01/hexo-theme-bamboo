@@ -1,37 +1,39 @@
+# 配置里面 线上地址写法：http://xxx，本地地址。可以在`source`文件夹下创建目录，假如创建img和videos目录，则引用的时候使用 /img/xxx 写法, /videos/xxx  ... 
+
 # 菜单
 menu:
-  # Home:
-  #   url: /
-  #   icon: fa fa-home
-  # Archives:
-  #   url: /archives
-  #   icon: fa fa-archive
-  # Tags:
-  #   url: /tags
-  #   icon: fa fa-tags
-  # Categories:
-  #   url: /categories
-  #   icon: fa fa-bookmark
-  # About:
-  #   url: /about
-  #   icon: fa fa-user
-  # Friends:
-  #   url: /friends
-  # 更多: # 这是二级菜单的写法
-  #  icon: fa fa-link
-  #  children:
-  #   - name: 图库
-  #     url: /gallery
-  #     icon: fa fa-music
-  #   - name: 友情连接
-  #     url: /huoban
-  #     icon: fa fa-film
-  #   - name: 关于我
-  #     url: /me
-  #     icon: fa fa-film
-  #   - name: 百度
-  #     url: http://baidu.com
-  #     icon: fa fa-film
+  Home:
+    url: /
+    icon: fas fa-home
+  Archives:
+    url: /archives
+    icon: fas fa-archive
+  Tags:
+    url: /tags
+    icon: fas fa-tags
+  Categories:
+    url: /categories
+    icon: fas fa-bookmark
+  About:
+    url: /about
+    icon: fas fa-user
+  Friends:
+    url: /friends
+  更多: # 这是二级菜单的写法
+   icon: fas fa-link
+   children:
+    - name: 图库
+      url: /gallery
+      icon: fas fa-music
+    - name: 友情连接
+      url: /huoban
+      icon: fas fa-film
+    - name: 关于我
+      url: /me
+      icon: fas fa-film
+    - name: 百度
+      url: http://baidu.com
+      icon: fas fa-film
 
 # github地址, 头部导航右上角的github链接
 Github: 
@@ -43,6 +45,126 @@ logo: /medias/logo.png # 为空则不显示
 
 # 网站 favicon
 favicon: /favicon.ico # or .png .jpg .svg .gif .jpeg .ico
+
+# sidebar侧边栏
+sidebar:
+  on: true
+  position: right # left right
+  widget_library:
+    side_blogger:
+      on: true
+      display: [desktop, mobile] # [desktop, mobile]
+      avatar: http://api.btstu.cn/sjtx/api.php?lx=c1&format=images
+      shape: rectangle # circle, rectangle
+      url: /about/
+      title: 青墨书晚风
+      subtitle: 我是副标题
+      jinrishici: true # Poetry Today. You can set a string, and it will be displayed when loading fails.
+      fontFammily: Long Cang,cursive
+      background: '#fff'
+      social:
+        - icon: fas fa-rss
+          url: /atom.xml
+        - icon: fas fa-envelope
+          url: mailto:me@xxx.com
+        - icon: fab fa-github
+          url: https://github.com/yuang01/hexo-theme-bamboo
+        - icon: fab fa-qq
+          url: tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=你的qq号码
+    # ---------------------------------------
+    # category widget
+    side_category:
+      on: true
+      display: [desktop] # [desktop, mobile]
+      background: '#fff'
+      order:  # 卡片排序(widget都有)，任意数字，数字小的在上面
+      header:
+        icon: fas fa-folder-open
+        icon_color: # 标题字体颜色
+        title: 文章分类
+        url: /blog/categories/
+    # ---------------------------------------
+    # tagcloud widget
+    side_tagcloud:
+      on: true
+      display: [desktop, mobile] # [desktop, mobile]
+      background: '#fff'
+      order: 
+      header:
+        icon: fas fa-tags
+        icon_color: 
+        title: 热门标签
+        url: /tags/
+      min_font: 14
+      max_font: 24
+      color: true
+      start_color: '#999'
+      end_color: '#555'
+    # ---------------------------------------
+    # recent_post widget
+    side_recent_post:
+      on: true
+      display: [desktop, mobile] # [desktop, mobile]
+      background: '#fff'
+      limit: 5
+      sort: update # date
+      order: 
+      header:
+        icon: fas fa-book
+        icon_color: 
+        title: 最新文章
+        url: /tags/
+    # ---------------------------------------
+    # side_archives widget
+    side_archives:
+      on: true
+      type: monthly # yearly or monthly      or yearly
+      format: MMMM YYYY # eg: YYYY年MM月     or YYYY
+      timeOrder: -1 # Sort of order. 1, asc for ascending; -1, desc for descending 时间排序
+      limit: 8 # if set 0 will show all
+      order:  # widget order 卡片排序
+      header: 
+        icon: fas fa-archive
+        icon_color: red
+        title: 归档
+    # ---------------------------------------
+    # side_webinfo widget
+    side_webinfo:
+      class: webinfo
+      display: [desktop]
+      order: 
+      header: 
+        icon: fas fa-chart-line
+        title: 站点信息
+      type:
+        article:
+          on: true
+          text: '文章数目：'
+          unit: '篇'
+        runtime:
+          on: true
+          data: '2020/01/01'    # 填写建站日期
+          text: '已运行时间：'
+          unit: '天'
+        wordcount:
+          on: true
+          text: '本站总字数：'   # 需要启用 wordcount
+          unit: '字'
+        visitcounter:
+          service: busuanzi # only busuanzi
+          siteuv:
+            on: true
+            text: '本站访客数：'
+            unit: '人'
+          sitepv:
+            on: true
+            text: '本站总访问量：'
+            unit: '次'
+        lastupd:
+          on: true
+          friendlyShow: true    # 更友好的时间显示
+          text: '最后活动时间：'
+          unit: '日'
 
 # 页面刷新时预加载动画
 preloader:
@@ -86,7 +208,7 @@ swiper:
   # 图片宽度为100% (轮播图的文字和按钮只能居中显示)
   imgwidthFull: false
   # 整个轮播图宽高都是100%  (轮播图的文字和按钮只能居中显示)
-  full: true # full 优先级大于 imgwidthFull
+  full: false # full 优先级大于 imgwidthFull
   # 两边透明，imgwidthFull/full: false的时候，设置该值为true，则两边的模糊效果为透明
   bothSideTransparent: false
 
@@ -259,11 +381,11 @@ socialAccounts:
   on: true
   # data: # data下面的值，不是固定个数的，可以自己增加或者删除
   #   QQ:
-  #     icon: fa fa-qq
+  #     icon: fas fa-qq
   #     name: 1730241541
   #     url: 'http://www.baidu.com'
   #   微信:
-  #     icon: fa fa-weixin
+  #     icon: fas fa-weixin
   #     name: 1730241541
   #     url: 'http://www.baidu.com'
 
@@ -573,13 +695,13 @@ site_footer:
   # busuanzi是访客数那个,假如说你想在 social和 copyright中间加一个自定义内容, 可以这样写 layout: [social, aaa ,copyright, busuanzi, custom], 然后在下面写上aaa: 'markdown格式', aaa这个名称随便取
   layout: [social, copyright, busuanzi, custom]
   social:
-    # - icon: fa fa-rss
+    # - icon: fas fa-rss
     #   url: /atom.xml
-    # - icon: fa fa-envelope
+    # - icon: fas fa-envelope
     #   url: mailto:1730241541@qq.com
-    # - icon: fa fa-github
+    # - icon: fas fa-github
     #   url: https://github.com/yuang01/hexo-theme-bamboo
-    # - icon: fa fa-qq
+    # - icon: fas fa-qq
     #   url: tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1730241541
   copyright: 'Copyright © 2019 - 2020 <a href="https://github.com/yuang01">yuang01</a> | Powered by <a href="https://hexo.io/zh-cn/docs/">Hexo</a> | Theme <a href="https://github.com/yuang01/theme">Bamboo</a> '
   custom: # 根据需要自行取消注释，label: 'markdown格式'，会在下面继续增加内容
@@ -683,7 +805,7 @@ imgs:
 CDN:
   valine: https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js
   iconfont: https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css
-  fontAwesome: https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css
+  fontAwesome: https://cdn.jsdelivr.net/gh/inkss/fontawesome@5.15.3/css/all.min.css
   aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js
   Meting: https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js
   livere: https://cdn-city.livere.com/js/embed.dist.js

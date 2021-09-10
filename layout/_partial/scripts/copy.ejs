@@ -18,7 +18,7 @@
         var initCopyCode = function () {
           var copyHtml = '';
           copyHtml += '<button class="btn-copy" data-clipboard-snippet="" style="position:absolute;top:0;right:0;z-index:1;">';
-          copyHtml += '<i class="fa fa-copy"></i><span>' + copy + '</span>';
+          copyHtml += '<i class="fas fa-copy"></i><span>' + copy + '</span>';
           copyHtml += '</button>';
           $(".post-detail pre").not('.gutter pre').wrap("<div class='codeBox' style='position:relative;width:100%;'></div>")
           $(".post-detail pre").not('.gutter pre').before(copyHtml);

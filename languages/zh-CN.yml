@@ -72,3 +72,7 @@ publishedIn: 发表于
 wordcount: '字数统计'
 min2read: '阅读时长'
 min: 分钟
+no_title: 暂无标题
+side:
+  side_archives: '归档'
+  more_button: '更多'

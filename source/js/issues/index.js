@@ -104,7 +104,7 @@ const IssuesAPI = {
     },
     getIssuesAPIForSites(cfg) {
       const el = $(cfg.el)[0];
-      $(el).append('<div class="loading"><i class="fa fa-cog fa-2x fa-spin"></i><p>正在加载</p></div>');
+      $(el).append('<div class="loading"><i class="fas fa-cog fa-2x fa-spin"></i><p>正在加载</p></div>');
       this.requestIssuesAPI(cfg.api, function(data) {
         $(el).find('.loading').remove();
         const dt = IssuesAPI.groupIssuesData(cfg, data);
@@ -144,12 +144,12 @@ const IssuesAPI = {
     },
     getIssuesAPIForTimeline(cfg) {
       const el = $(cfg.el)[0];
-      $(el).append('<div class="loading"><i class="fa fa-cog fa-2x fa-spin"></i><p>正在加载</p></div>');
+      $(el).append('<div class="loading"><i class="fas fa-cog fa-2x fa-spin"></i><p>正在加载</p></div>');
       this.requestIssuesAPI(cfg.api, function(data) {
         $(el).find('.loading').remove();
         if (data.length > 0) {
           for (i = 0; i < data.length; i++) {
-            const a = '&nbsp;&nbsp;<a class="comments" target="_blank" href="' + data[i].html_url + '"><i class="fa fa-comment-dots fa-fw"></i>' + data[i].comments + '</a>';
+            const a = '&nbsp;&nbsp;<a class="comments" target="_blank" href="' + data[i].html_url + '"><i class="fas fa-comment-dots fa-fw"></i>' + data[i].comments + '</a>';
             const meta = '<div class="meta"><p></p><p>' + data[i].title + a + '</p><p></p></div>';
             const body = '<div class="body"><p>' + data[i].body + '</p></div>';
             const tag = '<div class="timenode">' + meta + body + '</div>';

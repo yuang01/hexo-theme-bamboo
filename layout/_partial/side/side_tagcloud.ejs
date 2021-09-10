@@ -1,0 +1,15 @@
+<% if (site.tags.length){ %>
+<section class="widget side_tagcloud">
+    <%- partial('sideHeader', {item: item}) %>
+    <div class='content'>
+    <%- tagcloud(site.tags, {
+        min_font: item.min_font,
+        max_font: item.max_font,
+        color: item.color,
+        start_color: item.start_color,
+        end_color: item.end_color,
+    }) %>
+    </div>
+</section>
+<% } %>
+  

@@ -1,0 +1,39 @@
+<aside id='l_side'>
+  <% if (theme.sidebar.on){ %>
+    <% if (theme.sidebar.widget_library) { %>
+      <% if (theme.sidebar.widget_library.side_blogger.on) { %>
+        <%- partial('side/side_blogger', { item: theme.sidebar.widget_library.side_blogger }) %>
+      <% } %>
+    <% } %>
+  <% } %>
+  
+  <% if (site.data.widget) { %>
+    <% (site.data.widget.widget_library || []).forEach(function(widget){ %>
+      <div class="widget <%- widget.class_name %>" id="<%- widget.id_name %>" style="order: <%- widget.order %>;background: <%- widget.background %>">
+        <header>
+          <% if (widget.url) { %>
+            <a style="color: <%- widget.icon_color %>" href='<%- widget.url %>'><i class="<%- widget.icon %> fa-fw" aria-hidden="true"></i><span class='name'><%- widget.name %></span></a>
+          <% } else { %>
+            <i style="color: <%- widget.icon_color %>" class="<%- widget.icon %> fa-fw" aria-hidden="true"></i><span class='name'><%- widget.name %></span>
+          <% } %>
+        </header>
+        <div class="content">
+          <%- widget.html %>
+        </div>
+    </div>
+    <% }) %>
+  <% } %>
+
+  <div class="layout_sticky">
+    <% if (theme.sidebar.widget_library.side_category.on) { %>
+      <%- partial('side/side_category', { item: theme.sidebar.widget_library.side_category }) %>
+    <% } %>
+    <% if (theme.sidebar.widget_library.side_tagcloud.on) { %>
+      <%- partial('side/side_tagcloud', { item: theme.sidebar.widget_library.side_tagcloud }) %>
+    <% } %>
+    <%- partial('side/side_recent_post', { item: theme.sidebar.widget_library.side_recent_post }) %>
+    <%- partial('side/side_archives') %>
+    <%- partial('side/side_webinfo', { item: theme.sidebar.widget_library.side_webinfo }) %>
+    <%- partial('side/widget_library_sticky') %>
+  </div>
+</aside>

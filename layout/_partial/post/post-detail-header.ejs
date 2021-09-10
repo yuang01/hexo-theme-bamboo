@@ -38,7 +38,7 @@
     <% if (post.onlyTitle != true) { %>
       <% if (post.date) { %>
         <span class="post-detail-header_date">
-          <i class="fa fa-calendar"></i> <%= __('publishedIn') %>：<%- date(post.date, "YYYY-MM-DD") %> |
+          <i class="fas fa-calendar"></i> <%= __('publishedIn') %>：<%- date(post.date, "YYYY-MM-DD") %> |
         </span>
       <% } %>
 
@@ -56,16 +56,16 @@
       <% if (theme.wordcount.on) { %>
         <div class="post-detail-header_wordcount">
           <span class="totalcount">
-            <i class="fa fa-file-text-o"></i> <%- __('wordcount')%>: <%- wordcount(post.content)%> |
+            <i class="fas fa-file-text-o"></i> <%- __('wordcount')%>: <%- wordcount(post.content)%> |
           </span>
   
           <span class="min2read">
-            <i class="fa fa-clock-o"></i> <%- __('min2read')%>: <%- min2read(post.content)%><%- __('min')%> |
+            <i class="fas fa-clock"></i> <%- __('min2read')%>: <%- min2read(post.content)%><%- __('min')%> |
           </span>
   
           <% if(theme.busuanzi.on === true ) { %>
             <span class="reading">
-              <i class="fa fa-eye"></i> <%= __('reading') %>：<span id="busuanzi_value_page_pv"></span>
+              <i class="fas fa-eye"></i> <%= __('reading') %>：<span id="busuanzi_value_page_pv"></span>
             </span>
           <% } %>
         </div>

@@ -48,17 +48,17 @@ var books = theme.books.data || {};
 <% } %>
 <div id="about" class="container">
 	<div class="title">
-		<i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp;<%= __('about') %>
+		<i class="fas fa-user" aria-hidden="true"></i>&nbsp;&nbsp;<%= __('about') %>
 	</div>
 	<% if(theme.baseInfo.on) { %>
 	<div class="basic-info reveal">
 		<div class="subtitle">
-			<i class="fa fa-address-card-o" aria-hidden="true"></i>&nbsp;&nbsp;<%= __('aboutBasicInfo') %>
+			<i class="fas fa-address-card-o" aria-hidden="true"></i>&nbsp;&nbsp;<%= __('aboutBasicInfo') %>
 		</div>
 		<div class="items">
 			<div class="item">
 				<div class="border">
-					<i class="fa fa-heart" aria-hidden="true"></i>
+					<i class="fas fa-heart" aria-hidden="true"></i>
 				</div>
 				<div class="text">
 					<%= __('age') %>：<%= theme.baseInfo.age %>
@@ -67,7 +67,7 @@ var books = theme.books.data || {};
 
 			<div class="item">
 				<div class="border">
-					<i class="fa fa-transgender" aria-hidden="true"></i>
+					<i class="fas fa-transgender" aria-hidden="true"></i>
 				</div>
 				<div class="text">
 					<%= __('sex') %>：<%= theme.baseInfo.sex %>
@@ -76,7 +76,7 @@ var books = theme.books.data || {};
 
 			<div class="item">
 				<div class="border">
-					<i class="fa fa-map-marker" aria-hidden="true"></i>
+					<i class="fas fa-map-marker" aria-hidden="true"></i>
 				</div>
 				<div class="text">
 					<%= __('coordinate') %>：<%= theme.baseInfo.coordinate %>
@@ -85,7 +85,7 @@ var books = theme.books.data || {};
 
 			<div class="item">
 				<div class="border">
-					<i class="fa fa-external-link-square" aria-hidden="true"></i>
+					<i class="fas fa-external-link-square" aria-hidden="true"></i>
 				</div>
 				<div class="text">
 					<%= __('status') %>：<%= theme.baseInfo.status %>
@@ -97,7 +97,7 @@ var books = theme.books.data || {};
 	<% if(theme.skills.on) { %>
 	<div class="basic-info reveal">
 		<div class="subtitle">
-			<i class="fa fa-bicycle" aria-hidden="true"></i>&nbsp;&nbsp;<%= __('skill') %>
+			<i class="fas fa-bicycle" aria-hidden="true"></i>&nbsp;&nbsp;<%= __('skill') %>
 		</div>
 		<div class="skill">
 			<% Object.keys(skills).forEach(function(skill) { %>
@@ -113,7 +113,7 @@ var books = theme.books.data || {};
 	<% if(theme.socialAccounts.on) { %>
 	<div class="basic-info reveal">
 		<div class="subtitle">
-			<i class="fa fa-chain-broken" aria-hidden="true"></i>&nbsp;&nbsp;<%= __('socialAccounts') %>
+			<i class="fas fa-chain-broken" aria-hidden="true"></i>&nbsp;&nbsp;<%= __('socialAccounts') %>
 		</div>
 		<div class="socialAccounts">
 			<% Object.keys(socialAccounts).forEach(function(socialAccount) { %>
@@ -127,7 +127,7 @@ var books = theme.books.data || {};
 	<% if(theme.games.on) { %>
 	<div class="basic-info reveal">
 		<div class="subtitle">
-			<i class="fa fa-gamepad" aria-hidden="true"></i>&nbsp;&nbsp;<%= __('game') %>
+			<i class="fas fa-gamepad" aria-hidden="true"></i>&nbsp;&nbsp;<%= __('game') %>
 		</div>
 		<div class="games">
 			<% Object.keys(games).forEach(function(game) { %>
@@ -146,7 +146,7 @@ var books = theme.books.data || {};
 	<% if(theme.books.on) { %>
 	<div class="basic-info reveal">
 		<div class="subtitle">
-			<i class="fa fa-book" aria-hidden="true"></i>&nbsp;&nbsp;<%= __('book') %>
+			<i class="fas fa-book" aria-hidden="true"></i>&nbsp;&nbsp;<%= __('book') %>
 		</div>
 		<div class="books">
 			<% Object.keys(books).forEach(function(book) { %>

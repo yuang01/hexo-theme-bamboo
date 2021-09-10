@@ -1,0 +1,63 @@
+<% if (theme.sidebar.widget_library.side_recent_post.on) { %>
+  <section class="widget side_recent_post">
+    <%- partial('sideHeader', {item: item}) %>
+    <div class='content'>
+      <%
+        let postLimit = theme.sidebar.widget_library.side_recent_post.limit === 0 ? site.posts.length : theme.sidebar.widget_library.side_recent_post.limit || 5
+        let sort = theme.sidebar.widget_library.side_recent_post.sort === 'updated' ? 'updated' : 'date';
+      %>
+      <!-- hash算法 -->
+      <%
+        var hashCode = function (str) {
+            if (!str && str.length === 0) {
+                return 0;
+            }
+
+            var hash = 0;
+            for (var i = 0, len = str.length; i < len; i++) {
+                hash = ((hash << 5) - hash) + str.charCodeAt(i);
+                hash |= 0;
+            }
+            return hash;
+        };
+      %>
+      <div class="aside-list">
+        <% site.posts.sort(sort, -1).limit(postLimit).each(function(article){%>
+          <div class="aside-list-item">
+            <%
+              var img = 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/ada660a8c596431983dddd411a12f2b3.jpg!sswm';
+              var imgs = theme.imgs;
+              if (!imgs || imgs.length === 0) {
+                  return img;
+              }
+              img = imgs[Math.abs(hashCode(article.title) % imgs.length)]
+            %>
+            
+            <% 
+              let link = article.link || article.path;
+              let title = article.title ||  __('no_title');
+              let post_img = article.img || article.swiperImg || img;
+            %>
+
+            <div class="post-img-box">
+              <a href="<%- url_for(link) %>" class="post-img " style="background-size: cover; 
+                background-position: center center;">
+                <img class="lazyload" style="width:100%;height:100%;object-fit:cover;" data-src="<%- url_for(post_img) %>" alt="">
+              </a>
+            </div>
+            <div class="post-date-title">
+              <div>
+                <% if (theme.sidebar.widget_library.side_recent_post.sort === 'updated') { %>
+                  <span class="post-date"><%= date(article.updated, "MM-DD") %></span>
+                <% } else { %>
+                  <span class="post-date"><%= date(article.date, "MM-DD") %></span>
+                <% } %>
+              </div>
+              <a class="post-title" href="<%- url_for(link) %>"><%= title %></a>
+            </div>
+          </div>
+        <% }) %>
+      </div>
+    </div>
+  </section>
+<% } %>

@@ -72,3 +72,7 @@ publishedIn: Published in
 wordcount: 'Words'
 min2read: 'Reading time'
 min: min
+no_title: no title
+side:
+  side_archives: 'archives'
+  more_button: 'more'

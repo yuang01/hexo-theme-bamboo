@@ -72,3 +72,7 @@ publishedIn: 發表於
 wordcount: '字數統計'
 min2read: '閱讀時長'
 min: 分鐘
+no_title: 暫無標題
+side:
+  side_archives: '歸檔'
+  more_button: '更多'

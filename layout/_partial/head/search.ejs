@@ -1,17 +1,14 @@
 <div id="appSearch">
-  <div class="search"  @click="showDialog()"><i class="fa fa-search" aria-hidden="true"></i></div>
+  <div class="search"  @click="showDialog()"><i class="fas fa-search" aria-hidden="true"></i></div>
   <transition name="fade">
     <div class="message-box_wrapper" style="display: none;" v-cloak v-show="dialogVisible" @click.self="cancelDialogVisible()">
       <div class="message-box animated bounceInDown">
-        <!-- <div class="close" style="overflow: hidden;">
-          <i class="fa fa-close" aria-hidden="true" style="float:right;" @click.self="cancelDialogVisible()"></i>
-        </div> -->
         <h2>
           <span>
-            <i class="fa fa-search" aria-hidden="true"></i>
+            <i class="fas fa-search" aria-hidden="true"></i>
             <span class="title"><%= __('search') %></span>
           </span>
-          <i class="fa fa-close close" pointer style="float:right;" aria-hidden="true" @click.self="cancelDialogVisible()"></i>
+          <i class="fas fa-times close" pointer style="float:right;" aria-hidden="true" @click.self="cancelDialogVisible()"></i>
         </h2>
         <form class="site-search-form">
           <input type="text"

@@ -1,0 +1,16 @@
+<% if (theme.sidebar.widget_library.side_archives.on) { %>
+  <section class="widget side_archives">
+    <% 
+      let type = theme.sidebar.widget_library.side_archives.type || 'monthly'
+      let format = theme.sidebar.widget_library.side_archives.format || 'MMMM YYYY'
+      let timeOrder = theme.sidebar.widget_library.side_archives.timeOrder || -1
+      let limit = theme.sidebar.widget_library.side_archives.limit === 0 ? 0 : theme.sidebar.widget_library.side_archives.limit || 8
+      let header = theme.sidebar.widget_library.side_archives.header || {
+        icon: 'fas fa-archive',
+        icon_color: '',
+        title: __('side.side_archives'),
+      };
+    %>
+    <%- side_archives({ type:type, format: format, timeOrder: timeOrder, limit: limit, header: header }) %>
+  </section>
+<% } %>

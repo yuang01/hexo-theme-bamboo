@@ -19,11 +19,12 @@ $borderRadius = 10px
   transition: all 0.3s;
   
   .header-content {
-    width: calc(60% + 260px); // 这样的话，logo和菜单会往中间靠
+    width: calc(70% + 260px);
     // width: 100%; // 这样的话，空间会更大一点，logo和菜单会向两边靠齐
     height: 100%;
     margin: 0 auto;
-    // padding: 0 10px;
+    box-sizing: border-box;
+    padding: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;

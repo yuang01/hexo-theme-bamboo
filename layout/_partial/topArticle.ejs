@@ -15,7 +15,7 @@
 
 <% if (page.current === 1 && theme.topArticle.on === true) { %>
 <div class="topArticle reveal">
-	<h3><i class="fa fa-thumbs-o-up" aria-hidden="true"></i><%= __('recommendedArticles') %></h3>
+	<h3><i class="fas fa-thumbs-o-up" aria-hidden="true"></i><%= __('recommendedArticles') %></h3>
 	<div class="articles">
 		<% site.posts.sort('-date').each(function (post, i) { %>
 			<% if(post.top) { %>
@@ -39,7 +39,7 @@
 							</div>
 						</div>
 						<a href="<%- url_for(post.path) %>" class="more">
-							<i class="fa fa-eye" aria-hidden="true"></i><%= __('readMore') %>
+							<i class="fas fa-eye" aria-hidden="true"></i><%= __('readMore') %>
 						</a>
 					</div>
 				</div>

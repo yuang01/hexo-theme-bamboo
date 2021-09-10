@@ -1,0 +1,16 @@
+<% if (site.data.widget) { %>
+  <% (site.data.widget.widget_library_sticky || []).forEach(function(widget){ %>
+    <div class="widget <%- widget.class_name %>" id="<%- widget.id_name %>" style="order: <%- widget.order %>;background: <%- widget.background %>">
+      <header>
+        <% if (widget.url) { %>
+          <a style="color: <%- widget.icon_color %>" href='<%- widget.url %>'><i class="<%- widget.icon %> fa-fw" aria-hidden="true"></i><span class='name'><%- widget.name %></span></a>
+        <% } else { %>
+          <i style="color: <%- widget.icon_color %>" class="<%- widget.icon %> fa-fw" aria-hidden="true"></i><span class='name'><%- widget.name %></span>
+        <% } %>
+      </header>
+      <div class="content">
+        <%- widget.html %>
+      </div>
+  </div>
+  <% }) %>
+<% } %>
