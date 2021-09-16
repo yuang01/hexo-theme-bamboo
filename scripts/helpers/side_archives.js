@@ -64,13 +64,7 @@
  
    const len = data.length
    const Judge = limit === 0 ? len : Math.min(len, limit)
- 
-  //  result += `<header><i class="fas fa-archive"></i><span>${this._p('side.side_archives')}</span>`
- 
-  //  if (len > Judge) {
-  //    result += `<a class="card-more-btn" href="${this.url_for(archiveDir)}/" title="${this._p('side.more_button')}">
-  //    <i class="fas fa-angle-right"></i></a>`
-  //  }
+   
    result += `<header><a style="color: ${header.icon_color}" href='${this.url_for(archiveDir)}/'><i class="${header.icon} fa-fw" aria-hidden="true"></i><span class='name'>${header.title}</span></a>`;
    result += '</header><div class="content"><ul class="card-archive-list">'
  

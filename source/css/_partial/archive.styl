@@ -125,10 +125,18 @@
 
 .archive-main {
   min-height: 60vh;
+  .archive-paginator {
+    width: 70%;
+    margin: 0 auto;  
+    @media (max-width: 551px) {
+      width: 100%;
+    }
+  }
 }
 .archive {
-  width: 100%;
+  width: 70%;
   padding: 0 40px 0 60px;
+  margin: 0 auto;
   box-sizing: border-box;
   display: flex;
   justify-content: center;

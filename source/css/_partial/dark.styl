@@ -93,12 +93,6 @@
       color: #c9d1d9;
     }
     background: #2d3032;
-    .article-link {
-      .article {
-        transition: opacity 0.3s;
-        opacity: 0.4;
-      }
-    }
   }
   .posts {
     .post {
@@ -106,12 +100,10 @@
       background-color: #2d3032;
       .post-img a {
         transition: all 0.3s;
-        filter: brightness(0.6);
       }
     }
     .post-img-mobile a {
       transition: all 0.3s;
-      filter: brightness(0.6);
     }
     .post-time {
       color: #8b949e;
@@ -150,7 +142,6 @@
     }
   }
   .swiper-btn-color {
-    // background-color: #2d3032;
     transition: all 0.3s;
     &:hover {
       background-color: $color-primary;
@@ -174,14 +165,13 @@
       width: 100%;
       height: 100%;
       background-color: #000;
-      opacity: 0.6;
+      opacity: 0.8;
       z-index: 1;  
     }
     .title {
       z-index: 2;
       color: f0f6fc;
     }
-    // filter: brightness(0.5);
   }
   .post-detail {
     :not(pre)>code[class*=language-], pre[class*=language-] {
@@ -256,12 +246,9 @@
     .post-copyright {
       background-color: #f0f6fc26;
     }
-    img {
-      filter: brightness(0.6);
-    }
   }
   img {
-    filter: brightness(0.6);
+    filter: brightness(0.8);
   }
   #lv-ad-976 #container .reply-content {
     color: #f0f6fc;
@@ -333,7 +320,7 @@
   .about-header,
   .friends-header {
     .mask-box {
-      opacity: 0.6;
+      opacity: 0.8;
     }
   }
   .tag-name .name,
@@ -359,11 +346,6 @@
   #about .basic-info .items .item {
     color: #f0f6fc;
   }
-  .skill,
-  #about .basic-info .games .game-item .logo img,
-  #about .basic-info .books .book-item .logo img {
-    filter: brightness(0.6);
-  }
   #about .basic-info .games .game-item,
   #about .basic-info .books .book-item {
     color: #8b949e;
@@ -372,7 +354,7 @@
     color: #8b949e;
   }
   video {
-    filter: brightness(0.6);
+    filter: brightness(0.8);
   }
   .message-box_wrapper .message-box {
     background-color: #2d3032;
@@ -392,11 +374,6 @@
           box-shadow: 0 0 8px 3px rgba(255, 255, 255, .12);  
         }
       }
-    }
-  }
-  .post-donate {
-    .donate_bar a.btn_donate {
-      filter: brightness(0.7);
     }
   }
   .donate-box {
@@ -433,5 +410,20 @@
   .widget {
     background-color: #2d3032!important;
     color: #f0f6fc!important;
+    header a {
+      span, i {
+        color: #c9d1d9;
+      }
+    }
+    &.side_category {
+      li a {
+        .name {
+          color: #c9d1d9;
+        }
+        &:hover {
+          background-color: alpha(#c9d1d9, 0.2);
+        }
+      }  
+    }
   }
 }
