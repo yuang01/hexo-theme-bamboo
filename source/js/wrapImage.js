@@ -13,7 +13,7 @@ function wrapImageWithFancyBox() {
     var $imageWrapLink = $image.parent('a');
     var $linkWrapDiv = $imageWrapLink.parent('div');
     if ($imageWrapLink.length < 1) {
-      var src = this.getAttribute('data-original') || this.getAttribute('src');
+      var src = this.getAttribute('data-src') || this.getAttribute('src');
       var idx = src.lastIndexOf('?');
       if (idx != -1) {
         src = src.substring(0, idx);

@@ -1,14 +1,7 @@
 'use strict';
 
-const fs = require('hexo-fs');
-
 function lazyProcess(htmlContent, target) {
-  const cfg = {
-    enable: true,
-    onlypost: true,
-    loadingImg: this.theme.config.postLoadingImg,
-    blurIn: true,
-  };
+  const cfg = this.theme.config.lazyload;
   if (cfg == undefined || cfg.enable != true) {
     return htmlContent;
   }
@@ -20,7 +13,7 @@ function lazyProcess(htmlContent, target) {
   const loadingImg = cfg.loadingImg;
   return htmlContent.replace(/<img(.*?)src="(.*?)"(.*?)>/gi, function(str, p1, p2) {
     // might be duplicate
-    if (/data-original/gi.test(str)) {
+    if (/data-srcset/gi.test(str)) {
       return str;
     }
     if (/src="data:image(.*?)/gi.test(str)) {
@@ -51,18 +44,13 @@ function lazyProcess(htmlContent, target) {
     } else {
       newCls += 'lazyload';
     }
-    if (result.includes('src=')) {
-      const rex = /src=/gi;
-      result = result.replace(rex, "");
-    }
     if (cls.length > 0) {
       result = result.replace('"' + oldCls + '"', '"' + newCls + '"');
     }
     if (loadingImg) {
-      return result.replace(p2, '" class="lazyload placeholder" ' + 'data-original="' + p2 + '" src="' + loadingImg);
+      return result.replace(p2, p2 + '" class="lazyload placeholder" ' + 'data-srcset="' + p2 + '" srcset="' + loadingImg);
     }
-    
-    return result.replace(p2, '" class="lazyload" ' + 'data-original="' + p2 + '" src="' + 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=');
+    return result.replace(p2, p2 + '" class="lazyload" ' + 'data-srcset="' + p2 + '" srcset="' + 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=');
 
   });
 }
@@ -72,6 +60,6 @@ module.exports.processPost = function(data) {
   return data;
 };
 
-// module.exports.processSite = function(htmlContent) {
-//   return lazyProcess.call(this, htmlContent, 'site');
-// };
+module.exports.processSite = function(htmlContent) {
+  return lazyProcess.call(this, htmlContent, 'site');
+};

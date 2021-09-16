@@ -6,13 +6,13 @@
     <div 
       class="donate-box-mask"
       v-cloak 
-      v-if="visible"
+      v-show="visible"
       @click="cancelDialogDrawer()"
     >
     </div>
   </transition>
   <transition name="bounce">
-    <div class="donate-box" v-cloak v-if="visible">
+    <div class="donate-box" v-cloak v-show="visible">
       <div class="donate-box_close">
         <i class="fas fa-times" aria-hidden="true" @click="cancelDialogDrawer" pointer></i>
       </div>
@@ -30,10 +30,10 @@
         </div>
       </div>
       <div class="donate-box_img">
-        <div class="AlipayImg" v-if="tabActive === 'Alipay'">
+        <div class="AlipayImg" v-show="tabActive === 'Alipay'">
           <img src="<%- url_for(theme.Alipay) %>" alt="支付宝打赏" />
         </div> 
-        <div class="WeChatpayImg" v-if="tabActive === 'WeChatpay'">
+        <div class="WeChatpayImg" v-show="tabActive === 'WeChatpay'">
           <img src="<%- url_for(theme.WeChatpay) %>" alt="微信打赏" />
         </div>
       </div>

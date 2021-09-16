@@ -1,6 +1,6 @@
 <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -2;"></div>
 <div class="bg-light-floor-archive" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -3;"></div>
-<div class="lazyload archive-header" data-original="<%- url_for(theme.archive.img) %>" >
+<div class="archive-header" style="background-image:url('<%- url_for(theme.archive.img) %>')">
   <div class="archive-header-title">
     <%= theme.archive.title %>
   </div>
@@ -76,8 +76,9 @@
               img = imgs[Math.abs(hashCode(post.title) % imgs.length)]
             %>
             <div class="post-img-box">
-              <a href="<%- url_for(post.path) %>" class="post-img lazyload" data-original="<%- url_for(post.img || post.swiperImg || img) %>" style="background-size: cover; 
+              <a href="<%- url_for(post.path) %>" class="post-img " style="background-size: cover; 
                 background-position: center center;">
+                <img class="lazyload" src="<%- url_for(post.img || post.swiperImg || img) %>" alt="">
               </a>
             </div>
             <div class="post-date-title">

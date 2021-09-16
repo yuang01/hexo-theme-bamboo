@@ -4,10 +4,17 @@
   margin-bottom: 20px;   
   display: flex; 
   box-sizing: border-box;
-  flex-direction: row-reverse;
+  if (hexo-config('sidebar.position') == 'left') {
+    flex-direction: row-reverse;
+  }
+  justify-content: space-between;
   .l_content {
     flex: 1;
-    margin-left: 15px;
+    if (hexo-config('sidebar.position') == 'left') {
+      margin-left: 15px;
+    } else {
+      margin-right: 15px;
+    }
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -37,6 +44,28 @@
       box-shadow: 0 1px 20px -6px rgba(0,0,0,0.5);
       .content {
         padding: 8px 16px;  
+      }
+    }
+  }
+  @media screen and (max-width: 1200px) { 
+    & { 
+      width: 80%;
+    }
+  }
+  @media screen and (max-width: 992px) { 
+      & { 
+        width: 95%;
+        .l_content { 
+          margin: 0 auto;  
+        }
+      }
+  }
+
+  @media screen and (max-width: 551px) { 
+    & {
+      width: 95%;
+      .l_content { 
+        margin: 0 auto;  
       }
     }
   }

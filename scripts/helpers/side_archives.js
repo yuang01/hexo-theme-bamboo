@@ -72,7 +72,7 @@
   //    <i class="fas fa-angle-right"></i></a>`
   //  }
    result += `<header><a style="color: ${header.icon_color}" href='${this.url_for(archiveDir)}/'><i class="${header.icon} fa-fw" aria-hidden="true"></i><span class='name'>${header.title}</span></a>`;
-   result += '<header><div class="content"><ul class="card-archive-list">'
+   result += '</header><div class="content"><ul class="card-archive-list">'
  
    for (let i = 0; i < Judge; i++) {
      const item = data[i]

@@ -1,0 +1,68 @@
+<!-- hash算法 -->
+<%
+var hashCode = function (str) {
+    if (!str && str.length === 0) {
+        return 0;
+    }
+
+    var hash = 0;
+    for (var i = 0, len = str.length; i < len; i++) {
+        hash = ((hash << 5) - hash) + str.charCodeAt(i);
+        hash |= 0;
+    }
+    return hash;
+};
+%>
+<section class="posts">
+  <% page.posts.each(function (post, i) { %>
+    <%
+      var img = 'https://ssyerv1.oss-cn-hangzhou.aliyuncs.com/picture/ada660a8c596431983dddd411a12f2b3.jpg!sswm';
+      var imgs = theme.imgs;
+      if (!imgs || imgs.length === 0) {
+          return img;
+      }
+      img = imgs[Math.abs(hashCode(post.title) % imgs.length)]
+    %>
+    <article class="post reveal" style="<% if(i % 2 == 0 && theme.homePostImgsPosition.on) { %>flex-direction: row-reverse;<% } %>   <% if(theme.homePostImgsPosition.on === false && theme.homePostImgsPosition.left) { %>flex-direction: row-reverse;<% } %>">
+      <div class="post-main">
+        <div class="post-info">
+          <div class="post-time">
+            <i class="fas fa-clock" aria-hidden="true"></i>
+            <span class="post-time"><%- date(post.date, "YYYY-MM-DD") %></span>
+          </div>
+          <div class="post-title">
+            <a class="post-title-link" href="<%- url_for(post.path) %>"><%= post.title %></a>
+          </div>
+          <div class="post-meta">
+            <div class="post-tags">
+              <%- partial('_partial/post/tags', {post: post}) %>
+            </div>
+            <div class="post-categories">
+              <%- partial('_partial/post/categories', {post: post}) %>
+            </div>
+          </div>
+          <div class="post-img-mobile">
+            <a href="<%- url_for(post.path) %>" style="background-size: cover; 
+              background-position: center center;">
+              <img class="lazyload" src="<%- url_for(post.img || post.swiperImg || img) %>" alt="">
+            </a>
+          </div>
+          <div class="post-content">
+            <%- post.excerpt || strip_html(post.content).substring(0, 120) %>
+          </div>
+        </div>
+        <div class="post-more">
+          <a href="<%- url_for(post.path) %>">
+            <i class="iconfont iconmore" pointer style="<% if(i % 2 == 0 && theme.homePostImgsPosition) { %>float: right;<% } %>  <% if(theme.homePostImgsPosition.on === false && theme.homePostImgsPosition.left) { %>flex-direction: row-reverse;<% } %>" title="阅读更多"></i>
+          </a>
+        </div>
+      </div>
+      <div class="post-img">
+        <a href="<%- url_for(post.path) %>" style="background-size: cover; 
+          background-position: center center;">
+          <img class="lazyload" src="<%- url_for(post.img || post.swiperImg || img) %>" alt="">
+        </a>
+      </div>
+    </article>
+  <% }) %>
+</section>

@@ -25,8 +25,9 @@
     img = imgs[Math.abs(hashCode(page.prev.title) % imgs.length)]
   %>
   <div class="post-nav-prev post-nav-item">
-    <div class="post-nav-img lazyload" data-original="<%- url_for(page.prev.img  || page.prev.swiperImg || img) %>" style="background-size: cover; 
+    <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
+      <img class="lazyload" src="<%- url_for(page.prev.img || page.prev.swiperImg || img) %>" alt="">
     </div>
     <a href="<%- url_for(page.prev.path) %>" class="post-nav-link">
       <div class="title">
@@ -51,8 +52,9 @@
     img = imgs[Math.abs(hashCode(page.next.title) % imgs.length)]
   %>
   <div class="post-nav-next post-nav-item">
-    <div class="post-nav-img lazyload" data-original="<%- url_for(page.next.img  || page.next.swiperImg || img) %>" style="background-size: cover; 
+    <div class="post-nav-img" style="background-size: cover; 
       background-position: center center;">
+      <img class="lazyload" src="<%- url_for(page.next.img  || page.next.swiperImg || img) %>" src="" alt="">
     </div>
     <a href="<%- url_for(page.next.path) %>" class="post-nav-link">
       <div class="title">

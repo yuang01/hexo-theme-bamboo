@@ -5,14 +5,14 @@
   // 刷新页面判断火箭是否显示
   isshow();
   // 窗口滚动判断火箭是否显示
-  window.onscroll = function () {
+  window.addEventListener('scroll', function () {
     if(isTop === false){
       clearInterval(timer);//当isTop变成了false的时候就停止定时器
       // backbtn.style.transform = 'translateY(0)';
     }
     isTop = false; //当鼠标再次滚动的时候，isTop就变成了false
     isshow();
-  }
+  })
   // 判断火箭显示与否
   function isshow() {
     // or > document.documentElement.clientHeight 大于一个屏幕

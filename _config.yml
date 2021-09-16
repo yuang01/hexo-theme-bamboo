@@ -49,11 +49,10 @@ favicon: /favicon.ico # or .png .jpg .svg .gif .jpeg .ico
 # sidebar侧边栏
 sidebar:
   on: true
-  position: right # left right
+  position: left # left right
   widget_library:
     side_blogger:
       on: true
-      display: [desktop, mobile] # [desktop, mobile]
       avatar: http://api.btstu.cn/sjtx/api.php?lx=c1&format=images
       shape: rectangle # circle, rectangle
       url: /about/
@@ -62,6 +61,7 @@ sidebar:
       jinrishici: true # Poetry Today. You can set a string, and it will be displayed when loading fails.
       fontFammily: Long Cang,cursive
       background: '#fff'
+      order:  # 卡片排序, 数值越小，越在上面
       social:
         - icon: fas fa-rss
           url: /atom.xml
@@ -75,7 +75,6 @@ sidebar:
     # category widget
     side_category:
       on: true
-      display: [desktop] # [desktop, mobile]
       background: '#fff'
       order:  # 卡片排序(widget都有)，任意数字，数字小的在上面
       header:
@@ -87,7 +86,6 @@ sidebar:
     # tagcloud widget
     side_tagcloud:
       on: true
-      display: [desktop, mobile] # [desktop, mobile]
       background: '#fff'
       order: 
       header:
@@ -104,7 +102,6 @@ sidebar:
     # recent_post widget
     side_recent_post:
       on: true
-      display: [desktop, mobile] # [desktop, mobile]
       background: '#fff'
       limit: 5
       sort: update # date
@@ -123,6 +120,7 @@ sidebar:
       timeOrder: -1 # Sort of order. 1, asc for ascending; -1, desc for descending 时间排序
       limit: 8 # if set 0 will show all
       order:  # widget order 卡片排序
+      background: '#fff'
       header: 
         icon: fas fa-archive
         icon_color: red
@@ -130,8 +128,7 @@ sidebar:
     # ---------------------------------------
     # side_webinfo widget
     side_webinfo:
-      class: webinfo
-      display: [desktop]
+      background: '#fff'
       order: 
       header: 
         icon: fas fa-chart-line
@@ -178,7 +175,7 @@ swiper:
   autoplay: false # 是否自动轮播
   loop: true # 让轮播看起来是循环的, 例如false的话，到达最后一个轮播图的时候，右按钮不能点击
   delay: 5000 # 切换延迟时间
-  effect: 'slide' # 'fade': 淡入淡出效果
+  effect: 'fade' # 'fade': 淡入淡出效果 , fade效果暂不支持pjax
   textAnimated: 'fadeInDown' # 文字动画，属性使用 animate.css, https://daneden.github.io/animate.css/
   textDuration: '0.2s' # 文字动画持续时间（单位秒）
   textDelay: '0.1s' # 文字动画延迟时间（单位秒）
@@ -738,16 +735,21 @@ pjax:
 
 # 鼠标手势
 cursor:
-  pointer: https://cdn.jsdelivr.net/gh/inkss/common@master/cursor/pointer.png
-  default: https://cdn.jsdelivr.net/gh/inkss/common@master/cursor/left_ptr.png
-  text: https://cdn.jsdelivr.net/gh/inkss/common@master/cursor/text.png
-  zoom-in: https://cdn.jsdelivr.net/gh/inkss/common@master/cursor/zoom-in.png
-  zoom-out: https://cdn.jsdelivr.net/gh/inkss/common@master/cursor/zoom-out.png
+  pointer: https://zhutix.com/wp-content/themes/b2/x2.cur
+  default: https://zhutix.com/wp-content/themes/b2/x1.cur
+  text: 
+  zoom-in: 
+  zoom-out: 
 
-# loading图片地址，为空则不使用loading图片，文章详情页的loading图片可从`postLoadingImg`参数控制
-loadingImg: 'https://img10.360buyimg.com/ddimg/jfs/t1/159345/8/2271/222193/5ff7b36fEe49f5663/a95287c20385127f.gif'
-# 文章详情页的loading图片地址，为空则不使用loading图片
-postLoadingImg: 'https://img10.360buyimg.com/ddimg/jfs/t1/157667/29/9156/134350/603c6445Ebbc9cabe/41219c5d36d45072.gif'
+# 图片懒加载
+# https://www.npmjs.com/package/vanilla-lazyload
+lazyload:
+  enable: true
+  js: https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js
+  onlypost: false
+  loadingImg: https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg
+  blurIn: true # 模糊加载效果 （loadingImg为空时有效）
+
 
 # prismjs代码高亮，在根目录下的_config.yml文件中将prismjs.enable设为true的时候, 在这里选择主题样式
 prismjs:

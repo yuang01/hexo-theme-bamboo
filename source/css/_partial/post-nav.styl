@@ -22,8 +22,10 @@
       height: 100%;
       opacity: 0.6;
       transition: all 0.3s;
-      if hexo-config('loadingImg') {
-        background-image: url(hexo-config('loadingImg'));
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
       }
     }
     .post-nav-link {
