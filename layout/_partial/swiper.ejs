@@ -55,13 +55,13 @@
                 <div class="flag-text">
                   <div class="flag-text-content">
                     <div class="title ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><%= theme.swiper.defaultTile %></div>
-                    <% if (theme.swiper.defaultDescTyped) { %>
-                      <div class="ani animated default-excerpt" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>">
+                    <% if (theme.swiper.defaultDescTyped && theme.swiper.defaultDesc && theme.swiper.defaultDesc.length > 0) { %>
+                      <div  class="ani animated default-excerpt" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>">
                         <vue-typed-js :strings="defaultDesc" :loop="defaultDescTypedLoop" :type-speed="<%- theme.swiper.defaultDescTypedSpeed %>" :back-speed="<%- theme.swiper.defaultDescTypedBackSpeed %>">
                           <h1 class="typing"></h1>
                         </vue-typed-js>
                       </div>
-                      <% } else {  %>
+                      <% } else { %>
                         <div class="excerpt ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><%= theme.swiper.defaultDesc %></div>
                       <% } %>
                   </div>
@@ -141,7 +141,7 @@
               <div class="flag-text">
                 <div class="flag-text-content">
                   <div class="title ani animated" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>"><%= theme.swiper.defaultTile %></div>
-                  <% if (theme.swiper.defaultDescTyped) { %>
+                  <% if (theme.swiper.defaultDescTyped && theme.swiper.defaultDesc && theme.swiper.defaultDesc.length > 0) { %>
                     <div class="ani animated default-excerpt" swiper-animate-effect="<%= theme.swiper.textAnimated %>" swiper-animate-duration="<%= theme.swiper.textDuration %>" swiper-animate-delay="<%= theme.swiper.textDelay %>">
                       <vue-typed-js :strings="defaultDesc" :loop="defaultDescTypedLoop" :type-speed="<%- theme.swiper.defaultDescTypedSpeed %>" :back-speed="<%- theme.swiper.defaultDescTypedBackSpeed %>">
                         <h1 class="typing"></h1>

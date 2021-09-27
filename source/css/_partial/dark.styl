@@ -7,24 +7,26 @@
   right: 17px;
   width: 50px;
   height: 50px;
-  line-height: 50px;
   border-radius: 50%;
   line-height: 50px;
+  .dark-content {
+    width: 100%;
+    height: 100%; 
+  }
   text-align: center;
-  border: 2px solid #222;
   box-shadow:-2px 2px 2px 2px rgba(255,255,255,0.5);
-  font-size: 1.5em;
   cursor $cursor-pointer,pointer;
   transition: background-color 0.3s;
   z-index: 999;
+  box-sizing: border-box;
 }
 @media (max-width: 551px) {
   .dark {
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    bottom: 70px;
-    right: 5px;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    bottom: 60px;
+    right: 0;
   }
 }
 // 以下是其他元素在关灯模式下的样式，强制使用该样式 0.0。。。，由于精力有限就没用css变量搞
@@ -165,7 +167,7 @@
       width: 100%;
       height: 100%;
       background-color: #000;
-      opacity: 0.8;
+      opacity: 0.6;
       z-index: 1;  
     }
     .title {
@@ -320,7 +322,7 @@
   .about-header,
   .friends-header {
     .mask-box {
-      opacity: 0.8;
+      opacity: 0.6;
     }
   }
   .tag-name .name,
@@ -407,10 +409,14 @@
   .header .header-content .navbar .menu .menu-item:hover {
     background-color: rgba(0, 0, 0, 1);
   }
+
   .widget {
     background-color: #2d3032!important;
-    color: #f0f6fc!important;
-    header a {
+    color: #c9d1d9!important;
+    a {
+      color: #c9d1d9!important;
+    }
+    header {
       span, i {
         color: #c9d1d9;
       }
@@ -421,7 +427,34 @@
           color: #c9d1d9;
         }
         &:hover {
-          background-color: alpha(#c9d1d9, 0.2);
+          background-color: alpha(#c9d1d9, 0.2)!important;
+        }
+      }  
+    }
+    &.side_recent_post {
+      .post-title {
+          color: #c9d1d9!important;
+          &:hover {
+            color: $color-primary!important;
+          }
+      }  
+    }
+    &.side_archives {
+      .card-archive-list-link {
+        color: #c9d1d9!important;
+        &:hover {
+          background-color: alpha(#c9d1d9, 0.2)!important;
+        }
+      }  
+    }
+    &.side_blogger {
+      .content {
+        background-color: #2d3032!important;
+        .social-wrapper a {
+          color: #c9d1d9!important;
+          &:hover {
+            background-color: alpha(#c9d1d9, 0.2)!important;
+          }
         }
       }  
     }

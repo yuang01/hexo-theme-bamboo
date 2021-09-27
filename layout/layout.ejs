@@ -56,7 +56,8 @@
     <% if(theme.ribbon.on === true ) { %>
       <script type="text/javascript" size="100" alpha='0.4' zIndex="-1" src="<%- url_for('/js/ribbon.min.js') %>"></script>
     <% } %>
-    
+
+    <script src="<%- url_for('/js/utils/index.js') %>"></script>
     <script src="<%- url_for('/js/app.js') %>" data-pjax></script>
     
     <%- partial('_partial/scripts/index') %>

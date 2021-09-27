@@ -1,108 +1,106 @@
 .note {
-    padding: 12px 24px 12px 30px;
-    border-left-width: 4px;
-    border-left-style: solid;
-    border-radius: 4px;
-    margin: 1rem 0;
-    background-color: alpha(#f3f5f7, $color-post-contentOpacity)
-    border-color: $color-primary;
-    color: #2c3e50;
-    position: relative;
-}
-
-.note.warning {
-    border-color: $color-warning;
-    background-color: alpha($color-warning + 11.3 * 8% + 1 * .5deg, $color-post-contentOpacity)
-}
-.note.info {
-    border-color: $color-info;
-    background-color: alpha($color-info + 11.3 * 8% + 1 * .5deg, $color-post-contentOpacity)
-}
-.note.info::before {
-    content: '\f129';
-    background-color: $color-info ;
-    position: absolute;
-    top: 14px;
-    left: -12px;
-    color: #fff;
-    width: 20px;
-    height: 20px;
-    border-radius: 100%;
-    text-align: center;
-    line-height: 20px;
-    font-weight: bold;
-    font-family: FontAwesome;
-    font-size: 14px;
-}
-.note.quote::before {
-    content: '\f10d';
-    background-color: $color-primary ;
-    position: absolute;
-    top: 14px;
-    left: -12px;
-    color: #fff;
-    width: 20px;
-    height: 20px;
-    border-radius: 100%;
-    text-align: center;
-    line-height: 20px;
-    font-weight: bold;
-    font-family: FontAwesome;
-    font-size: 14px;
-}
-.note.warning::before {
-    content: '!';
-    background-color: $color-warning ;
-    position: absolute;
-    top: 14px;
-    left: -12px;
-    color: #fff;
-    width: 20px;
-    height: 20px;
-    border-radius: 100%;
-    text-align: center;
-    line-height: 20px;
-    font-weight: bold;
-    font-family: FontAwesome;
-    font-size: 14px;
-}
-.note.danger::before {
-    content: '\f188';
-    background-color: $color-danger ;
-    position: absolute;
-    top: 14px;
-    left: -12px;
-    color: #fff;
-    width: 20px;
-    height: 20px;
-    border-radius: 100%;
-    text-align: center;
-    line-height: 20px;
-    font-weight: bold;
-    font-family: FontAwesome;
-    font-size: 14px;
-}
-.note.danger {
-    border-color: $color-danger;
-    background-color: alpha($color-danger + 11.3 * 8% + 1 * .5deg, $color-post-contentOpacity)
-}
-.note.success {
-    border-color: $color-success;
-    background-color: alpha($color-success + 11.3 * 8% + 1 * .5deg, $color-post-contentOpacity)
-}
-.note.success::before {
-    content: '\f00c';
-    background-color: $color-success;
-    position: absolute;
-    top: 14px;
-    left: -12px;
-    color: #fff;
-    width: 20px;
-    height: 20px;
-    border-radius: 100%;
-    text-align: center;
-    line-height: 20px;
-    font-weight: bold;
-    font-family: FontAwesome;
-    font-size: 14px;
+	padding: 12px 24px 12px 30px;
+	border-left-width: 4px;
+	border-left-style: solid;
+	border-radius: 4px;
+	margin: 1rem 0;
+	background-color: alpha(#f3f5f7, $color-post-contentOpacity)
+	border-color: $color-primary;
+	color: #2c3e50;
+	position: relative;
+	&::before {
+		font-family: "Font Awesome 5 Pro"; // Font Awesome 5 Free
+		font-weight: 600;
+	}
+	&.warning {
+		border-color: $color-warning;
+		background-color: alpha($color-warning + 11.3 * 8% + 1 * .5deg, $color-post-contentOpacity)
+	}
+	&.info {
+		border-color: $color-info;
+		background-color: alpha($color-info + 11.3 * 8% + 1 * .5deg, $color-post-contentOpacity)
+	}
+	&.info::before {
+		content: '\f129';
+		background-color: $color-info ;
+		position: absolute;
+		top: 14px;
+		left: -12px;
+		color: #fff;
+		width: 20px;
+		height: 20px;
+		border-radius: 100%;
+		text-align: center;
+		line-height: 20px;
+		font-weight: bold;
+		font-size: 14px;
+	}
+	&.quote::before {
+		content: '\f10d';
+		background-color: $color-primary ;
+		position: absolute;
+		top: 14px;
+		left: -12px;
+		color: #fff;
+		width: 20px;
+		height: 20px;
+		border-radius: 100%;
+		text-align: center;
+		line-height: 20px;
+		font-weight: bold;
+		font-size: 14px;
+	}
+	&.warning::before {
+		content: '\f12a';
+		background-color: $color-warning ;
+		position: absolute;
+		top: 14px;
+		left: -12px;
+		color: #fff;
+		width: 20px;
+		height: 20px;
+		border-radius: 100%;
+		text-align: center;
+		line-height: 20px;
+		font-weight: bold;
+		font-size: 14px;
+	}
+	&.danger::before {
+		content: '\f188';
+		background-color: $color-danger ;
+		position: absolute;
+		top: 14px;
+		left: -12px;
+		color: #fff;
+		width: 20px;
+		height: 20px;
+		border-radius: 100%;
+		text-align: center;
+		line-height: 20px;
+		font-weight: bold;
+		font-size: 14px;
+	}
+	&.danger {
+		border-color: $color-danger;
+		background-color: alpha($color-danger + 11.3 * 8% + 1 * .5deg, $color-post-contentOpacity)
+	}
+	&.success {
+		border-color: $color-success;
+		background-color: alpha($color-success + 11.3 * 8% + 1 * .5deg, $color-post-contentOpacity)
+	}
+	&.success::before {
+		content: '\f00c';
+		background-color: $color-success;
+		position: absolute;
+		top: 14px;
+		left: -12px;
+		color: #fff;
+		width: 20px;
+		height: 20px;
+		border-radius: 100%;
+		text-align: center;
+		line-height: 20px;
+		font-weight: bold;
+		font-size: 14px;
+	}
 }

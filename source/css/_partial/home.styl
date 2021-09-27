@@ -18,6 +18,8 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    padding: 20px 0;
+    box-sizing: border-box;
     header {
       border-top-left-radius: 10px;
       border-top-right-radius: 10px;
@@ -38,7 +40,6 @@
     }
     .widget {
       margin-bottom: 8px;
-      margin-top: 20px;
       background: #fff;
       border-radius: 10px;
       box-shadow: 0 1px 20px -6px rgba(0,0,0,0.5);
@@ -55,16 +56,15 @@
   @media screen and (max-width: 992px) { 
       & { 
         width: 95%;
-        .l_content { 
-          margin: 0 auto;  
-        }
       }
   }
 
-  @media screen and (max-width: 551px) { 
+  @media screen and (max-width: 992px) { 
     & {
       width: 95%;
+      flex-direction: column;
       .l_content { 
+        width: 100%;
         margin: 0 auto;  
       }
     }

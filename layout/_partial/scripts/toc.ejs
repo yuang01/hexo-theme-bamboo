@@ -3,9 +3,9 @@
 
 <script>
   var headerEl = '<%- theme.toc.heading %>',  //headers 
-      content = '.post-detail',//文章容器
-      idArr = {};  //标题数组以确定是否增加索引id
-      //add #id
+    content = '.post-detail',//文章容器
+    idArr = {};  //标题数组以确定是否增加索引id
+  //add #id
   var option = {
     // Where to render the table of contents.
     tocSelector: '.toc',
@@ -19,6 +19,8 @@
     positionFixedSelector: '.toc-main',
     positionFixedClass: 'is-position-fixed',
     fixedSidebarOffset: 'auto',
+    activeLinkClass: 'is-active-link',
+    // onClick: function (e) {},
   }
   if ($('.toc').length > 0) {
 
@@ -39,10 +41,41 @@
       }
     });
 
-    tocbot.init(option);
-    
+    document.addEventListener("DOMContentLoaded", function () {
+      tocbot.init(option);
+      mobileTocClick();
+    });
+
   }
 
+  window.tocScrollFn = function () {
+    return bamboo.throttle(function () {
+      findHeadPosition();
+    }, 100)()
+  }
+  window.addEventListener('scroll', tocScrollFn);
+
+  const findHeadPosition = function (top) {
+    if ($('.toc').length <= 0) {
+      return false;
+    }
+    setTimeout(() => {  // or DOMContentLoaded 
+      autoScrollToc();
+    }, 0);
+  }
+
+  const autoScrollToc = function () {
+    const $activeItem = document.querySelector('.is-active-link');
+    const $cardToc = document.querySelector('.toc-content');
+    const activePosition = $activeItem.getBoundingClientRect().top
+    const sidebarScrollTop = $cardToc.scrollTop
+    if (activePosition > (document.documentElement.clientHeight - 100)) {
+      $cardToc.scrollTop = sidebarScrollTop + 150
+    }
+    if (activePosition < 100) {
+      $cardToc.scrollTop = sidebarScrollTop - 150
+    }
+  }
 
   document.addEventListener('pjax:send', function () {
     if ($('.toc').length) {
@@ -53,34 +86,54 @@
   document.addEventListener('pjax:complete', function () {
     if ($('.toc').length) {
       tocbot.init(option);
+      mobileTocClick();
     }
   });
-
   
+  // 手机端toc按钮点击出现目录
+  const mobileTocClick = function () {
+    const $cardTocLayout = document.getElementsByClassName('toc-aside')[0];
+    const $cardToc = $cardTocLayout.getElementsByClassName('toc-content')[0];
+    const mobileToc = {
+      open: () => {
+        $cardTocLayout.style.cssText = 'animation: toc-open .3s; opacity: 1; right: 45px'
+      },
+
+      close: () => {
+        $cardTocLayout.style.animation = 'toc-close .2s'
+        setTimeout(() => {
+          $cardTocLayout.style.cssText = "opacity:''; animation: ''; right: ''"
+        }, 100)
+      }
+    }
+    document.getElementById('toc-mobile-btn').addEventListener('click', () => {
+      if (window.getComputedStyle($cardTocLayout).getPropertyValue('opacity') === '0') mobileToc.open()
+      else mobileToc.close()
+    })
+
+    $cardToc.addEventListener('click', (e) => {
+      if (window.innerWidth < 992) { // 小于992px的时候
+        mobileToc.close()
+      }
+    })
+  }
 </script>
 
 <style>
-.is-position-fixed {
-  position:sticky !important;
-  top: 74px;
-}
-.toc-main ul {
-  counter-reset: show-list;
-}
-.toc-main ul li::before {
-  content: counter(item)".";
-  display: block;
-  position: absolute;
-  left: 12px;
-  top:0;
-}
-/* .toc > .toc-list {
-  padding-left: 35px;
-}
-.toc>.toc-list li {
-  list-style: decimal;
-}
-.toc-list {
-  padding-left: 25px;
-} */
+  .is-position-fixed {
+    position: sticky !important;
+    top: 74px;
+  }
+
+  .toc-main ul {
+    counter-reset: show-list;
+  }
+
+  .toc-main ul li::before {
+    content: counter(item)".";
+    display: block;
+    position: absolute;
+    left: 12px;
+    top: 0;
+  }
 </style>

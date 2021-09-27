@@ -20,28 +20,28 @@
 
 <!-- 评论所需js -->
 <% if(page.comments !== false ) { %>
-    <% if(theme.valine.on) { %>
-        <!-- 弹幕所需的css和js -->
-        <%- partial('_partial/scripts/danmu') %>
-        <%- partial('_partial/comment/valine/script') %>
-    <% } else if(theme.twikoo.on) { %>
-        <%- partial('_partial/comment/twikoo/script') %>
-    <% } else if(theme.gitment.on) { %>
-        <%- partial('_partial/comment/gitment/script') %>
-    <% } else if(theme.livere.on) {  %>
-        <%- partial('_partial/comment/livere/script') %>
-    <% } else if(theme.changyan.on) {  %>
-        <%- partial('_partial/comment/changyan/script') %>
-    <% } else if(theme.gitalk.on) {  %>
-        <%- partial('_partial/comment/gitalk/script') %>
-    <% } else if(theme.utterance.on) { %>
-        <%- partial('_partial/comment/utterance/script') %>
-    <% } %>
+  <% if(theme.valine.on) { %>
+    <!-- 弹幕所需的css和js -->
+    <%- partial('_partial/scripts/danmu') %>
+    <%- partial('_partial/comment/valine/script') %>
+  <% } else if(theme.twikoo.on) { %>
+    <%- partial('_partial/comment/twikoo/script') %>
+  <% } else if(theme.gitment.on) { %>
+    <%- partial('_partial/comment/gitment/script') %>
+  <% } else if(theme.livere.on) {  %>
+    <%- partial('_partial/comment/livere/script') %>
+  <% } else if(theme.changyan.on) {  %>
+    <%- partial('_partial/comment/changyan/script') %>
+  <% } else if(theme.gitalk.on) {  %>
+    <%- partial('_partial/comment/gitalk/script') %>
+  <% } else if(theme.utterance.on) { %>
+    <%- partial('_partial/comment/utterance/script') %>
+  <% } %>
 <% } %>
 
 <!-- 鼠标点击特效 -->
 <%- partial('_partial/scripts/cursor_effect') %>
 
 <% if (theme.busuanzi.on) { %>
-    <script async src="<%- url_for(theme.CDN.busuanzi) %>" data-pjax></script>
+  <script async src="<%- url_for(theme.CDN.busuanzi) %>" data-pjax></script>
 <% } %>
