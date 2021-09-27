@@ -53,14 +53,14 @@
     }
   }
   .toc-content {
-    max-height: calc(100vh - 130px);
+    max-height: calc(100vh - 150px);
     @media screen and (max-width: 551px) {
       max-height: calc(100vh - 170px);  
     }
     overflow: auto;
     display: inline-block;
-    width: 300px;
-
+    width: 100%;
+    box-sizing: border-box;
     .toc-list {
       padding-left: 35px;
     }

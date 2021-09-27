@@ -94,9 +94,13 @@
   const mobileTocClick = function () {
     const $cardTocLayout = document.getElementsByClassName('toc-aside')[0];
     const $cardToc = $cardTocLayout.getElementsByClassName('toc-content')[0];
+    let right = '45px';
+    if (window.innerWidth >= 551 && window.innerWidth <= 992) {
+      right = '100px'
+    }
     const mobileToc = {
       open: () => {
-        $cardTocLayout.style.cssText = 'animation: toc-open .3s; opacity: 1; right: 45px'
+        $cardTocLayout.style.cssText = 'animation: toc-open .3s; opacity: 1; right: ' + right
       },
 
       close: () => {
