@@ -20,22 +20,14 @@
   </div>
   <!-- js在scripts目录下的的toc.ejs里面 -->
   <% if(theme.toc.open === false || page.tocOpen === false) { %>
-    <style>
-      .toc-aside {
-        width: 0;
-        padding: 0;
+    <script>
+      if (window.innerWidth >= 992) {
+        $(".toc-aside").css({'width': 0, 'padding': 0});
+        $(".toc-content").css({'width': 0});
+        $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
+        $(".main-content").css({'width': '75%', 'margin': '10px auto'});
       }
-      .toc-aside .toc-content {
-        width: 0;
-      }
-      .toc-aside-title span, .toc-aside-title i {
-        display: none;
-      }
-      .main-content {
-        width: 75%;
-        margin: 10px auto;
-      }
-    </style>
+    </script>
   <% } %>
 
   <script>
@@ -65,20 +57,12 @@
     
   </script>
 <% } else { %>
-  <style>
-    .toc-aside {
-      width: 0;
-      padding: 0;
+  <script>
+    if (window.innerWidth >= 992) {
+      $(".toc-aside").css({'width': 0, 'padding': 0});
+      $(".toc-content").css({'width': 0});
+      $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
+      $(".main-content").css({'width': '75%', 'margin': '10px auto'});
     }
-    .toc-aside .toc-content {
-      width: 0;
-    }
-    .toc-aside-title span, .toc-aside-title i {
-      display: none;
-    }
-    .main-content {
-      width: 75%;
-      margin: 10px auto;
-    }
-  </style>
+  </script>
 <% } %>
