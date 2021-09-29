@@ -11,12 +11,13 @@
   border-radius: 50%;
   line-height: 50px;
   text-align: center;
-  box-shadow:-2px 2px 2px 2px rgba(255,255,255,0.5);
+  box-shadow: -2px 2px 2px 2px rgba(255, 255, 255, 0.5);
   font-size: 14px;
-  cursor $cursor-pointer,pointer;
+  cursor: $cursor-pointer, pointer;
   transition: background-color 0.3s;
   z-index: 999;
 }
+
 @media (max-width: 551px) {
   .danmu {
     width: 40px;
@@ -32,6 +33,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .danmuBtn {
   display: inline-block;
   width: 50px;
@@ -43,24 +45,28 @@
   text-align: left;
   vertical-align: top;
   cursor: pointer;
-  color: #ccc; 
+  color: #ccc;
   text-align: center;
   transition: all 0.3s;
+
   &.open {
-    color:#fa0;
+    color: #fa0;
+
     .danmuCircle {
       background-color: #fa0;
     }
   }
+
   .danmuCircle {
     display: inline-block;
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background-color: #ccc;  
+    background-color: #ccc;
     margin-right: 2px;
   }
 }
+
 .barrage .close.z {
-  background-size: cover!important;  
+  background-size: cover !important;
 }

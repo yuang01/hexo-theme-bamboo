@@ -4,12 +4,14 @@
   padding: 0 15px;
   height: 100%;
   line-height: 60px;
-  cursor $cursor-pointer,pointer;
+  cursor: $cursor-pointer, pointer;
   transition: background-color 0.3s;
+
   &:hover {
     background-color: rgba(0, 0, 0, 0.2);
   }
 }
+
 .message-box_wrapper {
   position: fixed;
   top: 0;
@@ -20,6 +22,7 @@
   display: flex;
   justify-content: center;
   z-index: 11;
+
   .message-box {
     display: flex;
     position: relative;
@@ -29,21 +32,25 @@
     padding: 10px 20px;
     margin-top: 100px;
     background-color: #fff;
+
     h2 {
       font-size: 1.5rem;
       color: $color-primary;
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       .close {
         cursor: pointer;
         color: #ccc;
         font-size: 1.2rem;
+
         &:hover {
           color: $color-primary;
         }
       }
     }
+
     #local-search-input {
       position: relative;
       width: 100%;
@@ -54,7 +61,7 @@
       background-color: transparent;
       // background-repeat: no-repeat;
       // background-image: linear-gradient(#ccc, #ccc, #ccc, #ccc),
-      //                   linear-gradient(#e4eaec, #e4eaec);
+      // linear-gradient(#e4eaec, #e4eaec);
       // background-position: center bottom, center calc(100% - 1px);
       // background-size: 0 2px, 100% 1px;
       // padding: 0.6em 0;
@@ -63,56 +70,61 @@
       box-sizing: border-box;
       font-size: 1rem;
       z-index: 2;
-
-      padding: .25rem .7rem;
+      padding: 0.25rem 0.7rem;
       outline: 0;
       border: 2px solid $color-primary;
       border-radius: 2rem;
       font-size: 14px;
       margin-top: 15px;
     }
+
     #local-search-input:focus {
       // transition-duration: 0.3s;
       // background-size: 100% 2px, 100% 1px;
       // background-image: linear-gradient($color-primary, $color-primary),
-      //                 linear-gradient(#e4eaec, #e4eaec);
+      // linear-gradient(#e4eaec, #e4eaec);
       // 注释代码是另一种输入框样式
     }
   }
+
   .result-wrapper {
     max-height: 80%;
     overflow: auto;
     overflow-x: hidden;
     margin-top: 10px;
+
     .search-keyword {
       color: #d63200;
     }
-    a {
-      // text-decoration: none;
-    }
+
+
     p {
       font-size: 1rem;
       line-height: 1.5rem;
       color: rgba(0, 0, 0, 0.5);
     }
+
     ul {
-      list-style-type none;
+      list-style-type: none;
       box-sizing: border-box;
       padding: 10px;
+
       li {
         padding: 15px 20px;
         border-radius: 10px;
         margin-bottom: 15px;
-        box-shadow: 0 0 4px 1px rgba(0, 0, 0, .12);
-        transition: all .3s
+        box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.12);
+        transition: all 0.3s;
         word-wrap: break-word;
+
         &:hover {
-          box-shadow: 0 0 8px 3px rgba(0, 0, 0, .12);  
+          box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.12);
         }
       }
     }
   }
 }
+
 @media (max-width: 551px) {
   .message-box_wrapper {
     .message-box {

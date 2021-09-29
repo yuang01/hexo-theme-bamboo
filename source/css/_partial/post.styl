@@ -31,6 +31,7 @@
   padding: 0 10px;
   background-color: rgba(255, 255, 255, $color-post-tocOpacity);
   transition: width 0.3s;
+
   @media screen and (max-width: 992px) {
     & {
       position: fixed;
@@ -52,21 +53,27 @@
       box-sizing: border-box;
     }
   }
+
   .toc-content {
     max-height: calc(100vh - 150px);
+
     @media screen and (max-width: 551px) {
-      max-height: calc(100vh - 170px);  
+      max-height: calc(100vh - 170px);
     }
+
     overflow: auto;
     display: inline-block;
     width: 100%;
     box-sizing: border-box;
+
     .toc-list {
       padding-left: 35px;
     }
+
     .is-collapsible {
-      padding-left: 15px;  
+      padding-left: 15px;
     }
+
     if (hexo-config('toc.showOrderNumber')) {
       .toc-list li {
         list-style: decimal;
@@ -102,8 +109,9 @@
       writing-mode: vertical-rl;
       border-radius: 5px;
       cursor: url('../../medias/cursor/Horizontal.cur'), text;
+
       @media screen and (max-width: 992px) {
-        display: none;  
+        display: none;
       }
     }
 
@@ -112,45 +120,52 @@
     }
   }
 }
+
 #toc-mobile-btn {
-  display: none; 
-  @media screen and (max-width: 992px) { 
+  display: none;
+
+  @media screen and (max-width: 992px) {
     display: block;
     position: fixed;
     width: 50px;
     height: 50px;
     line-height: 50px;
     bottom: 140px;
-    right: 17px;  
+    right: 17px;
     text-align: center;
     z-index: 999;
     background-color: $color-primary;
     color: $color-inner;
     border-radius: 50%;
-    box-shadow:-2px 2px 2px 2px rgba(255,255,255,0.5);
+    box-shadow: -2px 2px 2px 2px rgba(255, 255, 255, 0.5);
   }
-  @media screen and (max-width: 551px) { 
+
+  @media screen and (max-width: 551px) {
     width: 30px;
     height: 30px;
     line-height: 30px;
     bottom: 100px;
-    right: 0;  
-  } 
+    right: 0;
+  }
 }
+
 @keyframes toc-open {
   0% {
-    transform: scale(0.7)
+    transform: scale(0.7);
   }
+
   100% {
-    transform: scale(1)
+    transform: scale(1);
   }
 }
+
 @keyframes toc-close {
   0% {
-    transform: scale(1)
+    transform: scale(1);
   }
+
   100% {
-    transform: scale(0.7)
+    transform: scale(0.7);
   }
 }
 
@@ -546,10 +561,6 @@
     margin: 0 auto !important;
     margin-top: 10px !important;
   }
-
-  // .toc-aside {
-  //   display: none;
-  // }
 }
 
 @media (max-width: 551px) {

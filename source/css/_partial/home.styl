@@ -1,71 +1,85 @@
 #l_main {
   width: 70%;
   margin: 0 auto;
-  margin-bottom: 20px;   
-  display: flex; 
+  margin-bottom: 20px;
+  display: flex;
   box-sizing: border-box;
+
   if (hexo-config('sidebar.position') == 'left') {
     flex-direction: row-reverse;
   }
+
   justify-content: space-between;
+
   .l_content {
     flex: 1;
+
     if (hexo-config('sidebar.position') == 'left') {
       margin-left: 15px;
     } else {
       margin-right: 15px;
     }
+
     display: flex;
     flex-direction: column;
     overflow: hidden;
     padding: 20px 0;
     box-sizing: border-box;
+
     header {
       border-top-left-radius: 10px;
       border-top-right-radius: 10px;
-      padding: "calc(%s - 2px)" % 16px;
+      padding: 'calc(%s - 2px)' % 16px;
       font-weight: bold;
       font-size: 0.875rem;
       padding-bottom: 0;
-      &,a {
+
+      &, a {
         color: #4c4948;
         transition: all 0.3s;
       }
+
       >a:hover {
-        color: $color-primary!important;
+        color: $color-primary !important;
       }
+
       span.name {
         margin-left: 8px;
       }
     }
+
     .widget {
       margin-bottom: 8px;
       background: #fff;
       border-radius: 10px;
-      box-shadow: 0 1px 20px -6px rgba(0,0,0,0.5);
+      box-shadow: 0 1px 20px -6px rgba(0, 0, 0, 0.5);
+
       .content {
-        padding: 8px 16px;  
+        padding: 8px 16px;
       }
     }
   }
-  @media screen and (max-width: 1200px) { 
-    & { 
+
+  @media screen and (max-width: 1200px) {
+    & {
       width: 80%;
     }
   }
-  @media screen and (max-width: 992px) { 
-      & { 
-        width: 95%;
-      }
+
+  @media screen and (max-width: 992px) {
+    & {
+      width: 95%;
+    }
   }
 
-  @media screen and (max-width: 992px) { 
+  @media screen and (max-width: 992px) {
     & {
       width: 95%;
       flex-direction: column;
-      .l_content { 
+
+      .l_content {
         width: 100%;
-        margin: 0 auto;  
+        margin: 0 auto;
       }
     }
   }

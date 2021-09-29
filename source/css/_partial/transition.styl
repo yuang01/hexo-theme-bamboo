@@ -1,35 +1,45 @@
 .fade-enter-active, .fade-leave-active {
-  transition: opacity .8s;
+  transition: opacity 0.8s;
 }
+
 .fade-enter, .fade-leave-to {
   opacity: 0;
 }
+
 .bounce-enter-active {
-  animation: bounce-in .5s;
+  animation: bounce-in 0.5s;
 }
+
 .bounce-leave-active {
-  animation: bounce-in .5s reverse;
+  animation: bounce-in 0.5s reverse;
 }
+
 @keyframes bounce-in {
   0% {
     transform: scale(0);
   }
+
   50% {
     transform: scale(1.2);
   }
+
   100% {
     transform: scale(1);
   }
 }
+
 .translate-fade-enter-active, .translate-fade-leave-active {
   transition: all 1s;
 }
+
 .translate-fade-enter, .translate-fade-leave-active {
   opacity: 0;
 }
+
 .translate-fade-enter {
   transform: translateX(31px);
 }
+
 .translate-fade-leave-active {
   transform: translateX(-31px);
 }
@@ -37,12 +47,15 @@
 .scale-enter-active, .scale-leave-active {
   transition: all 2s;
 }
+
 .scale-enter, .scale-leave-active {
   opacity: 0;
 }
+
 .scale-enter {
   transform: scale(1.5);
 }
+
 .scale-leave-active {
   transform: scale(1);
 }

@@ -8,26 +8,27 @@
   height: 82px;
   margin-left: auto;
   margin-right: auto;
-  background: url(http://img.t.sinajs.cn/t5/style/images/apps_PRF/e_media/btn_reward.gif)no-repeat;
+  background: url('http://img.t.sinajs.cn/t5/style/images/apps_PRF/e_media/btn_reward.gif') no-repeat; // img.t.sinajs.cn/t5/style/images/apps_PRF/e_media/btn_reward.gif)no-repeat;
   -webkit-transition: background 0s;
   -moz-transition: background 0s;
   -o-transition: background 0s;
   -ms-transition: background 0s;
-  transition: background 0s
+  transition: background 0s;
 }
 
 .donate_bar a.btn_donate:hover {
-  background-position: 0 -82px
+  background-position: 0 -82px;
 }
 
 .donate_bar .donate_txt {
   display: block;
   color: #9d9d9d;
-  font: 14px/2 "Microsoft Yahei"
+  font: 14px / 2 'Microsoft Yahei';
 }
+
 .post-donate {
   display: flex;
-  justify-content: center;  
+  justify-content: center;
 }
 
 .donate-box-mask {
@@ -39,6 +40,7 @@
   background: rgba(0, 0, 0, 0.5);
   z-index: 11;
 }
+
 .donate-box {
   position: fixed;
   top: 15%;
@@ -50,10 +52,12 @@
 
   .donate-box_close {
     height: 20px;
+
     i {
       float: right;
       color: #ccc;
       cursor: pointer;
+
       &:hover {
         color: #000000;
       }
@@ -72,8 +76,8 @@
     display: flex;
     justify-content: center;
     cursor: pointer;
-    .Alipay,
-    .WeChatpay {
+
+    .Alipay, .WeChatpay {
       width: 20%;
       line-height: 20px;
       text-align: center;
@@ -81,27 +85,30 @@
       padding: 10px 20px;
       color: white;
     }
+
     .Alipay.active {
-      background-color: #027AFF; 
+      background-color: #027AFF;
     }
+
     .WeChatpay.active {
       background-color: #00bc0d;
     }
   }
+
   .donate-box_img {
     width: 200px;
     height: 200px;
     overflow: hidden;
     margin: 10px auto;
-    .AlipayImg,
-    .WeChatpayImg {
+
+    .AlipayImg, .WeChatpayImg {
       width: 100%;
-      height: 100%;  
+      height: 100%;
     }
-    .AlipayImg img,
-    .WeChatpayImg img {
+
+    .AlipayImg img, .WeChatpayImg img {
       width: 100%;
-      height: 100%;  
+      height: 100%;
     }
   }
 }

@@ -1,29 +1,36 @@
 .bg-light-floor-friends {
   background: convert(hexo-config('friends.background'));
-  background-size: cover; 
+  background-size: cover;
   background-position: center center;
 }
+
 .friends-title {
   font-size: 1.6em;
   color: #273849;
-  if hexo-config('friends.titleColor') {
+
+  if (hexo-config('friends.titleColor')) {
     color: convert(hexo-config('friends.titleColor'));
   }
+
   text-align: center;
   padding: 15px 0;
 }
+
 .friends-header {
   position: relative;
   width: 100%;
   height: 50vh;
-  if hexo-config('color_scheme.common.headerMenuTransparent') {
+
+  if (hexo-config('color_scheme.common.headerMenuTransparent')) {
     height: 60vh;
   }
-  if hexo-config('friends.full') {
+
+  if (hexo-config('friends.full')) {
     height: 100vh;
   }
+
   overflow: hidden;
-  background-size: cover; 
+  background-size: cover;
   background-position: center center;
   background-color: $color-primary;
   display: flex;
@@ -31,21 +38,24 @@
   align-items: center;
   flex-direction: column;
   color: $color-inner;
+
   .friends-header-title {
     z-index: 2;
     font-size: 2.5rem;
     font-family: MV Boli;
     color: #fff;
   }
+
   .friends-header-desc {
     z-index: 2;
     font-weight: 500;
     font-size: 1.25rem;
     line-height: 1.4em;
-    font-family: 'Architects Daughter', cursive!important;
-    color: #fff; 
+    font-family: 'Architects Daughter', cursive !important;
+    color: #fff;
     min-height: 1.4em;
   }
+
   .mask-box {
     position: absolute;
     top: 0;
@@ -62,11 +72,13 @@
   width: 100%;
   height: 100vh;
   color: $color-inner;
+
   video {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
+
   .video-header-title {
     z-index: 2;
     font-size: 2.5rem;
@@ -77,19 +89,21 @@
     transform: translate(-50%, -50%);
     color: #fff;
   }
+
   .video-header-desc {
     z-index: 2;
     font-weight: 500;
     font-size: 1.25rem;
     line-height: 1.4em;
-    font-family: 'Architects Daughter', cursive!important;
-    color: #fff; 
+    font-family: 'Architects Daughter', cursive !important;
+    color: #fff;
     min-height: 1.4em;
     position: absolute;
     left: 50%;
     top: calc(50% + 50px);
     transform: translate(-50%, -50%);
   }
+
   .mask-box {
     position: absolute;
     top: 0;
@@ -103,79 +117,90 @@
 }
 
 @media (min-width: 992px) {
-  if hexo-config('friends.video') {
+  if (hexo-config('friends.video')) {
     .friends-video {
       display: block;
     }
+
     .friends-header {
-      display: none;  
+      display: none;
     }
   } else {
     .friends-video {
       display: none;
     }
+
     .friends-header {
-      display: flex;  
+      display: flex;
     }
   }
-  
 }
+
 @media (max-width: 992px) {
   .friends-video {
     display: none;
   }
+
   .friends-header {
-    display: flex;  
+    display: flex;
   }
 }
 
 #friends {
-  min-height: calc(60vh - 60px);  
+  min-height: calc(60vh - 60px);
 }
+
 .friends {
-  display flex;
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 15px;
+
   .friend {
     width: 28%;
-    box-shadow: 0 1px 20px -6px rgba(0,0,0,.5);
+    box-shadow: 0 1px 20px -6px rgba(0, 0, 0, 0.5);
     padding: 10px 15px;
-    display flex;
+    display: flex;
     background-color: #fff;
     // align-items: center;
     transition: all 0.5s;
     margin-top: 10px;
+
     &:hover {
-      transform:scale(1.2);
+      transform: scale(1.2);
     }
+
     .friend-avatar {
       width: 60px;
       height: 60px;
       margin-right: 10px;
+
       img {
         width: 100%;
         height: 100%;
-      }  
+      }
     }
+
     .friend-info {
       flex: 1;
+
       .friend-name {
-        
       }
+
       .friend-introduction {
         width: 100%;
-        word-break:break-all;
+        word-break: break-all;
         display: -webkit-box;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 2;
         overflow: hidden;
         color: #a3a3a3;
-        font-size: 14px;  
+        font-size: 14px;
       }
     }
   }
 }
+
 @media (max-width: 730px) {
   .friends {
     .friend {
@@ -183,6 +208,7 @@
     }
   }
 }
+
 @media (max-width: 551px) {
   .friends {
     .friend {

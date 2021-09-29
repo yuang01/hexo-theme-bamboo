@@ -4,22 +4,25 @@
   background-color: $color-primary;
   // color: $color-inner!important;
 }
+
 // 轮播图底部小点点的背景颜色
 .swiper-pagination-bullet-active {
-  background-color: $color-primary!important;
+  background-color: $color-primary !important;
 }
+
 // 搜索输入框聚焦时候的颜色
 #local-search-input:focus {
   // background-image: linear-gradient($color-primary, $color-primary),
-  //                     linear-gradient(#e4eaec, #e4eaec)!important;
+  // linear-gradient(#e4eaec, #e4eaec)!important;
 }
+
 // 推荐文章鼠标移入到阅读更多的颜色
 .topArticle {
   .more {
     &:hover {
-      color: $color-primary!important;
+      color: $color-primary !important;
     }
-  }  
+  }
 }
 
 // 首页文章标题和阅读更多鼠标移入
@@ -30,13 +33,13 @@
         color: $color-primary;
       }
     }
-  }  
+  }
 
   .post-more {
     i {
       &:hover {
         color: $color-primary;
-      } 
+      }
     }
   }
 }
@@ -47,7 +50,7 @@
     &:hover {
       color: $color-primary;
     }
-  }  
+  }
 }
 
 .post-categories {
@@ -56,15 +59,15 @@
       &:hover {
         color: $color-primary;
       }
-    }  
+    }
   }
 }
 
 // 文章详情页的a链接颜色
 .post-detail {
   a {
-    color: $color-link!important;
-  }  
+    color: $color-link !important;
+  }
 }
 
 // copyright的左边框颜色
@@ -75,27 +78,24 @@
 // 文章详情页的blockquote，md中的 > 标签的左边框和背景颜色
 .post-detail {
   blockquote {
-      border-left: 4px solid $color-primary;
-      background-color: alpha(#f3f5f7, $color-post-contentOpacity)
+    border-left: 4px solid $color-primary;
+    background-color: alpha(#f3f5f7, $color-post-contentOpacity);
   }
 }
+
 // 文章详情页的目录的左边框
 .toc-link.is-active-link::before {
   background-color: $color-primary;
 }
 
-
 // valine评论颜色
 // valine 访客-标签的背景色
 #vcomment .vcards .vcard .vh .vhead .vtag.vvisitor {
-  background-color: $color-primary!important;
+  background-color: $color-primary !important;
 }
+
 // valine 按钮的背景色
 .v[data-class=v] .vbtn:active, .v[data-class=v] .vbtn:hover {
-  color: $color-primary!important;
-  border-color: $color-primary!important;
+  color: $color-primary !important;
+  border-color: $color-primary !important;
 }
-// valine ‘回复’ 字体颜色， 默认是 #ef2f11 红色， 您可以将此红色改成你设置的主题颜色
-// #vcomment .vcards .vcard .vh .vmeta .vat {
-//   color: #ef2f11;
-// }
