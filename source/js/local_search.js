@@ -94,7 +94,7 @@ var searchFunc = function (path, search_id, content_id) {
             str +=
               "<li><a class='color-primary' href='" +
               data_url +
-              "' class='search-result-title' target='_blank'>" +
+              "' class='search-result-title'>" +
               orig_data_title +
               "</a>";
             var content = orig_data_content;
