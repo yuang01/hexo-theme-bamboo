@@ -725,7 +725,7 @@ tag_plugins:
 # mermaid
 # see https://github.com/mermaid-js/mermaid
 mermaid:
-  on: false
+  on: true
   # built-in themes: default/forest/dark/neutral
   theme: default
   cdn: https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
