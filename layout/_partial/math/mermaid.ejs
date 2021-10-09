@@ -1,0 +1,16 @@
+<script>
+  if (document.getElementsByClassName('mermaid').length) {
+    if (window.mermaidJsLoad) mermaid.init()
+    else {
+      loadScript('<%- theme.mermaid.cdn %>').then(() => {
+        window.mermaidJsLoad = true
+        mermaid.initialize({
+          theme: '<%= theme.mermaid.theme %>',
+        })
+        if (!'<%= theme.pjax.on %>') {
+          mermaid.init();
+        }
+      })
+    }
+  }
+</script>

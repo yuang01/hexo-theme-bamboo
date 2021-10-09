@@ -722,6 +722,14 @@ tag_plugins:
   # getFile标签的左侧默认图片
   getFileImg: 'https://img.51miz.com/Element/00/37/79/59/10df0417_E377959_b7bb9dfa.png'
 
+# mermaid
+# see https://github.com/mermaid-js/mermaid
+mermaid:
+  on: false
+  # built-in themes: default/forest/dark/neutral
+  theme: default
+  cdn: https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
+
 # pjax
 pjax:
   on: true

@@ -60,3 +60,7 @@
 <% if (page.mathjax) { %>
   <%- partial('_partial/math/mathjax') %>
 <% } %>
+
+<% if (theme.mermaid.on) { %>
+  <%- partial('_partial/math/mermaid') %>
+<% } %>
