@@ -187,6 +187,7 @@
       width: 100%;
       display: flex;
       flex-wrap: wrap;
+      box-sizing: border-box;
 
       .bar-box {
         position: relative;
@@ -197,7 +198,10 @@
         overflow: hidden;
         margin-top: 20px;
         margin-right: 5%;
-
+        @media (max-width: 551px) {
+          width: 100%;
+          margin-right: 0;
+        }
         .bar {
           width: 35%;
           height: 100%;
