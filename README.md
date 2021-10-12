@@ -5,8 +5,8 @@
 ![https://img.shields.io/npm/v/hexo-theme-bamboo?color=%09%23bf00ff](https://img.shields.io/npm/v/hexo-theme-bamboo?color=%09%23bf00ff)
 ![hexo version](https://img.shields.io/badge/hexo-5.0+-0e83c)
 
-最新文档，请[点击github查看](https://yuang01.github.io)，或者[点击gitee查看](https://yuang01.gitee.io)，
-
+最新文档，请[点击gitee查看](https://yuang01.gitee.io)，
+各位小哥哥，小姐姐，右上角给个星星（star）吧，支持一下嘛
 <table>
     <tr>
             <th>首页轮播(支持三种显示方式)</th>
