@@ -1,6 +1,6 @@
 {
   "name": "hexo-theme-bamboo",
-  "version": "2.6.8",
+  "version": "2.6.9",
   "description": "simple and beautiful theme for Hexo.",
   "main": "package.json",
   "scripts": {
