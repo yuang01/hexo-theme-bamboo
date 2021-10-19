@@ -92,9 +92,9 @@ var searchFunc = function (path, search_id, content_id) {
           // 0x05. show search results
           if (isMatch) {
             str +=
-              "<li><a class='color-primary' href='" +
+              "<li><a href='" +
               data_url +
-              "' class='search-result-title'>" +
+              "' class='search-result-title color-primary'>" +
               orig_data_title +
               "</a>";
             var content = orig_data_content;
@@ -138,6 +138,7 @@ var searchFunc = function (path, search_id, content_id) {
           // return $resultContent.innerHTML = BTN + "<ul><span class='local-search-empty'>没有找到内容，请尝试更换检索词。<span></ul>";
         }
         $resultContent.innerHTML = str;
+        window.pjax && window.pjax.refresh($resultContent)
         // $resultContent.innerHTML = BTN + str;
       });
     },

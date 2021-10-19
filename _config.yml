@@ -473,7 +473,7 @@ bubble:
 
 # valine 评论
 valine:
-  on: true
+  on: false
   appid: 
   appkey: 
   avatar: '' # 匿名者头像选项 https://valine.js.org/avatar.html
@@ -522,7 +522,7 @@ gitalk:
 
 # utterance 评论
 utterance:
-  on: false
+  on: true
   # 仓库名字，格式：你的用户 ID/ 仓库名称，如：yuang01/yuang01.github.io
   repo: 
   # 主题
