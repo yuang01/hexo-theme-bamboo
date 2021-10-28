@@ -5,6 +5,8 @@
 ![https://img.shields.io/npm/v/hexo-theme-bamboo?color=%09%23bf00ff](https://img.shields.io/npm/v/hexo-theme-bamboo?color=%09%23bf00ff)
 ![hexo version](https://img.shields.io/badge/hexo-5.0+-0e83c)
 
+> 主题还有许多样式啊，文章样式啊，功能啊需要优化和增加的，欢迎各位pr，贡献代码哦
+
 最新文档，请[点击gitee查看](https://yuang01.gitee.io)，
 
 <table>
