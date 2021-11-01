@@ -1,4 +1,3 @@
-<link href="<%- url_for('/js/swiper/swiper@5.4.1.min.css') %>" rel="stylesheet">
 
 <% if (theme.swiper.defaultDescTyped) { %>
   <link href="<%- url_for('/js/vue-typed-js/index.css') %>" rel="stylesheet">
@@ -174,10 +173,6 @@
   <% } %>
   <canvas id="header_canvas"style="position:absolute;bottom:0;width:100%;pointer-events:none;"></canvas>
 </div>
-
-<script type="text/javascript">
-  Vue.use(window.VueAwesomeSwiper)
-</script>
 
 <script>
   var autoplay = JSON.parse('<%= theme.swiper.autoplay %>');

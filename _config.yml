@@ -169,6 +169,7 @@ preloader:
 
 # 首页轮播图设置
 swiper:
+  on: true # 设置为false, 则首页不显示轮播图
   # 当在.md文件中，设置swiper:true，会将该文章放到轮播中，
   showPrevNext: true # 是否显示左右切换按钮
   showIndicators: false  # 是否显示指示器
@@ -832,3 +833,5 @@ CDN:
   paceCss: //cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css
   weather: https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0
   typedJs: https://cdn.jsdelivr.net/npm/typed.js@2.0.11
+  jquery: https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js
+  vue: https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js

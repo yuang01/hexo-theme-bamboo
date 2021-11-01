@@ -4,8 +4,18 @@
   <%- partial('_partial/head/head') %>
   
   <!-- 依赖于jquery和vue -->
-  <script src="<%- url_for('/js/jquery3.5.1.js') %>"></script>
-  <script src="<%- url_for('/js/vue2.6.11.js') %>"></script>
+  <% if(theme.CDN.jquery) { %>
+    <%- js(theme.CDN.jquery) %>
+  <% } else { %>
+    <script src="<%- url_for('/js/jquery3.5.1.js') %>"></script>
+  <% } %>
+
+  <% if(theme.CDN.vue) { %>
+    <%- js(theme.CDN.vue) %>
+  <% } else { %>
+    <script src="<%- url_for('/js/vue2.6.11.js') %>"></script>
+  <% } %>
+  
   
   <body>
     <!-- 预加载动画 -->
@@ -22,7 +32,7 @@
 
     <!-- 内容区域 -->
     <div id="safearea">
-      <main class="main" id="pjax-container" style="<% if(theme.color_scheme.common.headerMenuTransparent) { %>margin-top: 0;<% } else { %>margin-top: 60px;<% } %>">
+      <main class="main" id="pjax-container" style="<% if(theme.color_scheme.common.headerMenuTransparent && theme.swiper.on) { %>margin-top: 0;<% } else { %>margin-top: 60px;<% } %>">
         <%- body %>
       </main>
     </div>

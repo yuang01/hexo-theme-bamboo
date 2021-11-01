@@ -5,6 +5,10 @@
 <script src="<%- url_for('/js/swiper/vue-awesome-swiper.js') %>"></script>
 <script src="<%- url_for('/js/swiper/swiper.animate1.0.3.min.js') %>"></script>
 
+<script type="text/javascript">
+  Vue.use(window.VueAwesomeSwiper)
+</script>
+
 <% if (theme.swiper.defaultDescTyped) { %>
   <script src="<%- url_for('/js/vue-typed-js/index.js') %>"></script>
 <% } %>

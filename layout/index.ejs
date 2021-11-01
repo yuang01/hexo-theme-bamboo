@@ -1,5 +1,8 @@
-<!-- 首页轮播 -->
-<%- partial('_partial/swiper') %>
+<% if(theme.swiper.on ) { %>
+  <!-- 首页轮播 -->
+  <%- partial('_partial/swiper') %>
+<% } %>
+
 <div id="l_main">
   <div class="l_content">
     <!-- 自定义的内容 -->

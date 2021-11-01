@@ -8,7 +8,7 @@
     menuMap.set("Contact", "留言板");
     menuMap.set("Friends", "友情链接");
 %>
-<header class="header <% if(!theme.color_scheme.common.headerMenuTransparent) { %>header-bg-color<% } %>" id="navHeader"
+<header class="header <% if(!theme.color_scheme.common.headerMenuTransparent || !theme.swiper.on) { %>header-bg-color<% } %>" id="navHeader"
   style="position: fixed;
   left: 0; top: 0; z-index: 10;width: 100%;"
 >
@@ -100,7 +100,7 @@
     <% } %>
 
     <!-- 当头部导航设置为背景透明的时候  -->
-    <% if(theme.color_scheme.common.headerMenuTransparent) { %>
+    <% if(theme.color_scheme.common.headerMenuTransparent && theme.swiper.on) { %>
       <script src="<%- url_for('/js/header/index.js') %>" data-pjax></script>
     <% } %>
 </header>

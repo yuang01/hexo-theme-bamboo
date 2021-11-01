@@ -57,7 +57,8 @@
   <link rel="icon" type="<%= iconType %>" href="<%- url_for(theme.favicon) %>">
   <link rel="stylesheet" href="<%= theme.CDN.iconfont %>">
   <link href="<%= theme.CDN.fontAwesome %>" rel="stylesheet">
-
+  <link href="<%- url_for('/js/swiper/swiper@5.4.1.min.css') %>" rel="stylesheet">
+  
   <% if(theme.live2d.on === true ) { %>
     <script>
         var themeModelId = '<%= theme.live2d.modelId %>';
