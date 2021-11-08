@@ -1,13 +1,18 @@
 $height = 60px
 $borderRadius = 10px
-.header-bg-color {
+
+.header-bg-color,
+.no-img-top,
+.no-swiper {
   if hexo-config('color_scheme.common.headerMenuBackgroundColor') {
     background: convert(hexo-config('color_scheme.common.headerMenuBackgroundColor'));
   }  else {
     background: $color-primary
   }
+  transition: all 0.3s;
   // backdrop-filter: saturate(120%) blur(5px); // 模糊效果
 }
+
 .header {
   position: relative;
   display: flex;
@@ -16,9 +21,27 @@ $borderRadius = 10px
   align-items: center;
   height: $height;
   box-sizing: border-box;
-  transition: all 0.3s;
   z-index: 2;
-  
+  // css动画效果，需要的话就加上
+  // animation: headerNoOpacity 1s;
+  // animation-duration: 1s;
+  // animation-timing-function: ease;
+  // animation-delay: 0s;
+  // animation-iteration-count: 1;
+  // animation-direction: normal;
+  // animation-fill-mode: none;
+  // animation-play-state: running;
+  // animation-name: headerNoOpacity;
+
+  @keyframes headerNoOpacity {
+    0% {
+      transform: translateY(-50px)
+    }
+    100% {
+      transform: translateY(0)
+    }
+  }
+      
   .header-content {
     width: calc(70% + 260px);
     // width: 100%; // 这样的话，空间会更大一点，logo和菜单会向两边靠齐

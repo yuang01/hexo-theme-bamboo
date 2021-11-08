@@ -16,3 +16,6 @@ $(function () {
   setTabs();
 });
 
+document.addEventListener('pjax:complete', function () {
+  setTabs();
+});

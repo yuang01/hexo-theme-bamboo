@@ -18,51 +18,49 @@
   <div id="toc-mobile-btn">
     <i class="fas fa-list-ul" aria-hidden="true"></i>
   </div>
-  <!-- js在scripts目录下的的toc.ejs里面 -->
-  <% if(theme.toc.open === false || page.tocOpen === false) { %>
-    <script>
-      if (window.innerWidth >= 992) {
-        $(".toc-aside").css({'width': 0, 'padding': 0});
-        $(".toc-content").css({'width': 0});
-        $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
-        $(".main-content").css({'width': '75%', 'margin': '10px auto'});
-      }
-    </script>
-  <% } %>
-
-  <script>
-    function openBtnClickFn () {
-      let openOrCloseBtn = $('.toc-aside .toc-aside-title .toc-open-close');
-      let open = eval('<%= page.tocOpen %>' || '<%= theme.toc.open %>');
-      openOrCloseBtn.click(function() {
-        if (open === true) {
-          $(".toc-aside").css({'width': 0, 'padding': 0});
-          $(".toc-content").css({'width': 0});
-          $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
-          $(".main-content").css({'width': '75%', 'margin': '10px auto'});
-          open = false;
-        } else {
-          $(".toc-aside").css({'width': '300px', 'padding': '0 10px'});
-          $(".toc-content").css({'width': '300px'});
-          $(".toc-aside-title span, .toc-aside-title i").css({'display': 'inline-block'});
-          $(".main-content").css({'width': '65%', 'margin-right': '10px', 'margin-left': 'calc(35% - 350px)'});
-          open = true;
-        }
-      });
-    };
-    openBtnClickFn();
-    document.addEventListener('pjax:complete', function () {
-      openBtnClickFn();
-    })
-    
-  </script>
-<% } else { %>
-  <script>
-    if (window.innerWidth >= 992) {
-      $(".toc-aside").css({'width': 0, 'padding': 0});
-      $(".toc-content").css({'width': 0});
-      $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
-      $(".main-content").css({'width': '75%', 'margin': '10px auto'});
-    }
-  </script>
 <% } %>
+
+<script>
+  function closeToc(init) {
+    $(".toc-aside").css({'width': 0, 'padding': 0, 'transition': init ?  'noe' : 'width 0.3s' });
+    $(".toc-content").css({'width': 0});
+    $(".toc-aside-title span, .toc-aside-title i").css({'display': 'none'});
+    $(".main-content").css({'width': '75%', 'margin': '10px auto'});
+  };
+  function openToc() {
+    $(".main-content").css({'width': '65%', 'margin-right': '10px', 'margin-left': 'calc(35% - 350px)'});
+    $(".toc-aside").css({'width': '300px', 'padding': '0 10px', 'transition': 'width 0.3s'});
+    $(".toc-content").css({'width': '300px'});
+    $(".toc-aside-title span, .toc-aside-title i").css({'display': 'inline-block'});
+  }
+  function openBtnClickFn () {
+    let openOrCloseBtn = $('.toc-aside .toc-aside-title .toc-open-close');
+    let open = eval('<%- page.tocOpen %>' || '<%- theme.toc.open %>');
+    openOrCloseBtn.click(function() {
+      if (open) {
+        closeToc();
+        open = false;
+      } else {
+        openToc();
+        open = true;
+      }
+    });
+  };
+  openBtnClickFn();
+  initCloseTocWidth(true);
+
+  function initCloseTocWidth(init) {
+    if (window.innerWidth >= 992) {
+      let isClose = <%- theme.toc.open === false || page.tocOpen === false  || theme.toc.on === false || page.toc === false %>;
+      isClose && closeToc(init)
+    }
+  }
+
+  document.addEventListener('pjax:complete', function () {
+    $(".toc-aside").css({'transition': 'no'});
+  })
+  document.addEventListener('pjax:complete', function () {
+    openBtnClickFn();
+  })
+  
+</script>

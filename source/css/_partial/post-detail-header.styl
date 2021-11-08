@@ -14,6 +14,27 @@
   color: $color-post-header-title;
   font-weight: $color-post-header-title-font-weight;
   font-family: '楷体';
+  // css动画效果，需要的话就加上
+  // animation: header-effect 1s;
+  // animation-duration: 1s;
+  // animation-timing-function: ease;
+  // animation-delay: 0s;
+  // animation-iteration-count: 1;
+  // animation-direction: normal;
+  // animation-fill-mode: none;
+  // animation-play-state: running;
+  // animation-name: header-effect;
+
+  @keyframes header-effect {
+    0% {
+      opacity: 0
+      transform: translateY(-50px)
+    }  
+    100% {
+      opacity: 1
+      transform: translateY(0)
+    }
+  }
 
   .post-detail-header-mask {
     position: absolute;

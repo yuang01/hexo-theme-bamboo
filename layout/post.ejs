@@ -4,9 +4,15 @@
 
 <div class="bg-dark-floor" style="position: fixed;left: 0;top: 0;width: 100%;height: 100%;z-index: -1;"></div>
 
-<%- partial('_partial/post/post-detail-header', { post: page }) %>
+<% if (page.imgTop !== false) { %>
+  <%- partial('_partial/post/post-detail-header', { post: page }) %>
+<% } %>
 
-<div class="row justify-position">
+<% 
+  var topSpacing = page.imgTop === false ? '60px' : '0px'; // imgTop为false的时候，距离顶部60px
+%>
+<div class="row justify-position" 
+  style="padding-top: <%- topSpacing %>;">
   <div class="main-content">
     <article class="post post-detail">
       <div class="post-content">

@@ -16,7 +16,6 @@
     <script src="<%- url_for('/js/vue2.6.11.js') %>"></script>
   <% } %>
   
-  
   <body>
     <!-- 预加载动画 -->
     <%- partial('_partial/loaded') %>
@@ -24,15 +23,14 @@
     <!-- 判断是否为暗黑风格 -->
     <%- partial('_partial/scripts/dark') %>
 
-    <!-- 头部导航等 -->
-    <%- partial('_partial/head/header') %>
-
     <!-- 需要在上面加载的js -->
     <%- partial('_partial/scripts/head') %>
 
-    <!-- 内容区域 -->
     <div id="safearea">
-      <main class="main" id="pjax-container" style="<% if(theme.color_scheme.common.headerMenuTransparent && theme.swiper.on) { %>margin-top: 0;<% } else { %>margin-top: 60px;<% } %>">
+      <main class="main" id="pjax-container">
+        <!-- 头部导航 -->
+        <%- partial('_partial/head/header') %>
+        <!-- 内容区域 -->
         <%- body %>
       </main>
     </div>
@@ -68,7 +66,7 @@
     <% } %>
 
     <script src="<%- url_for('/js/utils/index.js') %>"></script>
-    <script src="<%- url_for('/js/app.js') %>" data-pjax></script>
+    <script src="<%- url_for('/js/app.js') %>"></script>
     
     <%- partial('_partial/scripts/index') %>
     <!-- pjax -->
