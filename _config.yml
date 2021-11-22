@@ -380,11 +380,11 @@ socialAccounts:
   # data: # data下面的值，不是固定个数的，可以自己增加或者删除
   #   QQ:
   #     icon: fas fa-qq
-  #     name: 1730241541
+  #     name: xxxxxxxx
   #     url: 'http://www.baidu.com'
   #   微信:
   #     icon: fas fa-weixin
-  #     name: 1730241541
+  #     name: xxxxxxxx
   #     url: 'http://www.baidu.com'
 
 # 关于我 游戏
