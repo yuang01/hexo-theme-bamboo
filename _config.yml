@@ -472,6 +472,11 @@ typed:
 bubble:
   on: true
 
+# waline 评论 https://waline.js.org
+waline:
+  on: false
+  serverURL: 
+
 # valine 评论
 valine:
   on: false
