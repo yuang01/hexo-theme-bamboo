@@ -1,0 +1,31 @@
+<script src="<%- url_for('/js/waline/waline.min.js') %>"></script>
+
+<script type="text/javascript">
+  comment_el = '#waline-comment';
+  var waline;
+  loadWaline = function () {
+    if (!$(comment_el).length) {
+      return;
+    }
+
+    waline = Waline({
+      el: comment_el,
+      serverURL: '<%- theme.waline.serverURL %>',
+      lang: '<%- theme.waline.lang %>',
+      vistor: '<%- theme.waline.vistor %>',
+      emoji: '<%- theme.waline.emoji %>',
+      login: '<%- theme.waline.login %>',
+      wordLimit: '<%- theme.waline.wordLimit %>',
+      pageSize: '<%- theme.waline.pageSize %>',
+      copyright: '<%- theme.waline.copyright %>',
+    });
+  }
+  $(document).ready(loadWaline);
+  document.addEventListener('pjax:complete', function () {
+    if(waline && typeof waline.update === 'function') {
+      waline.update();
+    } else {
+      loadWaline();
+    }
+  });
+</script>
