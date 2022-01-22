@@ -472,12 +472,8 @@ typed:
 bubble:
   on: true
 
-# waline 评论 https://waline.js.org
-waline:
-  on: false
-  serverURL: 
-
-# valine 评论
+# 评论推荐使用 utterance 和 valine
+# valine 评论 https://valine.js.org
 valine:
   on: false
   appid: 
@@ -526,7 +522,7 @@ gitalk:
   clientID:      #`Github Application clientID`
   clientSecret:  #`Github Application clientSecret`
 
-# utterance 评论
+# utterance 评论  官网：https://utteranc.es/
 utterance:
   on: true
   # 仓库名字，格式：你的用户 ID/ 仓库名称，如：yuang01/yuang01.github.io
@@ -538,6 +534,11 @@ utterance:
   # 映射配置
   issue_term: pathname
   cdn: https://utteranc.es/client.js
+
+# waline 评论 https://waline.js.org
+waline:
+  on: false
+  serverURL: 
 
 # 弹幕 只对valine评论有效
 danmu:

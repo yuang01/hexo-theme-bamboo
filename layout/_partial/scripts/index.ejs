@@ -39,6 +39,8 @@
     <%- partial('_partial/comment/gitalk/script') %>
   <% } else if(theme.utterance.on) { %>
     <%- partial('_partial/comment/utterance/script') %>
+  <% } else if(theme.waline.on) {  %>
+    <%- partial('_partial/comment/waline/script') %>
   <% } %>
 <% } %>
 
