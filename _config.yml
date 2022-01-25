@@ -537,7 +537,12 @@ utterance:
 # waline 评论 https://waline.js.org
 waline:
   on: false
-  serverURL: 
+  serverURL: '' # 必填，测试地址：https://waline.vercel.app/
+  lang: 'zh-CN'
+  emoji: ['https://cdn.jsdelivr.net/gh/walinejs/emojis/weibo']
+  login: 'enable'
+  pageSize: 10
+  copyright: true
 
 # 弹幕 只对valine评论有效
 danmu:

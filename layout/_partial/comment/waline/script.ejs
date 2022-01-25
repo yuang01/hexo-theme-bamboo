@@ -1,5 +1,4 @@
 <script src="<%- url_for('/js/waline/waline.min.js') %>"></script>
-
 <script type="text/javascript">
   comment_el = '#waline-comment';
   var waline;
@@ -7,25 +6,22 @@
     if (!$(comment_el).length) {
       return;
     }
+    var walineEmoji = '<%- theme.waline.emoji %>';
+    walineEmoji = walineEmoji.split(',')
 
     waline = Waline({
       el: comment_el,
       serverURL: '<%- theme.waline.serverURL %>',
       lang: '<%- theme.waline.lang %>',
       vistor: '<%- theme.waline.vistor %>',
-      emoji: '<%- theme.waline.emoji %>',
+      emoji: walineEmoji,
       login: '<%- theme.waline.login %>',
-      wordLimit: '<%- theme.waline.wordLimit %>',
       pageSize: '<%- theme.waline.pageSize %>',
-      copyright: '<%- theme.waline.copyright %>',
+      copyright: <%- theme.waline.copyright %>
     });
   }
   $(document).ready(loadWaline);
   document.addEventListener('pjax:complete', function () {
-    if(waline && typeof waline.update === 'function') {
-      waline.update();
-    } else {
-      loadWaline();
-    }
+    loadWaline();
   });
 </script>
