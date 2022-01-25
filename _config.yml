@@ -472,7 +472,6 @@ typed:
 bubble:
   on: true
 
-# 评论推荐使用 utterance 和 valine
 # valine 评论 https://valine.js.org
 valine:
   on: false
