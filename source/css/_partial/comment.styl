@@ -21,8 +21,33 @@
   margin: 10px 0;
 }
 
+#waline-box {
+  padding: 1em; 
+  margin: 15px auto;  
+  background: rgba(255, 255, 255, 0.8);
+  .v[data-class=v] .vbtn.primary {
+    border-color: $color-primary;
+    background: $color-primary;
+    color: #fff;
+  }
+  .v[data-class=v] .vbtn.primary:hover, .v[data-class=v] .vbtn.primary:active {
+    color: #fff !important
+  }
+}
 .darkModel {
-  #gitment-container {
+  #gitment-container,
+  #waline-box {
     background-color: #2d3032;
+  }
+  #waline-comment .v[data-class=v] .vpanel,
+  .v[data-class=v] .veditor:focus, .v[data-class=v] .vinput:focus  {
+    background-color: #2d3032;
+  }
+  #waline-comment {
+    .v[data-class=v] .vheader label,
+    .v[data-class=v] .vaction,
+    .vcount {
+      color: #fff;
+    }
   }
 }
