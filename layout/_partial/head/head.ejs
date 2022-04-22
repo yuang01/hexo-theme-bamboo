@@ -96,7 +96,6 @@
     <link href="<%- url_for(theme.CDN.paceCss) %>" rel="stylesheet">
 
     <% if (theme.valine.on && page.comments !== false) { %>
-        <script src="<%- url_for('/js/valine/av-min@3.0.4.js') %>"></script>
         <script src="<%- url_for(theme.CDN.valine) %>"></script>
     <% } %>
 
