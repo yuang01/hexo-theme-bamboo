@@ -300,7 +300,7 @@ lantern:
 # https://scrollrevealjs.org/api/reveal.html 滚动动画, 旧版本用的是aos.js(已经弃用aos.js)
 scrollreveal:
   on: false
-  js: https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js
+  js: https://unpkg.com/scrollreveal@4.0.6/dist/scrollreveal.min.js
   distance: 120px
   duration: 400 # ms
   interval: 30 # ms
@@ -521,7 +521,7 @@ gitalk:
   clientID:      #`Github Application clientID`
   clientSecret:  #`Github Application clientSecret`
 
-# utterance 评论  官网：https://utteranc.es/
+# utterance 评论  官网：https://utteranc.es/, 建议用这个评论
 utterance:
   on: true
   # 仓库名字，格式：你的用户 ID/ 仓库名称，如：yuang01/yuang01.github.io
@@ -678,7 +678,7 @@ color_scheme:
     contentOpacity: '1'
     # 文章详情页面 --> 透明度, 右侧文章目录背景颜色的透明度
     tocOpacity: '0.8'
-    # bgImg -- 文章详情页背景图, 针对所有的文章详情页背景
+    # bgImg --> 表示文章详情页背景图, 针对所有的文章详情页背景
     # 可以是数组（数组里面是图片地址，多个图片地址会采用 幻灯片 循环显示），
     # 如果背景只想要一个图片：可以使用 ['http://xxxxxx'] 或者 'http://xxxxxxx'，这样的写法, 图片地址也可以是本地路径('/img/xxx.png' or '/medias/xxx.png')
     # 也可以是颜色字符串（例如'#C7EDCC', 或者rgba(0 ,0 ,0, 0.8) 那么会使用该颜色作为背景）
@@ -739,7 +739,7 @@ mermaid:
   on: true
   # built-in themes: default/forest/dark/neutral
   theme: default
-  cdn: https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
+  cdn: https://unpkg.com/mermaid/dist/mermaid.min.js
 
 # pjax
 pjax:
@@ -764,7 +764,7 @@ cursor:
 # https://www.npmjs.com/package/vanilla-lazyload
 lazyload:
   enable: true
-  js: https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js
+  js: https://unpkg.com/vanilla-lazyload@17.1.0/dist/lazyload.min.js
   onlypost: false
   loadingImg: https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg
   blurIn: true # 模糊加载效果 （loadingImg为空时有效）
@@ -824,24 +824,24 @@ imgs:
 - '/medias/15.jpg'
 
 CDN:
-  valine: https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js
+  valine: /js/valine/index.js # https://unpkg.com/valine/dist/Valine.min.js ==> 用这个官方链接则没有 博主标识功能
   iconfont: https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css
-  fontAwesome: https://cdn.jsdelivr.net/gh/inkss/fontawesome@5.15.3/css/all.min.css
-  aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js
-  Meting: https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js
+  fontAwesome: https://unpkg.com/@fortawesome/fontawesome-free/css/all.min.css
+  aplayer: https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js
+  Meting: https://unpkg.com/meting@2/dist/Meting.min.js
   livere: https://cdn-city.livere.com/js/embed.dist.js
-  gitmentCss: https://cdn.jsdelivr.net/npm/gitment@0.0.3/style/default.css
-  gitmentJs: https://cdn.jsdelivr.net/npm/gitment@0.0.3/dist/gitment.browser.js
-  gitalkCss: https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css
-  gitalkJs: https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js
-  busuanzi: //busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js # 卜算子
-  ayuCss: https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.css
-  ayuJs: https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.umd.min.js
+  gitmentCss: https://unpkg.com/gitment@0.0.3/style/default.css
+  gitmentJs: https://unpkg.com/gitment@0.0.3/dist/gitment.browser.js
+  gitalkCss: https://unpkg.com/gitalk@1.7.2/dist/gitalk.css
+  gitalkJs: https://unpkg.com/gitalk@1.7.2/dist/gitalk.min.js
+  busuanzi: //busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js # 不蒜子
+  ayuCss: https://unpkg.com/v-plugs-ayu/lib/ayu.css
+  ayuJs: https://unpkg.com/v-plugs-ayu/lib/ayu.umd.min.js
   copyRight: https://creativecommons.org/licenses/by-nc-nd/4.0/
-  live2d: https://cdn.jsdelivr.net/gh/yuang01/live2d-widget@latest/autoload.js
+  live2d: https://cdn.jsdelivr.net/gh/yuang01/live2d-widget@latest/autoload.js # https://cdn.jsdelivr.net/gh 这个cdn目前国内不太稳定，可能导致左下角人物加载不出来
   paceJs: //cdn.bootcss.com/pace/1.0.2/pace.min.js
   paceCss: //cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css
   weather: https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0
-  typedJs: https://cdn.jsdelivr.net/npm/typed.js@2.0.11
-  jquery: https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js
-  vue: https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js
+  typedJs: https://unpkg.com/typed.js@2.0.11
+  jquery: https://unpkg.com/jquery@3.5.1/dist/jquery.min.js
+  vue: https://unpkg.com/vue@2.6.11/dist/vue.min.js

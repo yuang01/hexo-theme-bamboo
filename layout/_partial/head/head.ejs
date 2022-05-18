@@ -67,7 +67,7 @@
         }
     </script>
     
-    <script src="<%= theme.CDN.live2d %>"></script>
+    <script src="<%- url_for(theme.CDN.live2d) %>"></script>
     <script>
         var live2dOpen = eval('<%= theme.live2d.open %>') || false;
         if (!live2dOpen) {
