@@ -183,6 +183,7 @@ swiper:
   readMoreBtn: true # 阅读更多按钮是否显示
   readMoreBtnBackgroundColor: '' # 阅读更多按钮背景颜色,空字符串则默认使用主题颜色
   bubble: true # 轮播图是否显示气泡,也可以打开底下的花瓣或者雪花特效 sakura（花瓣）: true snow(雪花): true
+  wave: true # 轮播图底下的波浪特效
   # 当没有文章设置swiper: true时候，轮播图会显示以下default默认内容，可自行切换对应内容
   defaultImg: 'https://img11.360buyimg.com/ddimg/jfs/t1/160978/33/20686/2476596/6083e62dEa588862b/63f8f2163ab61b2f.png' # 图片，没有则随机选取
   defaultVideo: '' # video，min-width:992px show
@@ -272,7 +273,7 @@ ribbon:
 
 # live-2d(左下角动画人物)
 live2d:
-  on: true # 控制显示或者隐藏
+  on: false # 控制显示或者隐藏
   modelId:  # 0 or 1 or 2 or 3 or 4 or 5 or 6
   open: true # 默认展开，false则收缩，通过点左下角的方块点击，控制展开或者收缩
 
@@ -638,7 +639,7 @@ color_scheme:
     # 链接色 a标签
     link: '#42b983'
     # 选中区域文字的背景颜色, 后面的小数代表透明度
-    selection: 'alpha(#42b983, 0.8)'
+    selection: 'rgba(66, 185, 133, 0.8)'
     # 顶部页面加载进度条颜色
     pace: '#f6a427'
     # 滚动条颜色, 空字符串则滚动条使用 主题色，否则强制使用该颜色
@@ -651,7 +652,7 @@ color_scheme:
     headerMenuTransparent: true
     headerMenuBackgroundColor: '' 
     # headerMenuBackgroundColor:头部导航背景颜色, 为空则使用theme主题色, 
-    # headerMenuBackgroundColor写法: alpha(#42b983, 0.8) or rgba(268, 264, 269, 0.8) or #42b983 or red or 也可以是渐变颜色 linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%)  or 也可以是url("图片地址")
+    # headerMenuBackgroundColor写法: rgba(268, 264, 269, 0.8) or #42b983 or red or 也可以是渐变颜色 linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%)  or 也可以是url("图片地址")
   # 文章详情页 颜色属性
   post:
     # 文章详情页面-->标题在图片上时候的颜色
@@ -692,10 +693,12 @@ color_scheme:
     ## bgImg，bgImgDelay，bgImgTransition三个属性除了可以在这里全局配置，还可以在单独的文章里配置
     ## 单独的文章里配置，则这bgImg，bgImgDelay，bgImgTransition三个属性优先使用单独的文章里配置的
   footer:
-    # 为空则使用 theme主题色，写法: alpha(#42b983, 0.8) or rgba(268, 264, 269, 0.8) or #42b983 or red or 也可以是渐变颜色 linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%) or 也可以是url("图片地址")
+    # 为空则使用 theme主题色，写法: rgba(268, 264, 269, 0.8) or #42b983 or red or 也可以是渐变颜色 linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%) or 也可以是url("图片地址")
     background: '' 
     # 页脚里面的a标签鼠标移入时候的颜色 red or #000 or other color
     aHover: 'orangered' 
+    # fish --> 表示页脚游动的鱼儿特效, 鱼儿颜色值使用的是footer.background, 只支持rgba(66, 185, 133, 0.8) 或者 #42b983 或者 red 这三种颜色格式的写法，是格式。
+    fish: true 
 
 # 设置网站页脚
 site_footer:
