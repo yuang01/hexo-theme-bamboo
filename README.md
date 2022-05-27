@@ -1,3 +1,4 @@
+# 注意：如果发现图标等显示异常，请及时更新主题
 # hexo-theme-bamboo
 
 ![master version](https://img.shields.io/github/package-json/v/yuang01/hexo-theme-bamboo/dev?label=dev)
