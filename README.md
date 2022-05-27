@@ -1,4 +1,5 @@
 # 注意：如果发现图标等显示异常，请及时更新主题
+建议关闭自带的live2d(左下角小人)，由于`jsdelivr`cdn不稳定，可能导致live2d加载不出来，然后拖慢网页速度
 # hexo-theme-bamboo
 
 ![master version](https://img.shields.io/github/package-json/v/yuang01/hexo-theme-bamboo/dev?label=dev)
