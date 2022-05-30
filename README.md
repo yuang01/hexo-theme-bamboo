@@ -8,7 +8,7 @@
 
 
 
-最新文档，请[点击gitee查看](https://yuang01.gitee.io)，
+最新文档，请[点击gitee查看](https://yuang01.gitee.io)，或者[点击github查看](https://yuang01.github.io)
 
 <table>
     <tr>
