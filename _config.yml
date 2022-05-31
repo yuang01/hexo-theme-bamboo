@@ -176,7 +176,7 @@ swiper:
   autoplay: false # 是否自动轮播
   loop: true # 让轮播看起来是循环的, 例如false的话，到达最后一个轮播图的时候，右按钮不能点击
   delay: 5000 # 切换延迟时间
-  effect: 'slide' # 'fade': 淡入淡出效果 , fade效果暂不支持pjax
+  effect: 'slide' # 'fade': 淡入淡出效果
   textAnimated: 'fadeInDown' # 文字动画，属性使用 animate.css, https://daneden.github.io/animate.css/
   textDuration: '0.2s' # 文字动画持续时间（单位秒）
   textDelay: '0.1s' # 文字动画延迟时间（单位秒）
