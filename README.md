@@ -8,7 +8,7 @@
 
 
 
-最新文档，请[点击gitee查看](https://yuang01.gitee.io)，或者[点击github查看](https://yuang01.github.io)
+最新文档，请[点击github查看](https://yuang01.github.io)
 ## 注意：以后文档更新会在github.io那个地址上更新，gitee pages需要实名认证，所以放弃gitee.io上更新
 <table>
     <tr>
