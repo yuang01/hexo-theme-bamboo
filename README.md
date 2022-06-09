@@ -9,7 +9,6 @@
 
 
 最新文档，请[点击github查看](https://yuang01.github.io)
-## 注意：以后文档更新会在github.io那个地址上更新，gitee pages需要实名认证，所以放弃gitee.io上更新
 <table>
     <tr>
             <th>首页轮播(支持三种显示方式)</th>
@@ -53,6 +52,7 @@ npm i hexo-theme-bamboo
 
 接着在hexo根目录下新建文件`_config.bamboo.yml`,从`node_modules`文件夹下找到`hexo-theme-bamboo`文件夹下的`_config.yml`，将里面的内容复制到`_config.bamboo.yml`文件中即可，在`_config.bamboo.yml`文件中对主题进行配置
 
+## 喜欢的话，可以在github上点个star哦
 
 ## Stargazers over time
 
