@@ -52,6 +52,7 @@ npm i hexo-theme-bamboo
 
 接着在hexo根目录下新建文件`_config.bamboo.yml`,从`node_modules`文件夹下找到`hexo-theme-bamboo`文件夹下的`_config.yml`，将里面的内容复制到`_config.bamboo.yml`文件中即可，在`_config.bamboo.yml`文件中对主题进行配置
 
+## 喜欢的话，可以在github上点个star哦
 
 ## Stargazers over time
 
