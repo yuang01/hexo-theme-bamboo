@@ -800,7 +800,7 @@ wordcount:
 # 自己嵌入css或者script
 import:
   link:
-    # - <link src"xxx.css"></link>
+    # - <link href="xxx.css"  rel="stylesheet">
     - 
     - 
   script: 
