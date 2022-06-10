@@ -2,7 +2,9 @@
   <%
     var layout = theme.site_footer.layout;
   %>
-  <%- partial('./fish') %>
+  <% if (theme.color_scheme.footer.fish) { %>
+    <%- partial('./fish') %>
+  <% } %>
   <div class="footer bg-color">
     <div class="footer-main">
       <% layout.forEach(function(item){ %>
