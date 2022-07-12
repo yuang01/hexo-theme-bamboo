@@ -8,7 +8,7 @@
 
 
 
-最新文档，请[点击github查看](https://yuang01.github.io)
+最新文档，请[点击github查看](https://yuang01.github.io)，or 国内访问: [速度更快](http://120.48.121.186/)
 <table>
     <tr>
             <th>首页轮播(支持三种显示方式)</th>
