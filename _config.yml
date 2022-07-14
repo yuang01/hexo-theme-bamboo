@@ -334,9 +334,9 @@ toc:
 music:
   on: true
   autoHide: true    # hide automaticaly
-  server: tencent   #require	music platform: netease, tencent, kugou, xiami, baidu
-  type: playlist    #require song, playlist, album, search, artist
-  id: 8062553743     #require	song id / playlist id / album id / search keyword
+  server: tencent   # require music platform: netease, tencent, kugou, xiami, baidu
+  type: playlist    # require song, playlist, album, search, artist
+  id: 8062553743    # require song id / playlist id / album id / search keyword
   fixed: true       # 开启吸底模式，建议开启
   autoplay: false   # 是否自动播放, 有些浏览器会禁用自动播放，目前edge可以自动播放
   theme: '#42b983'
@@ -345,7 +345,7 @@ music:
   preload: 'auto'   # 预加载，可选值: 'none', 'metadata', 'auto'
   volume: 0.7       # 默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效
   listFolded: true  # 列表默认折叠
-  hideLrc: false     # 隐藏歌词
+  hideLrc: false    # 隐藏歌词
 
 # 关于我
 baseInfo:
