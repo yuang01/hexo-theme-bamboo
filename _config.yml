@@ -750,7 +750,10 @@ tag_plugins:
   linkImg: 'https://cdn.pixabay.com/photo/2018/12/05/13/41/panda-3857754__340.jpg'
   # getFile标签的左侧默认图片
   getFileImg: 'https://img.51miz.com/Element/00/37/79/59/10df0417_E377959_b7bb9dfa.png'
-  
+  swiper:
+    autoplay: true # 自动播放
+    css: https://unpkg.com/swiper@6/swiper-bundle.min.css
+    js: https://unpkg.com/swiper@6/swiper-bundle.min.js
 # mermaid
 # see https://github.com/mermaid-js/mermaid
 mermaid:

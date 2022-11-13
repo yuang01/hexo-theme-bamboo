@@ -1,7 +1,7 @@
 <script>
   var bambooSwiperTag = {};
   function load_swiper() {
-    if (!document.querySelectorAll(".swiper-container")[0]) return;
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
     loadCSS("<%- theme.tag_plugins.swiper.css %>")
     loadScript("<%- theme.tag_plugins.swiper.js %>").then(() => {
       pjax_swiper();
@@ -11,7 +11,7 @@
   load_swiper();
 
   function pjax_swiper() {
-    bambooSwiperTag.swiper = new Swiper('.swiper-container', {
+    bambooSwiperTag.swiper = new Swiper('.post-swiper-container', {
       slidesPerView: 'auto',
       spaceBetween: 8,
       centeredSlides: true,
@@ -43,7 +43,7 @@
   }
 
   document.addEventListener('pjax:complete', function () {
-    if (!document.querySelectorAll(".swiper-container")[0]) return;
+    if (!document.querySelectorAll(".post-swiper-container")[0]) return;
     if (typeof bambooSwiperTag.swiper === "undefined") {
       load_swiper();
     } else {

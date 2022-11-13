@@ -38,7 +38,7 @@ hexo.extend.tag.register(
         });
       }
     }
-    el += '<div class="tag-plugin swiper-container"';
+    el += '<div class="tag-plugin post-swiper-container"';
     if (args.width && args.width.length > 0) {
       el += " " + hexo.args.joinTags(args, "width").join(" ");
     }
