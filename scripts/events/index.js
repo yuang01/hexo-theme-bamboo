@@ -1,3 +1,7 @@
+hexo.on('generateBefore', () => {
+  require('./lib/stellar-tag-utils')(hexo);
+});
+
 hexo.on('ready', () => {
   const { version } = require('../../package.json');
   hexo.log.info(`
