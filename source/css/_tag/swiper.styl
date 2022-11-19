@@ -7,6 +7,10 @@
   &:not(.swiper-container-initialized) {
     display: none
   }
+  .swiper-wrapper,
+  .swiper-pagination {
+    z-index: 0  
+  }
   div.swiper-slide {
     text-align: left
     display: -webkit-box
@@ -47,6 +51,7 @@
     border-radius: 4px
     background: alpha(white, 0.25)
     transition: background 0.2s ease-out
+    z-index: 1
     --swiper-theme-color: black !important
     &:after {
       font-size: 1.2rem !important
@@ -69,7 +74,7 @@
       font-size: 24px
       color: #fff
       font-weight: 400;
-      z-index: 2;
+      // z-index: 2;
     }
   }
   @media (max-width: 551px) {

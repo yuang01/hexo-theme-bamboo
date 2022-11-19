@@ -1,39 +1,39 @@
 # 配置里面 线上地址写法：http://xxx，本地地址。可以在`source`文件夹下创建目录，假如创建img和videos目录，则引用的时候使用 /img/xxx 写法, /videos/xxx  ... 
 
 # 菜单
-menu:
-  # Home:
-  #   url: /
-  #   icon: fas fa-home
-  # Archives:
-  #   url: /archives
-  #   icon: fas fa-archive
-  # Tags:
-  #   url: /tags
-  #   icon: fas fa-tags
-  # Categories:
-  #   url: /categories
-  #   icon: fas fa-bookmark
-  # About:
-  #   url: /about
-  #   icon: fas fa-user
-  # Friends:
-  #   url: /friends
-  # 更多: # 这是二级菜单的写法
-  #  icon: fas fa-link
-  #  children:
-  #   - name: 图库
-  #     url: /gallery
-  #     icon: fas fa-music
-  #   - name: 友情连接
-  #     url: /huoban
-  #     icon: fas fa-film
-  #   - name: 关于我
-  #     url: /me
-  #     icon: fas fa-film
-  #   - name: 百度
-  #     url: http://baidu.com
-  #     icon: fas fa-film
+# menu:
+#   Home:
+#     url: /
+#     icon: fas fa-home
+#   Archives:
+#     url: /archives
+#     icon: fas fa-archive
+#   Tags:
+#     url: /tags
+#     icon: fas fa-tags
+#   Categories:
+#     url: /categories
+#     icon: fas fa-bookmark
+#   About:
+#     url: /about
+#     icon: fas fa-user
+#   Friends:
+#     url: /friends
+#   更多: # 这是二级菜单的写法
+#    icon: fas fa-link
+#    children:
+#     - name: 图库
+#       url: /gallery
+#       icon: fas fa-music
+#     - name: 友情连接
+#       url: /huoban
+#       icon: fas fa-film
+#     - name: 关于我
+#       url: /me
+#       icon: fas fa-film
+#     - name: 百度
+#       url: http://baidu.com
+#       icon: fas fa-film
 
 # github地址, 头部导航右上角的github链接
 Github: 
@@ -71,6 +71,18 @@ sidebar:
           url: https://github.com/yuang01/hexo-theme-bamboo
         - icon: fab fa-qq
           url: tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=你的qq号码
+    # ---------------------------------------
+    side_toc:
+      on: true
+      background: '#fff'
+      order: -1 # 卡片排序(widget都有)，任意数字，数字小的在上面
+      header:
+        icon: fas fa-list
+        icon_color: # 标题字体颜色
+        title: 本文目录
+      showNumber: true
+      heading: h2, h3, h4 # h2,3,4标题会在目录显示，可以加上 ,h5则h5标题也会显示在目录里
+      collapseDepth: 20 # 折叠深度, 0则会折叠，0-6即可, 20相当于不折叠
     # ---------------------------------------
     # category widget
     side_category:
@@ -322,13 +334,6 @@ baiduAnalytics:
 # 百度搜索资源平台提交链接
 baiduPush: true
 
-# 文章目录
-toc:
-  on: true # 是否显示
-  heading: h2, h3, h4
-  open: true # 是否展开，false则收缩
-  showBtn: true # 是否显示展开收缩按钮
-  showOrderNumber: true # 是否显示序号
 
 # 音乐
 music:
@@ -683,11 +688,11 @@ color_scheme:
     # 文章详情页面--> p标签使用 ``符号 突出的文字颜色
     pLight: '#d63200'
     # 文章详情-页面-> p标签颜色
-    p: '#273849'
+    p: '#213547'
     # 文章详情页面--> title颜色， h1, h2, h3..
-    title: '#273849'
+    title: '#213547'
     # 文章详情页面 -->右侧目录文字颜色
-    toc: '#273849'
+    toc: '#213547'
     # 文章详情页面 --> font-family
     fontFamily: '-apple-system,BlinkMacSystemFont,PingFang SC,Segoe UI,Microsoft YaHei,Hiragino Sans GB,Helvetica Neue,Helvetica,Arial,sans-serif'
     # 文章详情页面 --> 透明度, 左侧文章内容背景颜色的透明度
@@ -798,7 +803,7 @@ prismjs:
 # highlight代码高亮，在根目录下的_config.yml文件中将highlight设为true的时候，在这里自定义颜色值
 # https://github.com/chriskempson/tomorrow-theme
 highlight:
-  background: '#2d2d2d'
+  background: '#292d3e'
   currentLine: '#393939'
   selection: '#515151'
   foreground: '#cccccc'
@@ -864,5 +869,7 @@ CDN:
   paceCss: //cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css
   weather: https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0
   typedJs: https://unpkg.com/typed.js@2.0.11
+  tocbotJs: https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.min.js
+  tocbotCss: https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.css
   jquery: https://unpkg.com/jquery@3.5.1/dist/jquery.min.js
   vue: https://unpkg.com/vue@2.6.11/dist/vue.min.js

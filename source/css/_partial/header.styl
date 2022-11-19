@@ -22,6 +22,7 @@ $borderRadius = 10px
   height: $height;
   box-sizing: border-box;
   z-index: 2;
+  border-bottom: 1px solid #3c3c3c1f;
   // css动画效果，需要的话就加上
   // animation: headerNoOpacity 1s;
   // animation-duration: 1s;
@@ -66,7 +67,7 @@ $borderRadius = 10px
           display: flex;
           justify-content: center;
           a {
-            color: $color-inner;
+            color: #fff;
             display: block;
             overflow: hidden;
             text-align: center;
@@ -129,6 +130,9 @@ $borderRadius = 10px
             transform: translateY(30px);
             transition: all 0.3s;
             opacity: 0;
+            a {
+              color: $color-inner!important;
+            }
             li {
               if hexo-config('color_scheme.common.headerMenuBackgroundColor') {
                 background: convert(hexo-config('color_scheme.common.headerMenuBackgroundColor'));
@@ -149,7 +153,7 @@ $borderRadius = 10px
       }
     }
   }
-
+  
   .blog-title {
     display: flex;
     justify-content: center;
@@ -168,7 +172,7 @@ $borderRadius = 10px
       height: 100%;
     }
     a {
-      color: $color-inner;
+      color: #fff;
       margin-left: 5px;
       display: inline-block;
       font-size: 1.6em;
@@ -186,6 +190,12 @@ $borderRadius = 10px
     .s-sticker-city {
       color: $color-inner!important;  
     }
+  }
+}
+.header-bg-color {
+  .header-content .navbar .menu .menu-item a,
+  .blog-title a {
+    color: $color-inner;
   }
 }
 @media (min-width: 992px) { 
