@@ -26,7 +26,7 @@
   <% } %>
 
   <div class="layout_sticky">    
-    <% if (is_home()) { %>
+    <% if (!is_post()) { %>
       <% if (theme.sidebar.widget_library.side_category.on) { %>
         <%- partial('side/side_category', { item: theme.sidebar.widget_library.side_category }) %>
       <% } %>
