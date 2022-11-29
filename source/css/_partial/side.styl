@@ -1,6 +1,5 @@
 #l_side {
   width: 240px;
-  margin: 20px 0;
   border-radius: 10px;
   box-sizing: border-box;
   display: flex;
@@ -10,7 +9,7 @@
 
   .layout_sticky {
     position: sticky;
-    top: 70px;
+    top: 60px;
     display: flex;
     flex-direction: column;
     order: 10000000;
@@ -39,7 +38,8 @@
   }
 
   .widget {
-    margin-bottom: 16px;
+    // margin-bottom: 16px;
+    margin-top: 15px;
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 1px 20px -6px rgba(0, 0, 0, 0.5);
@@ -172,7 +172,7 @@
     .content {
       .toc-main .toc-content{
         font-size: 0.875rem;
-        max-height: calc(100vh - 130px);
+        max-height: calc(100vh - 140px);
         overflow auto;  
         ol { list-style:none;}
         if (hexo-config('sidebar.widget_library.side_toc.showNumber')) {

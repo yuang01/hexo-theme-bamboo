@@ -5,6 +5,9 @@
   justify-content: center;
   align-items: center;
   color: $color-inner;
+  if (!hexo-config('color_scheme.footer.fish')) {
+    margin-top: 15px;
+  }
 
   if (hexo-config('color_scheme.footer.background')) {
     background: convert(hexo-config('color_scheme.footer.background'));
@@ -63,4 +66,7 @@
       }
     }
   }
+}
+#j-fish-skip {
+  margin-top: 15px;  
 }
