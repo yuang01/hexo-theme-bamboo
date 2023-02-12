@@ -115,7 +115,7 @@ $borderRadius = 10px
               a:hover {
                 transition: background-color 0.3s;
                 background-color: rgba(0, 0, 0, 0.2);
-                text-decoration: underline;
+                text-decoration: none;
               }
             }
           }
@@ -125,23 +125,25 @@ $borderRadius = 10px
             left: calc((140px - 100%) / -2);
             border-radius: $borderRadius;
             height: 0;
-            transition: all 0.3s;
             overflow: hidden;
             transform: translateY(30px);
-            transition: all 0.3s;
+            transition: transform  0.3s, opacity 0.2s;
             opacity: 0;
+
             a {
               color: $color-inner!important;
+              box-sizing: border-box;
+              padding: 15px 10px;
             }
             li {
               if hexo-config('color_scheme.common.headerMenuBackgroundColor') {
                 background: convert(hexo-config('color_scheme.common.headerMenuBackgroundColor'));
-              }  else {
+              } else {
                 background: $color-primary
               }
               width: 140px;
               text-align: center;
-              line-height: 45px;
+              line-height: 1.2;
               &:first-child {
                 overflow: hidden;
                 border-top-left-radius: $borderRadius;
@@ -176,11 +178,8 @@ $borderRadius = 10px
       margin-left: 5px;
       display: inline-block;
       font-size: 1.6em;
-      font-family: "Comic Sans MS",cursive,LiSu,sans-serif;
+      font-family: "Comic Sans MS", LiSu, sans-serif;
       text-decoration: none;
-      // overflow: hidden;
-      // text-overflow:ellipsis; white-space: nowrap;
-      // width: 170px;
     }  
   }
   #he-plugin-simple {
@@ -244,8 +243,3 @@ $borderRadius = 10px
     }
   }
 }
-// @media (max-width: 982px) and (min-width: 551px) {
-//   .header {
-//     padding: 0 60px 0 20px;
-//   }
-// }

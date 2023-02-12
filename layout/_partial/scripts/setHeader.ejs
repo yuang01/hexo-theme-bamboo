@@ -1,7 +1,5 @@
 <script>
   let setHeaderClass = () => {
-    const headerMenuTransparent = <%-theme.color_scheme.common.headerMenuTransparent %>;
-    if (!headerMenuTransparent) { return; }
     const nav = $('#navHeader');
     const navTop = nav.outerHeight();
     const winTop = $(window).scrollTop();

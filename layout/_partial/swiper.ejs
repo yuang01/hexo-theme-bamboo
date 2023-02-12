@@ -270,11 +270,12 @@
   position: relative;
   user-select: none;
   overflow: hidden;
+  font-family: Titillium Web,'PingFang SC','Hiragino Sans GB','Microsoft JhengHei','Microsoft YaHei',sans-serif;
 }
 .default-excerpt {
-  font-size: 1.6rem;
-  margin-top: 1rem;
-  font-family: Titillium Web,'PingFang SC','Hiragino Sans GB','Microsoft JhengHei','Microsoft YaHei',sans-serif;
+  font-size: 1.6em;
+  margin-top: 1em;
+  color: #eee;
 }
 .bottom-one-btn {
   margin-top: 15px;
@@ -323,19 +324,17 @@
   z-index: 9999;
 }
 .flag-text .title {
-  font-size: 1.8rem;
-  font-family: Long Cang,cursive;
+  font-size: 1.8em;
 }
 .flag-text .title a {
   color: #fff;
   transition: color 0.3s;
 }
 .flag-text .title a:hover {
-  color: <%- url_for(theme.color_scheme.common.theme) %>;
+  color: <%- theme.color_scheme.common.theme %>;
 }
 .flag-text .excerpt {
   color: #eee;
-  font-family: Ubuntu,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
   width: 70%;
   line-height: 30px;
   height: 150px;
@@ -363,7 +362,7 @@
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 2.5rem;
+  font-size: 2.5em;
   color: #fff;
   cursor: pointer;
   z-index: 2;
@@ -393,14 +392,12 @@
   animation: rightan 1.5s infinite;
 }
 /* 当头部导航设置为背景透明的时候 */
-<% if(theme.color_scheme.common.headerMenuTransparent) { %>
-  .swiper-slide {
-    height: 400px;
-  }
-  .flag-text {
-    top: 80px;
-  }
-<% } %>
+.swiper-slide {
+  height: 400px;
+}
+.flag-text {
+  top: 80px;
+}
 
 @media (min-width: 992px) {
   .swiper-button-prev {
@@ -439,7 +436,7 @@
     width: 100%;
   }
   .flag-text .title {
-    font-size: 1.5rem;
+    font-size: 1.5em;
     margin-top: 50px;
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -487,7 +484,7 @@
     margin-top: 20px;
   }
   .flag-text .excerpt {
-    font-size: 1rem;
+    font-size: 1em;
     line-height: 20px;
     height: 80px;
     display: -webkit-box;
@@ -513,7 +510,6 @@
   }
 }
 /* 当头部导航设置为背景透明的时候 */
-<% if(theme.color_scheme.common.headerMenuTransparent) { %>
   @media (max-width: 992px) {
     .flag-text {
       top: 60px;
@@ -525,7 +521,6 @@
       height: 310px;
     }
   }
-<% } %>
 
 /* 文字或者按钮居中显示 */
 <% if(theme.swiper.textCenter || theme.swiper.imgwidthFull || theme.swiper.full) { %>
@@ -551,8 +546,7 @@
   .default-excerpt {
     display: flex;
     justify-content: center;
-    font-size: 1.6rem;
-    font-family: Titillium Web,'PingFang SC','Hiragino Sans GB','Microsoft JhengHei','Microsoft YaHei',sans-serif;
+    font-size: 1.6em;
   }
   .flag-text-btns {
     justify-content: center;
@@ -598,7 +592,7 @@
     transform: none;
   }
   .flag-text .title {
-    font-size: 2.2rem;
+    font-size: 2.2em;
     line-height: 1.5em;
     max-height: none;
   }
@@ -622,7 +616,7 @@
     height: 50px;
   }
   .swiper-button-next:after, .swiper-button-prev:after {
-    font-size: 1.2rem;
+    font-size: 1.2em;
   }
   @media (min-width: 992px) {
     .flag-text .excerpt {
@@ -633,7 +627,7 @@
   }
   @media (max-width: 992px) {
     .flag-text .title {
-      font-size: 2.4rem;
+      font-size: 2.4em;
       margin-top: 20px;
       display: -webkit-box;
       -webkit-box-orient: vertical;
@@ -668,10 +662,7 @@
     width: 100%;
   }
   .swiper-slide {
-    height: calc(100vh - 60px);
-    <% if(theme.color_scheme.common.headerMenuTransparent) { %>
-      height: 100vh;
-    <% } %>
+    height: 100vh;
   }
   .flag-text {
     top: 50%;
@@ -681,13 +672,12 @@
     height: auto;
   }
   .flag-text .title {
-    font-size: 2.8rem;
+    font-size: 2.8em;
     line-height: 1.5em;
     max-height: none;
-    /* overflow: visible; */
   }
   .flag-text .excerpt {
-    font-size: 1.25rem;
+    font-size: 1.25em;
     height: 150px;
   }
   .flag-text .read-more {
@@ -727,7 +717,7 @@
     height: 50px;
   }
   .swiper-button-next:after, .swiper-button-prev:after {
-    font-size: 1.2rem;
+    font-size: 1.2em;
   }
   @media (min-width: 992px) {
     .flag-text .excerpt {
@@ -748,7 +738,7 @@
       top: 55%;
     }
     .flag-text .title {
-      font-size: 2.4rem;
+      font-size: 2.4em;
       margin-top: 0;
       display: -webkit-box;
       -webkit-box-orient: vertical;
@@ -768,7 +758,7 @@
       height: 60%;
     }
     .flag-text .title {
-      font-size: 2.2rem;
+      font-size: 2.2em;
     }
     .flag-text .excerpt {
       line-height: 30px;
@@ -784,7 +774,7 @@
       margin-right: 0;
     }
     .default-excerpt {
-      margin-top: 1rem;
+      margin-top: 1em;
     }
   }
 <% } %>
