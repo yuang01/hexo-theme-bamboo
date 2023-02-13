@@ -145,8 +145,8 @@
       display: inline-block;
       cursor: pointer;
       border-radius: 8px
-      background-color: transparent;
-      border: 1px solid transparent;
+      background-color: $color-primary;
+      border: 1px solid $color-primary;
 
       -webkit-user-select: none;
       -moz-user-select: none;
@@ -302,6 +302,9 @@
   h4 {
     font-size: 1.2rem;
     padding-left: 10px;
+  }
+
+  h4:not(.bamboo-h):not(.bamboo-h-b) {
     border-left: 5px solid $color-primary;
   }
 
@@ -360,7 +363,7 @@
     list-style: none;
   }
 
-  ul:not(.post-copyright) li {
+  ul:not(.post-copyright):not(.nav-tabs) li {
     position: relative;
     padding-left: 25px;
     &::before {
@@ -486,7 +489,7 @@
     word-wrap: break-word;
     border: 1px solid $color-primary + 8 * 10% + 1 * .5deg;
   }
-  table tr:hover {
+  table:not(.highlight table) tr:hover {
     background-color: $color-primary + 8.5 * 10% + 1 * .5deg;
   }
   table tr th:first-child, table tr td:first-child {
