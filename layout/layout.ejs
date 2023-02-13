@@ -16,10 +16,9 @@
     <script src="<%- url_for('/js/vue2.6.11.js') %>"></script>
   <% } %>
   
+  <!-- 预加载动画 -->
+  <%- partial('_partial/loaded') %>
   <body>
-    <!-- 预加载动画 -->
-    <%- partial('_partial/loaded') %>
-    
     <!-- 判断是否为暗黑风格 -->
     <%- partial('_partial/scripts/dark') %>
 

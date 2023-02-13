@@ -1,54 +1,63 @@
 #vcomments textarea {
-  box-sizing: border-box;
-  background: url('/source/medias/comment_bg.png') 100% 100% no-repeat;
+	box-sizing: border-box;
+	background: url('/source/medias/comment_bg.png') 100% 100% no-repeat;
 }
 
 #gitalk-container {
-  background: rgba(255, 255, 255, 0.8);
-  padding: 1em;
-  margin: 10px 0;
+	background: rgba(255, 255, 255, 0.8);
+	padding: 1em;
 }
 
 #gitment-ctn {
-  background: rgba(255, 255, 255, 0.8);
-  padding: 1em;
-  margin: 10px 0;
+	background: rgba(255, 255, 255, 0.8);
+	padding: 1em;
 }
 
 #gitment-container {
-  background: rgba(255, 255, 255, 0.8);
-  padding: 1em;
-  margin: 10px 0;
+	background: rgba(255, 255, 255, 0.8);
+	padding: 1em;
+	border-radius: 8px;
+}
+
+#beaudar_container {
+	background: rgba(255, 255, 255, 0.8);
+	padding: 1em;
+	border-radius: 8px;
+	.timeline,
+	.beaudar {
+		max-width: none!important;
+	}
 }
 
 #waline-box {
-  padding: 1em; 
-  margin: 15px auto;  
-  background: rgba(255, 255, 255, 0.8);
-  --waline-theme-color: $color-primary!important;
-  .v[data-class=v] .vbtn.primary {
-    border-color: $color-primary;
-    background: $color-primary;
-    color: #fff;
-  }
-  .v[data-class=v] .vbtn.primary:hover, .v[data-class=v] .vbtn.primary:active {
-    color: #fff !important
-  }
+	padding: 1em;
+	margin: 15px auto;
+	background: rgba(255, 255, 255, 0.8);
+	--waline-theme-color: $color-primary !important;
+
+	.v[data-class=v] .vbtn.primary {
+		border-color: $color-primary;
+		background: $color-primary;
+		color: #fff;
+	}
+
+	.v[data-class=v] .vbtn.primary:hover, .v[data-class=v] .vbtn.primary:active {
+		color: #fff !important;
+	}
 }
+
 .darkModel {
-  #gitment-container,
-  #waline-box {
-    background-color: #2d3032;
-  }
-  #waline-comment .v[data-class=v] .vpanel,
-  .v[data-class=v] .veditor:focus, .v[data-class=v] .vinput:focus  {
-    background-color: #2d3032;
-  }
-  #waline-comment {
-    .v[data-class=v] .vheader label,
-    .v[data-class=v] .vaction,
-    .vcount {
-      color: #fff;
-    }
-  }
+	#gitment-container, #waline-box,
+	#beaudar_container {
+		background-color: #2d3032;
+	}
+	#waline-comment .v[data-class=v] .vpanel, .v[data-class=v] .veditor:focus, .v[data-class=v] .vinput:focus {
+		background-color: #2d3032;
+	}
+
+	#waline-comment {
+		.v[data-class=v] .vheader label, .v[data-class=v] .vaction, .vcount {
+			color: #fff;
+		}
+	}
 }

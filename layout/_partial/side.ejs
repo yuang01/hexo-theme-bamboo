@@ -25,17 +25,22 @@
     <% }) %>
   <% } %>
 
-  <div class="layout_sticky">
-    <% if (theme.sidebar.widget_library.side_category.on) { %>
-      <%- partial('side/side_category', { item: theme.sidebar.widget_library.side_category }) %>
+  <div class="layout_sticky">    
+    <% if (!is_post()) { %>
+      <% if (theme.sidebar.widget_library.side_category.on) { %>
+        <%- partial('side/side_category', { item: theme.sidebar.widget_library.side_category }) %>
+      <% } %>
+      <% if (theme.sidebar.widget_library.side_tagcloud.on) { %>
+        <%- partial('side/side_tagcloud', { item: theme.sidebar.widget_library.side_tagcloud }) %>
+      <% } %>
+      <%- partial('side/side_recent_post', { item: theme.sidebar.widget_library.side_recent_post }) %>
+      <%- partial('side/side_archives') %>
+      <%- partial('side/side_webinfo', { item: theme.sidebar.widget_library.side_webinfo }) %>
+      <%- partial('side/widget_library_sticky') %>
+    <% } else if (is_post()) { %>
+      <%- partial('side/side_toc',  { item: theme.sidebar.widget_library.side_toc }) %>
+      <%- partial('side/side_recent_post', { item: theme.sidebar.widget_library.side_recent_post }) %>
     <% } %>
-    <% if (theme.sidebar.widget_library.side_tagcloud.on) { %>
-      <%- partial('side/side_tagcloud', { item: theme.sidebar.widget_library.side_tagcloud }) %>
-    <% } %>
-    <%- partial('side/side_recent_post', { item: theme.sidebar.widget_library.side_recent_post }) %>
-    <%- partial('side/side_archives') %>
-    <%- partial('side/side_webinfo', { item: theme.sidebar.widget_library.side_webinfo }) %>
-    <%- partial('side/widget_library_sticky') %>
   </div>
 </aside>
 <% } %>

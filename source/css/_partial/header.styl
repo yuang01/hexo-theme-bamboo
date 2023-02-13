@@ -22,6 +22,7 @@ $borderRadius = 10px
   height: $height;
   box-sizing: border-box;
   z-index: 2;
+  border-bottom: 1px solid #3c3c3c1f;
   // css动画效果，需要的话就加上
   // animation: headerNoOpacity 1s;
   // animation-duration: 1s;
@@ -66,7 +67,7 @@ $borderRadius = 10px
           display: flex;
           justify-content: center;
           a {
-            color: $color-inner;
+            color: #fff;
             display: block;
             overflow: hidden;
             text-align: center;
@@ -114,7 +115,7 @@ $borderRadius = 10px
               a:hover {
                 transition: background-color 0.3s;
                 background-color: rgba(0, 0, 0, 0.2);
-                text-decoration: underline;
+                text-decoration: none;
               }
             }
           }
@@ -124,20 +125,25 @@ $borderRadius = 10px
             left: calc((140px - 100%) / -2);
             border-radius: $borderRadius;
             height: 0;
-            transition: all 0.3s;
             overflow: hidden;
             transform: translateY(30px);
-            transition: all 0.3s;
+            transition: transform  0.3s, opacity 0.2s;
             opacity: 0;
+
+            a {
+              color: $color-inner!important;
+              box-sizing: border-box;
+              padding: 15px 10px;
+            }
             li {
               if hexo-config('color_scheme.common.headerMenuBackgroundColor') {
                 background: convert(hexo-config('color_scheme.common.headerMenuBackgroundColor'));
-              }  else {
+              } else {
                 background: $color-primary
               }
               width: 140px;
               text-align: center;
-              line-height: 45px;
+              line-height: 1.2;
               &:first-child {
                 overflow: hidden;
                 border-top-left-radius: $borderRadius;
@@ -149,7 +155,7 @@ $borderRadius = 10px
       }
     }
   }
-
+  
   .blog-title {
     display: flex;
     justify-content: center;
@@ -168,15 +174,12 @@ $borderRadius = 10px
       height: 100%;
     }
     a {
-      color: $color-inner;
+      color: #fff;
       margin-left: 5px;
       display: inline-block;
       font-size: 1.6em;
-      font-family: "Comic Sans MS",cursive,LiSu,sans-serif;
+      font-family: "Comic Sans MS", LiSu, sans-serif;
       text-decoration: none;
-      // overflow: hidden;
-      // text-overflow:ellipsis; white-space: nowrap;
-      // width: 170px;
     }  
   }
   #he-plugin-simple {
@@ -186,6 +189,12 @@ $borderRadius = 10px
     .s-sticker-city {
       color: $color-inner!important;  
     }
+  }
+}
+.header-bg-color {
+  .header-content .navbar .menu .menu-item a,
+  .blog-title a {
+    color: $color-inner;
   }
 }
 @media (min-width: 992px) { 
@@ -234,8 +243,3 @@ $borderRadius = 10px
     }
   }
 }
-// @media (max-width: 982px) and (min-width: 551px) {
-//   .header {
-//     padding: 0 60px 0 20px;
-//   }
-// }

@@ -11,7 +11,7 @@
 <% 
   var topSpacing = page.imgTop === false ? '60px' : '0px'; // imgTop为false的时候，距离顶部60px
 %>
-<div class="row justify-position" 
+<div class="post-detail-content post-row" 
   style="padding-top: <%- topSpacing %>;">
   <div class="main-content">
     <article class="post post-detail">
@@ -55,7 +55,7 @@
   </div>
 
   <!-- 目录 -->
-  <%- partial('_partial/post/toc', { page: page }) %>
+  <%- partial('_partial/side') %>
 
   <!-- 图片放大 Wrap images with fancybox support -->
   <script src="<%- url_for('/js/wrapImage.js') %>"></script>

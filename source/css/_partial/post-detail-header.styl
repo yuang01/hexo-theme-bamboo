@@ -1,19 +1,18 @@
+
 .post-detail-header {
   width: 100%;
   overflow: hidden;
-  height: 400px;
-
-  if (hexo-config('color_scheme.common.headerMenuTransparent')) {
-    height: 450px;
-  }
-
+  height: 450px;
+  
   position: relative;
   background-color: $color-primary;
   background-size: cover;
   background-position: center center;
-  color: $color-post-header-title;
-  font-weight: $color-post-header-title-font-weight;
-  font-family: '楷体';
+  color: #fff;
+  font-weight: lighter;
+  font-family: Consolas, 'Courier New';
+
+  
   // css动画效果，需要的话就加上
   // animation: header-effect 1s;
   // animation-duration: 1s;
@@ -44,16 +43,14 @@
     height: 100%;
     background-color: #000;
     opacity: 0.4;
-    z-index: 1;
     transition: all 0.2s;
   }
 
   .title-box {
     display: block;
     z-index: 2;
-    // margin-bottom: 5px;
   }
-
+  
   .title {
     font-size: 2rem;
     line-height: 1.5;
@@ -62,7 +59,7 @@
 
   .typed-cursor {
     font-size: 2rem;
-    color: $color-post-header-title;
+    color: #fff;
   }
 
   .post-detail-header_info-box {
@@ -76,7 +73,7 @@
 
     .post-detail-header_categories {
       a {
-        color: $color-post-header-title;
+        color: #fff;
       }
 
       a:hover {

@@ -1,8 +1,9 @@
-<link href="<%- url_for('/js/tocbot/tocbot.css') %>" rel="stylesheet">
-<script src="<%- url_for('/js/tocbot/tocbot.min.js') %>"></script>
-
+<!-- <link href="<%- url_for('/js/tocbot/tocbot.css') %>" rel="stylesheet">
+<script src="<%- url_for('/js/tocbot/tocbot.min.js') %>"></script> -->
+<%- js(theme.CDN.tocbotJs) %>
+<%- css(theme.CDN.tocbotCss) %>
 <script>
-  var headerEl = '<%- theme.toc.heading %>',  //headers 
+  var headerEl = '<%- theme.sidebar.widget_library.side_toc.heading %>',  //headers 
     content = '.post-detail',//文章容器
     idArr = {};  //标题数组以确定是否增加索引id
   //add #id
@@ -14,12 +15,15 @@
     // Which headings to grab inside of the contentSelector element.
     headingSelector: headerEl,
     scrollSmooth: true,
-    scrollSmoothOffset: -80,
-    headingsOffset: -($(window).height() * 0.4 - 45),
-    positionFixedSelector: '.toc-main',
-    positionFixedClass: 'is-position-fixed',
+    scrollSmoothOffset: -70,
+    // headingsOffset: -($(window).height() * 0.4 - 45),
+    headingsOffset: -($(window).height() * 0.4 - 70),
+    // positionFixedSelector: '.toc-main',
+    // positionFixedClass: 'is-position-fixed',
     fixedSidebarOffset: 'auto',
     activeLinkClass: 'is-active-link',
+    orderedList: true,
+    collapseDepth: <%- theme.sidebar.widget_library.side_toc.collapseDepth %>,
     // onClick: function (e) {},
   }
   if ($('.toc').length > 0) {
@@ -72,7 +76,7 @@
     if (activePosition > (document.documentElement.clientHeight - 100)) {
       $cardToc.scrollTop = sidebarScrollTop + 150
     }
-    if (activePosition < 100) {
+    if (activePosition < 150) {
       $cardToc.scrollTop = sidebarScrollTop - 150
     }
   }
@@ -92,7 +96,7 @@
   
   // 手机端toc按钮点击出现目录
   const mobileTocClick = function () {
-    const $cardTocLayout = document.getElementsByClassName('toc-aside')[0];
+    const $cardTocLayout = document.getElementsByClassName('side_toc')[0];
     const $cardToc = $cardTocLayout.getElementsByClassName('toc-content')[0];
     let right = '45px';
     if (window.innerWidth >= 551 && window.innerWidth <= 992) {
@@ -124,7 +128,7 @@
 </script>
 
 <style>
-  .is-position-fixed {
+  /* .is-position-fixed {
     position: sticky !important;
     top: 74px;
   }
@@ -139,5 +143,5 @@
     position: absolute;
     left: 12px;
     top: 0;
-  }
+  } */
 </style>

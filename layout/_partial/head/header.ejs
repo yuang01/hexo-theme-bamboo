@@ -10,9 +10,8 @@
 
     var noSwiper = (is_home() && !theme.swiper.on) ? 'no-swiper' : '';
     var topImg = page.imgTop === false ? 'no-img-top' : '';
-    var defaultBg = !theme.color_scheme.common.headerMenuTransparent ? 'header-bg-color' : '';
 %>
-<header class="header <%- noSwiper %> <%- topImg %> <%- defaultBg %>" 
+<header class="header <%- noSwiper %> <%- topImg %>" 
   id="navHeader"
   style="position: fixed;
   left: 0; top: 0; z-index: 10;width: 100%;"

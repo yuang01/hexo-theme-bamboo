@@ -3,6 +3,7 @@
   float: left;
   color: #8a8a8a;
   display: flex;
+  align-items: center;
 
   i {
     margin-right: 5px;
@@ -31,11 +32,7 @@
 .tags-header {
   position: relative;
   width: 100%;
-  height: 50vh;
-
-  if (hexo-config('color_scheme.common.headerMenuTransparent')) {
-    height: 60vh;
-  }
+  height: 60vh;
 
   if (hexo-config('tag.full')) {
     height: 100vh;

@@ -14,7 +14,7 @@ highlight-blue = convert(hexo-config('highlight.blue'));
 highlight-purple = convert(hexo-config('highlight.purple'));
 
 $code-block
-  background: alpha(highlight-background, $color-post-contentOpacity)
+  background: highlight-background
   // margin: 0 article-padding * -1
   padding: 15px article-padding
   border-style: solid
@@ -26,13 +26,15 @@ $code-block
 
 $line-numbers
   color: #666
-  font-size: 0.85em
+  font-size: 1em
 
 .post
   figure.highlight
+    border-radius: 8px
+    border: none
     margin: 0
     pre, code
-      font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
+      font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
       // font-family: font-mono
     code
       background: color-background

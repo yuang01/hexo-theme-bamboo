@@ -1,39 +1,36 @@
 # 配置里面 线上地址写法：http://xxx，本地地址。可以在`source`文件夹下创建目录，假如创建img和videos目录，则引用的时候使用 /img/xxx 写法, /videos/xxx  ... 
 
 # 菜单
-menu:
-  # Home:
-  #   url: /
-  #   icon: fas fa-home
-  # Archives:
-  #   url: /archives
-  #   icon: fas fa-archive
-  # Tags:
-  #   url: /tags
-  #   icon: fas fa-tags
-  # Categories:
-  #   url: /categories
-  #   icon: fas fa-bookmark
-  # About:
-  #   url: /about
-  #   icon: fas fa-user
-  # Friends:
-  #   url: /friends
-  # 更多: # 这是二级菜单的写法
-  #  icon: fas fa-link
-  #  children:
-  #   - name: 图库
-  #     url: /gallery
-  #     icon: fas fa-music
-  #   - name: 友情连接
-  #     url: /huoban
-  #     icon: fas fa-film
-  #   - name: 关于我
-  #     url: /me
-  #     icon: fas fa-film
-  #   - name: 百度
-  #     url: http://baidu.com
-  #     icon: fas fa-film
+# menu:
+#   Home:
+#     url: /
+#     icon: fas fa-home
+#   Archives:
+#     url: /archives
+#     icon: fas fa-archive
+#   Tags:
+#     url: /tags
+#     icon: fas fa-tags
+#   Categories:
+#     url: /categories
+#     icon: fas fa-bookmark
+#   Friends:
+#     url: /friends
+#   更多: # 这是二级菜单的写法
+#    icon: fas fa-link
+#    children:
+#     - name: 图库
+#       url: /gallery
+#       icon: fas fa-music
+#     - name: 友情连接
+#       url: /huoban
+#       icon: fas fa-film
+#     - name: 关于我
+#       url: /me
+#       icon: fas fa-film
+#     - name: 百度
+#       url: http://baidu.com
+#       icon: fas fa-film
 
 # github地址, 头部导航右上角的github链接
 Github: 
@@ -59,7 +56,7 @@ sidebar:
       title: 青墨书晚风
       subtitle: 我是副标题
       jinrishici: true # Poetry Today. You can set a string, and it will be displayed when loading fails.
-      fontFammily: Long Cang,cursive
+      fontFammily: Titillium Web,'PingFang SC','Hiragino Sans GB','Microsoft JhengHei','Microsoft YaHei',sans-serif
       background: '#fff'
       order:  # 卡片排序, 数值越小，越在上面
       social:
@@ -71,6 +68,18 @@ sidebar:
           url: https://github.com/yuang01/hexo-theme-bamboo
         - icon: fab fa-qq
           url: tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=你的qq号码
+    # ---------------------------------------
+    side_toc:
+      on: true
+      background: '#fff'
+      order: -1 # 卡片排序(widget都有)，任意数字，数字小的在上面
+      header:
+        icon: fas fa-list
+        icon_color: # 标题字体颜色
+        title: 本文目录
+      showNumber: true
+      heading: h2, h3, h4 # h2,3,4标题会在目录显示，可以加上 ,h5则h5标题也会显示在目录里
+      collapseDepth: 20 # 折叠深度, 0则会折叠，0-6即可, 20相当于不折叠
     # ---------------------------------------
     # category widget
     side_category:
@@ -166,6 +175,7 @@ sidebar:
 # 页面刷新时预加载动画
 preloader:
   on: true
+  type: 2 # 1/2/3/4/5/6/7/8/9
 
 # 首页轮播图设置
 swiper:
@@ -176,15 +186,16 @@ swiper:
   autoplay: false # 是否自动轮播
   loop: true # 让轮播看起来是循环的, 例如false的话，到达最后一个轮播图的时候，右按钮不能点击
   delay: 5000 # 切换延迟时间
-  effect: 'slide' # 'fade': 淡入淡出效果 , fade效果暂不支持pjax
+  effect: 'slide' # 'fade': 淡入淡出效果
   textAnimated: 'fadeInDown' # 文字动画，属性使用 animate.css, https://daneden.github.io/animate.css/
   textDuration: '0.2s' # 文字动画持续时间（单位秒）
   textDelay: '0.1s' # 文字动画延迟时间（单位秒）
   readMoreBtn: true # 阅读更多按钮是否显示
   readMoreBtnBackgroundColor: '' # 阅读更多按钮背景颜色,空字符串则默认使用主题颜色
   bubble: true # 轮播图是否显示气泡,也可以打开底下的花瓣或者雪花特效 sakura（花瓣）: true snow(雪花): true
+  wave: true # 轮播图底下的波浪特效
   # 当没有文章设置swiper: true时候，轮播图会显示以下default默认内容，可自行切换对应内容
-  defaultImg: 'https://img11.360buyimg.com/ddimg/jfs/t1/160978/33/20686/2476596/6083e62dEa588862b/63f8f2163ab61b2f.png' # 图片，没有则随机选取
+  defaultImg: 'https://pic4.zhimg.com/80/v2-5317ee3782ed2cdc733a907b0065f895_1440w.jpg' # 图片，没有则随机选取
   defaultVideo: '' # video，min-width:992px show
   defaultVideoLoadingImg: 'https://img14.360buyimg.com/ddimg/jfs/t1/175057/18/19582/882056/60ee7ac8Ef0045710/202d2ad878684a3b.gif' # video loading img -- use .gif img, 视频预加载动画，使用gif图片作为loading，为空则视频没有预加载动画
   defaultTile: '青墨书晚风' # 标题
@@ -230,9 +241,9 @@ donate:
   on: true
 donate_message: 你的赏识是我前进的动力
 # 支付宝打赏图片相对路径
-Alipay: '/medias/zfb.jpg'
+Alipay: 'https://pica.zhimg.com/80/v2-61f99f8dcf899f54cad2a1aa28b21e44_1440w.webp'
 # 微信打赏图片相对路径
-WeChatpay: '/medias/wx.jpg'
+WeChatpay: 'https://pic2.zhimg.com/80/v2-29e78b52051ce542adf6d786d61fbd19_1440w.webp'
 
 # 分享功能
 sharejs: 
@@ -272,7 +283,7 @@ ribbon:
 
 # live-2d(左下角动画人物)
 live2d:
-  on: true # 控制显示或者隐藏
+  on: false # 控制显示或者隐藏
   modelId:  # 0 or 1 or 2 or 3 or 4 or 5 or 6
   open: true # 默认展开，false则收缩，通过点左下角的方块点击，控制展开或者收缩
 
@@ -300,7 +311,7 @@ lantern:
 # https://scrollrevealjs.org/api/reveal.html 滚动动画, 旧版本用的是aos.js(已经弃用aos.js)
 scrollreveal:
   on: false
-  js: https://cdn.jsdelivr.net/npm/scrollreveal@4.0.6/dist/scrollreveal.min.js
+  js: https://unpkg.com/scrollreveal@4.0.6/dist/scrollreveal.min.js
   distance: 120px
   duration: 400 # ms
   interval: 30 # ms
@@ -321,21 +332,14 @@ baiduAnalytics:
 # 百度搜索资源平台提交链接
 baiduPush: true
 
-# 文章目录
-toc:
-  on: true # 是否显示
-  heading: h2, h3, h4
-  open: true # 是否展开，false则收缩
-  showBtn: true # 是否显示展开收缩按钮
-  showOrderNumber: true # 是否显示序号
 
 # 音乐
 music:
   on: true
   autoHide: true    # hide automaticaly
-  server: tencent   #require	music platform: netease, tencent, kugou, xiami, baidu
-  type: playlist    #require song, playlist, album, search, artist
-  id: 8062553743     #require	song id / playlist id / album id / search keyword
+  server: tencent   # require music platform: netease, tencent, kugou, xiami, baidu
+  type: playlist    # require song, playlist, album, search, artist
+  id: 8062553743    # require song id / playlist id / album id / search keyword
   fixed: true       # 开启吸底模式，建议开启
   autoplay: false   # 是否自动播放, 有些浏览器会禁用自动播放，目前edge可以自动播放
   theme: '#42b983'
@@ -344,72 +348,7 @@ music:
   preload: 'auto'   # 预加载，可选值: 'none', 'metadata', 'auto'
   volume: 0.7       # 默认音量，请注意播放器会记忆用户设置，用户手动设置音量后默认音量即失效
   listFolded: true  # 列表默认折叠
-  hideLrc: false     # 隐藏歌词
-
-# 关于我
-baseInfo:
-  on: true
-  age: 99 # 年龄
-  sex: '男' # 性别
-  coordinate: '火星' # 坐标
-  status: '划水中' # 状态
-
-# 关于我 技能
-skills:  # color or #000 技能
-  on: true
-  # data: # data下面的值，不是固定个数的，可以自己增加或者删除
-  #   HTML5:
-  #     background: 'linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%)'
-  #     percent: 90%
-  #   JavaScript:
-  #     background: 'linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%)'
-  #     percent: 85%
-  #   Node.js:
-  #     background: 'linear-gradient(to right, #43e97b 0%, #38f9d7 100%)'
-  #     percent: 50%
-  #   CSS:
-  #     background: 'linear-gradient(to right, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%)'
-  #     percent: 70%
-  #   Vue:
-  #     background: 'linear-gradient(to top, #0ba360 0%, #3cba92 100%)'
-  #     percent: 90%
-
-# 关于我 社交账号
-socialAccounts: 
-  on: true
-  # data: # data下面的值，不是固定个数的，可以自己增加或者删除
-  #   QQ:
-  #     icon: fas fa-qq
-  #     name: xxxxxxxx
-  #     url: 'http://www.baidu.com'
-  #   微信:
-  #     icon: fas fa-weixin
-  #     name: xxxxxxxx
-  #     url: 'http://www.baidu.com'
-
-# 关于我 游戏
-games:
-  on: true
-  # data: # data下面的值，不是固定个数的，可以自己增加或者删除
-  #   王者荣耀:
-  #     img: 'https://pic2.zhimg.com/80/v2-54730a36304842b86a57a237b8b39945_720w.jpg?source=1940ef5c'
-  #   英雄杀:
-  #     img: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1909008358,1888649581&fm=26&gp=0.jpg'
-  #   和平精英:
-  #     img: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1595596612190&di=dbf2030780758c4724ecb1f07f2f4f73&imgtype=0&src=http%3A%2F%2Fimgup04.51wxjz.com%2F51wxjz%2F2019-06%2F05%2F09%2F15596983468928_0.png'
-  #   英雄联盟:
-  #     img: 'https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3035766587,2822701570&fm=26&gp=0.jpg'
-
-# 关于我 书籍
-books:
-  on: true
-  # data: # data下面的值，不是固定个数的，可以自己增加或者删除
-  #   明朝那些事儿:
-  #     img: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=2736238052,2078148140&fm=26&gp=0.jpg'
-  #   春秋左传:
-  #     img: 'https://pic2.zhimg.com/50/v2-6f33f60312de25ddcb795fc81ee91b38_720w.jpg?source=54b3c3a5'
-  #   孙子兵法:
-  #     img: 'https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=710999414,899378807&fm=26&gp=0.jpg'
+  hideLrc: false    # 隐藏歌词
 
 #版权信息  coryRyght
 copyright:
@@ -521,7 +460,7 @@ gitalk:
   clientID:      #`Github Application clientID`
   clientSecret:  #`Github Application clientSecret`
 
-# utterance 评论  官网：https://utteranc.es/
+# utterance 评论  官网：https://utteranc.es/, 建议用这个评论
 utterance:
   on: true
   # 仓库名字，格式：你的用户 ID/ 仓库名称，如：yuang01/yuang01.github.io
@@ -533,6 +472,21 @@ utterance:
   # 映射配置
   issue_term: pathname
   cdn: https://utteranc.es/client.js
+
+# beaudar
+# https://beaudar.lipk.org/
+beaudar:
+  on: false
+  repo:  # 填写仓库名字，格式：你的用户 ID/ 仓库名称，如：yuang01/yuang01.github.io
+  issue-term: pathname
+  issue-number:
+  branch: main
+  position: top
+  order: desc
+  theme:
+    light: github-light
+    dark: github-dark
+  label: ✨💬✨
 
 # waline 评论 https://waline.js.org
 waline:
@@ -632,53 +586,25 @@ color_scheme:
   # 通用颜色
   common:
     # 主题色
-    theme: '#42b983'
+    theme: 'rgba(66, 185, 133, 0.8)'
     # 主题色块内部的文字颜色
     inner: '#fff'
     # 链接色 a标签
     link: '#42b983'
-    # 选中区域文字的背景颜色, 后面的小数代表透明度
-    selection: 'alpha(#42b983, 0.8)'
-    # 顶部页面加载进度条颜色
-    pace: '#f6a427'
-    # 滚动条颜色, 空字符串则滚动条使用 主题色，否则强制使用该颜色
-    scroll: '#42b983'
     # 首页文章列表的背景颜色, url("http://xxx.png") or red or #000 or rgba() ..
     postListBackground: 'rgba(255,255,255,1)'
     # 首页页面的底部背景颜色，空字符串透明('transparent')，可以是白色('#fff')等颜色, 也可以是图片，例如  'url("https://img11.360buyimg.com/ddimg/jfs/t1/169624/29/16/4603017/5fec2c79Eecbd536a/308b28b82a013cd2.png")'
-    bgFloor: 'url("https://pic1.zhimg.com/80/v2-b4b71405d08bc1952025ba1bd5db54f3_1440w.jpg?source=1940ef5c")' # 如果是图片地址，url里面请用双引号
-    # 头部导航是否背景透明，滚动条在对顶端的时候,头部导航背景透明
-    headerMenuTransparent: true
+    bgFloor: 'url("https://pic2.zhimg.com/80/v2-a90e3e9f544549e244355039b96bd606_1440w.jpg")' # 如果是图片地址，url里面请用双引号
     headerMenuBackgroundColor: '' 
     # headerMenuBackgroundColor:头部导航背景颜色, 为空则使用theme主题色, 
-    # headerMenuBackgroundColor写法: alpha(#42b983, 0.8) or rgba(268, 264, 269, 0.8) or #42b983 or red or 也可以是渐变颜色 linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%)  or 也可以是url("图片地址")
+    # headerMenuBackgroundColor写法: rgba(268, 264, 269, 0.8) or #42b983 or red or 也可以是渐变颜色 linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%)  or 也可以是url("图片地址")
   # 文章详情页 颜色属性
   post:
-    # 文章详情页面-->标题在图片上时候的颜色
-    headerTitle: '#fff'
-    # 文章详情页面-->标题在图片上时候字体粗细
-    headerTitleFontWeight: 'normal' # 100-900 or bold, normal, bolder, lighter
-    #文章详情页面--> copy按钮背景色, 空字符串则copy按钮背景为 主题颜色，否则强制使用该颜色
-    copyBackground: ''
-    #文章详情页面--> copy按钮文字颜色, 空字符串则copy按钮字体颜色为 主题色块内部的文字颜色，否则强制使用该颜色
-    copyColor: ''
-    # 代码高亮部分的背景色, 空字符串则使用-代码高亮配置-的背景颜色，否则强制使用该颜色作为代码高亮背景色, highlight的背景色，请在highlight.background中设置
-    codeBackground: ''
-    # 文章详情页面--> p标签使用 ``符号 突出的文字颜色
-    pLight: '#d63200'
-    # 文章详情-页面-> p标签颜色
-    p: '#273849'
-    # 文章详情页面--> title颜色， h1, h2, h3..
-    title: '#273849'
-    # 文章详情页面 -->右侧目录文字颜色
-    toc: '#273849'
     # 文章详情页面 --> font-family
     fontFamily: '-apple-system,BlinkMacSystemFont,PingFang SC,Segoe UI,Microsoft YaHei,Hiragino Sans GB,Helvetica Neue,Helvetica,Arial,sans-serif'
     # 文章详情页面 --> 透明度, 左侧文章内容背景颜色的透明度
     contentOpacity: '1'
-    # 文章详情页面 --> 透明度, 右侧文章目录背景颜色的透明度
-    tocOpacity: '0.8'
-    # bgImg -- 文章详情页背景图, 针对所有的文章详情页背景
+    # bgImg --> 表示文章详情页背景图, 针对所有的文章详情页背景
     # 可以是数组（数组里面是图片地址，多个图片地址会采用 幻灯片 循环显示），
     # 如果背景只想要一个图片：可以使用 ['http://xxxxxx'] 或者 'http://xxxxxxx'，这样的写法, 图片地址也可以是本地路径('/img/xxx.png' or '/medias/xxx.png')
     # 也可以是颜色字符串（例如'#C7EDCC', 或者rgba(0 ,0 ,0, 0.8) 那么会使用该颜色作为背景）
@@ -692,10 +618,12 @@ color_scheme:
     ## bgImg，bgImgDelay，bgImgTransition三个属性除了可以在这里全局配置，还可以在单独的文章里配置
     ## 单独的文章里配置，则这bgImg，bgImgDelay，bgImgTransition三个属性优先使用单独的文章里配置的
   footer:
-    # 为空则使用 theme主题色，写法: alpha(#42b983, 0.8) or rgba(268, 264, 269, 0.8) or #42b983 or red or 也可以是渐变颜色 linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%) or 也可以是url("图片地址")
+    # 为空则使用 theme主题色，写法: rgba(268, 264, 269, 0.8) or #42b983 or red or 也可以是渐变颜色 linear-gradient(45deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%) or 也可以是url("图片地址")
     background: '' 
     # 页脚里面的a标签鼠标移入时候的颜色 red or #000 or other color
     aHover: 'orangered' 
+    # fish --> 表示页脚游动的鱼儿特效, 鱼儿颜色值使用的是footer.background, 只支持rgba(66, 185, 133, 0.8) 或者 #42b983 或者 red 这三种颜色格式的写法，是格式。
+    fish: true 
 
 # 设置网站页脚
 site_footer:
@@ -732,14 +660,17 @@ tag_plugins:
   linkImg: 'https://cdn.pixabay.com/photo/2018/12/05/13/41/panda-3857754__340.jpg'
   # getFile标签的左侧默认图片
   getFileImg: 'https://img.51miz.com/Element/00/37/79/59/10df0417_E377959_b7bb9dfa.png'
-
+  swiper:
+    autoplay: true # 自动播放
+    css: https://unpkg.com/swiper@6/swiper-bundle.min.css
+    js: https://unpkg.com/swiper@6/swiper-bundle.min.js
 # mermaid
 # see https://github.com/mermaid-js/mermaid
 mermaid:
   on: true
   # built-in themes: default/forest/dark/neutral
   theme: default
-  cdn: https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js
+  cdn: https://unpkg.com/mermaid/dist/mermaid.min.js
 
 # pjax
 pjax:
@@ -764,9 +695,9 @@ cursor:
 # https://www.npmjs.com/package/vanilla-lazyload
 lazyload:
   enable: true
-  js: https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.1.0/dist/lazyload.min.js
+  js: https://unpkg.com/vanilla-lazyload@17.1.0/dist/lazyload.min.js
   onlypost: false
-  loadingImg: https://img2.baidu.com/it/u=2037979560,2772131037&fm=26&fmt=auto&gp=0.jpg
+  loadingImg: https://pic1.zhimg.com/v2-cd38920285d125be80b3eb504052c550_b.webp
   blurIn: true # 模糊加载效果 （loadingImg为空时有效）
 
 
@@ -777,7 +708,7 @@ prismjs:
 # highlight代码高亮，在根目录下的_config.yml文件中将highlight设为true的时候，在这里自定义颜色值
 # https://github.com/chriskempson/tomorrow-theme
 highlight:
-  background: '#2d2d2d'
+  background: '#292d3e'
   currentLine: '#393939'
   selection: '#515151'
   foreground: '#cccccc'
@@ -797,7 +728,7 @@ wordcount:
 # 自己嵌入css或者script
 import:
   link:
-    # - <link src"xxx.css"></link>
+    # - <link href="xxx.css"  rel="stylesheet">
     - 
     - 
   script: 
@@ -807,41 +738,43 @@ import:
 
 # 文章图片,不指定 img:xxx 的时候随机取下面的图片
 imgs:
-- '/medias/1.jpg'
-- '/medias/2.jpg'
-- '/medias/3.jpg'
-- '/medias/4.jpg'
-- '/medias/5.jpg'
-- '/medias/6.jpg'
-- '/medias/7.jpg'
-- '/medias/8.jpg'
-- '/medias/9.jpg'
-- '/medias/10.jpg'
-- '/medias/11.jpg'
-- '/medias/12.jpg'
-- '/medias/13.jpg'
-- '/medias/14.jpg'
-- '/medias/15.jpg'
+- 'https://pic1.zhimg.com/80/v2-03a22891ccba9bccf6424dfd7cbf4be7_1440w.webp'
+- 'https://picx.zhimg.com/80/v2-b44931ea513e5f7b3b06f2703f79653c_1440w.webp'
+- 'https://picx.zhimg.com/80/v2-9c50d3af0bc62a0e8b6e89e24c769317_1440w.webp'
+- 'https://picx.zhimg.com/80/v2-85c31120acff76826ab53ea8934ef4bb_1440w.webp'
+- 'https://pica.zhimg.com/80/v2-573ac3e25de03fad9c32add5a05e5cfc_1440w.webp'
+- 'https://pic4.zhimg.com/80/v2-83ea273b88e119d9615aed0d89aad4ab_1440w.webp'
+- 'https://pic3.zhimg.com/80/v2-5f7cb7e900b9dcf5354c3d4d2c5cc3c2_1440w.webp'
+- 'https://pic2.zhimg.com/80/v2-63bbdb5b76b8d349ad35ff4281efbd37_1440w.webp'
+- 'https://pic3.zhimg.com/80/v2-7cfc909ebe8d83683909846edd6b5232_1440w.webp'
+- 'https://pic2.zhimg.com/80/v2-e22aaad20d20634f506f57fff0fcbc17_1440w.webp'
+- 'https://pica.zhimg.com/80/v2-61f99f8dcf899f54cad2a1aa28b21e44_1440w.webp'
+- 'https://pic4.zhimg.com/80/v2-e434e3a2888fb4efb1844845b8791d1f_1440w.webp'
+- 'https://pic3.zhimg.com/v2-a5267dfbf175991d4b3a69b41f3f678a_b.jpg'
+- 'https://pic3.zhimg.com/80/v2-e5c15010b8ba4608a1974403a02a2da0_1440w.webp'
+- 'https://pic2.zhimg.com/80/v2-29e78b52051ce542adf6d786d61fbd19_1440w.webp'
 
 CDN:
-  valine: https://cdn.jsdelivr.net/gh/HCLonely/Valine@latest/dist/Valine.min.js
+  valine: /js/valine/index.js # https://unpkg.com/valine/dist/Valine.min.js ==> 用这个官方链接则没有 博主标识功能
   iconfont: https://at.alicdn.com/t/font_1911880_c1nvbyezg17.css
-  fontAwesome: https://cdn.jsdelivr.net/gh/inkss/fontawesome@5.15.3/css/all.min.css
-  aplayer: https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js
-  Meting: https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js
+  fontAwesome: https://unpkg.com/@fortawesome/fontawesome-free/css/all.min.css
+  aplayer: https://unpkg.com/aplayer@1.10.1/dist/APlayer.min.js
+  Meting: https://unpkg.com/meting@2/dist/Meting.min.js
   livere: https://cdn-city.livere.com/js/embed.dist.js
-  gitmentCss: https://cdn.jsdelivr.net/npm/gitment@0.0.3/style/default.css
-  gitmentJs: https://cdn.jsdelivr.net/npm/gitment@0.0.3/dist/gitment.browser.js
-  gitalkCss: https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css
-  gitalkJs: https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js
-  busuanzi: //busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js # 卜算子
-  ayuCss: https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.css
-  ayuJs: https://cdn.jsdelivr.net/npm/v-plugs-ayu/lib/ayu.umd.min.js
+  gitmentCss: https://unpkg.com/gitment@0.0.3/style/default.css
+  gitmentJs: https://unpkg.com/gitment@0.0.3/dist/gitment.browser.js
+  gitalkCss: https://unpkg.com/gitalk@1.7.2/dist/gitalk.css
+  gitalkJs: https://unpkg.com/gitalk@1.7.2/dist/gitalk.min.js
+  busuanzi: //busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js # 不蒜子
+  ayuCss: https://unpkg.com/v-plugs-ayu/lib/ayu.css
+  ayuJs: https://unpkg.com/v-plugs-ayu/lib/ayu.umd.min.js
   copyRight: https://creativecommons.org/licenses/by-nc-nd/4.0/
-  live2d: https://cdn.jsdelivr.net/gh/yuang01/live2d-widget@latest/autoload.js
+  live2d: https://cdn.jsdelivr.net/gh/yuang01/live2d-widget@latest/autoload.js # https://cdn.jsdelivr.net/gh 这个cdn目前国内不太稳定，可能导致左下角人物加载不出来
   paceJs: //cdn.bootcss.com/pace/1.0.2/pace.min.js
   paceCss: //cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css
   weather: https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0
-  typedJs: https://cdn.jsdelivr.net/npm/typed.js@2.0.11
-  jquery: https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js
-  vue: https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js
+  typedJs: https://unpkg.com/typed.js@2.0.11
+  tocbotJs: https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.min.js
+  tocbotCss: https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.18.2/tocbot.css
+  jquery: https://unpkg.com/jquery@3.5.1/dist/jquery.min.js
+  vue: https://unpkg.com/vue@2.6.11/dist/vue.min.js

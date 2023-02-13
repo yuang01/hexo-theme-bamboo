@@ -15,7 +15,7 @@ figure.gallery-group
   &:hover
     img
       opacity: .4
-      transform: translate3d(0, 0, 0)
+      transform: translate3d(0, 0, 0) translateX(0)!important
 
     .gallery-group-name::after
       transform: translate3d(0, 0, 0)
@@ -26,14 +26,14 @@ figure.gallery-group
 
   img
     position: relative
-    margin: 0 !important
-    max-width: none
+    margin: 0
+    max-width: none !important
     width: calc(100% + 20px)
     height: 250px
     backface-visibility: hidden
     opacity: .8
     transition: opacity .35s, transform .35s
-    transform: translate3d(-10px, 0, 0)
+    transform: translate3d(-10px, 0, 0) translateX(0)
     object-fit: cover
 
   figcaption

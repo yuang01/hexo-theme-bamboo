@@ -1,3 +1,6 @@
+body {
+  font-family: -apple-system,BlinkMacSystemFont,PingFang SC,Segoe UI,Microsoft YaHei,Hiragino Sans GB,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
 body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button, input, textarea, th, td {
   margin: 0;
   padding: 0;
@@ -85,12 +88,7 @@ p, input, pre code, textarea, *[text] {
 }
 
 .main {
-  if (hexo-config('color_scheme.common.headerMenuTransparent')) {
-    min-height: calc(100vh - 130px);
-  } else {
-    min-height: calc(100vh - 190px);
-  }
-
+  min-height: calc(100vh - 130px);
   box-sizing: border-box;
 }
 
@@ -126,11 +124,7 @@ a {
 
 // 滚动条
 ::-webkit-scrollbar-thumb {
-  if (hexo-config('color_scheme.common.scroll')) {
-    background-color: $color-scroll;
-  } else {
-    background-color: $color-primary;
-  }
+  background-color: $color-primary;
 
   border-radius: 3em;
 }
@@ -140,20 +134,16 @@ a {
   height: 6px;
 }
 
-pre::-webkit-scrollbar-thumb, .toc-aside .toc-content::-webkit-scrollbar-thumb {
+pre::-webkit-scrollbar-thumb, .side_toc .toc-content::-webkit-scrollbar-thumb {
   background: transparent;
 }
 
-pre:hover::-webkit-scrollbar-thumb, .toc-aside .toc-content:hover::-webkit-scrollbar-thumb {
+pre:hover::-webkit-scrollbar-thumb, .side_toc .toc-content:hover::-webkit-scrollbar-thumb {
   background-color: #ccc;
 }
 
-pre:hover::-webkit-scrollbar-thumb:hover, .toc-aside .toc-content:hover::-webkit-scrollbar-thumb:hover {
-  if (hexo-config('color_scheme.common.scroll')) {
-    background-color: $color-scroll;
-  } else {
-    background-color: $color-primary;
-  }
+pre:hover::-webkit-scrollbar-thumb:hover, .side_toc .toc-content:hover::-webkit-scrollbar-thumb:hover {
+  background-color: $color-primary;
 }
 
 // 媒体查询
@@ -165,12 +155,12 @@ pre:hover::-webkit-scrollbar-thumb:hover, .toc-aside .toc-content:hover::-webkit
 
 // 鼠标选择背景色
 ::-moz-selection {
-  background: $color-selection;
+  background: $color-primary
   color: #fff;
 }
 
 ::selection {
-  background: $color-selection;
+  background: $color-primary
   color: #fff;
 }
 
