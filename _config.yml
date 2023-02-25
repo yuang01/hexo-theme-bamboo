@@ -555,26 +555,6 @@ categoryDetail:
   video: ''
   background: '' # red or rgba(255,255,255,0.8) or other color or url("http:xxx.png")
 
-# 关于我页面，配置同上
-about:
-  title: 'about'
-  img: 'https://pic4.zhimg.com/80/v2-d12b0c9802720897793993a5a199720f_1440w.jpg'
-  desc: '愿你如风，被人温柔以待'
-  full: false
-  video: ''
-  background: '' # red or rgba(255,255,255,0.8) or other color or url("http:xxx.png")
-  titleColor: '' # 标题字体颜色
-
-# 友情链接页面，配置同上
-friends:
-  title: 'friends'
-  img: 'https://pic2.zhimg.com/80/v2-2407599a217ba89f9499c282f129d44d_1440w.jpg?source=1940ef5c'
-  desc: '愿你如风，被人温柔以待'
-  full: false
-  video: ''
-  background: '' # red or rgba(255,255,255,0.8) or other color or url("http:xxx.png")
-  titleColor: '' # 标题字体颜色
-
 # 黑夜模式, 关灯
 dark:
   on: true # 是否显示开关灯
