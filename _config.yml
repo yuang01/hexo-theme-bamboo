@@ -45,7 +45,6 @@ favicon: /favicon.ico # or .png .jpg .svg .gif .jpeg .ico
 
 # sidebar侧边栏
 sidebar:
-  on: true
   position: left # left right
   widget_library:
     side_blogger:
