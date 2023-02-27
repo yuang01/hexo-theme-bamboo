@@ -3,7 +3,7 @@
     <% if (item.header.url) { %>
       <a style="color: <%- item.header.icon_color %>" href='<%- item.header.url %>'><i class="<%- item.header.icon %> fa-fw" aria-hidden="true"></i><span class='name'><%- item.header.title %></span></a>
     <% } else { %>
-      <i style="color: <%- item.header.icon_color %>" class="<%- item.header.icon %> fa-fw" aria-hidden="true"></i><span class='name'><%- item.header.title %></span>
+      <i style="color: <%- item.header.icon_color %>" class="<%- item.header.icon %> fa-fw" aria-hidden="true"></i><span class='name' style="color: <%- item.header.icon_color %>"><%- item.header.title %></span>
     <% } %>
   </header>
 <% } %>

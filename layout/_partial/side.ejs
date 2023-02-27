@@ -43,4 +43,13 @@
     <% } %>
   </div>
 </aside>
+<% } else {%>
+  <% if (is_post()) { %>
+  <aside id='l_side'>
+    <div class="layout_sticky"> 
+      <%- partial('side/side_toc',  { item: theme.sidebar.widget_library.side_toc }) %>
+      <%- partial('side/side_recent_post', { item: theme.sidebar.widget_library.side_recent_post }) %>
+    </div>
+  </aside>
+  <% } %>
 <% } %>

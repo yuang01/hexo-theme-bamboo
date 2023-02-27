@@ -77,7 +77,7 @@ sidebar:
         icon: fas fa-list
         icon_color: # 标题字体颜色
         title: 本文目录
-      showNumber: true
+      before: number
       heading: h2, h3, h4 # h2,3,4标题会在目录显示，可以加上 ,h5则h5标题也会显示在目录里
       collapseDepth: 20 # 折叠深度, 0则会折叠，0-6即可, 20相当于不折叠
     # ---------------------------------------
