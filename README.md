@@ -8,7 +8,7 @@
 
 
 
-最新文档，请[netifly查看](https://hexo-theme-bamboo.netlify.app/), 或者 [yuang01.github.io查看](https://yuang01.github.io)，或者[http://120.48.121.186查看](http://120.48.121.186/)
+最新文档，请[netifly查看](https://hexo-theme-bamboo.netlify.app/), 或者 [yuang01.github.io查看](https://yuang01.github.io)
 <table>
     <tr>
             <th>首页轮播(支持三种显示方式)</th>
