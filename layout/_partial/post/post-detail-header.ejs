@@ -35,7 +35,7 @@
       </span>
     </div>
     
-    <% if (post.onlyTitle != true) { %>
+    <% if (post.onlyTitle != true && is_post()) { %>
       <% if (post.date) { %>
         <span class="post-detail-header_date">
           <i class="fas fa-calendar"></i> <%= __('publishedIn') %>：<%- date(post.date, "YYYY-MM-DD") %> |

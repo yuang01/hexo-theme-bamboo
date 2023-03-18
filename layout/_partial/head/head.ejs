@@ -67,7 +67,7 @@
         }
     </script>
     
-    <script src="<%- url_for(theme.CDN.live2d) %>"></script>
+    <script defer src="<%- url_for(theme.CDN.live2d) %>"></script>
     <script>
         var live2dOpen = eval('<%= theme.live2d.open %>') || false;
         if (!live2dOpen) {
@@ -80,7 +80,7 @@
   <%- css('css/style.css') %>
   
   <% if(theme.fancybox.on === true ) { %>
-    <%- css('js/fancybox/jquery.fancybox.min.css') %>
+    <link href="<%- url_for(theme.fancybox.css) %>" rel="stylesheet">
   <% } %>
   <% if(theme.sharejs.on === true ) { %>
     <%- css(['js/shareJs/share.min.css']) %>
@@ -92,11 +92,24 @@
             }
         }
     </style>
-    <script src="<%- url_for(theme.CDN.paceJs) %>"></script>
+    <script defer src="<%- url_for(theme.CDN.paceJs) %>"></script>
     <link href="<%- url_for(theme.CDN.paceCss) %>" rel="stylesheet">
 
     <% if (theme.valine.on && page.comments !== false) { %>
         <script src="<%- url_for(theme.CDN.valine) %>"></script>
+    <% } %>
+    
+    <!-- 依赖于jquery和vue -->
+    <% if(theme.CDN.jquery) { %>
+        <script src="<%- url_for(theme.CDN.jquery) %>"></script>
+    <% } else { %>
+        <script src="<%- url_for('/js/jquery3.5.1.js') %>"></script>
+    <% } %>
+
+    <% if(theme.CDN.vue) { %>
+        <script src="<%- url_for(theme.CDN.vue) %>"></script>
+    <% } else { %>
+        <script src="<%- url_for('/js/vue2.6.11.js') %>"></script>
     <% } %>
 
     <!-- import link -->

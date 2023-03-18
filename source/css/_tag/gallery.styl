@@ -99,3 +99,33 @@ div.fancybox
     color: #888
     &:empty
       display: none
+
+.waterfall-picture-container {
+  .gallery {
+    &[col='1'],
+    &[col='1']>.fancybox {
+      width: 100%; 
+    }
+    &[col='2']>.fancybox {
+      width: "calc(50% - 2 * %s)" % 1px
+    }
+    &[col='3']>.fancybox {
+      width: "calc(33.33% - 2 * %s)" % 1px
+    }
+    &[col='4']>.fancybox {
+      width: "calc(25% - 2 * %s)" % 1px
+    }
+    &[col='5']>.fancybox {
+      width: "calc(20% - 2 * %s)" % 1px
+    }
+    &[col='6']>.fancybox {
+      width: "calc(16.66% - 2 * %s)" % 1px
+    }
+    &[col='7']>.fancybox {
+      width: "calc(14.2857% - 2 * %s)" % 1px
+    }
+    &[col='8']>.fancybox {
+      width: "calc(12.5% - 2 * %s)" % 1px
+    }
+  }
+}

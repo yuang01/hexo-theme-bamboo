@@ -224,9 +224,11 @@ swiper:
 goTop: 
   on: true
 
-# 图片点击放大功能
+# 图片点击放大功能, http://fancyapps.com/fancybox/
 fancybox: 
   on: true
+  css: https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css
+  js:  https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js
 
 # 统计网站访问数量
 busuanzi:

@@ -3,19 +3,6 @@
   <!-- meta/link... -->
   <%- partial('_partial/head/head') %>
   
-  <!-- 依赖于jquery和vue -->
-  <% if(theme.CDN.jquery) { %>
-    <%- js(theme.CDN.jquery) %>
-  <% } else { %>
-    <script src="<%- url_for('/js/jquery3.5.1.js') %>"></script>
-  <% } %>
-
-  <% if(theme.CDN.vue) { %>
-    <%- js(theme.CDN.vue) %>
-  <% } else { %>
-    <script src="<%- url_for('/js/vue2.6.11.js') %>"></script>
-  <% } %>
-  
   <!-- 预加载动画 -->
   <%- partial('_partial/loaded') %>
   <body>
@@ -52,7 +39,7 @@
 
     <!-- 图片放大 -->
     <% if(theme.fancybox.on === true ) { %>
-      <script src="<%- url_for('/js/fancybox/jquery.fancybox.min.js') %>"></script>
+      <script src="<%- url_for(theme.fancybox.js) %>"></script>
     <% } %>
 
     <!-- 百度解析 -->
