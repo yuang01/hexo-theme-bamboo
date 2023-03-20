@@ -24,6 +24,7 @@ function wrapImageWithFancyBox() {
     .not(".btns img")
     .not(".gallery-group-img")
     .not('.getJsonPhoto-api img')
+    .not('.getJsonTalk-api img')
     .each(function () {
       var $image = $(this);
       var imageCaption = $image.attr("alt");
