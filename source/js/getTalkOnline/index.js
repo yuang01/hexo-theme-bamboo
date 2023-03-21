@@ -111,7 +111,6 @@ const getTalkJson = {
     }
     let talkCard = `${cardHtml}`;
     $(el).append(talkCard);
-    waterfall(el);
     result = result + talkCard;
     
     if (index < files.length) {
@@ -143,7 +142,9 @@ const getTalkJson = {
       if (dt.length > 0) {
         let isRegular = cfg.isRegular || null;
         let box = getTalkJson.renderBox(dt, index, cfg.api, isRegular, el);
-
+        setTimeout(() => {
+          waterfall(el);
+        });
       } else {
         $(el).append(`<p style="color:red">${cfg.api} 没有图片链接</p>`);
       }
