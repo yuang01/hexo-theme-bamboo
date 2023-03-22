@@ -71,8 +71,24 @@ const getTalkJson = {
 					</a>`;
 			}
 			if (musicId) {
-				// 只支持网易云单曲,输入id
-				musicHtml = `<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=100% height=86 src="//music.163.com/outchain/player?type=2&id=${musicId}&auto=1&height=66"></iframe>`;
+				// 固定写死网易云单曲,输入id
+        musicHtml = `
+          <meting-js  
+            class=""
+            server="netease"
+            type="song"
+            id="${musicId}"
+            fixed=false
+            autoplay='false'
+            theme='#42b983'
+            loop='all'
+            order='list'
+            preload='auto'
+            volume='0.7'
+            list-folded=true
+            hideLrc=false
+        >
+          `
 			}
 			if (date) {
 				timeHtml = `
@@ -144,7 +160,7 @@ const getTalkJson = {
         let box = getTalkJson.renderBox(dt, index, cfg.api, isRegular, el);
         setTimeout(() => {
           waterfall(el);
-        });
+        }, 500); // 音乐加载会有时间，所以先就用settimeout延迟一下
       } else {
         $(el).append(`<p style="color:red">${cfg.api} 没有图片链接</p>`);
       }
