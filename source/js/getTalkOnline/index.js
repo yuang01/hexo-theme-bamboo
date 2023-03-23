@@ -73,21 +73,23 @@ const getTalkJson = {
 			if (musicId) {
 				// 固定写死网易云单曲,输入id
         musicHtml = `
-          <meting-js  
-            class=""
-            server="netease"
-            type="song"
-            id="${musicId}"
-            fixed=false
-            autoplay='false'
-            theme='#42b983'
-            loop='all'
-            order='list'
-            preload='auto'
-            volume='0.7'
-            list-folded=true
-            hideLrc=false
-        >
+          <div class="music">
+            <meting-js  
+              class=""
+              server="netease"
+              type="song"
+              id="${musicId}"
+              fixed=false
+              autoplay='false'
+              theme='#42b983'
+              loop='all'
+              order='list'
+              preload='auto'
+              volume='0.7'
+              list-folded=true
+              hideLrc=false
+          >
+        </div>
           `
 			}
 			if (date) {
@@ -158,9 +160,7 @@ const getTalkJson = {
       if (dt.length > 0) {
         let isRegular = cfg.isRegular || null;
         let box = getTalkJson.renderBox(dt, index, cfg.api, isRegular, el);
-        setTimeout(() => {
-          waterfall(el);
-        }, 500); // 音乐加载会有时间，所以先就用settimeout延迟一下
+        waterfall(el);
       } else {
         $(el).append(`<p style="color:red">${cfg.api} 没有图片链接</p>`);
       }
