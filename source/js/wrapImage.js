@@ -56,6 +56,7 @@ function wrapImageWithFancyBox() {
     });
   
   Fancybox.bind('[data-fancybox="images"]', {
+    Hash: false,
     Toolbar: {
       display: {
         left: ["infobar"],
