@@ -481,7 +481,7 @@ beaudar:
   repo:  # 填写仓库名字，格式：你的用户 ID/ 仓库名称，如：yuang01/yuang01.github.io
   issue-term: pathname
   issue-number:
-  branch: main
+  branch: main   # 根据仓库选择，如果主分支是master，则这里写master
   position: top
   order: desc
   theme:
@@ -610,7 +610,7 @@ color_scheme:
 site_footer:
   # 通过layout控制页脚元素的显示和顺序
   # busuanzi是访客数那个,假如说你想在 social和 copyright中间加一个自定义内容, 可以这样写 layout: [social, aaa ,copyright, busuanzi, custom], 然后在下面写上aaa: 'markdown格式', aaa这个名称随便取
-  layout: [social, copyright, busuanzi, custom]
+  layout: [social, copyright, custom]
   social:
     # - icon: fas fa-rss
     #   url: /atom.xml
