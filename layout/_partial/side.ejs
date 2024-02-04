@@ -1,10 +1,7 @@
-<% if (theme.sidebar.on){ %>
 <aside id='l_side'>
-  <% if (theme.sidebar.on){ %>
-    <% if (theme.sidebar.widget_library) { %>
-      <% if (theme.sidebar.widget_library.side_blogger.on) { %>
-        <%- partial('side/side_blogger', { item: theme.sidebar.widget_library.side_blogger }) %>
-      <% } %>
+  <% if (theme.sidebar.widget_library) { %>
+    <% if (theme.sidebar.widget_library.side_blogger.on) { %>
+      <%- partial('side/side_blogger', { item: theme.sidebar.widget_library.side_blogger }) %>
     <% } %>
   <% } %>
   
@@ -43,4 +40,3 @@
     <% } %>
   </div>
 </aside>
-<% } %>

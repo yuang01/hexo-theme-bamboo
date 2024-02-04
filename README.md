@@ -6,9 +6,18 @@
 ![https://img.shields.io/npm/v/hexo-theme-bamboo?color=%09%23bf00ff](https://img.shields.io/npm/v/hexo-theme-bamboo?color=%09%23bf00ff)
 ![hexo version](https://img.shields.io/badge/hexo-5.0+-0e83c)
 
+<div style="display: flex;align-items: center;">
+ <a target="_blank" href="https://github.com/yuang01/hexo-theme-bamboo">
+        <img src="https://img.shields.io/github/stars/yuang01/hexo-theme-bamboo.svg?style=social" alt="github star">
+    </a>
+    <a target="_blank" href="https://github.com/yuang01/hexo-theme-bamboo">
+        <img src="https://gitee.com/yuang01/hexo-theme-bamboo/badge/star.svg" alt="star">
+    </a>
+</div>
 
+最新文档，请[netifly查看](https://hexo-theme-bamboo.netlify.app/), 或者 [yuang01.github.io查看](https://yuang01.github.io), 或者 [http://120.48.121.186/查看](http://120.48.121.186/)
 
-最新文档，请[点击github查看](https://yuang01.github.io)，or 国内访问: [速度更快](http://120.48.121.186/)
+## 欢迎贡献代码，或者优化代码，优化样式等
 <table>
     <tr>
             <th>首页轮播(支持三种显示方式)</th>

@@ -6,7 +6,6 @@ $(document).ready(function () {
  * Wrap images with fancybox support.
  */
 function wrapImageWithFancyBox() {
-  $.fancybox.defaults.hash = false;
   $(".post-detail")
     .find("img")
     .not(".swiper-slide img")
@@ -24,6 +23,8 @@ function wrapImageWithFancyBox() {
     .not(".link-card img")
     .not(".btns img")
     .not(".gallery-group-img")
+    .not('.getJsonPhoto-api img')
+    .not('.getJsonTalk-api img')
     .each(function () {
       var $image = $(this);
       var imageCaption = $image.attr("alt");
@@ -46,16 +47,30 @@ function wrapImageWithFancyBox() {
       $imageWrapLink.attr("data-fancybox", "images");
       if (imageCaption) {
         $imageWrapLink.attr("data-caption", imageCaption);
-        $linkWrapDiv.append(
-          '<span class="image-caption">' + imageCaption + "</span>"
-        );
+        if (!$linkWrapDiv.hasClass('image-caption')) {
+          $linkWrapDiv.append(
+            '<span class="image-caption">' + imageCaption + "</span>"
+          );
+        }
       }
     });
-
-  $('[data-fancybox="images"]').fancybox({
-    buttons: ["slideShow", "thumbs", "zoom", "fullScreen", "close"],
-    thumbs: {
-      autoStart: false,
+  
+  Fancybox.bind('[data-fancybox="images"]', {
+    Hash: false,
+    Toolbar: {
+      display: {
+        left: ["infobar"],
+        middle: [
+          "zoomIn",
+          "zoomOut",
+          "toggle1to1",
+          "rotateCCW",
+          "rotateCW",
+          "flipX",
+          "flipY",
+        ],
+        right: ["slideshow", "thumbs", "close"],
+      },
     },
   });
 }

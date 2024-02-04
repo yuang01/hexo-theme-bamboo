@@ -175,7 +175,7 @@
         max-height: calc(100vh - 140px);
         overflow auto;  
         ol { list-style:none;}
-        if (hexo-config('sidebar.widget_library.side_toc.showNumber')) {
+        if (hexo-config('sidebar.widget_library.side_toc.before') == 'number') {
           li:before {color:#000; font-family:Times New Roman;}
           li{counter-increment:a 1;}
           li:before{content:counter(a)". ";} 
@@ -183,6 +183,8 @@
           li li:before{content:counter(a)"."counter(b)". ";}
           li li li{counter-increment:c 1;} 
           li li li:before{content:counter(a)"."counter(b)"."counter(c)". ";}
+        } else {
+          li:before{content: hexo-config('sidebar.widget_library.side_toc.before');} 
         }
         a:hover {
           color: $color-primary;

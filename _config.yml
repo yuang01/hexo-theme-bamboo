@@ -45,12 +45,11 @@ favicon: /favicon.ico # or .png .jpg .svg .gif .jpeg .ico
 
 # sidebar侧边栏
 sidebar:
-  on: true
   position: left # left right
   widget_library:
     side_blogger:
       on: true
-      avatar: http://api.btstu.cn/sjtx/api.php?lx=c1&format=images
+      avatar: https://pic2.zhimg.com/80/v2-42b72d5ebee4b8d8aa70d9687effe87b_1440w.webp
       shape: rectangle # circle, rectangle
       url: /about/
       title: 青墨书晚风
@@ -77,7 +76,7 @@ sidebar:
         icon: fas fa-list
         icon_color: # 标题字体颜色
         title: 本文目录
-      showNumber: true
+      before: number # number为序号，可以是自定义表情字符
       heading: h2, h3, h4 # h2,3,4标题会在目录显示，可以加上 ,h5则h5标题也会显示在目录里
       collapseDepth: 20 # 折叠深度, 0则会折叠，0-6即可, 20相当于不折叠
     # ---------------------------------------
@@ -195,7 +194,7 @@ swiper:
   bubble: true # 轮播图是否显示气泡,也可以打开底下的花瓣或者雪花特效 sakura（花瓣）: true snow(雪花): true
   wave: true # 轮播图底下的波浪特效
   # 当没有文章设置swiper: true时候，轮播图会显示以下default默认内容，可自行切换对应内容
-  defaultImg: 'https://pic4.zhimg.com/80/v2-5317ee3782ed2cdc733a907b0065f895_1440w.jpg' # 图片，没有则随机选取
+  defaultImg: 'https://pic1.zhimg.com/v2-af3ccef61cf58b1a70765747cc1bbeac_b.jpg' # 图片，没有则随机选取
   defaultVideo: '' # video，min-width:992px show
   defaultVideoLoadingImg: 'https://img14.360buyimg.com/ddimg/jfs/t1/175057/18/19582/882056/60ee7ac8Ef0045710/202d2ad878684a3b.gif' # video loading img -- use .gif img, 视频预加载动画，使用gif图片作为loading，为空则视频没有预加载动画
   defaultTile: '青墨书晚风' # 标题
@@ -225,9 +224,11 @@ swiper:
 goTop: 
   on: true
 
-# 图片点击放大功能
+# 图片点击放大功能, http://fancyapps.com/fancybox/
 fancybox: 
   on: true
+  css: https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.css
+  js:  https://unpkg.com/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js
 
 # 统计网站访问数量
 busuanzi:
@@ -480,7 +481,7 @@ beaudar:
   repo:  # 填写仓库名字，格式：你的用户 ID/ 仓库名称，如：yuang01/yuang01.github.io
   issue-term: pathname
   issue-number:
-  branch: main
+  branch: main   # 根据仓库选择，如果主分支是master，则这里写master
   position: top
   order: desc
   theme:
@@ -555,26 +556,6 @@ categoryDetail:
   video: ''
   background: '' # red or rgba(255,255,255,0.8) or other color or url("http:xxx.png")
 
-# 关于我页面，配置同上
-about:
-  title: 'about'
-  img: 'https://pic4.zhimg.com/80/v2-d12b0c9802720897793993a5a199720f_1440w.jpg'
-  desc: '愿你如风，被人温柔以待'
-  full: false
-  video: ''
-  background: '' # red or rgba(255,255,255,0.8) or other color or url("http:xxx.png")
-  titleColor: '' # 标题字体颜色
-
-# 友情链接页面，配置同上
-friends:
-  title: 'friends'
-  img: 'https://pic2.zhimg.com/80/v2-2407599a217ba89f9499c282f129d44d_1440w.jpg?source=1940ef5c'
-  desc: '愿你如风，被人温柔以待'
-  full: false
-  video: ''
-  background: '' # red or rgba(255,255,255,0.8) or other color or url("http:xxx.png")
-  titleColor: '' # 标题字体颜色
-
 # 黑夜模式, 关灯
 dark:
   on: true # 是否显示开关灯
@@ -629,7 +610,7 @@ color_scheme:
 site_footer:
   # 通过layout控制页脚元素的显示和顺序
   # busuanzi是访客数那个,假如说你想在 social和 copyright中间加一个自定义内容, 可以这样写 layout: [social, aaa ,copyright, busuanzi, custom], 然后在下面写上aaa: 'markdown格式', aaa这个名称随便取
-  layout: [social, copyright, busuanzi, custom]
+  layout: [social, copyright, custom]
   social:
     # - icon: fas fa-rss
     #   url: /atom.xml
