@@ -1,4 +1,4 @@
-<script src="<%- url_for('/js/twikoo/twikoo.all.min.js') %>"></script>
+<script src="https://cdn.bootcdn.net/ajax/libs/twikoo/1.6.31/twikoo.all.min.js"></script>
 
 <script type="text/javascript">
   comment_el = '#tcomment';
@@ -6,7 +6,7 @@
     if ($(comment_el).length) {
       twikoo.init({
         envId: '<%- theme.twikoo.envId %>',
-        el: '#tcomments',
+        el: '#tcomment',
         region: '<%- theme.twikoo.region %>',
         path: '<%- theme.twikoo.path %>'
       })

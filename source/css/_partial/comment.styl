@@ -23,17 +23,47 @@
 	background: rgba(255, 255, 255, 0.8);
 	padding: 1em;
 	border-radius: 8px;
-	.timeline,
-	.beaudar {
-		max-width: none!important;
+
+	.timeline, .beaudar {
+		max-width: none !important;
+	}
+}
+
+#tcomment_container {
+	background: rgba(255, 255, 255, 1);
+	padding: 1em;
+	border-radius: 8px;
+
+	.twikoo .el-button--primary.is-disabled, .twikoo .el-button--primary.is-disabled:active, .twikoo .el-button--primary.is-disabled:focus, .twikoo .el-button--primary.is-disabled:hover {
+		background: alpha($color-primary, 0.5);
+	}
+
+	.el-button--primary {
+		background: $color-primary;
+		border-color: $color-primary;
+	}
+
+	.twikoo .el-button:not(.el-button--primary):not(.el-button--text):active, .twikoo .el-button:not(.el-button--primary):not(.el-button--text):focus, .twikoo .el-button:not(.el-button--primary):not(.el-button--text):hover {
+		color: $color-primary;
+		background-color: $color-primary-shallow;
+		border-color: alpha($color-primary, 0.5);
+	}
+
+	.tk-icon.__comments, .tk-action-icon, .tk-nick-link:hover, .tk-action-count {
+		color: $color-primary;
+	}
+
+	.twikoo .el-textarea__inner:focus,
+	.twikoo .el-input__inner:focus {
+		border-color: $color-primary;
 	}
 }
 
 #lv-container {
-  background: rgba(255, 255, 255, 0.8);
+	background: rgba(255, 255, 255, 0.8);
 	padding: 1em;
 	border-radius: 8px;
-  margin: 0!important;
+	margin: 0 !important;
 }
 
 #waline-box {
@@ -54,14 +84,24 @@
 }
 
 .darkModel {
-	#gitment-container, #waline-box,
-	#beaudar_container {
-		background-color: #2d3032;
-	}
-	#waline-comment .v[data-class=v] .vpanel, .v[data-class=v] .veditor:focus, .v[data-class=v] .vinput:focus {
+	#gitment-container, #waline-box, #beaudar_container {
 		background-color: #2d3032;
 	}
 
+	#waline-comment .v[data-class=v] .vpanel, .v[data-class=v] .veditor:focus, .v[data-class=v] .vinput:focus {
+		background-color: #2d3032;
+	}
+	#tcomment_container {
+		background-color: #2d3032;
+		color: #c9d1d9;
+		.tk-expand {
+			border: 1px solid #c9d1d9;
+			&:hover {
+				color: $color-primary;
+				border-color: $color-primary;	
+			}	
+		}
+	}
 	#waline-comment {
 		.v[data-class=v] .vheader label, .v[data-class=v] .vaction, .vcount {
 			color: #fff;

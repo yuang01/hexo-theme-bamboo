@@ -429,7 +429,7 @@ valine:
 # https://twikoo.js.org
 twikoo:
   on: false
-  envId: twikoo-1gs9l0fb17e7897a # 环境 ID，搭建教程：https://twikoo.js.org/quick-start.html
+  envId: '您的环境id' # 环境 ID，搭建教程：https://twikoo.js.org/backend.html
   # region: ap-guangzhou # 环境地域，默认为 ap-shanghai
   # path: 'window.location.pathname' # 自定义文章路径
 
