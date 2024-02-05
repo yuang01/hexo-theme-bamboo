@@ -430,6 +430,8 @@ valine:
 twikoo:
   on: false
   envId: '您的环境id' # 环境 ID，搭建教程：https://twikoo.js.org/backend.html
+  lightGallery: false # 评论图片点击放大
+  js: https://cdn.bootcdn.net/ajax/libs/twikoo/1.6.31/twikoo.all.min.js
   # region: ap-guangzhou # 环境地域，默认为 ap-shanghai
   # path: 'window.location.pathname' # 自定义文章路径
 
