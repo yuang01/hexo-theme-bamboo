@@ -17,7 +17,11 @@
 
 最新文档，请[netifly查看](https://hexo-theme-bamboo.netlify.app/)
 
-<table>
+![图片描述](https://pic1.zhimg.com/80/v2-33f4b9320449fe8a2046f62a15f79740_1440w.webp)
+![图片描述](https://pic1.zhimg.com/80/v2-06eb82cb2a1d3086d15fbe9c52730264_1440w.webp)
+![图片描述](https://pic3.zhimg.com/80/v2-5b09d23242026bfd0eebee8292737ba6_1440w.webp)
+
+<!-- <table>
     <tr>
             <th>首页轮播(支持三种显示方式)</th>
             <th>首页内容</th>
@@ -34,7 +38,7 @@
         <td><img src="https://img12.360buyimg.com/ddimg/jfs/t1/182808/27/4130/743199/609e2728Edd209b4b/30dc231a7446a625.png" /></td>
         <td><img src="https://img11.360buyimg.com/ddimg/jfs/t1/180598/31/4047/606158/609e2929E85cd5694/4f91990995bc1931.png" /></td>
     </tr>
-</table>
+</table> -->
 
 <!-- more -->
 ## 下载
