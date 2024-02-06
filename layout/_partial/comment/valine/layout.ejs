@@ -1,11 +1,11 @@
 
-<section id="comments" style="padding: 1em;"
-	class="animated bounceInUp">
+<section id="comments" style="padding: 1em;">
 	<div id="vcomment" class="comment"></div>
 </section>
 <style>
 	#comments {
 		background: <%- theme.valine.backgroundColor %>;
+		border-radius: 8px;
 	}
 	#veditor {
 		background-image: url('<%- url_for(theme.valine.backgroundImg) %>');
@@ -19,13 +19,7 @@
 		background-position-y: 200px;
 		transition: all 0.2s ease-in-out 0s;
 	}
-	#vcomment .vcards .vcard .vh .vhead .vtag.vvisitor {
-		background-color: #42b983;
-	}
-	.v[data-class=v] .vbtn:active, .v[data-class=v] .vbtn:hover {
-		color: #42b983;
-		border-color: #42b983;
-	}
+	
 	#vcomment .vcards .vcard .vhead .vsys i {
 		display: none;
 	}

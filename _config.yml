@@ -423,13 +423,15 @@ valine:
   friends: [] # 小伙伴的 邮箱md5， 是个数组
   requiredFields: [] # 设置必填项 ['nick', 'mail'] nick为昵称必填， mail为邮箱必填，建议设置必填，填写qq邮箱，会使用qq头像作为头像
   backgroundImg: 'https://img.zcool.cn/community/01a253594c71cfa8012193a329a77f.gif' # 右下角背景图片
-  backgroundColor: 'rgba(255,255,255,0.9)' # 背景颜色
+  backgroundColor: 'rgba(255,255,255,1)' # 背景颜色
 
-# twikoo评论
+# twikoo评论, 推荐
 # https://twikoo.js.org
 twikoo:
   on: false
   envId: '您的环境id' # 环境 ID，搭建教程：https://twikoo.js.org/backend.html
+  lightGallery: false # 评论图片点击放大
+  js: https://cdn.bootcdn.net/ajax/libs/twikoo/1.6.31/twikoo.all.min.js
   # region: ap-guangzhou # 环境地域，默认为 ap-shanghai
   # path: 'window.location.pathname' # 自定义文章路径
 
@@ -438,7 +440,7 @@ livere:
   on: false
   livere_uid:
 
-# gitment 评论
+# gitment 评论, 非常不推荐这个
 gitment:
   on: false
   gitment_owner:       #你的 GitHub ID
@@ -446,7 +448,7 @@ gitment:
   clientId: #client ID
   clientSecret:       #client secret
 
-# 畅言评论
+# 畅言评论, 不推荐这个
 changyan:
   on: false
   appId: 
@@ -461,7 +463,7 @@ gitalk:
   clientID:      #`Github Application clientID`
   clientSecret:  #`Github Application clientSecret`
 
-# utterance 评论  官网：https://utteranc.es/, 建议用这个评论
+# utterance 评论  官网：https://utteranc.es/, 建议用这个评论，默认开启的这个评论
 utterance:
   on: true
   # 仓库名字，格式：你的用户 ID/ 仓库名称，如：yuang01/yuang01.github.io

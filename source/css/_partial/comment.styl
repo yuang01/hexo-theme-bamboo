@@ -1,26 +1,103 @@
+$bg-color = #2d3032;
+$font-color = #c9d1d9;
 #vcomments textarea {
 	box-sizing: border-box;
 	background: url('/source/medias/comment_bg.png') 100% 100% no-repeat;
 }
 
+#vcomment {
+	.vcards .vcard .vh .vhead .vtag.vvisitor {
+		background-color: $color-primary;
+	}
+
+	.vcards .vcard .vh .vmeta .vat {
+		color: $color-primary;
+	}
+
+	.vbtn:active, .vbtn:hover {
+		color: $color-primary;
+		border-color: $color-primary;
+	}
+
+	.vcards .vcard .vhead .vnick:hover {
+		color: $color-primary;
+	}
+
+	.vicon.actived {
+		fill: $color-primary;
+	}
+
+	.vwrap .vheader .vinput:focus {
+		border-bottom-color: $color-primary;
+	}
+}
+
 #gitalk-container {
-	background: rgba(255, 255, 255, 0.8);
+	background: rgba(255, 255, 255, 1);
 	padding: 1em;
+	border-radius: 8px;
+
+	.gt-container .gt-link {
+		border-bottom: 1px dotted $color-primary;
+	}
+
+	.gt-container a {
+		color: $color-primary;
+	}
+
+	.gt-svg svg {
+		fill: $color-primary;
+	}
+
+	.gt-container .gt-btn.gt-btn-login, .gt-container .gt-btn.gt-btn-public {
+		border: 1px solid $color-primary;
+		background-color: $color-primary;
+	}
+
+	.gt-container .gt-btn.gt-btn-preview {
+		border: 1px solid $color-primary;
+		color: $color-primary;
+	}
+
+	.gt-container .gt-meta {
+		border-bottom: 1px solid $color-primary;
+	}
+
+	.gt-comments-null, .gt-counts, .gt-user-inner {
+		font-family: Titillium Web, 'PingFang SC', 'Hiragino Sans GB', 'Microsoft JhengHei', 'Microsoft YaHei', sans-serif;
+	}
+
+	.gt-header-avatar {
+		margin-right: 15px;
+	}
 }
 
 #gitment-ctn {
-	background: rgba(255, 255, 255, 0.8);
+	background: rgba(255, 255, 255, 1);
 	padding: 1em;
+	border-radius: 8px;
+
+	.gitment-header-like-btn svg {
+		fill: $color-primary;
+	}
+
+	a {
+		color: $color-primary;
+	}
+
+	.gitment-comments-init-btn:disabled, .gitment-editor-submit:disabled, .gitment-comments-init-btn:disabled, .gitment-editor-submit {
+		background-color: $color-primary;
+	}
 }
 
 #gitment-container {
-	background: rgba(255, 255, 255, 0.8);
+	background: rgba(255, 255, 255, 1);
 	padding: 1em;
 	border-radius: 8px;
 }
 
 #beaudar_container {
-	background: rgba(255, 255, 255, 0.8);
+	background: rgba(255, 255, 255, 1);
 	padding: 1em;
 	border-radius: 8px;
 
@@ -53,14 +130,13 @@
 		color: $color-primary;
 	}
 
-	.twikoo .el-textarea__inner:focus,
-	.twikoo .el-input__inner:focus {
+	.twikoo .el-textarea__inner:focus, .twikoo .el-input__inner:focus {
 		border-color: $color-primary;
 	}
 }
 
 #lv-container {
-	background: rgba(255, 255, 255, 0.8);
+	background: rgba(255, 255, 255, 1);
 	padding: 1em;
 	border-radius: 8px;
 	margin: 0 !important;
@@ -69,7 +145,8 @@
 #waline-box {
 	padding: 1em;
 	margin: 15px auto;
-	background: rgba(255, 255, 255, 0.8);
+	background: rgba(255, 255, 255, 1);
+	border-radius: 8px;
 	--waline-theme-color: $color-primary !important;
 
 	.v[data-class=v] .vbtn.primary {
@@ -85,26 +162,102 @@
 
 .darkModel {
 	#gitment-container, #waline-box, #beaudar_container {
-		background-color: #2d3032;
+		background-color: $bg-color;
 	}
 
 	#waline-comment .v[data-class=v] .vpanel, .v[data-class=v] .veditor:focus, .v[data-class=v] .vinput:focus {
-		background-color: #2d3032;
+		background-color: $bg-color;
 	}
-	#tcomment_container {
-		background-color: #2d3032;
-		color: #c9d1d9;
-		.tk-expand {
-			border: 1px solid #c9d1d9;
-			&:hover {
-				color: $color-primary;
-				border-color: $color-primary;	
-			}	
+
+	#vcomment {
+		pre {
+			background: #1e1b1b;
+
+			code {
+				background: transparent;
+			}
+		}
+
+		.vcards .vcard:hover {
+			box-shadow: 0 0 8px 3px $color-primary;
+		}
+
+		.vcards .vcard .vh {
+			border-bottom: none;
 		}
 	}
+
+	#gitalk-container {
+		background-color: $bg-color;
+		color: $font-color;
+
+		.gt-header-textarea {
+			background-color: $bg-color;
+			color: $font-color;
+			border: 1px solid $color-primary;
+		}
+
+		.gt-container .gt-comment-admin .gt-comment-content {
+			background: $bg-color;
+			color: $font-color;
+		}
+
+		.gt-container .gt-comment-body {
+			color: $font-color !important;
+		}
+
+		pre {
+			background: #1e1b1b;
+		}
+
+		.gt-header-preview {
+			background: $bg-color;
+			color: $font-color;
+		}
+
+		.gt-container .gt-comment-content:hover {
+			box-shadow: 0 0.625em 3.75em 0 $color-primary;
+		}
+	}
+
+	#tcomment_container {
+		background-color: $bg-color;
+		color: $font-color;
+
+		.tk-expand {
+			border: 1px solid $font-color;
+
+			&:hover {
+				color: $color-primary;
+				border-color: $color-primary;
+			}
+		}
+	}
+
+	#gitment-ctn {
+		background-color: $bg-color;
+		color: $font-color;
+
+		.gitment-container {
+			color: $font-color;
+		}
+
+		.gitment-editor-body textarea {
+			background-color: $bg-color;
+			color: $font-color;
+			border: 1px solid $color-primary;
+		}
+	}
+
 	#waline-comment {
 		.v[data-class=v] .vheader label, .v[data-class=v] .vaction, .vcount {
 			color: #fff;
+		}
+
+		.vcard .vmeta {
+			span {
+				background: transparent;
+			}
 		}
 	}
 }

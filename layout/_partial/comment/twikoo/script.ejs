@@ -1,14 +1,45 @@
-<script src="https://cdn.bootcdn.net/ajax/libs/twikoo/1.6.31/twikoo.all.min.js"></script>
-
+<script src="<%- url_for(theme.twikoo.js) %>"></script>
+<% if(theme.twikoo.lightGallery) { %>
+  <!-- lightGallery -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/css/lightgallery.css">
+  <script src="https://cdn.jsdelivr.net/npm/lightgallery@2.1.8/lightgallery.min.js"></script>
+<% } %>
 <script type="text/javascript">
   comment_el = '#tcomment';
+  isLightGalleryTwikoo = <%- theme.twikoo.lightGallery %>
   load_twikoo = function () {
     if ($(comment_el).length) {
       twikoo.init({
         envId: '<%- theme.twikoo.envId %>',
         el: '#tcomment',
         region: '<%- theme.twikoo.region %>',
-        path: '<%- theme.twikoo.path %>'
+        path: '<%- theme.twikoo.path %>',
+        onCommentLoaded: function () {
+          if (!isLightGalleryTwikoo) { // 评论图片放大
+            return;
+          }
+          var commentContents = document.getElementsByClassName('tk-content');
+          for (var i = 0; i < commentContents.length; i++) {
+            var commentItem = commentContents[i];
+            var imgEls = commentItem.getElementsByTagName('img');
+            if (imgEls.length > 0) {
+              for (var j = 0; j < imgEls.length; j++) {
+                var imgEl = imgEls[j];
+                var aEl = document.createElement('a');
+                aEl.setAttribute('class', 'tk-lg-link');
+                aEl.setAttribute('href', imgEl.getAttribute('src'));
+                aEl.setAttribute('data-src', imgEl.getAttribute('src'));
+                aEl.appendChild(imgEl.cloneNode(false));
+                imgEl.parentNode.insertBefore(aEl, imgEl.nextSibling);
+                imgEl.remove();
+              }
+              lightGallery(commentItem, {
+                selector: '.tk-lg-link',
+                share: false
+              });
+            }
+          }
+        }
       })
     }
   }
