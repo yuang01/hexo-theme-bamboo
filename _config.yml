@@ -412,6 +412,9 @@ typed:
 bubble:
   on: true
 
+### ---------- 评论开始----------- start ###
+# 评论只能有一个为on: true; 评论优先级为 utterance > beaudar > twikoo > valine > gitalk > giscus > waline > livere > gitment > changyan
+
 # valine 评论 https://valine.js.org
 valine:
   on: false
@@ -430,7 +433,7 @@ valine:
 twikoo:
   on: false
   envId: '您的环境id' # 环境 ID，搭建教程：https://twikoo.js.org/backend.html
-  lightGallery: false # 评论图片点击放大
+  lightGallery: false # 评论图片点击放大，注意启用了这个放大功能，就不要在twikoo的管理面板里面启用 '插件->使用简易图片点击放大效果', 否则会有两个放大效果
   js: https://cdn.bootcdn.net/ajax/libs/twikoo/1.6.31/twikoo.all.min.js
   # region: ap-guangzhou # 环境地域，默认为 ap-shanghai
   # path: 'window.location.pathname' # 自定义文章路径
@@ -453,6 +456,23 @@ changyan:
   on: false
   appId: 
   conf: 
+
+# giscus 评论 https://giscus.app/zh-CN
+giscus:
+  on: false
+  # 以下配置按照 yml 格式增删填写即可
+  # repo: xxx/xxx
+  # repo-id: xxx
+  # category: xxx
+  # category-id: xxx
+  # mapping: "pathname"
+  # reactions-enabled: "1"
+  # emit-metadata: "0"
+  # lang: "zh-CN"
+  # 以上配置按照 yml 格式增删填写即可
+  theme:
+    light: "light" # https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/css/giscus/light.css
+    dark: "dark" # https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/css/giscus/dark.css
 
 # gitalk评论
 gitalk:
@@ -501,12 +521,14 @@ waline:
   pageSize: 10
   copyright: true
 
-# 弹幕 只对valine评论有效
+# 弹幕 只对valine评论有效，不建议打开这个
 danmu:
   on: false
   loop: false # 设为true，则弹幕完了之后，继续查询评论接口，将该篇文章的评论再显示在弹幕里
   delay: 5000 # 每条弹幕之间出现的间隔时间
   speed: 40 # 弹幕运行的速度, 越小越快
+
+### ---------- 评论结束----------- end ###
 
 # 归档页面图片、描述、视频，全屏 or 'http://xxx'
 archive:

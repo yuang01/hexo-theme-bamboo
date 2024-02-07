@@ -1,12 +1,12 @@
 <script type="text/javascript">
-  var utteranceCommon = {};
+  var utteranceComment = {};
 
   function check_utterance() {
     let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('<%= theme.dark.default %>');
     if (isDark) {
-      utteranceCommon.Theme = '<%- theme.utterance.theme.dark %>';
+      utteranceComment.Theme = '<%- theme.utterance.theme.dark %>';
     } else {
-      utteranceCommon.Theme = '<%- theme.utterance.theme.light %>';
+      utteranceComment.Theme = '<%- theme.utterance.theme.light %>';
     }
 
     return document.getElementById("gitment-container");
@@ -21,7 +21,7 @@
       utterances.type = 'text/javascript';
       utterances.async = true;
       utterances.setAttribute('issue-term', '<%= theme.utterance.issue_term %>')
-      utterances.setAttribute('theme', utteranceCommon.Theme)
+      utterances.setAttribute('theme', utteranceComment.Theme)
       utterances.setAttribute('repo', '<%= theme.utterance.repo %>')
       utterances.crossorigin = 'anonymous';
       utterances.src = '<%= theme.utterance.cdn %>';
@@ -36,7 +36,7 @@
     if (!HEAD) return;
     const message = {
       type: 'set-theme',
-      theme: utteranceCommon.Theme
+      theme: utteranceComment.Theme
     };
     const utteranceIframe = document.querySelector('iframe');
     utteranceIframe.contentWindow.postMessage(message, 'https://utteranc.es');

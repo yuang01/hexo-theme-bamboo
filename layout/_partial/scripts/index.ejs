@@ -32,27 +32,25 @@
 
 <!-- 评论所需js -->
 <% if(page.comments !== false ) { %>
-  <% if(theme.valine.on) { %>
-    <!-- 弹幕所需的css和js -->
-    <%- partial('_partial/scripts/danmu') %>
-    <%- partial('_partial/comment/valine/script') %>
-  <% } else if(theme.twikoo.on) { %>
-    <%- partial('_partial/comment/twikoo/script') %>
-  <% } else if(theme.gitment.on) { %>
-    <%- partial('_partial/comment/gitment/script') %>
-  <% } else if(theme.livere.on) {  %>
-    <%- partial('_partial/comment/livere/script') %>
-  <% } else if(theme.changyan.on) {  %>
-    <%- partial('_partial/comment/changyan/script') %>
-  <% } else if(theme.gitalk.on) {  %>
-    <%- partial('_partial/comment/gitalk/script') %>
-  <% } else if(theme.utterance.on) { %>
-    <%- partial('_partial/comment/utterance/script') %>
-  <% } else if(theme.waline.on) {  %>
-    <%- partial('_partial/comment/waline/script') %>
-  <% } else if(theme.beaudar.on) {  %>
-    <%- partial('_partial/comment/beaudar/script') %>
-  <% } %>
+  <% const commentScripts = {
+      "utterance": ["_partial/comment/utterance/script"],
+      "beaudar": ["_partial/comment/beaudar/script"],
+      "twikoo": ["_partial/comment/twikoo/script"],
+      "valine": ["_partial/scripts/danmu", "_partial/comment/valine/script"],
+      "gitalk": ["_partial/comment/gitalk/script"],
+      "giscus": ["_partial/comment/giscus/script"],
+      "waline": ["_partial/comment/waline/script"],
+      "livere": ["_partial/comment/livere/script"],
+      "gitment": ["_partial/comment/gitment/script"],
+      "changyan": ["_partial/comment/changyan/script"],
+    };
+    const activePlugin = Object.keys(commentScripts).find(plugin => theme[plugin].on);
+    if (activePlugin) {
+      commentScripts[activePlugin].forEach(script => { %>
+        <%- partial(script) %>
+      <% });
+    }
+  %>
 <% } %>
 
 <!-- 鼠标点击特效 -->

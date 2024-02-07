@@ -1,25 +1,23 @@
 <!-- 评论 -->
 <% if(page.comments !== false ) { %>
   <div id="myComment">
-    <% if(theme.valine.on) { %>
-      <%- partial('_partial/comment/valine/layout') %>
-    <% } else if(theme.twikoo.on) { %>
-      <%- partial('_partial/comment/twikoo/layout') %>
-    <% } else if(theme.gitment.on) { %>
-      <%- partial('_partial/comment/gitment/layout') %>
-    <% } else if(theme.livere.on) {  %>
-      <%- partial('_partial/comment/livere/layout') %>
-    <% } else if(theme.changyan.on) {  %>
-      <%- partial('_partial/comment/changyan/layout') %>
-    <% } else if(theme.gitalk.on) {  %>
-      <%- partial('_partial/comment/gitalk/layout') %>
-    <% } else if(theme.utterance.on) {  %>
-      <%- partial('_partial/comment/utterance/layout') %>
-    <% } else if(theme.waline.on) {  %>
-      <%- partial('_partial/comment/waline/layout') %>
-    <% } else if(theme.beaudar.on) {  %>
-      <%- partial('_partial/comment/beaudar/layout') %>
+    <% const commentPlugins = {
+      "utterance": "_partial/comment/utterance/layout",
+      "beaudar": "_partial/comment/beaudar/layout",
+      "twikoo": "_partial/comment/twikoo/layout",
+      "valine": "_partial/comment/valine/layout",
+      "gitalk": "_partial/comment/gitalk/layout",
+      "giscus": "_partial/comment/giscus/layout",
+      "waline": "_partial/comment/waline/layout",
+      "livere": "_partial/comment/livere/layout",
+      "gitment": "_partial/comment/gitment/layout",
+      "changyan": "_partial/comment/changyan/layout",
+    };
+    const activePlugin = Object.keys(commentPlugins).find(plugin => theme[plugin].on);
+    if (activePlugin) { %>
+      <%- partial(commentPlugins[activePlugin]) %>
     <% } %>
   </div>
 <% } %>
-<!-- comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
+
+<!-- 还需要在后面这个地址里设置script, comment script in themes\hexo-theme-bamboo\layout\_partial\scripts\index.ejs -->
