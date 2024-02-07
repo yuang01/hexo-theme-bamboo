@@ -471,8 +471,8 @@ giscus:
   # lang: "zh-CN"
   # 以上配置按照 yml 格式增删填写即可
   theme:
-    light: "light" # https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/css/giscus/light.css
-    dark: "dark" # https://cdn.jsdelivr.net/gh/volantis-x/cdn-volantis@master/css/giscus/dark.css
+    light: "light"
+    dark: "dark"
 
 # gitalk评论
 gitalk:
