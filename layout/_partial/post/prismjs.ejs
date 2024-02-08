@@ -1,28 +1,21 @@
- <!-- prismjs 代码高亮 -->
- <% if(config.prismjs.enable === true ) { %>
+<!-- prismjs 代码高亮 -->
+<% if(config.prismjs.enable === true ) { %>
     <% 
         var themeName = post.prismjs || theme.prismjs.theme;
+        var themes = {
+            'default': 'prism.min.css',
+            'coy': 'prism-coy.min.css',
+            'dark': 'prism-dark.min.css',
+            'funky': 'prism-funky.min.css',
+            'okaidia': 'prism-okaidia.min.css',
+            'solarizedlight': 'prism-solarizedlight.min.css',
+            'tomorrow': 'prism-tomorrow.min.css',
+            'twilight': 'prism-twilight.min.css'
+        };
+        var themePath = themes[themeName] || 'prism.min.css';
     %>
     <link href="<%- url_for('/js/prism/prism-line-numbers.css') %>" rel="stylesheet">
-    <% if(themeName == 'default' ) { %>
-        <link href="<%- url_for('/js/prism/prism.min.css') %>" rel="stylesheet">
-    <% } else if(themeName == 'coy') { %>
-        <link href="<%- url_for('/js/prism/prism-coy.min.css') %>" rel="stylesheet">
-    <% }  else if(themeName == 'dark') { %>
-        <link href="<%- url_for('/js/prism/prism-dark.min.css') %>" rel="stylesheet">
-    <% } else if(themeName == 'funky') { %>
-        <link href="<%- url_for('/js/prism/prism-funky.min.css') %>" rel="stylesheet">
-    <% } else if(themeName == 'okaidia') { %>
-        <link href="<%- url_for('/js/prism/prism-okaidia.min.css') %>" rel="stylesheet">
-    <% } else if(themeName == 'solarizedlight') { %>
-        <link href="<%- url_for('/js/prism/prism-solarizedlight.min.css') %>" rel="stylesheet">
-    <% } else if(themeName == 'tomorrow') { %>
-        <link href="<%- url_for('/js/prism/prism-tomorrow.min.css') %>" rel="stylesheet">
-    <% } else if(themeName == 'twilight') {  %>
-        <link href="<%- url_for('/js/prism/prism-twilight.min.css') %>" rel="stylesheet">
-    <% } else { %>
-        <link href="<%- url_for('/js/prism/prism.min.css') %>" rel="stylesheet">
-    <% } %>
+    <link href="<%- url_for('/js/prism/' + themePath) %>" rel="stylesheet">
 
     <style>
         pre[class*="language-"] {
@@ -32,4 +25,4 @@
             border: none;
         }
     </style>
-  <% } %>
+<% } %>
