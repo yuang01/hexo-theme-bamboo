@@ -1,5 +1,5 @@
 <!-- 判断是否为黑夜模式 -->
-<script>
+<script defer>
   let isDark = JSON.parse(localStorage.getItem('dark')) || JSON.parse('<%= theme.dark.default %>');
 
   if (isDark) {

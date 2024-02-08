@@ -67,7 +67,7 @@
         }
     </script>
     
-    <script defer src="<%- url_for(theme.CDN.live2d) %>"></script>
+    <script async src="<%- url_for(theme.CDN.live2d) %>"></script>
     <script>
         var live2dOpen = eval('<%= theme.live2d.open %>') || false;
         if (!live2dOpen) {
@@ -100,17 +100,8 @@
     <% } %>
     
     <!-- 依赖于jquery和vue -->
-    <% if(theme.CDN.jquery) { %>
-        <script src="<%- url_for(theme.CDN.jquery) %>"></script>
-    <% } else { %>
-        <script src="<%- url_for('/js/jquery3.5.1.js') %>"></script>
-    <% } %>
-
-    <% if(theme.CDN.vue) { %>
-        <script src="<%- url_for(theme.CDN.vue) %>"></script>
-    <% } else { %>
-        <script src="<%- url_for('/js/vue2.6.11.js') %>"></script>
-    <% } %>
+    <script src="<%= theme.CDN && theme.CDN.jquery ? url_for(theme.CDN.jquery) : url_for('/js/jquery3.5.1.js') %>"></script>
+    <script src="<%= theme.CDN && theme.CDN.vue ? url_for(theme.CDN.vue) : url_for('/js/vue2.6.11.js') %>"></script>
 
     <!-- import link -->
     <% if (theme.import && theme.import.link){ %>

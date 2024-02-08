@@ -174,7 +174,7 @@ sidebar:
 # 页面刷新时预加载动画
 preloader:
   on: true
-  type: 2 # 1/2/3/4/5/6/7/8/9
+  type: 6 # 1/2/3/4/5/6/7/8
 
 # 首页轮播图设置
 swiper:
